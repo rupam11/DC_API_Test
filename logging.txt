@@ -1,0 +1,82 @@
+Request method:	POST
+Request URI:	https://9.51.192.136:9080/sector-service/createBpmnDiagram
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user=ew0KICAidXNlckFjY291bnRTdGF0dXMiOiBudWxsLA0KICAidXNlckNyZWF0ZWRBdCI6ICIyMDIwLTA0LTA5IDAwOjMzOjQ4IiwNCiAgInVzZXJDcmVhdGVkQnkiOiAiZGNoZWxwIiwNCiAgInVzZXJFbWFpbCI6ICJza3ZhcmdoZUBpbi5pYm0uY29tIiwNCiAgInVzZXJJZCI6IDMsDQogICJ1c2VyTmFtZSI6ICJza3ZhcmdoZSIsDQogICJ1c2VyUm9sZSI6ICJFdmFsIEFkbWluIiwNCiAgInVzZXJTZXNzaW9uVG9rZW4iOiAiSW5hY3RpdmUiLA0KICAidXNlclN0YXR1cyI6ICJBY3RpdmUiLA0KICAidXNlclR5cGUiOiAiSUJNIiwNCiAgInVzZXJVcGRhdGVkQXQiOiAiMjAyMC0wNC0xMyAwNjoxODowOCIsDQogICJ1c2VyVXBkYXRlZEJ5IjogInNrdmFyZ2hlIg0KfQ0K
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "test_bpmn_diagram",
+    "tasks": [
+        "task1",
+        "task2",
+        "task3"
+    ]
+}
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Date: Fri, 15 May 2020 12:08:38 GMT
+Keep-Alive: timeout=60
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+{
+    "timestamp": "2020-05-15T12:08:38.992+0000",
+    "status": 404,
+    "error": "Not Found",
+    "message": "No message available",
+    "path": "/createBpmnDiagram"
+}
+Request method:	GET
+Request URI:	https://9.51.192.136:9080/sector-service/getBpmnDiagram
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user=ew0KICAidXNlckFjY291bnRTdGF0dXMiOiBudWxsLA0KICAidXNlckNyZWF0ZWRBdCI6ICIyMDIwLTA0LTA5IDAwOjMzOjQ4IiwNCiAgInVzZXJDcmVhdGVkQnkiOiAiZGNoZWxwIiwNCiAgInVzZXJFbWFpbCI6ICJza3ZhcmdoZUBpbi5pYm0uY29tIiwNCiAgInVzZXJJZCI6IDMsDQogICJ1c2VyTmFtZSI6ICJza3ZhcmdoZSIsDQogICJ1c2VyUm9sZSI6ICJFdmFsIEFkbWluIiwNCiAgInVzZXJTZXNzaW9uVG9rZW4iOiAiSW5hY3RpdmUiLA0KICAidXNlclN0YXR1cyI6ICJBY3RpdmUiLA0KICAidXNlclR5cGUiOiAiSUJNIiwNCiAgInVzZXJVcGRhdGVkQXQiOiAiMjAyMC0wNC0xMyAwNjoxODowOCIsDQogICJ1c2VyVXBkYXRlZEJ5IjogInNrdmFyZ2hlIg0KfQ0K
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "test_bpmn_diagram",
+    "tasks": [
+        "task1",
+        "task2",
+        "task3"
+    ]
+}
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Date: Fri, 15 May 2020 12:08:40 GMT
+Keep-Alive: timeout=60
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+{
+    "timestamp": "2020-05-15T12:08:40.076+0000",
+    "status": 404,
+    "error": "Not Found",
+    "message": "No message available",
+    "path": "/getBpmnDiagram"
+}

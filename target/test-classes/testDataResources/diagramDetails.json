@@ -1,0 +1,6 @@
+{
+  "name": "test_bpmn_diagram",
+  "tasks": [
+    "task1","task2","task3"
+  ]
+}
