@@ -31,7 +31,7 @@ public class SectorStepDefinition extends Utils {
 		if (payloadReq.equalsIgnoreCase("Add"))
 			reqSector = data.addSector();
 		else if (payloadReq.equalsIgnoreCase("Update"))
-			reqSector = data.updateSector();
+			reqSector = data.updateSector(respSector);
 		else
 			System.out.println("Issue in Payload creation request");
 		reqSpec = given().spec(requestSpecification(

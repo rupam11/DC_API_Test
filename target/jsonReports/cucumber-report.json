@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-05-23T02:40:40.679Z",
+        "start_timestamp": "2020-05-26T08:48:30.121Z",
         "before": [
           {
             "result": {
-              "duration": 1210000000,
+              "duration": 1666000000,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 675000000,
+              "duration": 892000000,
               "status": "passed"
             },
             "line": 6,
@@ -56,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 3103000000,
+              "duration": 4654000000,
               "status": "passed"
             },
             "line": 7,
@@ -78,7 +78,6 @@
           },
           {
             "result": {
-              "duration": 3000000,
               "status": "passed"
             },
             "line": 8,
@@ -108,11 +107,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-23T02:40:45.834Z",
+        "start_timestamp": "2020-05-26T08:48:37.589Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -127,6 +125,7 @@
         "after": [
           {
             "result": {
+              "duration": 3000000,
               "status": "passed"
             },
             "match": {
@@ -139,7 +138,7 @@
         "steps": [
           {
             "result": {
-              "duration": 15000000,
+              "duration": 27000000,
               "status": "passed"
             },
             "line": 12,
@@ -161,7 +160,7 @@
           },
           {
             "result": {
-              "duration": 2442000000,
+              "duration": 3579000000,
               "status": "passed"
             },
             "line": 13,
@@ -212,11 +211,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-23T02:40:48.304Z",
+        "start_timestamp": "2020-05-26T08:48:41.218Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -243,7 +241,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 18,
@@ -265,7 +263,7 @@
           },
           {
             "result": {
-              "duration": 940000000,
+              "duration": 1182000000,
               "status": "passed"
             },
             "line": 19,
@@ -316,11 +314,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-23T02:40:49.262Z",
+        "start_timestamp": "2020-05-26T08:48:42.426Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -347,7 +344,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 24,
@@ -373,7 +370,7 @@
           },
           {
             "result": {
-              "duration": 3214000000,
+              "duration": 3635000000,
               "status": "passed"
             },
             "line": 25,
@@ -424,7 +421,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-23T02:40:52.492Z",
+        "start_timestamp": "2020-05-26T08:48:46.088Z",
         "before": [
           {
             "result": {
@@ -454,7 +451,6 @@
         "steps": [
           {
             "result": {
-              "duration": 3000000,
               "status": "passed"
             },
             "line": 30,
@@ -480,7 +476,7 @@
           },
           {
             "result": {
-              "duration": 915000000,
+              "duration": 1064000000,
               "status": "passed"
             },
             "line": 31,
@@ -503,7 +499,7 @@
           {
             "result": {
               "error_message": "java.lang.AssertionError: expected:\u003c200\u003e but was:\u003c404\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(CommonStepDefinition.java:40)\r\n\tat ✽.The API call is success with StatusCode 200(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:32)\r\n",
-              "duration": 3000000,
+              "duration": 2000000,
               "status": "failed"
             },
             "line": 32,

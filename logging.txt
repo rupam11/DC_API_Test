@@ -15,7 +15,7 @@ HTTP/1.1 200
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Sat, 23 May 2020 02:40:54 GMT
+Date: Tue, 26 May 2020 08:48:48 GMT
 Keep-Alive: timeout=60
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -65,7 +65,7 @@ HTTP/1.1 200
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Sat, 23 May 2020 02:40:56 GMT
+Date: Tue, 26 May 2020 08:48:50 GMT
 Keep-Alive: timeout=60
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -179,11 +179,11 @@ Connection: keep-alive
         "fieldValueSource": "Provided",
         "fieldValueSourceComment": "second Field is getting injested",
         "fieldUsability": 1,
-        "fieldStatus": "Active",
+        "fieldStatus": "Passive",
         "fieldCreatedBy": "dchelp",
-        "fieldUpdatedBy": "NA",
+        "fieldUpdatedBy": "skvarghe",
         "fieldCreatedAt": "2020-03-09 08:52:16",
-        "fieldUpdatedAt": "0000-00-00 00:00:00"
+        "fieldUpdatedAt": "2020-05-26 03:29:51"
     },
     {
         "fieldId": 13,
@@ -13809,7 +13809,7 @@ HTTP/1.1 200
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Sat, 23 May 2020 02:40:58 GMT
+Date: Tue, 26 May 2020 08:48:53 GMT
 Keep-Alive: timeout=60
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -13831,7 +13831,7 @@ HTTP/1.1 200
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Sat, 23 May 2020 02:40:59 GMT
+Date: Tue, 26 May 2020 08:48:55 GMT
 Keep-Alive: timeout=60
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -13919,37 +13919,6 @@ Connection: keep-alive
         "fieldUpdatedBy": "dchelp",
         "fieldCreatedAt": "2020-03-09 07:29:13",
         "fieldUpdatedAt": "2020-03-09 08:47:51"
-    },
-    {
-        "fieldId": 8,
-        "fieldParentId": "8",
-        "fieldVersion": "1.0",
-        "fieldDisplaySequence": 8,
-        "fieldType": "Text",
-        "fieldOptions": [
-            
-        ],
-        "fieldValue": "taskApplicable",
-        "fieldRuleIds": [
-            
-        ],
-        "fieldName": "Applicable",
-        "fieldGuidance": "Link",
-        "fieldConstraints": "Required",
-        "fieldCategory": "All",
-        "fieldTemplateName": "Implementation Process",
-        "fieldQuestion": "Is this Applicable task",
-        "fieldIndustry": "All",
-        "fieldSector": "All",
-        "fieldComment": "Please do provide Applicable Comment",
-        "fieldValueSource": "Provided",
-        "fieldValueSourceComment": "second Field is getting injested",
-        "fieldUsability": 1,
-        "fieldStatus": "Active",
-        "fieldCreatedBy": "dchelp",
-        "fieldUpdatedBy": "NA",
-        "fieldCreatedAt": "2020-03-09 08:52:16",
-        "fieldUpdatedAt": "0000-00-00 00:00:00"
     },
     {
         "fieldId": 13,
@@ -27524,7 +27493,7 @@ HTTP/1.1 404
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Sat, 23 May 2020 02:41:02 GMT
+Date: Tue, 26 May 2020 08:48:58 GMT
 Keep-Alive: timeout=60
 Vary: Origin
 Vary: Access-Control-Request-Method
@@ -27534,7 +27503,7 @@ Transfer-Encoding: chunked
 Connection: keep-alive
 
 {
-    "timestamp": "2020-05-23T02:41:02.794+0000",
+    "timestamp": "2020-05-26T08:48:58.324+0000",
     "status": 404,
     "error": "Not Found",
     "message": "No message available",
