@@ -1,33 +1,18 @@
 package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import resources.APIResources;
-
+import entity.Sector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
-import oldStepDefinitions.AbstractStepDefinition;
-import pojo.Activity;
-import pojo.Sector;
-import pojo.Task;
-import resources.TestDataBuild;
-import resources.Utils;
+import testBase.Utils;
 
 public class SectorStepDefinition extends Utils {
 
@@ -35,10 +20,10 @@ public class SectorStepDefinition extends Utils {
 	Sector reqSector;
 	Sector[] respAllSectors;
 	int sectCount, sectId;
-	CommonStepDefinition cmnSteDef;
+	CommonStepDefinition cmnStepDef;
 
 	public SectorStepDefinition() throws IOException {
-		cmnSteDef = new CommonStepDefinition();
+		cmnStepDef = new CommonStepDefinition();
 	}
 
 	@Given("{string} Sector Payload")
@@ -49,30 +34,32 @@ public class SectorStepDefinition extends Utils {
 			reqSector = data.updateSector();
 		else
 			System.out.println("Issue in Payload creation request");
-		reqSpec = given().spec(requestSpecification()).body(reqSector);
+		reqSpec = given().spec(requestSpecification(
+				"ew0KICAidXNlckFjY291bnRTdGF0dXMiOiBudWxsLA0KICAidXNlckNyZWF0ZWRBdCI6ICIyMDIwLTA0LTA5IDAwOjMzOjQ4IiwNCiAgInVzZXJDcmVhdGVkQnkiOiAiZGNoZWxwIiwNCiAgInVzZXJFbWFpbCI6ICJza3ZhcmdoZUBpbi5pYm0uY29tIiwNCiAgInVzZXJJZCI6IDMsDQogICJ1c2VyTmFtZSI6ICJza3ZhcmdoZSIsDQogICJ1c2VyUm9sZSI6ICJFdmFsIEFkbWluIiwNCiAgInVzZXJTZXNzaW9uVG9rZW4iOiAiSW5hY3RpdmUiLA0KICAidXNlclN0YXR1cyI6ICJBY3RpdmUiLA0KICAidXNlclR5cGUiOiAiSUJNIiwNCiAgInVzZXJVcGRhdGVkQXQiOiAiMjAyMC0wNC0xMyAwNjoxODowOCIsDQogICJ1c2VyVXBkYXRlZEJ5IjogInNrdmFyZ2hlIg0KfQ0K"))
+				.body(reqSector);
 
 	}
 
 	@Then("verify response will return Sector instance")
 	public void verify_response_will_return_Sector_instance() {
 		respSector = response.getBody().as(Sector.class);
-
-		cmnSteDef.user_calls_API_with_http_Request("getSectorCount", "Get");
-		int expSecId = cmnSteDef.getcount_from_Response_and_verify_it_is_0();
+		cmnStepDef.user_calls_API_with_http_Request("getSectorCount", "Get");
+		int expSecId = cmnStepDef.getcount_from_Response_and_verify_it_is_0();
 		int actSecId = respSector.getSectorId();
 		assertEquals("Sector do not get added properly", expSecId, actSecId);
 	}
 
 	@Then("verify response will return List of Sectors")
 	public void verify_response_will_return_List_of_Sectors() {
-		//System.out.println("Response body after getAllSectors ==" + response.getBody().asString());
+		// System.out.println("Response body after getAllSectors ==" +
+		// response.getBody().asString());
 		respAllSectors = response.getBody().as(Sector[].class);
 	}
 
 	@Then("total number of Sector in List is equal to getSectorCount")
 	public void total_number_of_Sector_in_List_is_equal_to_getSectorCount() throws IOException {
-		cmnSteDef.user_calls_API_with_http_Request("getSectorCount", "Get");
-		sectCount = cmnSteDef.getcount_from_Response_and_verify_it_is_0();
+		cmnStepDef.user_calls_API_with_http_Request("getSectorCount", "Get");
+		sectCount = cmnStepDef.getcount_from_Response_and_verify_it_is_0();
 		assertTrue("Total Sectors retrieved is not correct", respAllSectors.length == sectCount);
 	}
 
@@ -121,10 +108,10 @@ public class SectorStepDefinition extends Utils {
 
 	@Then("response should be list all Sectors=getAllSectors")
 	public void response_should_be_list_all_Sectors_getAllSectors() {
-		Sector[] actAllSectors= response.getBody().as(Sector[].class);
-		cmnSteDef.user_calls_API_with_http_Request("getAllSectors","Get");
-		Sector[] expAllSectors= response.getBody().as(Sector[].class);
-		assertArrayEquals("All Sectors not searched in case of no Search Criteria", expAllSectors,actAllSectors);		
+		Sector[] actAllSectors = response.getBody().as(Sector[].class);
+		cmnStepDef.user_calls_API_with_http_Request("getAllSectors", "Get");
+		Sector[] expAllSectors = response.getBody().as(Sector[].class);
+		assertArrayEquals("All Sectors not searched in case of no Search Criteria", expAllSectors, actAllSectors);
 	}
 
 }

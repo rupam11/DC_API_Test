@@ -11,15 +11,34 @@ public enum APIResources {
 	getAllActivities("activity-service/getAllActivities"),
 	updateActivity("activity-service/updateActivity"),	
 	
-	createSector("https://9.51.192.136:9080/sector-service/createSector"),
+	createTask("task-service/createTask"),
+	deleteTask("task-service/deleteTask"),
+	getTaskBySearchCriteria("task-service/getTaskBySearchCriteria"),
+	getTaskCount("task-service/getTaskCount"),
+	getAllTasks("task-service/getAllTasks"),
+	updateTask("task-service/updateTask"),
+	
+	createSector("sector-service/createSector"),
 	deleteSector("sector-service/deleteSector"),
 	getSectorBySearchCriteria("sector-service/getSectorBySearchCriteria"),
 	getSectorCount("sector-service/getSectorCount"),
 	getAllSectors("sector-service/getAllSectors"),
 	updateSector("sector-service/updateSector"),
 	
-	createBpmnDiagram("sector-service/createBpmnDiagram"),
-	getBpmnDiagram("sector-service/getBpmnDiagram");
+	createBpmnDiagram("bpmn-service/createBpmnDiagram"),
+	getBpmnDiagram("bpmn-service/getBpmnDiagram"),
+	
+	sendMail("mail-service/sendMail"),
+	
+	createField("field-service/createSector"),
+	deleteField("field-service/deleteSector"),
+	fields_init("field-service/fields/init"),
+	getAllFields("field-service/getAllFields"),
+	getFieldCount("field-service/getFieldCount"),
+	getFieldsBySearchCriteria("field-service/getFieldsBySearchCriteria"),
+	updateField("field-service/updateField"),
+	updateFieldByRuleId("field-service/updateFieldByRuleId");
+	
 	
 	private String resource;	
 	

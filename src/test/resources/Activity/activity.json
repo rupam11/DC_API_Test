@@ -1,0 +1,38 @@
+{
+    "activityId": 283,
+    "activityCode": "ACT_283",
+    "activitySequence": 283,
+    "activityDisplaySequence": 283,
+    "activityName": "WAS Migration Activities For WAS",
+    "activityStatus": "Active",
+    "activityPercentCompletion": "0",
+    "activityState": "Not Started",
+    "activityEffort": "NA",
+    "activityOwner": "",
+    "activityCreatedBy": "skvarghe",
+    "activityCreatedAt": "2020-05-19 00:23:16",
+    "activityUpdatedBy": "NA",
+    "activityUpdatedAt": "0000-00-00 00:00:00",
+    "activityTasks": [{
+            "taskId": 229,
+            "taskCode": "TSK_229",
+            "taskSequence": 0,
+            "taskDisplaySequence": 0,
+            "taskDescription": "Create WebSphere Application Server Version 9.0 profile. For detailed steps; please check \"Detailed Steps for WAS9\" tab",
+            "taskStatus": "Active",
+            "taskComments": "",
+            "taskApplicable": "Yes",
+            "percentCompletion": "0",
+            "taskState": "Not Started",
+            "taskEffort": "",
+            "taskOwner": "",
+            "taskCreatedBy": "skvarghe",
+            "taskCreatedAt": "2020-05-19 00:23:16",
+            "taskUpdatedBy": "0000-00-00 00:00:00",
+            "taskUpdatedAt": "NA",
+            "taskProcessName": "",
+            "taskSquadName": "Cloud Migration Factory",
+            "taskSquadType": "IBM"
+        }
+    ]
+}

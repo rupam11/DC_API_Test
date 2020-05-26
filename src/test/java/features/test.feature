@@ -1,23 +1,34 @@
-@DC-Test-Suite 
-@Test 
-Feature: Validating BPMN API's 
+@DC-Test-Suite @Test
+Feature: Validating Field API's
 
-@createBpmnDiagram 
-  Scenario: Verify API: createBpmnDiagram API create BPMN Diagram 
-    Given Add DiagramDetails Payload
-     When user calls "createBpmnDiagram" API with "Post" http Request 
-     Then the API call is success with StatusCode 200 
-     Then verify that ResponseStatus instance is returned as response
-     Then "messageCode" in response body is 0
-     Then "message" in response body is "Diagram created"
-     Then "displayMessage" in response body is "BPMN Diagram successfully created"
-         
-  
-  @getBpmnDiagram 
-  Scenario: Verify API: getBpmnDiagram API get BpmnDiagram using 'name' parameter
-    Given User invoke getBpmnDiagram with Parameters: name
-     When user calls "getBpmnDiagram" API with "Get" http Request 
-     Then the API call is success with StatusCode 200 
-     Then verify response will return InputStreamResource instance 
-     
- 
+  @fields/init
+  Scenario: Verify API: fields/init API, Create Dummy Field
+    Given "System_Admin" User invoke "fields/init"
+    When User calls "fields_init" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+
+  @getAllFields
+  Scenario: Verify API: getAllFields API, Get All Fields
+    Given "System_Admin" User invoke "getAllFields"
+    When User calls "getAllFields" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+
+  @getFieldCount
+  Scenario: Verify API: getFieldCount API, Get Number of Fields
+    Given "System_Admin" User invoke "getFieldCount"
+    When User calls "getFieldCount" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+
+  @getFieldsBySearchCriteria
+  Scenario: Verify API: getFieldsBySearchCriteria API, search by 'fieldCategory'
+    Given "System_Admin" User invoke "getFieldsBySearchCriteria" with Parameter: "fieldCategory"
+    When User calls "getFieldsBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    
+  @deleteField
+  Scenario: Verify API: deleteField API, update Field status as Passive
+    Given "System_Admin"  User invoke "deleteField" with Parameter: "fieldId"
+    When User calls "deleteField" API with "Delete" http Request
+    Then The API call is success with StatusCode 200
+    Then "fieldStatus" in response body is "Passive"
+    
