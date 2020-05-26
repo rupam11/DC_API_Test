@@ -1,13 +1,13 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-05-26T08:48:30.121Z",
+        "start_timestamp": "2020-05-26T18:03:15.689Z",
         "before": [
           {
             "result": {
-              "duration": 1666000000,
+              "duration": 1660000000,
               "status": "passed"
             },
             "match": {
@@ -15,10 +15,10 @@
             }
           }
         ],
-        "line": 5,
-        "name": "Verify API: fields/init API, Create Dummy Field",
+        "line": 6,
+        "name": "Verify API: getCategoryCount API return Total Category Count",
         "description": "",
-        "id": "validating-field-api-s;verify-api:-fields/init-api--create-dummy-field",
+        "id": "validating-category-api-s;verify-api:-getcategorycount-api-return-total-category-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 892000000,
+              "duration": 890000000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "\"System_Admin\" User invoke \"fields/init\"",
+            "line": 7,
+            "name": "\"System_Admin\" User invoke \"getCategoryCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"fields/init\"",
+                  "val": "\"getCategoryCount\"",
                   "offset": 27
                 }
               ],
@@ -56,78 +56,91 @@
           },
           {
             "result": {
-              "duration": 4654000000,
+              "duration": 3662000000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "User calls \"fields_init\" API with \"Get\" http Request",
+            "line": 8,
+            "name": "User calls \"getCategoryCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"fields_init\"",
+                  "val": "\"getCategoryCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 34
+                  "offset": 39
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@fields/init"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-05-26T08:48:37.589Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 11,
-        "name": "Verify API: getAllFields API, Get All Fields",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-getallfields-api--get-all-fields",
-        "after": [
           {
             "result": {
               "duration": 3000000,
               "status": "passed"
             },
+            "line": 9,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Verify category_Count result is greater than 0",
+            "match": {
+              "location": "stepDefinitions.CategoryStepDefinition.get_category_count()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Category"
+          },
+          {
+            "name": "@getCategoryCount"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-26T18:03:22.127Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Verify API: createCategory API add Category paylod",
+        "description": "",
+        "id": "validating-category-api-s;verify-api:-createcategory-api-add-category-paylod",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
             "match": {
               "location": "stepDefinitions.Hooks.afterScenario()"
             }
@@ -138,53 +151,54 @@
         "steps": [
           {
             "result": {
-              "duration": 27000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "\"System_Admin\" User invoke \"getAllFields\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getAllFields\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3579000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "User calls \"getAllFields\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getAllFields\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 35
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
+              "duration": 923000000,
               "status": "passed"
             },
             "line": 14,
+            "name": "\"System_Admin\" \"Add\" Category Payload",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepDefinitions.CategoryStepDefinition.category_Payload(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1125000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User calls \"createCategory\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createCategory\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 16,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -196,107 +210,34 @@
               "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "result": {
+              "duration": 147000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Verify responseBody is instance of Category",
+            "match": {
+              "location": "stepDefinitions.CategoryStepDefinition.Verify_responseBody_is_instance_of__Category()"
+            },
+            "keyword": "Then "
           },
           {
-            "name": "@getAllFields"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-05-26T08:48:41.218Z",
-        "before": [
-          {
             "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 17,
-        "name": "Verify API: getFieldCount API, Get Number of Fields",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-getfieldcount-api--get-number-of-fields",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 11000000,
+              "duration": 985000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "\"System_Admin\" User invoke \"getFieldCount\"",
+            "name": "Verify Total category_Count increased by 1",
             "match": {
               "arguments": [
                 {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getFieldCount\"",
-                  "offset": 27
+                  "val": "1",
+                  "offset": 41
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1182000000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "User calls \"getFieldCount\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getFieldCount\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CategoryStepDefinition.category_Count_incressed(int)"
             },
             "keyword": "Then "
           }
@@ -306,255 +247,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Category"
           },
           {
-            "name": "@getFieldCount"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-05-26T08:48:42.426Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 23,
-        "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldCategory\u0027",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldcategory-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "\"System_Admin\" User invoke \"getFieldsBySearchCriteria\" with Parameter: \"fieldCategory\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"fieldCategory\"",
-                  "offset": 71
-                }
-              ],
-              "location": "stepDefinitions.TaskStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3635000000,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getFieldsBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-05-26T08:48:46.088Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 29,
-        "name": "Verify API: deleteField API, update Field status as Passive",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-deletefield-api--update-field-status-as-passive",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "\"System_Admin\"  User invoke \"deleteField\" with Parameter: \"fieldId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deleteField\"",
-                  "offset": 28
-                },
-                {
-                  "val": "\"fieldId\"",
-                  "offset": 58
-                }
-              ],
-              "location": "stepDefinitions.FieldStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1064000000,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "User calls \"deleteField\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteField\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "error_message": "java.lang.AssertionError: expected:\u003c200\u003e but was:\u003c404\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(CommonStepDefinition.java:40)\r\n\tat ✽.The API call is success with StatusCode 200(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:32)\r\n",
-              "duration": 2000000,
-              "status": "failed"
-            },
-            "line": 32,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 33,
-            "name": "\"fieldStatus\" in response body is \"Passive\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"fieldStatus\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Passive\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@deleteField"
+            "name": "@createCategory"
           }
         ]
       }
     ],
-    "name": "Validating Field API\u0027s",
+    "name": "Validating Category API\u0027s",
     "description": "",
-    "id": "validating-field-api-s",
+    "id": "validating-category-api-s",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/test.feature",
+    "uri": "file:src/test/java/features/Category.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -565,11 +270,11 @@
         }
       },
       {
-        "name": "@Test",
+        "name": "@Category",
         "type": "Tag",
         "location": {
-          "line": 1,
-          "column": 16
+          "line": 2,
+          "column": 1
         }
       }
     ]

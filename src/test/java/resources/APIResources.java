@@ -37,8 +37,14 @@ public enum APIResources {
 	getFieldCount("field-service/getFieldCount"),
 	getFieldsBySearchCriteria("field-service/getFieldsBySearchCriteria"),
 	updateField("field-service/updateField"),
-	updateFieldByRuleId("field-service/updateFieldByRuleId");
+	updateFieldByRuleId("field-service/updateFieldByRuleId"),
 	
+	createCategory("category-service/createCategory"),
+	deleteCategory("category-service/deleteCategory"),
+	getAllCategories("field-service/getAllCategories"),
+	getCategoryCount("category-service/getCategoryCount");
+	
+		
 	
 	private String resource;	
 	

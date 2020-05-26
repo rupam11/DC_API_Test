@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.google.gson.Gson;
 import entity.Activity;
+import entity.Category;
 import entity.DiagramDetails;
 import entity.Mail;
 import entity.Sector;
@@ -19,6 +20,7 @@ public class JsonDataReader {
 	private Sector sector;
 	private DiagramDetails bpmn;
 	private Task task;
+	private Category category;
 	private Mail mail;
 	Gson gson;
 	BufferedReader bufferReader;
@@ -32,6 +34,7 @@ public class JsonDataReader {
 		this.sector=new Sector();
 		this.bpmn=new DiagramDetails();
 		this.mail=new Mail();
+		this.category=new Category();
 	}
 
 	public Activity getActivityData() {
@@ -160,6 +163,23 @@ public class JsonDataReader {
 			return mail;
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException("Json file not found at path : " + mailPath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Category getCategoryData() {
+		String CategoryFilePath=JSONDataFilePath+"Category/category.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(CategoryFilePath));
+			task = gson.fromJson(bufferReader, Task.class);
+			return category;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + CategoryFilePath);
 		} finally {
 			try {
 				if (bufferReader != null)

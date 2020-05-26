@@ -20,8 +20,8 @@ public class Utils {
 	public static RequestSpecification reqSpec;
 	public static ResponseSpecification respSpec;
 	public static Response response;
-	public TestDataBuild data = new TestDataBuild();
-	private ConfigFileReader configReader = FileReaderManager.getInstance().getConfigReader();
+	protected TestDataBuild data=new TestDataBuild();
+	private ConfigFileReader configReader=FileReaderManager.getInstance().getConfigReader();
 
 	public RequestSpecification requestSpecification(String userRole) throws IOException {
 

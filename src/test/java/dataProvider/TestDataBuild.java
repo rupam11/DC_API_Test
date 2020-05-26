@@ -3,6 +3,7 @@ package dataProvider;
 import java.io.IOException;
 
 import entity.Activity;
+import entity.Category;
 import entity.DiagramDetails;
 import entity.Mail;
 import entity.Sector;
@@ -48,6 +49,11 @@ public class TestDataBuild {
 	public Mail addMail() {
 		Mail mail = jsonReader.addMail();
 		return mail;
+	}
+
+	public Category addCategory() {
+		Category category=jsonReader.getCategoryData();
+		return category;
 	}
 
 }
