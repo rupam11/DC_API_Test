@@ -1,8 +1,11 @@
 package testBase;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.List;
+
 import dataProvider.ConfigFileReader;
 import dataProvider.FileReaderManager;
 import dataProvider.TestDataBuild;
@@ -22,18 +25,23 @@ public class Utils {
 	public static Response response;
 	protected TestDataBuild data=new TestDataBuild();
 	private ConfigFileReader configReader=FileReaderManager.getInstance().getConfigReader();
+	private PrintStream log;
+
+	public Utils() throws FileNotFoundException {
+		super();
+		log = new PrintStream(new FileOutputStream("logging.txt"));
+	}
 
 	public RequestSpecification requestSpecification(String userRole) throws IOException {
 
 		if (reqSpec == null) {
-			PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
+			//PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
 			reqSpec = new RequestSpecBuilder().setBaseUri(configReader.getPropValue("baseURL"))
 					.addHeader("user", configReader.getPropValue(userRole.toLowerCase()))
 					.addFilter(RequestLoggingFilter.logRequestTo(log))
 					.addFilter(ResponseLoggingFilter.logResponseTo(log)).setContentType(ContentType.JSON).build();
 			return reqSpec;
 		}
-
 		return reqSpec;
 	}
 
@@ -43,5 +51,6 @@ public class Utils {
 		return js.get(key).toString();
 
 	}
-
+	
+	
 }

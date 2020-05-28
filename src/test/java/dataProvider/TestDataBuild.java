@@ -5,6 +5,7 @@ import java.io.IOException;
 import entity.Activity;
 import entity.Category;
 import entity.DiagramDetails;
+import entity.Field;
 import entity.Mail;
 import entity.Sector;
 import entity.Task;
@@ -51,9 +52,14 @@ public class TestDataBuild {
 		return mail;
 	}
 
-	public Category addCategory() {
-		Category category=jsonReader.getCategoryData();
-		return category;
+		public Field addField() {
+		Field field=jsonReader.getFieldData();
+		return field;
+	}
+
+	public Field updateField(Field ipField) {
+		Field opField=jsonReader.updateFieldData(ipField);
+		return opField;
 	}
 
 }

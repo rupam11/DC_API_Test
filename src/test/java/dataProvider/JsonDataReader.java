@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import entity.Activity;
 import entity.Category;
 import entity.DiagramDetails;
+import entity.Field;
 import entity.Mail;
 import entity.Sector;
 import entity.Task;
@@ -22,6 +23,7 @@ public class JsonDataReader {
 	private Task task;
 	private Category category;
 	private Mail mail;
+	private Field field;
 	Gson gson;
 	BufferedReader bufferReader;
 
@@ -172,14 +174,15 @@ public class JsonDataReader {
 		}
 	}
 
-	public Category getCategoryData() {
-		String CategoryFilePath=JSONDataFilePath+"Category/category.json";
+	
+	public Field getFieldData() {
+		String FieldFilePath=JSONDataFilePath+"Field/field.json";
 		try {
-			bufferReader = new BufferedReader(new FileReader(CategoryFilePath));
-			task = gson.fromJson(bufferReader, Task.class);
-			return category;
+			bufferReader = new BufferedReader(new FileReader(FieldFilePath));
+			field = gson.fromJson(bufferReader, Field.class);
+			return field;
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("Json file not found at path : " + CategoryFilePath);
+			throw new RuntimeException("Json file not found at path : " + FieldFilePath);
 		} finally {
 			try {
 				if (bufferReader != null)
@@ -187,6 +190,11 @@ public class JsonDataReader {
 			} catch (IOException ignore) {
 			}
 		}
+	}
+
+	public Field updateFieldData(Field ipField) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

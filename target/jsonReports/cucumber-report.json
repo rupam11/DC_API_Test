@@ -3,11 +3,11 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-05-26T18:03:15.689Z",
+        "start_timestamp": "2020-05-28T17:17:20.329Z",
         "before": [
           {
             "result": {
-              "duration": 1660000000,
+              "duration": 1538000000,
               "status": "passed"
             },
             "match": {
@@ -16,9 +16,9 @@
           }
         ],
         "line": 6,
-        "name": "Verify API: getCategoryCount API return Total Category Count",
+        "name": "Verify API: getSectorCount API return Total Sector Count",
         "description": "",
-        "id": "validating-category-api-s;verify-api:-getcategorycount-api-return-total-category-count",
+        "id": "validating-sector-service-apis;verify-api:-getsectorcount-api-return-total-sector-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 890000000,
+              "duration": 1575000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "\"System_Admin\" User invoke \"getCategoryCount\"",
+            "name": "\"System_Admin\" User invoke \"getSectorCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCategoryCount\"",
+                  "val": "\"getSectorCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 3662000000,
+              "duration": 5355000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "User calls \"getCategoryCount\" API with \"Get\" http Request",
+            "name": "User calls \"getSectorCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCategoryCount\"",
+                  "val": "\"getSectorCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 39
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -78,10 +78,21 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 15000000,
               "status": "passed"
             },
             "line": 9,
+            "name": "Verify sector_Count result is greater than 0",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.get_sector_count()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 10,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -93,18 +104,6 @@
               "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "Verify category_Count result is greater than 0",
-            "match": {
-              "location": "stepDefinitions.CategoryStepDefinition.get_category_count()"
-            },
-            "keyword": "Then "
           }
         ],
         "tags": [
@@ -112,19 +111,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Category"
+            "name": "@Sector"
           },
           {
-            "name": "@getCategoryCount"
+            "name": "@getSectorCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-26T18:03:22.127Z",
+        "start_timestamp": "2020-05-28T17:17:29.019Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -133,9 +132,9 @@
           }
         ],
         "line": 13,
-        "name": "Verify API: createCategory API add Category paylod",
+        "name": "Verify API: createSector API add Sector paylod",
         "description": "",
-        "id": "validating-category-api-s;verify-api:-createcategory-api-add-category-paylod",
+        "id": "validating-sector-service-apis;verify-api:-createsector-api-add-sector-paylod",
         "after": [
           {
             "result": {
@@ -151,11 +150,11 @@
         "steps": [
           {
             "result": {
-              "duration": 923000000,
+              "duration": 1075000000,
               "status": "passed"
             },
             "line": 14,
-            "name": "\"System_Admin\" \"Add\" Category Payload",
+            "name": "\"System_Admin\" User \"Add\" Sector Payload",
             "match": {
               "arguments": [
                 {
@@ -164,29 +163,29 @@
                 },
                 {
                   "val": "\"Add\"",
-                  "offset": 15
+                  "offset": 20
                 }
               ],
-              "location": "stepDefinitions.CategoryStepDefinition.category_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1125000000,
+              "duration": 1519000000,
               "status": "passed"
             },
             "line": 15,
-            "name": "User calls \"createCategory\" API with \"Post\" http Request",
+            "name": "User calls \"createSector\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createCategory\"",
+                  "val": "\"createSector\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 37
+                  "offset": 35
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -195,7 +194,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 16,
@@ -213,31 +211,25 @@
           },
           {
             "result": {
-              "duration": 147000000,
+              "duration": 164000000,
               "status": "passed"
             },
             "line": 17,
-            "name": "Verify responseBody is instance of Category",
+            "name": "Verify response will return Sector instance",
             "match": {
-              "location": "stepDefinitions.CategoryStepDefinition.Verify_responseBody_is_instance_of__Category()"
+              "location": "stepDefinitions.SectorStepDefinition.verify_response_will_return_Sector_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 985000000,
+              "duration": 1319000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "Verify Total category_Count increased by 1",
+            "name": "Verify Total sector_Count increased by 1",
             "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 41
-                }
-              ],
-              "location": "stepDefinitions.CategoryStepDefinition.category_Count_incressed(int)"
+              "location": "stepDefinitions.SectorStepDefinition.verify_Total_sector_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -247,19 +239,813 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Category"
+            "name": "@Sector"
           },
           {
-            "name": "@createCategory"
+            "name": "@createSector"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:33.143Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "Verify API: getAllSectors API return List of All Sectors",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-getallsectors-api-return-list-of-all-sectors",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "\"System_Admin\" User invoke \"getAllSectors\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getAllSectors\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1694000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User calls \"getAllSectors\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getAllSectors\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 71000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Verify response will return List of Sectors",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 975000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Total number of Sector in List is equal to getSectorCount",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.total_number_of_Sector_in_List_is_equal_to_getSectorCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Sector added exist in returned SectorList",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@getAllSectors"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:36.054Z",
+        "before": [
+          {
+            "result": {
+              "duration": 19000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 31,
+        "name": "Verify API: getSectorBySearchCriteria API, search no SearchCriteria",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-no-searchcriteria",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "\"System_Admin\" User invoke \"getSectorBySearchCriteria\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getSectorBySearchCriteria\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1581000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getSectorBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Verify response will return List of Sectors",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "All Sectors should have Active Status",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.all_Sectors_should_have_Active_Status()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@getSectorBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:37.722Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 40,
+        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027searchId\u0027",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--searchid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 300000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"sectorId\"",
+                  "offset": 69
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1587000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getSectorBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Verify response will return List of Sectors",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Response should be list of Sectors and size should be one",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.response_should_be_list_of_Sectors_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Response Sector is same which was added",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.response_Sector_is_same_which_was_added()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@getSectorBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:39.637Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027sectorName\u0027",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--sectorname-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 29000000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"sectorName\"",
+                  "offset": 69
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1570000000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getSectorBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Verify response will return List of Sectors",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "Created Sector should exist in the List of Sectors",
+            "match": {
+              "location": "stepDefinitions.SectorStepDefinition.created_Sector_should_exist_in_the_List_of_Sectors()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@getSectorBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:41.265Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 57,
+        "name": "Verify API: deleteSector update Sector status as Passive",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-deletesector-update-sector-status-as-passive",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "\"System_Admin\" User invoke deleteSector with Parameter: \"sectorId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"sectorId\"",
+                  "offset": 56
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.user_invoke_deleteSector_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1083000000,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "User calls \"deleteSector\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteSector\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "Verify \"SectorStatus\" of particular \"Sector\" updated as Passive",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"SectorStatus\"",
+                  "offset": 7
+                },
+                {
+                  "val": "\"Sector\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.verify_of_particular_updated_as_Passive(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@deleteSector"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-28T17:17:42.388Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 64,
+        "name": "Verify API: updateSector API add Sector paylod",
+        "description": "",
+        "id": "validating-sector-service-apis;verify-api:-updatesector-api-add-sector-paylod",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "\"System_Admin\" User \"Update\" Sector Payload",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1006000000,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "User calls \"updateSector\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateSector\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "Verify \u0027sectorName\u0027,\u0027sectorStatus\u0027,\u0027sectorCreatedBy\u0027,\u0027sectorCreatedAt\u0027 gets updated",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027sectorName\u0027",
+                  "offset": 7
+                },
+                {
+                  "val": "\u0027sectorStatus\u0027",
+                  "offset": 20
+                },
+                {
+                  "val": "\u0027sectorCreatedBy\u0027",
+                  "offset": 35
+                },
+                {
+                  "val": "\u0027sectorCreatedAt\u0027",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.SectorStepDefinition.verify_gets_updated(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Sector"
+          },
+          {
+            "name": "@updateSector"
           }
         ]
       }
     ],
-    "name": "Validating Category API\u0027s",
+    "name": "Validating Sector-Service APIs",
     "description": "",
-    "id": "validating-category-api-s",
+    "id": "validating-sector-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Category.feature",
+    "uri": "file:src/test/java/features/Sector.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -270,7 +1056,7 @@
         }
       },
       {
-        "name": "@Category",
+        "name": "@Sector",
         "type": "Tag",
         "location": {
           "line": 2,

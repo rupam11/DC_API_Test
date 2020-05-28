@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import entity.Mail;
@@ -12,6 +13,11 @@ import io.cucumber.java.en.Then;
 import testBase.Utils;
 
 public class MailStepDefinition extends Utils {
+
+	public MailStepDefinition() throws FileNotFoundException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	ResponseStatus respResponseStatus;
 	Mail reqMail;

@@ -2,6 +2,14 @@
 @Field 
 Feature: Validating Field API's 
 
+@getFieldCount
+Scenario: Verify API: getFieldCount API, Get Number of Fields
+	Given "System_Admin" User invoke "getFieldCount"
+	When User calls "getFieldCount" API with "Get" http Request
+	Then The API call is success with StatusCode 200 
+	Then Response should be list of Tasks and satisfy the search: "taskApplicable"  
+#	Then Response Task is added should be filtered
+	
 @createField
 Scenario: Verify API: createField API, add Field paylod
 	Given "System_Admin" User "Add" Field Payload 
@@ -14,10 +22,7 @@ Scenario: Verify API: deleteField API, update Field status as Passive
 	Given "System_Admin"  User invoke "deleteField" with Parameter: "fieldId" 
 	When User calls "deleteField" API with "Delete" http Request 
 	Then The API call is success with StatusCode 200
-	Then Verify responseBody is instance of Task
-	Then Verify Total task_Count increased by 1
-	Then Verify taskId, taskequence, taskDisplaySequence is equal to total_task_count
-	Then Verify Task_Code is equal to 'TSK_task_count'
+	Then "fieldStatus" in response body is "Passive"
 	
 @fields/init
 Scenario: Verify API: fields/init API, Create Dummy Field
@@ -29,19 +34,14 @@ Scenario: Verify API: fields/init API, Create Dummy Field
 	#Then Task added exist in returned TaskList
 	
 @getAllFields
-Scenario: Verify API: getAllFields API, Get All Fields
+Scenario: Verify API: getAllFields API return List of All Fields
 	Given "System_Admin" User invoke "getAllFields" 
-	When User calls "getAllFields" API with "Get" http Request
+	When User calls "getAllFields" API with "Get" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response should be list all Tasks=getAllTasks
+	Then Verify response will return List of Fields
+	Then Total number of Fields in List is equal to getFieldCount
 	 
-@getFieldCount
-Scenario: Verify API: getFieldCount API, Get Number of Fields
-	Given "System_Admin" User invoke "getFieldCount"
-	When User calls "getFieldCount" API with "Get" http Request
-	Then The API call is success with StatusCode 200 
-	Then Response should be list of Tasks and satisfy the search: "taskApplicable"  
-#	Then Response Task is added should be filtered
+
 	
 @getFieldsBySearchCriteria
 Scenario: Verify API: getFieldsBySearchCriteria API, search by 'fieldCategory'
@@ -64,3 +64,31 @@ Scenario: Verify API: updateFieldByRuleId API, Update Field By Rule Id
 	When User calls "updateFieldByRuleId" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
 	Then Verify Task fields gets updated
+
+  @fields/init
+  Scenario: Verify API: fields/init API, Create Dummy Field
+    Given "System_Admin" User invoke "fields/init"
+    When User calls "fields_init" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+
+  @getAllFields
+  Scenario: Verify API: getAllFields API, Get All Fields
+    Given "System_Admin" User invoke "getAllFields"
+    When User calls "getAllFields" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    
+    
+  @getFieldsBySearchCriteria
+  Scenario: Verify API: getFieldsBySearchCriteria API, search by 'fieldCategory'
+    Given "System_Admin" User invoke "getFieldsBySearchCriteria" with Parameter: "fieldCategory"
+    When User calls "getFieldsBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    
+  @deleteField
+  Scenario: Verify API: deleteField API, update Field status as Passive
+    Given "System_Admin"  User invoke "deleteField" with Parameter: "fieldId"
+    When User calls "deleteField" API with "Delete" http Request
+    Then The API call is success with StatusCode 200
+    Then "fieldStatus" in response body is "Passive"
+    
+  

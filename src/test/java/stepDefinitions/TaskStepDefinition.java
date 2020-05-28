@@ -103,7 +103,8 @@ public class TaskStepDefinition extends Utils{
 	}
 	
 	@Given("{string} User invoke {string} with Parameter: {string}")
-	public void user_invoke_with_Parameter(String userRole,String apiNm,String param) {
+	public void user_invoke_with_Parameter(String userRole,String apiNm,String parameter) {
+		String param=parameter;
 		if (param.equalsIgnoreCase("taskApplicable"))
 			reqSpec.queryParam(param, respTask.getTaskApplicable());
 		else if (param.equalsIgnoreCase("taskDescription"))

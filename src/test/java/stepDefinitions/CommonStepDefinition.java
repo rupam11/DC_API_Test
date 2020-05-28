@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,6 +16,11 @@ import testBase.Utils;
 public class CommonStepDefinition extends Utils {
 	
 	
+	public CommonStepDefinition() throws FileNotFoundException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Given("{string} User invoke {string}")
 	public void User_invoke(String userRole, String apiNm) throws IOException {
 		reqSpec = given().spec(requestSpecification(userRole));

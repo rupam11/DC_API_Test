@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.springframework.core.io.InputStreamResource;
@@ -17,6 +18,11 @@ import io.restassured.builder.ResponseSpecBuilder;
 import testBase.Utils;
 
 public class BPMNStepDefinition extends Utils {
+
+	public BPMNStepDefinition() throws FileNotFoundException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	static DiagramDetails reqBpmn;
 	ResponseStatus respRespStatus;
