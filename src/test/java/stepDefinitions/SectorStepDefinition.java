@@ -8,17 +8,10 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import entity.Sector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.http.ContentType;
 import testBase.Utils;
 
 public class SectorStepDefinition extends Utils {
@@ -57,10 +50,6 @@ public class SectorStepDefinition extends Utils {
 	public void verify_response_will_return_Sector_instance() {
 		respSector = response.getBody().as(Sector.class);
 		System.out.println("sector created === "+respSector.toString());
-//		cmnStepDef.user_calls_API_with_http_Request("getSectorCount", "Get");
-//		int expSecId = cmnStepDef.getcount_from_Response_and_verify_it_is_0();
-//		int actSecId = respSector.getSectorId();
-//		assertEquals("Sector do not get added properly", expSecId, actSecId);
 	}
 
 	@Then("Verify response will return List of Sectors")
@@ -135,7 +124,6 @@ public class SectorStepDefinition extends Utils {
 	@Then("Verify Total sector_Count increased by 1")
 	public void verify_Total_sector_Count_increased_by() {
 		int old_count=sectCount;
-		System.out.println("OLD COunt = "+old_count);
 		cmnStepDef.user_calls_API_with_http_Request("getSectorCount", "Get");
 		assertEquals(old_count+1, get_sector_count());
 	}

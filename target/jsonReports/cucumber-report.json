@@ -3,11 +3,11 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-05-28T17:17:20.329Z",
+        "start_timestamp": "2020-05-29T08:28:55.911Z",
         "before": [
           {
             "result": {
-              "duration": 1538000000,
+              "duration": 3313000000,
               "status": "passed"
             },
             "match": {
@@ -16,9 +16,9 @@
           }
         ],
         "line": 6,
-        "name": "Verify API: getSectorCount API return Total Sector Count",
+        "name": "Verify API: getProcessCount API return Total Process Count",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorcount-api-return-total-sector-count",
+        "id": "validating-process-service-apis;verify-api:-getprocesscount-api-return-total-process-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1575000000,
+              "duration": 3086000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "\"System_Admin\" User invoke \"getSectorCount\"",
+            "name": "\"System_Admin\" User invoke \"getProcessCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSectorCount\"",
+                  "val": "\"getProcessCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 5355000000,
+              "duration": 7027000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "User calls \"getSectorCount\" API with \"Get\" http Request",
+            "name": "User calls \"getProcessCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorCount\"",
+                  "val": "\"getProcessCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 37
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -78,18 +78,19 @@
           },
           {
             "result": {
-              "duration": 15000000,
+              "duration": 48000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "Verify sector_Count result is greater than 0",
+            "name": "Verify Process_Count result is greater than 0",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.get_sector_count()"
+              "location": "stepDefinitions.ProcessStepDefinition.get_Process_count()"
             },
             "keyword": "Then "
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 10,
@@ -111,19 +112,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@getSectorCount"
+            "name": "@getProcessCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:29.019Z",
+        "start_timestamp": "2020-05-29T08:29:09.893Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -132,9 +133,9 @@
           }
         ],
         "line": 13,
-        "name": "Verify API: createSector API add Sector paylod",
+        "name": "Verify API: createProcess API add Process paylod",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-createsector-api-add-sector-paylod",
+        "id": "validating-process-service-apis;verify-api:-createprocess-api-add-process-paylod",
         "after": [
           {
             "result": {
@@ -150,11 +151,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1075000000,
+              "duration": 1950000000,
               "status": "passed"
             },
             "line": 14,
-            "name": "\"System_Admin\" User \"Add\" Sector Payload",
+            "name": "\"System_Admin\" User \"Add\" Process Payload",
             "match": {
               "arguments": [
                 {
@@ -166,26 +167,26 @@
                   "offset": 20
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1519000000,
+              "duration": 1792000000,
               "status": "passed"
             },
             "line": 15,
-            "name": "User calls \"createSector\" API with \"Post\" http Request",
+            "name": "User calls \"createProcess\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createSector\"",
+                  "val": "\"createProcess\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 35
+                  "offset": 36
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -211,25 +212,25 @@
           },
           {
             "result": {
-              "duration": 164000000,
+              "duration": 393000000,
               "status": "passed"
             },
             "line": 17,
-            "name": "Verify response will return Sector instance",
+            "name": "Verify response will return Process instance",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_response_will_return_Sector_instance()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1319000000,
+              "duration": 1347000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "Verify Total sector_Count increased by 1",
+            "name": "Verify Total Process_Count increased by 1",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_Total_sector_Count_increased_by()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_Total_Process_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -239,15 +240,15 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@createSector"
+            "name": "@createProcess"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:33.143Z",
+        "start_timestamp": "2020-05-29T08:29:15.403Z",
         "before": [
           {
             "result": {
@@ -260,9 +261,9 @@
           }
         ],
         "line": 21,
-        "name": "Verify API: getAllSectors API return List of All Sectors",
+        "name": "Verify API: getAllProcess API return List of All Process",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getallsectors-api-return-list-of-all-sectors",
+        "id": "validating-process-service-apis;verify-api:-getallprocess-api-return-list-of-all-process",
         "after": [
           {
             "result": {
@@ -278,11 +279,11 @@
         "steps": [
           {
             "result": {
-              "duration": 16000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 22,
-            "name": "\"System_Admin\" User invoke \"getAllSectors\"",
+            "name": "\"System_Admin\" User invoke \"getAllProcess\"",
             "match": {
               "arguments": [
                 {
@@ -290,7 +291,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getAllSectors\"",
+                  "val": "\"getAllProcess\"",
                   "offset": 27
                 }
               ],
@@ -300,15 +301,15 @@
           },
           {
             "result": {
-              "duration": 1694000000,
+              "duration": 2102000000,
               "status": "passed"
             },
             "line": 23,
-            "name": "User calls \"getAllSectors\" API with \"Get\" http Request",
+            "name": "User calls \"getAllProcess\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getAllSectors\"",
+                  "val": "\"getAllProcess\"",
                   "offset": 11
                 },
                 {
@@ -339,37 +340,37 @@
           },
           {
             "result": {
-              "duration": 71000000,
+              "duration": 21000000,
               "status": "passed"
             },
             "line": 25,
-            "name": "Verify response will return List of Sectors",
+            "name": "Verify response will return List of Process",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 975000000,
+              "duration": 1683000000,
               "status": "passed"
             },
             "line": 26,
-            "name": "Total number of Sector in List is equal to getSectorCount",
+            "name": "Total number of Process in List is equal to getProcessCount",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.total_number_of_Sector_in_List_is_equal_to_getSectorCount()"
+              "location": "stepDefinitions.ProcessStepDefinition.total_number_of_Process_in_List_is_equal_to_getProcessCount()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 5000000,
               "status": "passed"
             },
             "line": 27,
-            "name": "Sector added exist in returned SectorList",
+            "name": "Process added exist in returned ProcessList",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
+              "location": "stepDefinitions.ProcessStepDefinition.Process_added_exist_in_returned_ProcessList()"
             },
             "keyword": "Then "
           }
@@ -379,19 +380,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@getAllSectors"
+            "name": "@getAllProcess"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:36.054Z",
+        "start_timestamp": "2020-05-29T08:29:19.255Z",
         "before": [
           {
             "result": {
-              "duration": 19000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -400,9 +401,9 @@
           }
         ],
         "line": 31,
-        "name": "Verify API: getSectorBySearchCriteria API, search no SearchCriteria",
+        "name": "Verify API: getProcessBySearchCriteria API, search no SearchCriteria",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-no-searchcriteria",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-no-searchcriteria",
         "after": [
           {
             "result": {
@@ -418,11 +419,11 @@
         "steps": [
           {
             "result": {
-              "duration": 28000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 32,
-            "name": "\"System_Admin\" User invoke \"getSectorBySearchCriteria\"",
+            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\"",
             "match": {
               "arguments": [
                 {
@@ -430,7 +431,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getProcessBySearchCriteria\"",
                   "offset": 27
                 }
               ],
@@ -440,20 +441,20 @@
           },
           {
             "result": {
-              "duration": 1581000000,
+              "duration": 1558000000,
               "status": "passed"
             },
             "line": 33,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getProcessBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 48
+                  "offset": 49
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -462,7 +463,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 34,
@@ -484,9 +484,9 @@
               "status": "passed"
             },
             "line": 35,
-            "name": "Verify response will return List of Sectors",
+            "name": "Verify response will return List of Process",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
             },
             "keyword": "Then "
           },
@@ -495,9 +495,9 @@
               "status": "passed"
             },
             "line": 37,
-            "name": "All Sectors should have Active Status",
+            "name": "All Process should have Active Status",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.all_Sectors_should_have_Active_Status()"
+              "location": "stepDefinitions.ProcessStepDefinition.all_Process_should_have_Active_Status()"
             },
             "keyword": "Then "
           }
@@ -507,15 +507,15 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@getSectorBySearchCriteria"
+            "name": "@getProcessBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:37.722Z",
+        "start_timestamp": "2020-05-29T08:29:20.880Z",
         "before": [
           {
             "result": {
@@ -528,9 +528,9 @@
           }
         ],
         "line": 40,
-        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027searchId\u0027",
+        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--searchid-",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid-",
         "after": [
           {
             "result": {
@@ -546,11 +546,11 @@
         "steps": [
           {
             "result": {
-              "duration": 300000000,
+              "duration": 242000000,
               "status": "passed"
             },
             "line": 41,
-            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorId\"",
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"ProcessId\"",
             "match": {
               "arguments": [
                 {
@@ -558,30 +558,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"sectorId\"",
-                  "offset": 69
+                  "val": "\"ProcessId\"",
+                  "offset": 70
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1587000000,
+              "duration": 2323000000,
               "status": "passed"
             },
             "line": 42,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getProcessBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 48
+                  "offset": 49
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -607,36 +607,37 @@
           },
           {
             "result": {
-              "duration": 5000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 44,
-            "name": "Verify response will return List of Sectors",
+            "name": "Verify response will return List of Process",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 4000000,
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: Search by ProcessId do not list one Process\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one(ProcessStepDefinition.java:99)\r\n\tat ✽.Response should be list of Process and size should be one(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Process.feature:45)\r\n",
+              "duration": 13000000,
+              "status": "failed"
             },
             "line": 45,
-            "name": "Response should be list of Sectors and size should be one",
+            "name": "Response should be list of Process and size should be one",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.response_should_be_list_of_Sectors_and_size_should_be_one()"
+              "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 46,
-            "name": "Response Sector is same which was added",
+            "name": "Response Process is same which was added",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.response_Sector_is_same_which_was_added()"
+              "location": "stepDefinitions.ProcessStepDefinition.response_Process_is_same_which_was_added()"
             },
             "keyword": "Then "
           }
@@ -646,19 +647,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@getSectorBySearchCriteria"
+            "name": "@getProcessBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:39.637Z",
+        "start_timestamp": "2020-05-29T08:29:23.519Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "match": {
@@ -667,9 +668,9 @@
           }
         ],
         "line": 49,
-        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027sectorName\u0027",
+        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027ProcessName\u0027",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--sectorname-",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processname-",
         "after": [
           {
             "result": {
@@ -685,11 +686,11 @@
         "steps": [
           {
             "result": {
-              "duration": 29000000,
+              "duration": 56000000,
               "status": "passed"
             },
             "line": 50,
-            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorName\"",
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"ProcessName\"",
             "match": {
               "arguments": [
                 {
@@ -697,30 +698,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"sectorName\"",
-                  "offset": 69
+                  "val": "\"ProcessName\"",
+                  "offset": 70
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1570000000,
+              "duration": 2041000000,
               "status": "passed"
             },
             "line": 51,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getProcessBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 48
+                  "offset": 49
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -729,6 +730,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 52,
@@ -746,25 +748,24 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 53,
-            "name": "Verify response will return List of Sectors",
+            "name": "Verify response will return List of Process",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 54,
-            "name": "Created Sector should exist in the List of Sectors",
+            "name": "Created Process should exist in the List of Process",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.created_Sector_should_exist_in_the_List_of_Sectors()"
+              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
             },
             "keyword": "Then "
           }
@@ -774,18 +775,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@getSectorBySearchCriteria"
+            "name": "@getProcessBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:41.265Z",
+        "start_timestamp": "2020-05-29T08:29:25.666Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -794,12 +796,13 @@
           }
         ],
         "line": 57,
-        "name": "Verify API: deleteSector update Sector status as Passive",
+        "name": "Verify API: deleteProcess update Process status as Passive",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-deletesector-update-sector-status-as-passive",
+        "id": "validating-process-service-apis;verify-api:-deleteprocess-update-process-status-as-passive",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -812,11 +815,11 @@
         "steps": [
           {
             "result": {
-              "duration": 25000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 58,
-            "name": "\"System_Admin\" User invoke deleteSector with Parameter: \"sectorId\"",
+            "name": "\"System_Admin\" User invoke deleteProcess with Parameter: \"processId\"",
             "match": {
               "arguments": [
                 {
@@ -824,30 +827,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"sectorId\"",
-                  "offset": 56
+                  "val": "\"processId\"",
+                  "offset": 57
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_deleteSector_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_deleteProcess_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1083000000,
+              "duration": 2493000000,
               "status": "passed"
             },
             "line": 59,
-            "name": "User calls \"deleteSector\" API with \"Delete\" http Request",
+            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteSector\"",
+                  "val": "\"deleteProcess\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 35
+                  "offset": 36
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -873,23 +876,35 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 3000000,
               "status": "passed"
             },
             "line": 61,
-            "name": "Verify \"SectorStatus\" of particular \"Sector\" updated as Passive",
+            "name": "Verify response will return Process instance",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2076000000,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "\"processStatus\" in response body is \"Passive\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"SectorStatus\"",
-                  "offset": 7
+                  "val": "\"processStatus\"",
+                  "offset": 0
                 },
                 {
-                  "val": "\"Sector\"",
+                  "val": "\"Passive\"",
                   "offset": 36
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.verify_of_particular_updated_as_Passive(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -899,18 +914,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@deleteSector"
+            "name": "@deleteProcess"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-28T17:17:42.388Z",
+        "start_timestamp": "2020-05-29T08:29:30.272Z",
         "before": [
           {
             "result": {
+              "duration": 3000000,
               "status": "passed"
             },
             "match": {
@@ -918,10 +934,10 @@
             }
           }
         ],
-        "line": 64,
-        "name": "Verify API: updateSector API add Sector paylod",
+        "line": 65,
+        "name": "Verify API: updateProcess API add Process paylod",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-updatesector-api-add-sector-paylod",
+        "id": "validating-process-service-apis;verify-api:-updateprocess-api-add-process-paylod",
         "after": [
           {
             "result": {
@@ -938,11 +954,11 @@
         "steps": [
           {
             "result": {
-              "duration": 12000000,
+              "duration": 19000000,
               "status": "passed"
             },
-            "line": 65,
-            "name": "\"System_Admin\" User \"Update\" Sector Payload",
+            "line": 66,
+            "name": "\"System_Admin\" User \"Update\" Process Payload",
             "match": {
               "arguments": [
                 {
@@ -954,26 +970,26 @@
                   "offset": 20
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1006000000,
+              "duration": 1249000000,
               "status": "passed"
             },
-            "line": 66,
-            "name": "User calls \"updateSector\" API with \"Put\" http Request",
+            "line": 67,
+            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateSector\"",
+                  "val": "\"updateProcess\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 35
+                  "offset": 36
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -984,7 +1000,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 67,
+            "line": 68,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -999,31 +1015,13 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 6000000,
               "status": "passed"
             },
-            "line": 68,
-            "name": "Verify \u0027sectorName\u0027,\u0027sectorStatus\u0027,\u0027sectorCreatedBy\u0027,\u0027sectorCreatedAt\u0027 gets updated",
+            "line": 69,
+            "name": "Verify Process fields gets updated",
             "match": {
-              "arguments": [
-                {
-                  "val": "\u0027sectorName\u0027",
-                  "offset": 7
-                },
-                {
-                  "val": "\u0027sectorStatus\u0027",
-                  "offset": 20
-                },
-                {
-                  "val": "\u0027sectorCreatedBy\u0027",
-                  "offset": 35
-                },
-                {
-                  "val": "\u0027sectorCreatedAt\u0027",
-                  "offset": 53
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.verify_gets_updated(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.ProcessStepDefinition.verify_Processfields_gets_updated()"
             },
             "keyword": "Then "
           }
@@ -1033,19 +1031,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Sector"
+            "name": "@Process"
           },
           {
-            "name": "@updateSector"
+            "name": "@updateProcess"
           }
         ]
       }
     ],
-    "name": "Validating Sector-Service APIs",
+    "name": "Validating Process-Service APIs",
     "description": "",
-    "id": "validating-sector-service-apis",
+    "id": "validating-process-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Sector.feature",
+    "uri": "file:src/test/java/features/Process.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -1056,7 +1054,7 @@
         }
       },
       {
-        "name": "@Sector",
+        "name": "@Process",
         "type": "Tag",
         "location": {
           "line": 2,

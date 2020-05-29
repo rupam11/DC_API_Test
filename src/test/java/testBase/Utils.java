@@ -25,7 +25,7 @@ public class Utils {
 	public static Response response;
 	protected TestDataBuild data=new TestDataBuild();
 	private ConfigFileReader configReader=FileReaderManager.getInstance().getConfigReader();
-	private PrintStream log;
+	private static PrintStream log;
 
 	public Utils() throws FileNotFoundException {
 		super();
@@ -35,7 +35,6 @@ public class Utils {
 	public RequestSpecification requestSpecification(String userRole) throws IOException {
 
 		if (reqSpec == null) {
-			//PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
 			reqSpec = new RequestSpecBuilder().setBaseUri(configReader.getPropValue("baseURL"))
 					.addHeader("user", configReader.getPropValue(userRole.toLowerCase()))
 					.addFilter(RequestLoggingFilter.logRequestTo(log))

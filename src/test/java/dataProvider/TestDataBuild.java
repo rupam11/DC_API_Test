@@ -3,10 +3,10 @@ package dataProvider;
 import java.io.IOException;
 
 import entity.Activity;
-import entity.Category;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
+import entity.Process;
 import entity.Sector;
 import entity.Task;
 import testBase.Utils;
@@ -60,6 +60,17 @@ public class TestDataBuild {
 	public Field updateField(Field ipField) {
 		Field opField=jsonReader.updateFieldData(ipField);
 		return opField;
+	}
+
+	public Process addProcess() {
+		Process process=jsonReader.getProcessData();
+		return process;
+	}
+
+	public Process updateProcess(Process ipProcess) throws IOException {
+		Process opProcess=jsonReader.updateProcessData(ipProcess);
+		return opProcess;
+		
 	}
 
 }

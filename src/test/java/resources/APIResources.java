@@ -37,7 +37,15 @@ public enum APIResources {
 	getFieldCount("field-service/getFieldCount"),
 	getFieldsBySearchCriteria("field-service/getFieldsBySearchCriteria"),
 	updateField("field-service/updateField"),
-	updateFieldByRuleId("field-service/updateFieldByRuleId");
+	updateFieldByRuleId("field-service/updateFieldByRuleId"),
+	
+	createProcess("process-service/createProcess"),
+	deleteProcess("process-service/deleteProcess"),
+	getAllProcess("process-service/getAllProcess"),
+	getProcessCount("process-service/getProcessCount"),
+	getProcessBySearchCriteria("process-service/getProcessBySearchCriteria"),
+	updateProcess("process-service/updateProcess");
+	
 	
 			
 	

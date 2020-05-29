@@ -10,6 +10,7 @@ import entity.Category;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
+import entity.Process;
 import entity.Sector;
 import entity.Task;
 
@@ -26,6 +27,7 @@ public class JsonDataReader {
 	private Field field;
 	Gson gson;
 	BufferedReader bufferReader;
+	private Process process;
 
 	
 	//===================================================Initialize all private variable inside Constructor
@@ -37,6 +39,7 @@ public class JsonDataReader {
 		this.bpmn=new DiagramDetails();
 		this.mail=new Mail();
 		this.category=new Category();
+		this.process=new Process();
 	}
 
 	public Activity getActivityData() {
@@ -195,6 +198,40 @@ public class JsonDataReader {
 	public Field updateFieldData(Field ipField) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Process getProcessData() {
+		String ProcessFilePath=JSONDataFilePath+"Process/process.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(ProcessFilePath));
+			process = gson.fromJson(bufferReader, Process.class);
+			return process;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + ProcessFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Process updateProcessData(Process ipProcess) throws IOException {
+		ipProcess.setProcessCode("New_"+ipProcess.getProcessCode());
+		ipProcess.setProcessName(ipProcess.getProcessName());
+		
+		if(ipProcess.getProcessStatus().equalsIgnoreCase("Active"))
+			ipProcess.setProcessStatus("Passive");
+		else if(ipProcess.getProcessStatus().equalsIgnoreCase("Passive"))
+			ipProcess.setProcessStatus("Active");
+		else 
+			System.out.println("Please fix process.json data");
+	ipProcess.setProcessCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipProcess.setProcessCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+		
+		return ipProcess;
 	}
 	
 
