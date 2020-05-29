@@ -44,8 +44,14 @@ public enum APIResources {
 	getAllProcess("process-service/getAllProcess"),
 	getProcessCount("process-service/getProcessCount"),
 	getProcessBySearchCriteria("process-service/getProcessBySearchCriteria"),
-	updateProcess("process-service/updateProcess");
+	updateProcess("process-service/updateProcess"),
 	
+	createPattern("pattern-service/createPattern"),
+	deletePattern("pattern-service/deletePattern"),
+	getAllPattern("pattern-service/getAllPattern"),
+	getPatternCount("pattern-service/getPatternCount"),
+	getPatternBySearchCriteria("pattern-service/getPatternBySearchCriteria"),
+	updatePattern("pattern-service/updatePattern");
 	
 			
 	

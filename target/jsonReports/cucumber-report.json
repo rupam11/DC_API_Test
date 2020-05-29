@@ -3,11 +3,11 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-05-29T08:28:55.911Z",
+        "start_timestamp": "2020-05-29T12:29:15.470Z",
         "before": [
           {
             "result": {
-              "duration": 3313000000,
+              "duration": 2457000000,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3086000000,
+              "duration": 1231000000,
               "status": "passed"
             },
             "line": 7,
@@ -56,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 7027000000,
+              "duration": 5421000000,
               "status": "passed"
             },
             "line": 8,
@@ -78,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 48000000,
+              "duration": 53000000,
               "status": "passed"
             },
             "line": 9,
@@ -90,7 +90,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 10,
@@ -120,7 +119,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:09.893Z",
+        "start_timestamp": "2020-05-29T12:29:24.944Z",
         "before": [
           {
             "result": {
@@ -151,7 +150,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1950000000,
+              "duration": 956000000,
               "status": "passed"
             },
             "line": 14,
@@ -173,7 +172,7 @@
           },
           {
             "result": {
-              "duration": 1792000000,
+              "duration": 2372000000,
               "status": "passed"
             },
             "line": 15,
@@ -212,7 +211,7 @@
           },
           {
             "result": {
-              "duration": 393000000,
+              "duration": 147000000,
               "status": "passed"
             },
             "line": 17,
@@ -224,10 +223,88 @@
           },
           {
             "result": {
-              "duration": 1347000000,
+              "duration": 2515000000,
               "status": "passed"
             },
             "line": 18,
+            "name": "\"processUpdatedBy\" in response body is \"NA\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"processUpdatedBy\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"NA\"",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 40000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "\"processUpdatedAt\" in response body is \"0000-00-00 00:00:00\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"processUpdatedAt\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"0000-00-00 00:00:00\"",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "processId in response body is equal to output of \"getActivityCount\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityCount\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.processid_in_response_body_is_equal_to_output_of(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "processCode in response body is equal to output of \"PRS_getProcessCount\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PRS_getProcessCount\"",
+                  "offset": 51
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.processcode_in_response_body_is_equal_to_output_of(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1472000000,
+              "status": "passed"
+            },
+            "line": 22,
             "name": "Verify Total Process_Count increased by 1",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_Total_Process_Count_increased_by()"
@@ -248,7 +325,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:15.403Z",
+        "start_timestamp": "2020-05-29T12:29:32.476Z",
         "before": [
           {
             "result": {
@@ -260,7 +337,7 @@
             }
           }
         ],
-        "line": 21,
+        "line": 26,
         "name": "Verify API: getAllProcess API return List of All Process",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getallprocess-api-return-list-of-all-process",
@@ -282,7 +359,7 @@
               "duration": 6000000,
               "status": "passed"
             },
-            "line": 22,
+            "line": 27,
             "name": "\"System_Admin\" User invoke \"getAllProcess\"",
             "match": {
               "arguments": [
@@ -301,10 +378,10 @@
           },
           {
             "result": {
-              "duration": 2102000000,
+              "duration": 1966000000,
               "status": "passed"
             },
-            "line": 23,
+            "line": 28,
             "name": "User calls \"getAllProcess\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -325,7 +402,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 24,
+            "line": 29,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -340,10 +417,10 @@
           },
           {
             "result": {
-              "duration": 21000000,
+              "duration": 24000000,
               "status": "passed"
             },
-            "line": 25,
+            "line": 30,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -352,10 +429,10 @@
           },
           {
             "result": {
-              "duration": 1683000000,
+              "duration": 1113000000,
               "status": "passed"
             },
-            "line": 26,
+            "line": 31,
             "name": "Total number of Process in List is equal to getProcessCount",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.total_number_of_Process_in_List_is_equal_to_getProcessCount()"
@@ -364,10 +441,10 @@
           },
           {
             "result": {
-              "duration": 5000000,
+              "duration": 7000000,
               "status": "passed"
             },
-            "line": 27,
+            "line": 32,
             "name": "Process added exist in returned ProcessList",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.Process_added_exist_in_returned_ProcessList()"
@@ -388,7 +465,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:19.255Z",
+        "start_timestamp": "2020-05-29T12:29:35.634Z",
         "before": [
           {
             "result": {
@@ -400,7 +477,7 @@
             }
           }
         ],
-        "line": 31,
+        "line": 36,
         "name": "Verify API: getProcessBySearchCriteria API, search no SearchCriteria",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-no-searchcriteria",
@@ -419,10 +496,10 @@
         "steps": [
           {
             "result": {
-              "duration": 20000000,
+              "duration": 9000000,
               "status": "passed"
             },
-            "line": 32,
+            "line": 37,
             "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\"",
             "match": {
               "arguments": [
@@ -441,10 +518,10 @@
           },
           {
             "result": {
-              "duration": 1558000000,
+              "duration": 1308000000,
               "status": "passed"
             },
-            "line": 33,
+            "line": 38,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -465,7 +542,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 34,
+            "line": 39,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -480,10 +557,10 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 10000000,
               "status": "passed"
             },
-            "line": 35,
+            "line": 40,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -494,7 +571,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 37,
+            "line": 42,
             "name": "All Process should have Active Status",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.all_Process_should_have_Active_Status()"
@@ -515,7 +592,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:20.880Z",
+        "start_timestamp": "2020-05-29T12:29:36.984Z",
         "before": [
           {
             "result": {
@@ -527,13 +604,14 @@
             }
           }
         ],
-        "line": 40,
+        "line": 45,
         "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid-",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -546,11 +624,11 @@
         "steps": [
           {
             "result": {
-              "duration": 242000000,
+              "duration": 558000000,
               "status": "passed"
             },
-            "line": 41,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"ProcessId\"",
+            "line": 46,
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processId\"",
             "match": {
               "arguments": [
                 {
@@ -558,7 +636,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"ProcessId\"",
+                  "val": "\"processId\"",
                   "offset": 70
                 }
               ],
@@ -568,10 +646,10 @@
           },
           {
             "result": {
-              "duration": 2323000000,
+              "duration": 2032000000,
               "status": "passed"
             },
-            "line": 42,
+            "line": 47,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -592,7 +670,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 43,
+            "line": 48,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -607,10 +685,10 @@
           },
           {
             "result": {
-              "duration": 6000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 44,
+            "line": 49,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -619,11 +697,10 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: Search by ProcessId do not list one Process\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one(ProcessStepDefinition.java:99)\r\n\tat ✽.Response should be list of Process and size should be one(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Process.feature:45)\r\n",
-              "duration": 13000000,
-              "status": "failed"
+              "duration": 3000000,
+              "status": "passed"
             },
-            "line": 45,
+            "line": 50,
             "name": "Response should be list of Process and size should be one",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
@@ -632,9 +709,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
-            "line": 46,
+            "line": 51,
             "name": "Response Process is same which was added",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.response_Process_is_same_which_was_added()"
@@ -655,11 +732,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:23.519Z",
+        "start_timestamp": "2020-05-29T12:29:39.611Z",
         "before": [
           {
             "result": {
-              "duration": 8000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -667,7 +744,7 @@
             }
           }
         ],
-        "line": 49,
+        "line": 54,
         "name": "Verify API: getProcessBySearchCriteria API, search by \u0027ProcessName\u0027",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processname-",
@@ -686,10 +763,10 @@
         "steps": [
           {
             "result": {
-              "duration": 56000000,
+              "duration": 17000000,
               "status": "passed"
             },
-            "line": 50,
+            "line": 55,
             "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"ProcessName\"",
             "match": {
               "arguments": [
@@ -708,10 +785,10 @@
           },
           {
             "result": {
-              "duration": 2041000000,
+              "duration": 4023000000,
               "status": "passed"
             },
-            "line": 51,
+            "line": 56,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -733,7 +810,7 @@
               "duration": 1000000,
               "status": "passed"
             },
-            "line": 52,
+            "line": 57,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -748,10 +825,10 @@
           },
           {
             "result": {
-              "duration": 14000000,
+              "duration": 11000000,
               "status": "passed"
             },
-            "line": 53,
+            "line": 58,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -762,7 +839,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 54,
+            "line": 59,
             "name": "Created Process should exist in the List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
@@ -783,7 +860,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:25.666Z",
+        "start_timestamp": "2020-05-29T12:29:43.692Z",
         "before": [
           {
             "result": {
@@ -795,14 +872,13 @@
             }
           }
         ],
-        "line": 57,
+        "line": 62,
         "name": "Verify API: deleteProcess update Process status as Passive",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-deleteprocess-update-process-status-as-passive",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -815,10 +891,10 @@
         "steps": [
           {
             "result": {
-              "duration": 14000000,
+              "duration": 25000000,
               "status": "passed"
             },
-            "line": 58,
+            "line": 63,
             "name": "\"System_Admin\" User invoke deleteProcess with Parameter: \"processId\"",
             "match": {
               "arguments": [
@@ -837,10 +913,10 @@
           },
           {
             "result": {
-              "duration": 2493000000,
+              "duration": 3794000000,
               "status": "passed"
             },
-            "line": 59,
+            "line": 64,
             "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
@@ -861,7 +937,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 60,
+            "line": 65,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -876,10 +952,10 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 6000000,
               "status": "passed"
             },
-            "line": 61,
+            "line": 66,
             "name": "Verify response will return Process instance",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
@@ -888,10 +964,10 @@
           },
           {
             "result": {
-              "duration": 2076000000,
+              "duration": 28000000,
               "status": "passed"
             },
-            "line": 62,
+            "line": 67,
             "name": "\"processStatus\" in response body is \"Passive\"",
             "match": {
               "arguments": [
@@ -922,11 +998,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-05-29T08:29:30.272Z",
+        "start_timestamp": "2020-05-29T12:29:47.582Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -934,14 +1010,13 @@
             }
           }
         ],
-        "line": 65,
+        "line": 70,
         "name": "Verify API: updateProcess API add Process paylod",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-updateprocess-api-add-process-paylod",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -954,10 +1029,10 @@
         "steps": [
           {
             "result": {
-              "duration": 19000000,
+              "duration": 47000000,
               "status": "passed"
             },
-            "line": 66,
+            "line": 71,
             "name": "\"System_Admin\" User \"Update\" Process Payload",
             "match": {
               "arguments": [
@@ -976,10 +1051,10 @@
           },
           {
             "result": {
-              "duration": 1249000000,
+              "duration": 1729000000,
               "status": "passed"
             },
-            "line": 67,
+            "line": 72,
             "name": "User calls \"updateProcess\" API with \"Put\" http Request",
             "match": {
               "arguments": [
@@ -1000,7 +1075,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 68,
+            "line": 73,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1015,10 +1090,10 @@
           },
           {
             "result": {
-              "duration": 6000000,
+              "duration": 7000000,
               "status": "passed"
             },
-            "line": 69,
+            "line": 74,
             "name": "Verify Process fields gets updated",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_Processfields_gets_updated()"

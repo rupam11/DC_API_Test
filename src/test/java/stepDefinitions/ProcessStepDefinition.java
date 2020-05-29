@@ -12,6 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONObject;
+import org.skyscreamer.jsonassert.JSONParser;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import entity.Process;
 import entity.Task;
 import io.cucumber.java.en.Given;
@@ -28,9 +35,11 @@ public class ProcessStepDefinition extends Utils {
 	Process[] respAllProcess;
 	static int process_Count;
 	CommonStepDefinition cmnStepDef;
+	JSONObject jsonObject,actJsonObj,expJsonObj;
 
 	public ProcessStepDefinition() throws IOException {
 		cmnStepDef = new CommonStepDefinition();
+		
 	}
 
 
@@ -39,7 +48,7 @@ public class ProcessStepDefinition extends Utils {
 		if (payloadReq.equalsIgnoreCase("Add"))
 			reqProcess = data.addProcess();
 		else if (payloadReq.equalsIgnoreCase("Update"))
-			reqProcess = data.updateProcess(reqProcess);
+			reqProcess = data.updateProcess(respProcess);
 		else
 			System.out.println("Issue in Payload creation request");
 		
@@ -56,8 +65,8 @@ public class ProcessStepDefinition extends Utils {
 
 	@Then("Verify response will return Process instance")
 	public void verify_response_will_return_Process_instance() {
-		reqProcess = response.getBody().as(Process.class);
-		System.out.println("Process created === "+reqProcess.toString());
+		respProcess = response.getBody().as(Process.class);
+		System.out.println("Process created === "+respProcess.toString());
 	}
 
 	@Then("Verify response will return List of Process")
@@ -76,7 +85,7 @@ public class ProcessStepDefinition extends Utils {
 	@Then("Process added exist in returned ProcessList")
 	public void Process_added_exist_in_returned_ProcessList() {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
-		assertThat(ProcessList, hasItems(reqProcess));
+		assertThat(ProcessList, hasItems(respProcess));
 	}
 
 	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string}")
@@ -84,12 +93,13 @@ public class ProcessStepDefinition extends Utils {
 		if (param.equalsIgnoreCase("ProcessId"))
 		{
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqProcess.getProcessId());		
+			System.out.println("Response process porcess id"+respProcess.getProcessId());
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respProcess.getProcessId());		
 		}			
 		else if (param.equalsIgnoreCase("ProcessName"))
 		{				
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqProcess.getProcessName());
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respProcess.getProcessName());
 		}
 	}
 
@@ -101,12 +111,12 @@ public class ProcessStepDefinition extends Utils {
 
 	@Then("Response Process is same which was added")
 	public void response_Process_is_same_which_was_added() {
-		assertEquals("Wrong Process filtered", reqProcess, respAllProcess[0]);
+		assertEquals("Wrong Process filtered", respProcess, respAllProcess[0]);
 	}
 
 		@Then("Verify Process fields gets updated")
 		public void verify_Processfields_gets_updated() {
-		    Process updatedProcess=response.getBody().as(Process.class);
+//		    Process updatedProcess=response.getBody().as(Process.class);
 		reqProcess = response.getBody().as(Process.class);
 		assertEquals("Process name not updated", reqProcess.getProcessName(), reqProcess.getProcessName());
 		assertEquals("Process Processtatus not updated", reqProcess.getProcessStatus(), reqProcess.getProcessStatus());
@@ -115,12 +125,6 @@ public class ProcessStepDefinition extends Utils {
 		assertEquals("Process ProcessCreatedAt not updated", reqProcess.getProcessCreatedAt(),
 				reqProcess.getProcessCreatedAt());
 	}
-
-//	@Then("Verify {string} of particular {string} updated as Passive")
-//	public void verify_of_particular_updated_as_Passive(String string, String string2) {
-//		reqProcess = response.getBody().as(Process.class);
-//		assertEquals("Process not Deactivated!!!", "Passive", reqProcess.getProcessStatus());
-//	}
 
 	@Then("Response should be list all Process=getAllProcess")
 	public void response_should_be_list_all_Process_getAllProcess() {
@@ -153,7 +157,26 @@ public class ProcessStepDefinition extends Utils {
 	@Then("Created Process should exist in the List of Process")
 	public void created_Process_should_exist_in_the_List_of_Process() {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
-		assertThat(ProcessList, hasItems(reqProcess));
+		assertThat(ProcessList, hasItems(respProcess));
+	}
+	
+	/*@Then("Verify responseProcess is same as that of requestProcess")
+	public void verify_responseProcess_is_same_as_that_of_requestProcess() {
+		expJsonObj=updateJson(new JSONObject(reqProcess),"process");
+		actJsonObj=updateJson(new JSONObject(respProcess),"process");
+		System.out.println("Request:::"+expJsonObj.toString());
+		System.out.println("Response:::"+actJsonObj.toString());
+		assertEquals("Response is not created correctly",expJsonObj,actJsonObj);
+	}*/
+	
+	@Then("processId in response body is equal to output of {string}")
+	public void processid_in_response_body_is_equal_to_output_of(String string) {
+		assertEquals(process_Count+1, respProcess.getProcessId());
+	}
+
+	@Then("processCode in response body is equal to output of {string}")
+	public void processcode_in_response_body_is_equal_to_output_of(String string) {
+		assertEquals("PRS_"+respProcess.getProcessId(), respProcess.getProcessCode());
 	}
 
 }

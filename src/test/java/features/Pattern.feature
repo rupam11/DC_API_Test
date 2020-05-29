@@ -1,5 +1,5 @@
 @DC-Test-Suite 
-@Process 
+@Pattern
 Feature: Validating Process-Service APIs 
 
 @getProcessCount 
@@ -14,13 +14,8 @@ Scenario: Verify API: createProcess API add Process paylod
 	Given "System_Admin" User "Add" Process Payload 
 	When User calls "createProcess" API with "Post" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response will return Process instance
-	Then "processUpdatedBy" in response body is "NA"
-	Then "processUpdatedAt" in response body is "0000-00-00 00:00:00"
-	Then processId in response body is equal to output of "getActivityCount" 
-	Then processCode in response body is equal to output of "PRS_getProcessCount" 
+	Then Verify response will return Process instance 
 	Then Verify Total Process_Count increased by 1
-	#Then Verify responseProcess is same as that of requestProcess	
 
 @getAllProcess
 Scenario: Verify API: getAllProcess API return List of All Process 
@@ -43,13 +38,13 @@ Scenario: Verify API: getProcessBySearchCriteria API, search no SearchCriteria
 	
 	@getProcessBySearchCriteria 
 Scenario: Verify API: getProcessBySearchCriteria API, search by 'processId' 
-	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "processId" 
+	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "ProcessId" 
 	When User calls "getProcessBySearchCriteria" API with "Get" http Request
 	Then The API call is success with StatusCode 200
 		Then Verify response will return List of Process 
 	Then Response should be list of Process and size should be one 
 	Then Response Process is same which was added
-
+	
 	@getProcessBySearchCriteria 
 Scenario: Verify API: getProcessBySearchCriteria API, search by 'ProcessName' 
 	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "ProcessName" 
@@ -72,3 +67,6 @@ Scenario: Verify API: updateProcess API add Process paylod
 	When User calls "updateProcess" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
 	Then Verify Process fields gets updated
+	 
+	
+	
