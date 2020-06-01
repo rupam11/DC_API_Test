@@ -3,53 +3,54 @@ package entity;
 import java.io.Serializable;
 import java.util.List;
 
+
 public class Activity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
-	private int ActivityId;
+	private int activityId;
 	
 	
-	private String ActivityCode;
+	private String activityCode;
 	
 	
-	private int ActivitySequence;
+	private int activitySequence;
 	
 	
-	private int ActivityDisplaySequence;
+	private int activityDisplaySequence;
 
 	
-	private String ActivityName;
+	private String activityName;
 	
 	
-	private String ActivityStatus;
+	private String activityStatus;
 	
 	
-	private String ActivityPercentCompletion;
+	private String activityPercentCompletion;
 
 	
-	private String ActivityState;
+	private String activityState;
 	
 	
-	private String ActivityEffort;
+	private String activityEffort;
 	
 	
-	private String ActivityOwner;
+	private String activityOwner;
 
 	
-	private String ActivityCreatedBy;
+	private String activityCreatedBy;
 
 	
-	private String ActivityCreatedAt;
+	private String activityCreatedAt;
 
 	
-	private String ActivityUpdatedBy;
+	private String activityUpdatedBy;
 
 	
-	private String ActivityUpdatedAt;
+	private String activityUpdatedAt;
 	
 	
-	private List<Task> ActivityTasks;
+	private List<Task> activityTasks;
 	
 
 	public Activity() {
@@ -58,282 +59,282 @@ public class Activity implements Serializable {
 
 
 	/**
-	 * @param ActivityId
-	 * @param ActivityCode
-	 * @param ActivitySequence
-	 * @param ActivityDisplaySequence
-	 * @param ActivityName
-	 * @param ActivityStatus
-	 * @param ActivityPercentCompletion
-	 * @param ActivityState
-	 * @param ActivityEffort
-	 * @param ActivityOwner
-	 * @param ActivityCreatedBy
-	 * @param ActivityCreatedAt
-	 * @param ActivityUpdatedBy
-	 * @param ActivityUpdatedAt
-	 * @param ActivityTasks
+	 * @param activityId
+	 * @param activityCode
+	 * @param activitySequence
+	 * @param activityDisplaySequence
+	 * @param activityName
+	 * @param activityStatus
+	 * @param activityPercentCompletion
+	 * @param activityState
+	 * @param activityEffort
+	 * @param activityOwner
+	 * @param activityCreatedBy
+	 * @param activityCreatedAt
+	 * @param activityUpdatedBy
+	 * @param activityUpdatedAt
+	 * @param activityTasks
 	 */
-	public Activity(int ActivityId, String ActivityCode, int ActivitySequence, int ActivityDisplaySequence,
-			String ActivityName, String ActivityStatus, String ActivityPercentCompletion, String ActivityState,
-			String ActivityEffort, String ActivityOwner, String ActivityCreatedBy, String ActivityCreatedAt,
-			String ActivityUpdatedBy, String ActivityUpdatedAt, List<Task> ActivityTasks) {
+	public Activity(int activityId, String activityCode, int activitySequence, int activityDisplaySequence,
+			String activityName, String activityStatus, String activityPercentCompletion, String activityState,
+			String activityEffort, String activityOwner, String activityCreatedBy, String activityCreatedAt,
+			String activityUpdatedBy, String activityUpdatedAt, List<Task> activityTasks) {
 		super();
-		this.ActivityId = ActivityId;
-		this.ActivityCode = ActivityCode;
-		this.ActivitySequence = ActivitySequence;
-		this.ActivityDisplaySequence = ActivityDisplaySequence;
-		this.ActivityName = ActivityName;
-		this.ActivityStatus = ActivityStatus;
-		this.ActivityPercentCompletion = ActivityPercentCompletion;
-		this.ActivityState = ActivityState;
-		this.ActivityEffort = ActivityEffort;
-		this.ActivityOwner = ActivityOwner;
-		this.ActivityCreatedBy = ActivityCreatedBy;
-		this.ActivityCreatedAt = ActivityCreatedAt;
-		this.ActivityUpdatedBy = ActivityUpdatedBy;
-		this.ActivityUpdatedAt = ActivityUpdatedAt;
-		this.ActivityTasks = ActivityTasks;
+		this.activityId = activityId;
+		this.activityCode = activityCode;
+		this.activitySequence = activitySequence;
+		this.activityDisplaySequence = activityDisplaySequence;
+		this.activityName = activityName;
+		this.activityStatus = activityStatus;
+		this.activityPercentCompletion = activityPercentCompletion;
+		this.activityState = activityState;
+		this.activityEffort = activityEffort;
+		this.activityOwner = activityOwner;
+		this.activityCreatedBy = activityCreatedBy;
+		this.activityCreatedAt = activityCreatedAt;
+		this.activityUpdatedBy = activityUpdatedBy;
+		this.activityUpdatedAt = activityUpdatedAt;
+		this.activityTasks = activityTasks;
 	}
 
 
 	/**
-	 * @return the ActivityId
+	 * @return the activityId
 	 */
 	public int getActivityId() {
-		return ActivityId;
+		return activityId;
 	}
 
 
 	/**
-	 * @param ActivityId the ActivityId to set
+	 * @param activityId the activityId to set
 	 */
-	public void setActivityId(int ActivityId) {
-		this.ActivityId = ActivityId;
+	public void setActivityId(int activityId) {
+		this.activityId = activityId;
 	}
 
 
 	/**
-	 * @return the ActivityCode
+	 * @return the activityCode
 	 */
 	public String getActivityCode() {
-		return ActivityCode;
+		return activityCode;
 	}
 
 
 	/**
-	 * @param ActivityCode the ActivityCode to set
+	 * @param activityCode the activityCode to set
 	 */
-	public void setActivityCode(String ActivityCode) {
-		this.ActivityCode = ActivityCode;
+	public void setActivityCode(String activityCode) {
+		this.activityCode = activityCode;
 	}
 
 
 	/**
-	 * @return the ActivitySequence
+	 * @return the activitySequence
 	 */
 	public int getActivitySequence() {
-		return ActivitySequence;
+		return activitySequence;
 	}
 
 
 	/**
-	 * @param ActivitySequence the ActivitySequence to set
+	 * @param activitySequence the activitySequence to set
 	 */
-	public void setActivitySequence(int ActivitySequence) {
-		this.ActivitySequence = ActivitySequence;
+	public void setActivitySequence(int activitySequence) {
+		this.activitySequence = activitySequence;
 	}
 
 
 	/**
-	 * @return the ActivityDisplaySequence
+	 * @return the activityDisplaySequence
 	 */
 	public int getActivityDisplaySequence() {
-		return ActivityDisplaySequence;
+		return activityDisplaySequence;
 	}
 
 
 	/**
-	 * @param ActivityDisplaySequence the ActivityDisplaySequence to set
+	 * @param activityDisplaySequence the activityDisplaySequence to set
 	 */
-	public void setActivityDisplaySequence(int ActivityDisplaySequence) {
-		this.ActivityDisplaySequence = ActivityDisplaySequence;
+	public void setActivityDisplaySequence(int activityDisplaySequence) {
+		this.activityDisplaySequence = activityDisplaySequence;
 	}
 
 
 	/**
-	 * @return the ActivityName
+	 * @return the activityName
 	 */
 	public String getActivityName() {
-		return ActivityName;
+		return activityName;
 	}
 
 
 	/**
-	 * @param ActivityName the ActivityName to set
+	 * @param activityName the activityName to set
 	 */
-	public void setActivityName(String ActivityName) {
-		this.ActivityName = ActivityName;
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
 	}
 
 
 	/**
-	 * @return the ActivityStatus
+	 * @return the activityStatus
 	 */
 	public String getActivityStatus() {
-		return ActivityStatus;
+		return activityStatus;
 	}
 
 
 	/**
-	 * @param ActivityStatus the ActivityStatus to set
+	 * @param activityStatus the activityStatus to set
 	 */
-	public void setActivityStatus(String ActivityStatus) {
-		this.ActivityStatus = ActivityStatus;
+	public void setActivityStatus(String activityStatus) {
+		this.activityStatus = activityStatus;
 	}
 
 
 	/**
-	 * @return the ActivityPercentCompletion
+	 * @return the activityPercentCompletion
 	 */
 	public String getActivityPercentCompletion() {
-		return ActivityPercentCompletion;
+		return activityPercentCompletion;
 	}
 
 
 	/**
-	 * @param ActivityPercentCompletion the ActivityPercentCompletion to set
+	 * @param activityPercentCompletion the activityPercentCompletion to set
 	 */
-	public void setActivityPercentCompletion(String ActivityPercentCompletion) {
-		this.ActivityPercentCompletion = ActivityPercentCompletion;
+	public void setActivityPercentCompletion(String activityPercentCompletion) {
+		this.activityPercentCompletion = activityPercentCompletion;
 	}
 
 
 	/**
-	 * @return the ActivityState
+	 * @return the activityState
 	 */
 	public String getActivityState() {
-		return ActivityState;
+		return activityState;
 	}
 
 
 	/**
-	 * @param ActivityState the ActivityState to set
+	 * @param activityState the activityState to set
 	 */
-	public void setActivityState(String ActivityState) {
-		this.ActivityState = ActivityState;
+	public void setActivityState(String activityState) {
+		this.activityState = activityState;
 	}
 
 
 	/**
-	 * @return the ActivityEffort
+	 * @return the activityEffort
 	 */
 	public String getActivityEffort() {
-		return ActivityEffort;
+		return activityEffort;
 	}
 
 
 	/**
-	 * @param ActivityEffort the ActivityEffort to set
+	 * @param activityEffort the activityEffort to set
 	 */
-	public void setActivityEffort(String ActivityEffort) {
-		this.ActivityEffort = ActivityEffort;
+	public void setActivityEffort(String activityEffort) {
+		this.activityEffort = activityEffort;
 	}
 
 
 	/**
-	 * @return the ActivityOwner
+	 * @return the activityOwner
 	 */
 	public String getActivityOwner() {
-		return ActivityOwner;
+		return activityOwner;
 	}
 
 
 	/**
-	 * @param ActivityOwner the ActivityOwner to set
+	 * @param activityOwner the activityOwner to set
 	 */
-	public void setActivityOwner(String ActivityOwner) {
-		this.ActivityOwner = ActivityOwner;
+	public void setActivityOwner(String activityOwner) {
+		this.activityOwner = activityOwner;
 	}
 
 
 	/**
-	 * @return the ActivityCreatedBy
+	 * @return the activityCreatedBy
 	 */
 	public String getActivityCreatedBy() {
-		return ActivityCreatedBy;
+		return activityCreatedBy;
 	}
 
 
 	/**
-	 * @param ActivityCreatedBy the ActivityCreatedBy to set
+	 * @param activityCreatedBy the activityCreatedBy to set
 	 */
-	public void setActivityCreatedBy(String ActivityCreatedBy) {
-		this.ActivityCreatedBy = ActivityCreatedBy;
+	public void setActivityCreatedBy(String activityCreatedBy) {
+		this.activityCreatedBy = activityCreatedBy;
 	}
 
 
 	/**
-	 * @return the ActivityCreatedAt
+	 * @return the activityCreatedAt
 	 */
 	public String getActivityCreatedAt() {
-		return ActivityCreatedAt;
+		return activityCreatedAt;
 	}
 
 
 	/**
-	 * @param ActivityCreatedAt the ActivityCreatedAt to set
+	 * @param activityCreatedAt the activityCreatedAt to set
 	 */
-	public void setActivityCreatedAt(String ActivityCreatedAt) {
-		this.ActivityCreatedAt = ActivityCreatedAt;
+	public void setActivityCreatedAt(String activityCreatedAt) {
+		this.activityCreatedAt = activityCreatedAt;
 	}
 
 
 	/**
-	 * @return the ActivityUpdatedBy
+	 * @return the activityUpdatedBy
 	 */
 	public String getActivityUpdatedBy() {
-		return ActivityUpdatedBy;
+		return activityUpdatedBy;
 	}
 
 
 	/**
-	 * @param ActivityUpdatedBy the ActivityUpdatedBy to set
+	 * @param activityUpdatedBy the activityUpdatedBy to set
 	 */
-	public void setActivityUpdatedBy(String ActivityUpdatedBy) {
-		this.ActivityUpdatedBy = ActivityUpdatedBy;
+	public void setActivityUpdatedBy(String activityUpdatedBy) {
+		this.activityUpdatedBy = activityUpdatedBy;
 	}
 
 
 	/**
-	 * @return the ActivityUpdatedAt
+	 * @return the activityUpdatedAt
 	 */
 	public String getActivityUpdatedAt() {
-		return ActivityUpdatedAt;
+		return activityUpdatedAt;
 	}
 
 
 	/**
-	 * @param ActivityUpdatedAt the ActivityUpdatedAt to set
+	 * @param activityUpdatedAt the activityUpdatedAt to set
 	 */
-	public void setActivityUpdatedAt(String ActivityUpdatedAt) {
-		this.ActivityUpdatedAt = ActivityUpdatedAt;
+	public void setActivityUpdatedAt(String activityUpdatedAt) {
+		this.activityUpdatedAt = activityUpdatedAt;
 	}
 
 
 	/**
-	 * @return the ActivityTasks
+	 * @return the activityTasks
 	 */
 	public List<Task> getActivityTasks() {
-		return ActivityTasks;
+		return activityTasks;
 	}
 
 
 	/**
-	 * @param ActivityTasks the ActivityTasks to set
+	 * @param activityTasks the activityTasks to set
 	 */
-	public void setActivityTasks(List<Task> ActivityTasks) {
-		this.ActivityTasks = ActivityTasks;
+	public void setActivityTasks(List<Task> activityTasks) {
+		this.activityTasks = activityTasks;
 	}
 
 
@@ -341,21 +342,21 @@ public class Activity implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ActivityCode == null) ? 0 : ActivityCode.hashCode());
-		result = prime * result + ((ActivityCreatedAt == null) ? 0 : ActivityCreatedAt.hashCode());
-		result = prime * result + ((ActivityCreatedBy == null) ? 0 : ActivityCreatedBy.hashCode());
-		result = prime * result + ActivityDisplaySequence;
-		result = prime * result + ((ActivityEffort == null) ? 0 : ActivityEffort.hashCode());
-		result = prime * result + ActivityId;
-		result = prime * result + ((ActivityName == null) ? 0 : ActivityName.hashCode());
-		result = prime * result + ((ActivityOwner == null) ? 0 : ActivityOwner.hashCode());
-		result = prime * result + ((ActivityPercentCompletion == null) ? 0 : ActivityPercentCompletion.hashCode());
-		result = prime * result + ActivitySequence;
-		result = prime * result + ((ActivityState == null) ? 0 : ActivityState.hashCode());
-		result = prime * result + ((ActivityStatus == null) ? 0 : ActivityStatus.hashCode());
-		result = prime * result + ((ActivityTasks == null) ? 0 : ActivityTasks.hashCode());
-		result = prime * result + ((ActivityUpdatedAt == null) ? 0 : ActivityUpdatedAt.hashCode());
-		result = prime * result + ((ActivityUpdatedBy == null) ? 0 : ActivityUpdatedBy.hashCode());
+		result = prime * result + ((activityCode == null) ? 0 : activityCode.hashCode());
+		result = prime * result + ((activityCreatedAt == null) ? 0 : activityCreatedAt.hashCode());
+		result = prime * result + ((activityCreatedBy == null) ? 0 : activityCreatedBy.hashCode());
+		result = prime * result + activityDisplaySequence;
+		result = prime * result + ((activityEffort == null) ? 0 : activityEffort.hashCode());
+		result = prime * result + activityId;
+		result = prime * result + ((activityName == null) ? 0 : activityName.hashCode());
+		result = prime * result + ((activityOwner == null) ? 0 : activityOwner.hashCode());
+		result = prime * result + ((activityPercentCompletion == null) ? 0 : activityPercentCompletion.hashCode());
+		result = prime * result + activitySequence;
+		result = prime * result + ((activityState == null) ? 0 : activityState.hashCode());
+		result = prime * result + ((activityStatus == null) ? 0 : activityStatus.hashCode());
+		result = prime * result + ((activityTasks == null) ? 0 : activityTasks.hashCode());
+		result = prime * result + ((activityUpdatedAt == null) ? 0 : activityUpdatedAt.hashCode());
+		result = prime * result + ((activityUpdatedBy == null) ? 0 : activityUpdatedBy.hashCode());
 		return result;
 	}
 
@@ -369,71 +370,71 @@ public class Activity implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Activity other = (Activity) obj;
-		if (ActivityCode == null) {
-			if (other.ActivityCode != null)
+		if (activityCode == null) {
+			if (other.activityCode != null)
 				return false;
-		} else if (!ActivityCode.equals(other.ActivityCode))
+		} else if (!activityCode.equals(other.activityCode))
 			return false;
-		if (ActivityCreatedAt == null) {
-			if (other.ActivityCreatedAt != null)
+		if (activityCreatedAt == null) {
+			if (other.activityCreatedAt != null)
 				return false;
-		} else if (!ActivityCreatedAt.equals(other.ActivityCreatedAt))
+		} else if (!activityCreatedAt.equals(other.activityCreatedAt))
 			return false;
-		if (ActivityCreatedBy == null) {
-			if (other.ActivityCreatedBy != null)
+		if (activityCreatedBy == null) {
+			if (other.activityCreatedBy != null)
 				return false;
-		} else if (!ActivityCreatedBy.equals(other.ActivityCreatedBy))
+		} else if (!activityCreatedBy.equals(other.activityCreatedBy))
 			return false;
-		if (ActivityDisplaySequence != other.ActivityDisplaySequence)
+		if (activityDisplaySequence != other.activityDisplaySequence)
 			return false;
-		if (ActivityEffort == null) {
-			if (other.ActivityEffort != null)
+		if (activityEffort == null) {
+			if (other.activityEffort != null)
 				return false;
-		} else if (!ActivityEffort.equals(other.ActivityEffort))
+		} else if (!activityEffort.equals(other.activityEffort))
 			return false;
-		if (ActivityId != other.ActivityId)
+		if (activityId != other.activityId)
 			return false;
-		if (ActivityName == null) {
-			if (other.ActivityName != null)
+		if (activityName == null) {
+			if (other.activityName != null)
 				return false;
-		} else if (!ActivityName.equals(other.ActivityName))
+		} else if (!activityName.equals(other.activityName))
 			return false;
-		if (ActivityOwner == null) {
-			if (other.ActivityOwner != null)
+		if (activityOwner == null) {
+			if (other.activityOwner != null)
 				return false;
-		} else if (!ActivityOwner.equals(other.ActivityOwner))
+		} else if (!activityOwner.equals(other.activityOwner))
 			return false;
-		if (ActivityPercentCompletion == null) {
-			if (other.ActivityPercentCompletion != null)
+		if (activityPercentCompletion == null) {
+			if (other.activityPercentCompletion != null)
 				return false;
-		} else if (!ActivityPercentCompletion.equals(other.ActivityPercentCompletion))
+		} else if (!activityPercentCompletion.equals(other.activityPercentCompletion))
 			return false;
-		if (ActivitySequence != other.ActivitySequence)
+		if (activitySequence != other.activitySequence)
 			return false;
-		if (ActivityState == null) {
-			if (other.ActivityState != null)
+		if (activityState == null) {
+			if (other.activityState != null)
 				return false;
-		} else if (!ActivityState.equals(other.ActivityState))
+		} else if (!activityState.equals(other.activityState))
 			return false;
-		if (ActivityStatus == null) {
-			if (other.ActivityStatus != null)
+		if (activityStatus == null) {
+			if (other.activityStatus != null)
 				return false;
-		} else if (!ActivityStatus.equals(other.ActivityStatus))
+		} else if (!activityStatus.equals(other.activityStatus))
 			return false;
-		if (ActivityTasks == null) {
-			if (other.ActivityTasks != null)
+		if (activityTasks == null) {
+			if (other.activityTasks != null)
 				return false;
-		} else if (!ActivityTasks.equals(other.ActivityTasks))
+		} else if (!activityTasks.equals(other.activityTasks))
 			return false;
-		if (ActivityUpdatedAt == null) {
-			if (other.ActivityUpdatedAt != null)
+		if (activityUpdatedAt == null) {
+			if (other.activityUpdatedAt != null)
 				return false;
-		} else if (!ActivityUpdatedAt.equals(other.ActivityUpdatedAt))
+		} else if (!activityUpdatedAt.equals(other.activityUpdatedAt))
 			return false;
-		if (ActivityUpdatedBy == null) {
-			if (other.ActivityUpdatedBy != null)
+		if (activityUpdatedBy == null) {
+			if (other.activityUpdatedBy != null)
 				return false;
-		} else if (!ActivityUpdatedBy.equals(other.ActivityUpdatedBy))
+		} else if (!activityUpdatedBy.equals(other.activityUpdatedBy))
 			return false;
 		return true;
 	}
@@ -441,12 +442,12 @@ public class Activity implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Activity [ActivityId=" + ActivityId + ", ActivityCode=" + ActivityCode + ", ActivitySequence="
-				+ ActivitySequence + ", ActivityDisplaySequence=" + ActivityDisplaySequence + ", ActivityName="
-				+ ActivityName + ", ActivityStatus=" + ActivityStatus + ", ActivityPercentCompletion="
-				+ ActivityPercentCompletion + ", ActivityState=" + ActivityState + ", ActivityEffort=" + ActivityEffort
-				+ ", ActivityOwner=" + ActivityOwner + ", ActivityCreatedBy=" + ActivityCreatedBy
-				+ ", ActivityCreatedAt=" + ActivityCreatedAt + ", ActivityUpdatedBy=" + ActivityUpdatedBy
-				+ ", ActivityUpdatedAt=" + ActivityUpdatedAt + ", ActivityTasks=" + ActivityTasks + "]";
+		return "Activity [activityId=" + activityId + ", activityCode=" + activityCode + ", activitySequence="
+				+ activitySequence + ", activityDisplaySequence=" + activityDisplaySequence + ", activityName="
+				+ activityName + ", activityStatus=" + activityStatus + ", activityPercentCompletion="
+				+ activityPercentCompletion + ", activityState=" + activityState + ", activityEffort=" + activityEffort
+				+ ", activityOwner=" + activityOwner + ", activityCreatedBy=" + activityCreatedBy
+				+ ", activityCreatedAt=" + activityCreatedAt + ", activityUpdatedBy=" + activityUpdatedBy
+				+ ", activityUpdatedAt=" + activityUpdatedAt + ", activityTasks=" + activityTasks + "]";
 	}
 }

@@ -1,72 +1,138 @@
-@DC-Test-Suite 
+@DC-Test-Suite
 @Pattern
-Feature: Validating Process-Service APIs 
+Feature: Validating Pattern-Service APIs
 
-@getProcessCount 
-Scenario: Verify API: getProcessCount API return Total Process Count 
-	Given "System_Admin" User invoke "getProcessCount"
-	When User calls "getProcessCount" API with "Get" http Request 
-	Then Verify Process_Count result is greater than 0
-	Then The API call is success with StatusCode 200 
-		
-@createProcess 
-Scenario: Verify API: createProcess API add Process paylod 
-	Given "System_Admin" User "Add" Process Payload 
-	When User calls "createProcess" API with "Post" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify response will return Process instance 
-	Then Verify Total Process_Count increased by 1
+  @getPatternCount
+  Scenario: Verify API: getPatternCount API return Total Pattern Count
+    Given "System_Admin" User invoke "getPatternCount"
+    When User calls "getPatternCount" API with "Get" http Request
+    Then Verify Pattern_Count result is greater than or equal to 0
+    Then The API call is success with StatusCode 200
 
-@getAllProcess
-Scenario: Verify API: getAllProcess API return List of All Process 
-	Given "System_Admin" User invoke "getAllProcess"
-	When User calls "getAllProcess" API with "Get" http Request 
+  @createPattern
+  Scenario: Verify API: createPattern API add Pattern paylod
+    Given "System_Admin" User "Add" Pattern Payload with Param = "none" 
+    When User calls "createPattern" API with "Post" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return Pattern instance
+    Then Verify Total Pattern_Count increased by 1
+  @getAllPatterns
+  Scenario: Verify API: getAllPatterns API return List of All Pattern
+    Given "System_Admin" User invoke "getAllPatterns"
+    When User calls "getAllPatterns" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    Then Total number of Pattern in List is equal to getPatternCount
+  #Then Pattern added exist in returned PatternList
+  
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search no SearchCriteria
+    Given "System_Admin" User invoke "getPatternBySearchCriteria"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    #Then Response should be list all Pattern=getAllPattern
+    Then All Pattern should have Active Status
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternId'
+    Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: "patternId"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    Then Response should be list of Pattern and size should be one
+	  #Then Response Pattern is same which was added
+	  #Then Pattern added exist in returned PatternList
+  
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternName'
+    Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: "patternName"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    Then Each Pattern of returned PatternList should have same pattern "PatternName"
+    #Then Pattern added exist in returned PatternList
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternState'
+    Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: "patternState"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    Then Each Pattern of returned PatternList should have same pattern "patternState"
+    #Then Pattern added exist in returned PatternList
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternStatus'
+    Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: "patternStatus"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern
+    Then Each Pattern of returned PatternList should have same pattern "patternStatus"
+   # Then Pattern added exist in returned PatternList
+
+@getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternId' & 'patternName' & 'patternState' & 'patternStatus'
+    Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: 'patternId' & 'patternName' & 'patternState' & 'patternStatus'
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Response should be list of Pattern and size should be one
+   # Then Response Pattern is same which was added
+    #Then Pattern added exist in returned PatternList
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by invalid 'patternId'
+    Given "System_Admin" User invoke "getPatternBySearchCriteria" with invalid Parameter: "patternId" = "-9"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern with zero records
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by invalid 'patternName'
+    Given "System_Admin" User invoke "getPatternBySearchCriteria" with invalid Parameter: "patternName" = "invalidPatternName"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern with zero records
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by invalid 'patternState'
+    Given "System_Admin" User invoke "getPatternBySearchCriteria" with invalid Parameter: "patternState" = "invalidPatternState"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern with zero records
+
+  @getPatternBySearchCriteria
+  Scenario: Verify API: getPatternBySearchCriteria API, search by invalid 'patternStatus'
+    Given "System_Admin" User invoke "getPatternBySearchCriteria" with invalid Parameter: "patternStatus" = "invalidPatternStatus"
+    When User calls "getPatternBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Pattern with zero records
+
+  @deletePattern 
+Scenario: Verify API: deletePattern update Pattern status as Passive 
+	Given "System_Admin" User invoke deletePattern with Parameter: "patternId" 
+	When User calls "deletePattern" API with "Delete" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response will return List of Process 
-	Then Total number of Process in List is equal to getProcessCount 
-	Then Process added exist in returned ProcessList 
+	Then Verify response will return Pattern instance
+	Then "patternStatus" in response body is "Passive"
+
+ @deletePattern
+ Scenario: Verify API: deletePattern API,  with invalid patternId
+   Given "System_Admin" User invoke "deletePattern" with invalid Parameter: "patternId" = "-9"
+  When User calls "deletePattern" API with "Delete" http Request 
+	Then The API call is success with StatusCode 500 
+	Then "message" in response body is "No pattern found for patternId: -9"
 	
-		
-@getProcessBySearchCriteria 
-Scenario: Verify API: getProcessBySearchCriteria API, search no SearchCriteria 
-	Given "System_Admin" User invoke "getProcessBySearchCriteria" 
-	When User calls "getProcessBySearchCriteria" API with "Get" http Request 
+	@updatePattern 
+Scenario: Verify API: updatePattern API add Pattern paylod 
+	Given  "System_Admin" User "Update" Pattern Payload with Param = "patternId" 
+	When User calls "updatePattern" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response will return List of Process 
-	#Then Response should be list all Process=getAllProcess
-	Then All Process should have Active Status
+	Then Verify Pattern fields gets updated
 	
-	@getProcessBySearchCriteria 
-Scenario: Verify API: getProcessBySearchCriteria API, search by 'processId' 
-	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "ProcessId" 
-	When User calls "getProcessBySearchCriteria" API with "Get" http Request
-	Then The API call is success with StatusCode 200
-		Then Verify response will return List of Process 
-	Then Response should be list of Process and size should be one 
-	Then Response Process is same which was added
-	
-	@getProcessBySearchCriteria 
-Scenario: Verify API: getProcessBySearchCriteria API, search by 'ProcessName' 
-	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "ProcessName" 
-	When User calls "getProcessBySearchCriteria" API with "Get" http Request 
-	Then The API call is success with StatusCode 200
-		Then Verify response will return List of Process 
-		Then Created Process should exist in the List of Process
-	
-	@deleteProcess 
-Scenario: Verify API: deleteProcess update Process status as Passive 
-	Given "System_Admin" User invoke deleteProcess with Parameter: "processId" 
-	When User calls "deleteProcess" API with "Delete" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify response will return Process instance
-	Then "processStatus" in response body is "Passive"
-	
-	@updateProcess 
-Scenario: Verify API: updateProcess API add Process paylod 
-	Given  "System_Admin" User "Update" Process Payload 
-	When User calls "updateProcess" API with "Put" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify Process fields gets updated
-	 
-	
-	
+	@updatePattern 
+Scenario: Verify API: updatePattern API, with invalid patternId 
+	Given  "System_Admin" User "Update" Pattern Payload  with invalid Param = "patternId" and value="-9" 
+	When User calls "updatePattern" API with "Put" http Request 
+	Then The API call is success with StatusCode 500 
+Then "message" in response body is "No pattern found for patternId: -9" 

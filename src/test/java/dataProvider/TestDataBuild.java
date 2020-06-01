@@ -6,6 +6,7 @@ import entity.Activity;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
+import entity.Pattern;
 import entity.Process;
 import entity.Sector;
 import entity.Task;
@@ -71,6 +72,16 @@ public class TestDataBuild {
 		Process opProcess=jsonReader.updateProcessData(ipProcess);
 		return opProcess;
 		
+	}
+
+	public Pattern addPattern() {
+		Pattern pattern=jsonReader.getPatternData();
+		return pattern;
+	}
+
+	public Pattern updatePattern(Pattern ipPattern) throws IOException {
+		Pattern opPattern=jsonReader.updatePatternData(ipPattern);
+		return opPattern;		
 	}
 
 }

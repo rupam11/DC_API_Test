@@ -43,16 +43,23 @@ public class ProcessStepDefinition extends Utils {
 	}
 
 
-	@Given("{string} User {string} Process Payload")
-	public void user_Process_Payload(String userRole, String payloadReq) throws IOException {
+	@Given("{string} User {string} Process Payload with Param = {string}")
+	public void user_Process_Payload(String userRole, String payloadReq,String param) throws IOException {
 		if (payloadReq.equalsIgnoreCase("Add"))
+		{
 			reqProcess = data.addProcess();
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
+		}
 		else if (payloadReq.equalsIgnoreCase("Update"))
+		{
 			reqProcess = data.updateProcess(respProcess);
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param, respProcess.getProcessId());
+			
+		}			
 		else
 			System.out.println("Issue in Payload creation request");
-		
-		reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
+	
 	}
 	
 		
@@ -65,8 +72,7 @@ public class ProcessStepDefinition extends Utils {
 
 	@Then("Verify response will return Process instance")
 	public void verify_response_will_return_Process_instance() {
-		respProcess = response.getBody().as(Process.class);
-		System.out.println("Process created === "+respProcess.toString());
+		respProcess = response.getBody().as(Process.class);		
 	}
 
 	@Then("Verify response will return List of Process")
@@ -93,7 +99,6 @@ public class ProcessStepDefinition extends Utils {
 		if (param.equalsIgnoreCase("ProcessId"))
 		{
 			reqSpec = null;
-			System.out.println("Response process porcess id"+respProcess.getProcessId());
 			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respProcess.getProcessId());		
 		}			
 		else if (param.equalsIgnoreCase("ProcessName"))

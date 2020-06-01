@@ -4,12 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gson.Gson;
 import entity.Activity;
 import entity.Category;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
+import entity.Pattern;
 import entity.Process;
 import entity.Sector;
 import entity.Task;
@@ -25,9 +29,10 @@ public class JsonDataReader {
 	private Category category;
 	private Mail mail;
 	private Field field;
-	Gson gson;
+	private Gson gson;
 	BufferedReader bufferReader;
 	private Process process;
+	private Pattern pattern;
 
 	
 	//===================================================Initialize all private variable inside Constructor
@@ -40,16 +45,27 @@ public class JsonDataReader {
 		this.mail=new Mail();
 		this.category=new Category();
 		this.process=new Process();
+		this.pattern=new Pattern();
 	}
 
 	public Activity getActivityData() {
+		String TaskFilePath=JSONDataFilePath+"Activity/task.json";
 		String ActivityFilePath=JSONDataFilePath+"Activity/activity.json";
+		
 		try {
+			bufferReader = new BufferedReader(new FileReader(TaskFilePath));
+			task=gson.fromJson(bufferReader, Task.class);
+			List<Task> taskList=new ArrayList<Task>();
+			taskList.add(task);
+			
+			
 			bufferReader = new BufferedReader(new FileReader(ActivityFilePath));
-			activity = gson.fromJson(bufferReader, Activity.class);
+			activity=gson.fromJson(bufferReader, Activity.class);
+			activity.setActivityTasks(taskList);
+			
 			return activity;
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("Json file not found at path : " + ActivityFilePath);
+			throw new RuntimeException("Json file not found at path : ");
 		} finally {
 			try {
 				if (bufferReader != null)
@@ -57,6 +73,7 @@ public class JsonDataReader {
 			} catch (IOException ignore) {
 			}
 		}
+
 	}
 
 	public Sector getSectorData() {
@@ -218,8 +235,9 @@ public class JsonDataReader {
 	}
 
 	public Process updateProcessData(Process ipProcess) throws IOException {
+		System.out.println("original process === "+ipProcess.toString());
 		ipProcess.setProcessCode("New_"+ipProcess.getProcessCode());
-		ipProcess.setProcessName(ipProcess.getProcessName());
+		ipProcess.setProcessName("New_"+ipProcess.getProcessName());
 		
 		if(ipProcess.getProcessStatus().equalsIgnoreCase("Active"))
 			ipProcess.setProcessStatus("Passive");
@@ -230,8 +248,88 @@ public class JsonDataReader {
 	ipProcess.setProcessCreatedBy(configReader.getPropValue("update_CreatedBy"));
 		ipProcess.setProcessCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
-		
+		System.out.println("updated process === "+ipProcess.toString());
 		return ipProcess;
+	}
+
+	public Pattern getPatternData() {
+		
+		String TaskFilePath=JSONDataFilePath+"Pattern/task.json";
+		String ActivityFilePath=JSONDataFilePath+"Pattern/activity.json";
+		String PatternFilePath=JSONDataFilePath+"Pattern/pattern.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(TaskFilePath));
+			task=gson.fromJson(bufferReader, Task.class);
+			List<Task> taskList=new ArrayList<Task>();
+			taskList.add(task);
+			
+			
+			bufferReader = new BufferedReader(new FileReader(ActivityFilePath));
+			activity=gson.fromJson(bufferReader, Activity.class);
+			activity.setActivityTasks(taskList);
+			List<Activity> activityList=new ArrayList<Activity>();
+			activityList.add(activity);
+			
+			bufferReader = new BufferedReader(new FileReader(PatternFilePath));
+			pattern=gson.fromJson(bufferReader, Pattern.class);
+			pattern.setPatternActivities(activityList);
+			
+			return pattern;
+			
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : ");
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Pattern updatePatternData(Pattern ipPattern) throws IOException {
+		
+		String TaskFilePath=JSONDataFilePath+"Pattern/newTask.json";
+		String ActivityFilePath=JSONDataFilePath+"Pattern/newActivity.json";
+		List<Task> taskList=new ArrayList<Task>();
+		List<Activity> activityList=new ArrayList<Activity>();
+		
+		
+		try {
+			bufferReader = new BufferedReader(new FileReader(TaskFilePath));
+			task=gson.fromJson(bufferReader, Task.class);
+			taskList.add(task);			
+			
+			bufferReader = new BufferedReader(new FileReader(ActivityFilePath));
+			activity=gson.fromJson(bufferReader, Activity.class);
+			activity.setActivityTasks(taskList);
+			activityList.add(activity);
+			
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : ");
+		}
+		
+		ipPattern.setPatternCode("New_"+ipPattern.getPatternCode());
+		ipPattern.setPatternSequence(ipPattern.getPatternSequence()+10);
+		ipPattern.setPatternDisplaySequence(ipPattern.getPatternDisplaySequence()+10);
+		ipPattern.setPatternName("New_"+ipPattern.getPatternName());
+		//ipPattern.setPatternCompletion("New_"+ipPattern.getPatternCompletion());
+		ipPattern.setPatternEffort("New_"+ipPattern.getPatternEffort());
+		ipPattern.setPatternOwner("New_"+ipPattern.getPatternOwner());
+		ipPattern.setPatternCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipPattern.setPatternCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+		if(ipPattern.getPatternStatus().equalsIgnoreCase("Active"))
+			ipPattern.setPatternStatus("Passive");
+		else if(ipPattern.getPatternStatus().equalsIgnoreCase("Passive"))
+			ipPattern.setPatternStatus("Active");
+		else 
+			System.out.println("Please fix process.json data");
+		ipPattern.setPatternActivities(activityList);
+		
+		
+		
+		return ipPattern;
 	}
 	
 

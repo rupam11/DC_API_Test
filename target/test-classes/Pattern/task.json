@@ -1,0 +1,21 @@
+{
+            "taskId": 368,
+            "taskCode": "TSK_368",
+            "taskSequence": 0,
+            "taskDisplaySequence": 0,
+            "taskDescription": "New Test Task to be deleted",
+            "taskStatus": "Passive",
+            "taskComments": "None",
+            "taskApplicable": "No",
+            "percentCompletion": "0",
+            "taskState": "Not Started",
+            "taskEffort": "",
+            "taskOwner": "",
+            "taskCreatedBy": "zach",
+            "taskCreatedAt": "2020-04-12 06:11:17",
+            "taskUpdatedBy": "rupam_sys",
+            "taskUpdatedAt": "2020-04-27 14:15:44",
+            "taskProcessName": "test Process to be deleted",
+            "taskSquadName": "Cloud Migration Factory / IBM Support Team",
+            "taskSquadType": "IBM"
+        }

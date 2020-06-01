@@ -1,0 +1,21 @@
+{
+                "taskId": 373,
+                "taskCode": "TSK_373",
+                "taskSequence": 0,
+                "taskDisplaySequence": 0,
+                "taskDescription": "rk_Add Task3",
+                "taskStatus": "Active",
+                "taskComments": "test task comment",
+                "taskApplicable": "No",
+                "percentCompletion": "0",
+                "taskState": "Not Started",
+                "taskEffort": "task_effort",
+                "taskOwner": "owner",
+                "taskCreatedBy": "rupam_sys",
+                "taskCreatedAt": "2020-04-27 13:56:06",
+                "taskUpdatedBy": "rupam_sys",
+                "taskUpdatedAt": "2020-04-27 14:15:44",
+                "taskProcessName": "process_Nm",
+                "taskSquadName": "squad_Nm",
+                "taskSquadType": "Client"
+ }

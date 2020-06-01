@@ -48,7 +48,7 @@ public enum APIResources {
 	
 	createPattern("pattern-service/createPattern"),
 	deletePattern("pattern-service/deletePattern"),
-	getAllPattern("pattern-service/getAllPattern"),
+	getAllPatterns("pattern-service/getAllPatterns"),
 	getPatternCount("pattern-service/getPatternCount"),
 	getPatternBySearchCriteria("pattern-service/getPatternBySearchCriteria"),
 	updatePattern("pattern-service/updatePattern");

@@ -3,8 +3,6 @@ package entity;
 import java.io.Serializable;
 import java.util.List;
 
-
-
 public class Pattern implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +49,7 @@ public class Pattern implements Serializable {
 	private String patternUpdatedAt;
 	
 	
-	private List<Sector> patternSectors;
+	private List<Activity> patternActivities;
 
 	public Pattern() {
 
@@ -72,12 +70,12 @@ public class Pattern implements Serializable {
 	 * @param patternCreatedAt
 	 * @param patternUpdatedBy
 	 * @param patternUpdatedAt
-	 * @param patternSectors
+	 * @param patternActivities
 	 */
 	public Pattern(int patternId, String patternCode, int patternSequence, int patternDisplaySequence,
 			String patternName, String patternStatus, String patternCompletion, String patternState,
 			String patternEffort, String patternOwner, String patternCreatedBy, String patternCreatedAt,
-			String patternUpdatedBy, String patternUpdatedAt, List<Sector> patternSectors) {
+			String patternUpdatedBy, String patternUpdatedAt, List<Activity> patternActivities) {
 		super();
 		this.patternId = patternId;
 		this.patternCode = patternCode;
@@ -93,7 +91,7 @@ public class Pattern implements Serializable {
 		this.patternCreatedAt = patternCreatedAt;
 		this.patternUpdatedBy = patternUpdatedBy;
 		this.patternUpdatedAt = patternUpdatedAt;
-		this.patternSectors = patternSectors;
+		this.patternActivities = patternActivities;
 	}
 
 	/**
@@ -293,24 +291,24 @@ public class Pattern implements Serializable {
 	}
 
 	/**
-	 * @return the patternSectors
+	 * @return the patternActivities
 	 */
-	public List<Sector> getPatternSectors() {
-		return patternSectors;
+	public List<Activity> getPatternActivities() {
+		return patternActivities;
 	}
 
 	/**
-	 * @param patternSectors the patternSectors to set
+	 * @param patternActivities the patternActivities to set
 	 */
-	public void setPatternSectors(List<Sector> patternSectors) {
-		this.patternSectors = patternSectors;
+	public void setPatternActivities(List<Activity> patternActivities) {
+		this.patternActivities = patternActivities;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((patternSectors == null) ? 0 : patternSectors.hashCode());
+		result = prime * result + ((patternActivities == null) ? 0 : patternActivities.hashCode());
 		result = prime * result + ((patternCode == null) ? 0 : patternCode.hashCode());
 		result = prime * result + ((patternCompletion == null) ? 0 : patternCompletion.hashCode());
 		result = prime * result + ((patternCreatedAt == null) ? 0 : patternCreatedAt.hashCode());
@@ -337,10 +335,10 @@ public class Pattern implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Pattern other = (Pattern) obj;
-		if (patternSectors == null) {
-			if (other.patternSectors != null)
+		if (patternActivities == null) {
+			if (other.patternActivities != null)
 				return false;
-		} else if (!patternSectors.equals(other.patternSectors))
+		} else if (!patternActivities.equals(other.patternActivities))
 			return false;
 		if (patternCode == null) {
 			if (other.patternCode != null)
@@ -414,6 +412,6 @@ public class Pattern implements Serializable {
 				+ ", patternState=" + patternState + ", patternEffort=" + patternEffort + ", patternOwner="
 				+ patternOwner + ", patternCreatedBy=" + patternCreatedBy + ", patternCreatedAt=" + patternCreatedAt
 				+ ", patternUpdatedBy=" + patternUpdatedBy + ", patternUpdatedAt=" + patternUpdatedAt
-				+ ", patternSectors=" + patternSectors + "]";
+				+ ", patternActivities=" + patternActivities + "]";
 	}
 }

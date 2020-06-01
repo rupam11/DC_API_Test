@@ -11,7 +11,7 @@ Scenario: Verify API: getProcessCount API return Total Process Count
 		
 @createProcess 
 Scenario: Verify API: createProcess API add Process paylod 
-	Given "System_Admin" User "Add" Process Payload 
+	Given "System_Admin" User "Add" Process Payload with Param = "none" 
 	When User calls "createProcess" API with "Post" http Request 
 	Then The API call is success with StatusCode 200 
 	Then Verify response will return Process instance
@@ -58,6 +58,13 @@ Scenario: Verify API: getProcessBySearchCriteria API, search by 'ProcessName'
 		Then Verify response will return List of Process 
 		Then Created Process should exist in the List of Process
 	
+	@updateProcess 
+Scenario: Verify API: updateProcess API add Process paylod 
+	Given  "System_Admin" User "Update" Process Payload with Param = "processId" 
+	When User calls "updateProcess" API with "Put" http Request 
+	Then The API call is success with StatusCode 200 
+	Then Verify Process fields gets updated
+	
 	@deleteProcess 
 Scenario: Verify API: deleteProcess update Process status as Passive 
 	Given "System_Admin" User invoke deleteProcess with Parameter: "processId" 
@@ -65,10 +72,3 @@ Scenario: Verify API: deleteProcess update Process status as Passive
 	Then The API call is success with StatusCode 200 
 	Then Verify response will return Process instance
 	Then "processStatus" in response body is "Passive"
-	
-	@updateProcess 
-Scenario: Verify API: updateProcess API add Process paylod 
-	Given  "System_Admin" User "Update" Process Payload 
-	When User calls "updateProcess" API with "Put" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify Process fields gets updated

@@ -1,0 +1,21 @@
+{
+                    "taskId": 247,
+                    "taskCode": "TSK_247",
+                    "taskSequence": 0,
+                    "taskDisplaySequence": 0,
+                    "taskDescription": "Confirm IBM DBA access is enabled on source(DB Backup files path) and target server",
+                    "taskStatus": "Active",
+                    "taskComments": "",
+                    "taskApplicable": "Yes",
+                    "percentCompletion": "0",
+                    "taskState": "Not Started",
+                    "taskEffort": "",
+                    "taskOwner": "",
+                    "taskCreatedBy": "dchelp",
+                    "taskCreatedAt": "2020-03-08 00:48:00",
+                    "taskUpdatedBy": "",
+                    "taskUpdatedAt": "0000-00-00 00:00:00",
+                    "taskProcessName": "",
+                    "taskSquadName": "Cloud Migration Factory",
+                    "taskSquadType": "IBM"
+  }

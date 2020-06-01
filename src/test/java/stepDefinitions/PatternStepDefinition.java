@@ -1,87 +1,109 @@
 package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasItems;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+//import static org.hamcrest.Matchers.hasItems;
+//import static org.junit.Assert.assertArrayEquals;
+//import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertThat;
+//import static org.junit.Assert.assertTrue;
+
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matcher;
+import org.json.JSONObject;
+import org.springframework.util.Assert;
 
 import com.google.gson.Gson;
 
 import entity.Pattern;
-import entity.Task;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.http.ContentType;
 import testBase.Utils;
-
 
 public class PatternStepDefinition extends Utils {
 
 	static Pattern reqPattern,respPattern;
 	Pattern[] respAllPattern;
-	static int Pattern_Count;
+	static int pattern_Count;
 	CommonStepDefinition cmnStepDef;
-	Gson gson;
-   
+	JSONObject jsonObject,actJsonObj,expJsonObj;
+
 	public PatternStepDefinition() throws IOException {
 		cmnStepDef = new CommonStepDefinition();
-		gson=new Gson();
+		
 	}
 
-
-	@Given("{string} User {string} Pattern Payload")
-	public void user_Pattern_Payload(String userRole, String payloadReq) throws IOException {
+	@Given("{string} User {string} Pattern Payload with Param = {string}")
+	public void user_Pattern_Payload(String userRole, String payloadReq,String param) throws IOException {
+		
 		if (payloadReq.equalsIgnoreCase("Add"))
+		{
 			reqPattern = data.addPattern();
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern);
+		}
 		else if (payloadReq.equalsIgnoreCase("Update"))
-			reqPattern = data.updatePattern(reqPattern);
+		{
+			reqPattern = data.updatePattern(respPattern);
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern).queryParam(param, respPattern.getPatternId());
+			
+		}			
 		else
 			System.out.println("Issue in Payload creation request");
-		
-		reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern);
+	
+	}
+	
+	@Given("{string} User {string} Pattern Payload  with invalid Param = {string} and value=\"{int}\"")
+	public void user_Pattern_Payload_with_invalid_Param(String userRole, String payloadReq,String param, int i) throws IOException {
+
+		//int invalidPatternId=Integer.parseInt(i);
+		reqPattern = data.updatePattern(respPattern);
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern).queryParam(param,i);
 	}
 	
 		
-	@Then("Verify Pattern_Count result is greater than 0")
+	@Then("Verify Pattern_Count result is greater than or equal to 0")
 	public int get_Pattern_count() {
-		Pattern_Count = Integer.parseInt(response.getBody().asString());
-		assertTrue("Count is not correct", Pattern_Count > 0);
-		return Pattern_Count;
+		pattern_Count = Integer.parseInt(response.getBody().asString());
+		assertTrue("Count is not correct", pattern_Count >= 0);
+		return pattern_Count;
 	}
 
 	@Then("Verify response will return Pattern instance")
 	public void verify_response_will_return_Pattern_instance() {
-		reqPattern = response.getBody().as(Pattern.class);
-		System.out.println("Pattern created === "+reqPattern.toString());
+		respPattern = response.getBody().as(Pattern.class);
+		System.out.println("Pattern created === "+respPattern.toString());
 	}
 
 	@Then("Verify response will return List of Pattern")
-		public void verify_response_will_return_List_of_Pattern() {
-
+	public void verify_response_will_return_List_of_Pattern() {
 		respAllPattern = response.getBody().as(Pattern[].class);
 	}
+	
+	@Then("Verify response will return List of Pattern with zero records")
+	public void verify_PatternList_with_zero_Pattern() {
+		respAllPattern = response.getBody().as(Pattern[].class);
+		assertTrue("Count is not correct", respAllPattern.length == 0);
+	}
+	
 
 	@Then("Total number of Pattern in List is equal to getPatternCount")
 	public void total_number_of_Pattern_in_List_is_equal_to_getPatternCount() throws IOException {
-		int old_count=Pattern_Count;
+		int old_count=pattern_Count;
 		cmnStepDef.user_calls_API_with_http_Request("getPatternCount", "Get");
 		assertEquals(old_count, get_Pattern_count());
 	}
 
 	@Then("Pattern added exist in returned PatternList")
-	public void Pattern_added_exist_in_returned_PatternList() {
+	public void pattern_added_exist_in_returned_PatternList() {
 		List<Pattern> PatternList = Arrays.asList(respAllPattern);
-		assertThat(PatternList, hasItems(reqPattern));
+		assertThat(PatternList, hasItems(respPattern));
 	}
 
 	@Given("{string} User invoke getPatternBySearchCriteria with Parameter: {string}")
@@ -89,15 +111,41 @@ public class PatternStepDefinition extends Utils {
 		if (param.equalsIgnoreCase("PatternId"))
 		{
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqPattern.getPatternId());		
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respPattern.getPatternId());		
 		}			
 		else if (param.equalsIgnoreCase("PatternName"))
 		{				
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqPattern.getPatternName());
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respPattern.getPatternName());
+		}
+		else if (param.equalsIgnoreCase("PatternState"))
+		{				
+			reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respPattern.getPatternState());
+		}
+		else if (param.equalsIgnoreCase("PatternStatus"))
+		{				
+			reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respPattern.getPatternStatus());
 		}
 	}
 
+	@Given("{string} User invoke {string} with invalid Parameter: {string} = {string}")
+	public void user_invoke_api_with_invalid_Parameter(String userRole,String apiNm, String param, String var) throws IOException {
+			reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,var);	
+	}
+	
+		
+	@Given("{string} User invoke getPatternBySearchCriteria with Parameter: {string} & {string} & {string} & {string}")
+	public void user_invoke_getPatternBySearchCriteria_with_all_Parameter(String userRole, String param1, String param2,String param3,String param4) throws IOException {
+		reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1,respPattern.getPatternId())
+																.queryParam(param2, respPattern.getPatternName())
+																.queryParam(param3, respPattern.getPatternState())
+																.queryParam(param4, respPattern.getPatternStatus());
+	}
+		
 	@Then("Response should be list of Pattern and size should be one")
 	public void response_should_be_list_of_Pattern_and_size_should_be_one() {
 		respAllPattern = response.getBody().as(Pattern[].class);
@@ -106,38 +154,53 @@ public class PatternStepDefinition extends Utils {
 
 	@Then("Response Pattern is same which was added")
 	public void response_Pattern_is_same_which_was_added() {
-		assertEquals("Wrong Pattern filtered", reqPattern, respAllPattern[0]);
+		System.out.println("respPattern === "+respPattern.toString());
+		System.out.println("respALLPattern[0] === "+respAllPattern[0].toString());
+		assertEquals("Wrong Pattern filtered", respPattern, respAllPattern[0]);
 	}
 
 		@Then("Verify Pattern fields gets updated")
 		public void verify_Patternfields_gets_updated() {
-		    Pattern updatedPattern=response.getBody().as(Pattern.class);
-		reqPattern = response.getBody().as(Pattern.class);
-		assertEquals("Pattern name not updated", reqPattern.getPatternName(), reqPattern.getPatternName());
-		assertEquals("Pattern Patterntatus not updated", reqPattern.getPatternStatus(), reqPattern.getPatternStatus());
-		assertEquals("Pattern PatternCreatedBy not updated", reqPattern.getPatternCreatedBy(),
-				reqPattern.getPatternCreatedBy());
-		assertEquals("Pattern PatternCreatedAt not updated", reqPattern.getPatternCreatedAt(),
-				reqPattern.getPatternCreatedAt());
+		respPattern = response.getBody().as(Pattern.class);
+//		expJsonObj=updateJson(new JSONObject(reqPattern),"pattern");
+//		actJsonObj=updateJson(new JSONObject(respPattern),"pattern");
+//		System.out.println("reqPattern After updatJson"+expJsonObj);
+//		System.out.println("respPattern After updatJson"+actJsonObj);
+//		Gson gson=new Gson();
+//		reqPattern=gson.fromJson(expJsonObj.toString(), Pattern.class);
+//		respPattern=gson.fromJson(actJsonObj.toString(), Pattern.class);
+//		System.out.println("reqPattern After Json to java"+expJsonObj);
+//		System.out.println("respPattern After json to java"+actJsonObj);
+//		
+		assertThat(reqPattern, is(respPattern));
+		
+//		assertEquals("mtch error",reqPattern.toString(),respPattern.toString());
+//		assertEquals("Pattern code not updated", reqPattern.getPatternCode(), respPattern.getPatternCode());
+//		assertEquals("Pattern Sequence not updated", reqPattern.getPatternSequence(), respPattern.getPatternSequence());
+//		assertEquals("Pattern DisplaySequence not updated", reqPattern.getPatternDisplaySequence(),
+//				respPattern.getPatternDisplaySequence());
+//		assertEquals("Pattern Name not updated", reqPattern.getPatternName(),
+//				respPattern.getPatternName());
+//		assertEquals("Pattern Status not updated", reqPattern.getPatternStatus(), respPattern.getPatternStatus());
+//		assertEquals("Pattern Completion not updated", reqPattern.getPatternCompletion(), respPattern.getPatternCompletion());
+//		assertEquals("Pattern Effort not updated", reqPattern.getPatternEffort(), respPattern.getPatternEffort());
+//		assertEquals("Pattern CreatedAt not updated", reqPattern.getPatternCreatedAt(), respPattern.getPatternCreatedAt());
+//		assertEquals("Pattern Created By not updated", reqPattern.getPatternCreatedBy(), respPattern.getPatternCreatedBy());
+//		assertEquals("Pattern Patterntatus not updated", reqPattern.getPatternStatus(), respPattern.getPatternStatus());
+//		assertEquals("Pattern Actvities not updated", reqPattern.getPatternActivities(), respPattern.getPatternActivities());		
 	}
-
-//	@Then("Verify {string} of particular {string} updated as Passive")
-//	public void verify_of_particular_updated_as_Passive(String string, String string2) {
-//		reqPattern = response.getBody().as(Pattern.class);
-//		assertEquals("Pattern not Deactivated!!!", "Passive", reqPattern.getPatternStatus());
-//	}
 
 	@Then("Response should be list all Pattern=getAllPattern")
 	public void response_should_be_list_all_Pattern_getAllPattern() {
 		Pattern[] actAllPattern = response.getBody().as(Pattern[].class);
-		cmnStepDef.user_calls_API_with_http_Request("getAllPattern", "Get");
+		cmnStepDef.user_calls_API_with_http_Request("getAllPatterns", "Get");
 		Pattern[] expAllPattern = response.getBody().as(Pattern[].class);
 		assertArrayEquals("All Pattern not searched in case of no Search Criteria", expAllPattern, actAllPattern);
 	}
 	
 	@Then("Verify Total Pattern_Count increased by 1")
 	public void verify_Total_Pattern_Count_increased_by() {
-		int old_count=Pattern_Count;
+		int old_count=pattern_Count;
 		System.out.println("OLD COunt = "+old_count);
 		cmnStepDef.user_calls_API_with_http_Request("getPatternCount", "Get");
 		assertEquals(old_count+1, get_Pattern_count());
@@ -158,7 +221,51 @@ public class PatternStepDefinition extends Utils {
 	@Then("Created Pattern should exist in the List of Pattern")
 	public void created_Pattern_should_exist_in_the_List_of_Pattern() {
 		List<Pattern> PatternList = Arrays.asList(respAllPattern);
-		assertThat(PatternList, hasItems(reqPattern));
+		assertThat(PatternList, hasItems(respPattern));
 	}
+	
+	
+	@Then("PatternId in response body is equal to output of {string}")
+	public void Patternid_in_response_body_is_equal_to_output_of(String string) {
+		assertEquals(pattern_Count+1, respPattern.getPatternId());
+	}
+
+	@Then("PatternCode in response body is equal to output of {string}")
+	public void Patterncode_in_response_body_is_equal_to_output_of(String string) {
+		assertEquals("PAT_"+respPattern.getPatternId(), respPattern.getPatternCode());
+	}
+	
+	@Then("Each Pattern of returned PatternList should have same pattern {string}")
+	public void each_Pattern_of_returned_PatternList_should_have_same_pattern(String searchItem) {
+		assertTrue("All searched List do not satisfy search criteria",verify_all_records_with_search_criteria(searchItem));		
+	}	
+	
+	boolean verify_all_records_with_search_criteria(String searchItem) {
+		if(searchItem.equalsIgnoreCase("patternName"))
+		{
+			for(Pattern p:respAllPattern) 
+			if(!(p.getPatternName().matches(respPattern.getPatternName())))
+				return false;
+			return true;
+		}
+		else if(searchItem.equalsIgnoreCase("patternStatus"))
+		{
+			for(Pattern p:respAllPattern) 
+			if(!(p.getPatternStatus().matches(respPattern.getPatternStatus())))
+				return false;
+			return true;
+		}
+		else if(searchItem.equalsIgnoreCase("patternState"))
+		{
+			for(Pattern p:respAllPattern) 
+			if(!(p.getPatternState().matches(respPattern.getPatternState())))
+				return false;
+			return true;
+		}
+		else 
+			return false;
+		
+	}
+	
 
 }
