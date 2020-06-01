@@ -267,5 +267,37 @@ public class PatternStepDefinition extends Utils {
 		
 	}
 	
+	@Given("{string} User {string} Pattern Payload  with no Param")
+	public void user_Pattern_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
+		reqPattern = data.updatePattern(respPattern);
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern);
+		
+	}
+
+	@Given("{string} User {string} Pattern Payload  with no Pattern Body and Param = {string}")
+	public void user_Pattern_Payload_with_no_Pattern_Body(String userRole, String payloadReq, String param) throws IOException {
+		if (payloadReq.equalsIgnoreCase("Add"))
+		{	
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole));
+		}
+		else if (payloadReq.equalsIgnoreCase("Update"))
+		{
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParam(param, respPattern.getPatternId());
+			
+		}			
+		else
+			System.out.println("Issue in Payload creation request");
+	
+	}
+	
+	@Given ("{string} User deletePattern with no Param")
+	public void deletePattern_with_no_Param(String userRole) throws IOException {
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole));		
+	}
+	  
 
 }
