@@ -1,5 +1,4 @@
-@DC-Test-Suite
-@Activity
+@DC-Test-Suite @Activity
 Feature: Validating Activity-Service APIs
 
   @getActivityCount
@@ -49,84 +48,84 @@ Feature: Validating Activity-Service APIs
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
     Then Response should be List of Activities and size should be one
+
   #Then Response Activity is same which was added
   #Then Activity added exist in returned ActivityList
-  
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityCode'
     Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityCode"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same pattern "activityCode"
-  #Then Activity added exist in returned ActivityList
-  
+    Then Each Activity of returned ActivityList should have same activity "activityCode"
+    Then Activity added exist in returned ActivityList
+
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityName'
     Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityName"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same pattern "activityName"
-  
+    Then Each Activity of returned ActivityList should have same activity "activityName"
+
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityState'
     Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityState"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same pattern "activityState"
+    Then Each Activity of returned ActivityList should have same activity "activityState"
+
   #Then Activity added exist in returned ActivityList
-  
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityStatus'
     Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityStatus"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same pattern "activityStatus"
-  # Then Activity added exist in returned ActivityList
-  
+    Then Each Activity of returned ActivityList should have same activity "activityStatus"
+    Then Activity added exist in returned ActivityList
+
   @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityId' & 'patternCode' & 'patternName' & 'patternState' & 'patternStatus'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: 'activityId' & 'patternCode' & 'patternName' & 'patternState' & 'patternStatus'
+  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityId' & 'activityCode' & 'activityName' & 'activityState' & 'activityStatus'
+    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: 'activityId' & 'activityCode' & 'activityName' & 'activityState' & 'activityStatus'
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Response should be List of Activities and size should be one
-  # Then Response Activity is same which was added
-  #Then Activity added exist in returned ActivityList
-  
+    Then Response Activity is same which was added
+    Then Activity added exist in returned ActivityList
+
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityId'
-    Given "System_Admin" User invoke "getActivityBySearchCriteria" with invalid Parameter: "activityId" = "-9"
+    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityId" = "-9"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
-    
-     @getActivityBySearchCriteria
+
+  @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityCode'
-    Given "System_Admin" User invoke "getActivityBySearchCriteria" with invalid Parameter: "activityCode" = "invalidActivityCode"
+    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityCode" = "invalidActivityCode"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityName'
-    Given "System_Admin" User invoke "getActivityBySearchCriteria" with invalid Parameter: "activityName" = "invalidActivityName"
+    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityName" = "invalidActivityName"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityState'
-    Given "System_Admin" User invoke "getActivityBySearchCriteria" with invalid Parameter: "activityState" = "invalidActivityState"
+    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityState" = "invalidActivityState"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityStatus'
-    Given "System_Admin" User invoke "getActivityBySearchCriteria" with invalid Parameter: "activityStatus" = "invalidActivityStatus"
+    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityStatus" = "invalidActivityStatus"
     When User calls "getActivityBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
@@ -144,7 +143,7 @@ Feature: Validating Activity-Service APIs
     Given "System_Admin" User invoke "deleteActivity" with invalid Parameter: "activityId" = "-9"
     When User calls "deleteActivity" API with "Delete" http Request
     Then The API call is success with StatusCode 500
-    Then "message" in response body is "No pattern found for activityId: -9"
+    Then "message" in response body is "No activity found for activityId: -9"
 
   @deleteActivity
   Scenario: Verify API: deleteActivity API, with no Param
