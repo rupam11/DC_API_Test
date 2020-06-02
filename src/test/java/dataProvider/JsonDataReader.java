@@ -56,14 +56,14 @@ public class JsonDataReader {
 			bufferReader = new BufferedReader(new FileReader(TaskFilePath));
 			task=gson.fromJson(bufferReader, Task.class);
 			List<Task> taskList=new ArrayList<Task>();
-			taskList.add(task);
-			
+			taskList.add(task);			
 			
 			bufferReader = new BufferedReader(new FileReader(ActivityFilePath));
 			activity=gson.fromJson(bufferReader, Activity.class);
 			activity.setActivityTasks(taskList);
-			
+						
 			return activity;
+			
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException("Json file not found at path : ");
 		} finally {
@@ -73,9 +73,45 @@ public class JsonDataReader {
 			} catch (IOException ignore) {
 			}
 		}
-
 	}
 
+	public Activity updateActivityData(Activity ipActivity) throws IOException {
+		String TaskFilePath=JSONDataFilePath+"Activity/newTask.json";
+		List<Task> taskList=new ArrayList<Task>();
+		
+		try {
+			bufferReader = new BufferedReader(new FileReader(TaskFilePath));
+			task=gson.fromJson(bufferReader, Task.class);
+			taskList.add(task);					
+			
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : ");
+		}
+		
+		ipActivity.setActivityCode("New_"+ipActivity.getActivityCode());
+		ipActivity.setActivitySequence(ipActivity.getActivitySequence()+10);
+		ipActivity.setActivityDisplaySequence(ipActivity.getActivityDisplaySequence()+10);
+		ipActivity.setActivityName("New_"+ipActivity.getActivityName());
+		ipActivity.setActivityPercentCompletion("New_"+ipActivity.getActivityPercentCompletion());
+		ipActivity.setActivityEffort("New_"+ipActivity.getActivityEffort());
+		ipActivity.setActivityOwner("New_"+ipActivity.getActivityOwner());
+		ipActivity.setActivityCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipActivity.setActivityCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+		if(ipActivity.getActivityStatus().equalsIgnoreCase("Active"))
+			ipActivity.setActivityStatus("Passive");
+		else if(ipActivity.getActivityStatus().equalsIgnoreCase("Passive"))
+			ipActivity.setActivityStatus("Active");
+		else 
+			System.out.println("Please fix process.json data");
+		ipActivity.setActivityTasks(taskList);
+		
+		
+		return ipActivity;
+	}
+	
+	
+	
 	public Sector getSectorData() {
 		String SectorFilePath=JSONDataFilePath+"Sector/sector.json";
 		try {
@@ -331,6 +367,6 @@ public class JsonDataReader {
 		
 		return ipPattern;
 	}
-	
 
+	
 }

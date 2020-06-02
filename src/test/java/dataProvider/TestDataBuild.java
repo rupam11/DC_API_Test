@@ -21,8 +21,14 @@ public class TestDataBuild {
 	public Activity addActivity() {
 		Activity activity = jsonReader.getActivityData();		
 		return activity;
+		
 	}
 
+	public Activity updateActivity(Activity ipActivity) throws IOException {
+		Activity opActivity=jsonReader.updateActivityData(ipActivity);
+		return opActivity;	
+	}
+	
 	public Sector addSector() {
 		Sector sector = jsonReader.getSectorData();
 		return sector;
@@ -84,4 +90,5 @@ public class TestDataBuild {
 		return opPattern;		
 	}
 
+	
 }

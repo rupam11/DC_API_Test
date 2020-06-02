@@ -1,0 +1,3020 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-02T01:44:15.354Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2330000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Verify API: getActivityCount API return Total Activity Count",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitycount-api-return-total-activity-count",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1012000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "\"System_Admin\" User invoke \"getActivityCount\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getActivityCount\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4643000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User calls \"getActivityCount\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityCount\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 95000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify Activity_Count result is greater than or equal to 0",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.get_Activity_count()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityCount"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:23.741Z",
+        "before": [
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Verify API: createActivity API add Activity paylod",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-createactivity-api-add-activity-paylod",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1140000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "\"System_Admin\" User \"Add\" Activity Payload with Param \u003d \"none\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"none\"",
+                  "offset": 56
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1158000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User calls \"createActivity\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 236000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Verify response will return Activity instance",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_Activity_instance()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1071000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Verify Total Activity_Count increased by 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 41
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.verify_Total_Activity_Count_increased_by(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@createActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:27.393Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "Verify API: createActivity API with no pattern Body",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-createactivity-api-with-no-pattern-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "\"System_Admin\" User \"Add\" Activity Payload  with no Activity Body and Param \u003d \"none\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"none\"",
+                  "offset": 78
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_no_Activity_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1503000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User calls \"createActivity\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2239000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@createActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:31.177Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Verify API: getAllActivities API return List of All Activities",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getallactivities-api-return-list-of-all-activities",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "\"System_Admin\" User invoke \"getAllActivities\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getAllActivities\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3221000000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "User calls \"getAllActivities\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getAllActivities\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 188000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 953000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Total number of Activities in List is equal to getActivityCount",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.total_number_of_Activities_in_List_is_equal_to_getActivityCount()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getAllActivitys"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:35.644Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 36,
+        "name": "Verify API: getActivityBySearchCriteria API, search no SearchCriteria",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-no-searchcriteria",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "\"System_Admin\" User invoke \"getActivityBySearchCriteria\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2644000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 345000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "All Activities should have Active Status",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.all_Activities_should_have_Active_Status()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:38.804Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 45,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityId\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activityid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 576000000,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \"activityId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2275000000,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 32000000,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 102000000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Response should be List of Activities and size should be one",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.response_should_be_list_of_Activity_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:41.973Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 55,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityCode\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activitycode-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 127000000,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \"activityCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityCode\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1612000000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17000000,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Each Activity of returned ActivityList should have same activity \"activityCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"activityCode\"",
+                  "offset": 65
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \nExpected: a collection containing \u003cActivity [activityId\u003d308, activityCode\u003dACT_308, activitySequence\u003d308, activityDisplaySequence\u003d308, activityName\u003dPost Migration Activities For Jboss, activityStatus\u003dActive, activityPercentCompletion\u003d0, activityState\u003dNot Started, activityEffort\u003dNA, activityOwner\u003d, activityCreatedBy\u003drupam_sys, activityCreatedAt\u003d2020-06-01 20:44:40, activityUpdatedBy\u003dNA, activityUpdatedAt\u003d0000-00-00 00:00:00, activityTasks\u003d[Task [taskPercentCompletion\u003d0, taskApplicable\u003dNo, taskCode\u003dTSK_373, taskComments\u003dtest task comment, taskCreatedAt\u003d2020-06-01 20:44:40, taskCreatedBy\u003drupam_sys, taskDescription\u003drk_Add Task3, taskDisplaySequence\u003d0, taskEffort\u003dtask_effort, taskId\u003d373, taskOwner\u003downer, taskProcessName\u003dprocess_Nm, taskSequence\u003d0, taskSquadName\u003dsquad_Nm, taskSquadType\u003dClient, taskState\u003dNot Started, taskStatus\u003dActive, taskUpdatedAt\u003dNA, taskUpdatedBy\u003d0000-00-00 00:00:00]]]\u003e\n     but: was empty\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)\r\n\tat org.junit.Assert.assertThat(Assert.java:865)\r\n\tat org.junit.Assert.assertThat(Assert.java:832)\r\n\tat stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList(ActivityStepDefinition.java:224)\r\n\tat ✽.Activity added exist in returned ActivityList(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:61)\r\n",
+              "duration": 15000000,
+              "status": "failed"
+            },
+            "line": 61,
+            "name": "Activity added exist in returned ActivityList",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:43.816Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 64,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityName\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activityname-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 17000000,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \"activityName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityName\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3046000000,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 125000000,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: All searched List do not satisfy search criteria\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(ActivityStepDefinition.java:172)\r\n\tat ✽.Each Activity of returned ActivityList should have same activity \"activityName\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:69)\r\n",
+              "status": "failed"
+            },
+            "line": 69,
+            "name": "Each Activity of returned ActivityList should have same activity \"activityName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"activityName\"",
+                  "offset": 65
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:47.028Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 72,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityState\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activitystate-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \"activityState\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityState\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4863000000,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30000000,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "Each Activity of returned ActivityList should have same activity \"activityState\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"activityState\"",
+                  "offset": 65
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:51.964Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 81,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityStatus\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activitystatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 82,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \"activityStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityStatus\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1522000000,
+              "status": "passed"
+            },
+            "line": 83,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 84,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 85,
+            "name": "Verify response will return List of Activities",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "Each Activity of returned ActivityList should have same activity \"activityStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"activityStatus\"",
+                  "offset": 65
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \nExpected: a collection containing \u003cActivity [activityId\u003d308, activityCode\u003dACT_308, activitySequence\u003d308, activityDisplaySequence\u003d308, activityName\u003dPost Migration Activities For Jboss, activityStatus\u003dActive, activityPercentCompletion\u003d0, activityState\u003dNot Started, activityEffort\u003dNA, activityOwner\u003d, activityCreatedBy\u003drupam_sys, activityCreatedAt\u003d2020-06-01 20:44:40, activityUpdatedBy\u003dNA, activityUpdatedAt\u003d0000-00-00 00:00:00, activityTasks\u003d[Task [taskPercentCompletion\u003d0, taskApplicable\u003dNo, taskCode\u003dTSK_373, taskComments\u003dtest task comment, taskCreatedAt\u003d2020-06-01 20:44:40, taskCreatedBy\u003drupam_sys, taskDescription\u003drk_Add Task3, taskDisplaySequence\u003d0, taskEffort\u003dtask_effort, taskId\u003d373, taskOwner\u003downer, taskProcessName\u003dprocess_Nm, taskSequence\u003d0, taskSquadName\u003dsquad_Nm, taskSquadType\u003dClient, taskState\u003dNot Started, taskStatus\u003dActive, taskUpdatedAt\u003dNA, taskUpdatedBy\u003d0000-00-00 00:00:00]]]\u003e\n     but: was empty\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)\r\n\tat org.junit.Assert.assertThat(Assert.java:865)\r\n\tat org.junit.Assert.assertThat(Assert.java:832)\r\n\tat stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList(ActivityStepDefinition.java:224)\r\n\tat ✽.Activity added exist in returned ActivityList(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:87)\r\n",
+              "status": "failed"
+            },
+            "line": 87,
+            "name": "Activity added exist in returned ActivityList",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:53.528Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 90,
+        "name": "Verify API: getActivityBySearchCriteria API, search by \u0027activityId\u0027 \u0026 \u0027activityCode\u0027 \u0026 \u0027activityName\u0027 \u0026 \u0027activityState\u0027 \u0026 \u0027activityStatus\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by--activityid--\u0026--activitycode--\u0026--activityname--\u0026--activitystate--\u0026--activitystatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 91,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with Parameter: \u0027activityId\u0027 \u0026 \u0027activityCode\u0027 \u0026 \u0027activityName\u0027 \u0026 \u0027activityState\u0027 \u0026 \u0027activityStatus\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\u0027activityId\u0027",
+                  "offset": 71
+                },
+                {
+                  "val": "\u0027activityCode\u0027",
+                  "offset": 86
+                },
+                {
+                  "val": "\u0027activityName\u0027",
+                  "offset": 103
+                },
+                {
+                  "val": "\u0027activityState\u0027",
+                  "offset": 120
+                },
+                {
+                  "val": "\u0027activityStatus\u0027",
+                  "offset": 138
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1500000000,
+              "status": "passed"
+            },
+            "line": 92,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Search by ActivityId do not list one Activity\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ActivityStepDefinition.response_should_be_list_of_Activity_and_size_should_be_one(ActivityStepDefinition.java:167)\r\n\tat ✽.Response should be List of Activities and size should be one(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:94)\r\n",
+              "duration": 5000000,
+              "status": "failed"
+            },
+            "line": 94,
+            "name": "Response should be List of Activities and size should be one",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.response_should_be_list_of_Activity_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 95,
+            "name": "Response Activity is same which was added",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.response_Activity_is_same_which_was_added()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 96,
+            "name": "Activity added exist in returned ActivityList",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:55.066Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 99,
+        "name": "Verify API: getActivityBySearchCriteria API, search by invalid \u0027activityId\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by-invalid--activityid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 100,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with invalid Parameter: \"activityId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 94
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1524000000,
+              "status": "passed"
+            },
+            "line": 101,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 102,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 103,
+            "name": "Verify response will return List of Activities with zero records",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:56.613Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 106,
+        "name": "Verify API: getActivityBySearchCriteria API, search by invalid \u0027activityCode\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by-invalid--activitycode-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 107,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with invalid Parameter: \"activityCode\" \u003d \"invalidActivityCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityCode\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"invalidActivityCode\"",
+                  "offset": 96
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1507000000,
+              "status": "passed"
+            },
+            "line": 108,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 109,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 110,
+            "name": "Verify response will return List of Activities with zero records",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:44:58.150Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 113,
+        "name": "Verify API: getActivityBySearchCriteria API, search by invalid \u0027activityName\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by-invalid--activityname-",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 114,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with invalid Parameter: \"activityName\" \u003d \"invalidActivityName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityName\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"invalidActivityName\"",
+                  "offset": 96
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2879000000,
+              "status": "passed"
+            },
+            "line": 115,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 116,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Count is not correct\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records(ActivityStepDefinition.java:212)\r\n\tat ✽.Verify response will return List of Activities with zero records(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:117)\r\n",
+              "duration": 14000000,
+              "status": "failed"
+            },
+            "line": 117,
+            "name": "Verify response will return List of Activities with zero records",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:01.065Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 120,
+        "name": "Verify API: getActivityBySearchCriteria API, search by invalid \u0027activityState\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by-invalid--activitystate-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 121,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with invalid Parameter: \"activityState\" \u003d \"invalidActivityState\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityState\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"invalidActivityState\"",
+                  "offset": 97
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3391000000,
+              "status": "passed"
+            },
+            "line": 122,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 123,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Count is not correct\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records(ActivityStepDefinition.java:212)\r\n\tat ✽.Verify response will return List of Activities with zero records(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:124)\r\n",
+              "duration": 10000000,
+              "status": "failed"
+            },
+            "line": 124,
+            "name": "Verify response will return List of Activities with zero records",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:04.487Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 127,
+        "name": "Verify API: getActivityBySearchCriteria API, search by invalid \u0027activityStatus\u0027",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-getactivitybysearchcriteria-api--search-by-invalid--activitystatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 128,
+            "name": "\"System_Admin\" User invoke getActivityBySearchCriteria with invalid Parameter: \"activityStatus\" \u003d \"invalidActivityStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityStatus\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"invalidActivityStatus\"",
+                  "offset": 98
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1505000000,
+              "status": "passed"
+            },
+            "line": 129,
+            "name": "User calls \"getActivityBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getActivityBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 130,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 131,
+            "name": "Verify response will return List of Activities with zero records",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getActivityBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:06.032Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 134,
+        "name": "Verify API: deleteActivity update Activity status as Passive",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-deleteactivity-update-activity-status-as-passive",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 135,
+            "name": "\"System_Admin\" User invoke deleteActivity with Parameter: \"activityId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_invoke_deleteActivity_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1787000000,
+              "status": "passed"
+            },
+            "line": 136,
+            "name": "User calls \"deleteActivity\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 137,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 138,
+            "name": "Verify response will return Activity instance",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_response_will_return_Activity_instance()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 61000000,
+              "status": "passed"
+            },
+            "line": 139,
+            "name": "\"activityStatus\" in response body is \"Passive\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"activityStatus\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Passive\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@deleteActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:07.928Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 142,
+        "name": "Verify API: deleteActivity API,  with invalid activityId",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-deleteactivity-api---with-invalid-activityid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 143,
+            "name": "\"System_Admin\" User invoke \"deleteActivity\" with invalid Parameter: \"activityId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"deleteActivity\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 68
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 83
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1578000000,
+              "status": "passed"
+            },
+            "line": 144,
+            "name": "User calls \"deleteActivity\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 145,
+            "name": "The API call is success with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 146,
+            "name": "\"message\" in response body is \"No activity found for activityId: -9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"No activity found for activityId: -9\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@deleteActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:09.554Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 149,
+        "name": "Verify API: deleteActivity API, with no Param",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-deleteactivity-api--with-no-param",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 150,
+            "name": "\"System_Admin\" User deleteActivity with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_deleteActivity_with_no_Param(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1522000000,
+              "status": "passed"
+            },
+            "line": 151,
+            "name": "User calls \"deleteActivity\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 152,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 153,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027activityId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027activityId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@deleteActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:11.122Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 156,
+        "name": "Verify API: updateActivity API add Activity paylod",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-updateactivity-api-add-activity-paylod",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 157,
+            "name": "\"System_Admin\" User \"Update\" Activity Payload with Param \u003d \"activityId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 59
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1707000000,
+              "status": "passed"
+            },
+            "line": 158,
+            "name": "User calls \"updateActivity\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 159,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \nExpected: is \u003cActivity [activityId\u003d12, activityCode\u003dNew_ACT_12, activitySequence\u003d10, activityDisplaySequence\u003d10, activityName\u003dNew_Post Migration Activities For Jboss, activityStatus\u003dActive, activityPercentCompletion\u003d0, activityState\u003dNot Started, activityEffort\u003dNew_null, activityOwner\u003dNew_null, activityCreatedBy\u003ddchelp, activityCreatedAt\u003d2018-02-02 14:49:08, activityUpdatedBy\u003drupam_sys, activityUpdatedAt\u003d2020-06-01 20:45:26, activityTasks\u003d[Task [taskPercentCompletion\u003d0, taskApplicable\u003dYes, taskCode\u003dTSK_247, taskComments\u003d, taskCreatedAt\u003d2020-03-08 00:48:00, taskCreatedBy\u003ddchelp, taskDescription\u003dConfirm IBM DBA access is enabled on source(DB Backup files path) and target server, taskDisplaySequence\u003d0, taskEffort\u003d, taskId\u003d247, taskOwner\u003d, taskProcessName\u003d, taskSequence\u003d0, taskSquadName\u003dCloud Migration Factory, taskSquadType\u003dIBM, taskState\u003dNot Started, taskStatus\u003dActive, taskUpdatedAt\u003d2020-06-01 20:45:26, taskUpdatedBy\u003drupam_sys]]]\u003e\n     but: was \u003cActivity [activityId\u003d12, activityCode\u003dNew_ACT_12, activitySequence\u003d10, activityDisplaySequence\u003d10, activityName\u003dNew_Post Migration Activities For Jboss, activityStatus\u003dActive, activityPercentCompletion\u003dNew_0, activityState\u003dNot Started, activityEffort\u003dNew_null, activityOwner\u003dNew_null, activityCreatedBy\u003ddchelp, activityCreatedAt\u003d2018-02-02 14:49:08, activityUpdatedBy\u003drupam_sys, activityUpdatedAt\u003d2020-06-01 20:45:21, activityTasks\u003d[Task [taskPercentCompletion\u003d0, taskApplicable\u003dYes, taskCode\u003dTSK_247, taskComments\u003d, taskCreatedAt\u003d2020-03-08 00:48:00, taskCreatedBy\u003ddchelp, taskDescription\u003dConfirm IBM DBA access is enabled on source(DB Backup files path) and target server, taskDisplaySequence\u003d0, taskEffort\u003d, taskId\u003d247, taskOwner\u003d, taskProcessName\u003d, taskSequence\u003d0, taskSquadName\u003dCloud Migration Factory, taskSquadType\u003dIBM, taskState\u003dNot Started, taskStatus\u003dActive, taskUpdatedAt\u003d0000-00-00 00:00:00, taskUpdatedBy\u003d]]]\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)\r\n\tat org.junit.Assert.assertThat(Assert.java:865)\r\n\tat org.junit.Assert.assertThat(Assert.java:832)\r\n\tat stepDefinitions.ActivityStepDefinition.verify_Activity_fields_gets_updated(ActivityStepDefinition.java:218)\r\n\tat ✽.Verify Activity fields gets updated(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/test.feature:160)\r\n",
+              "duration": 8000000,
+              "status": "failed"
+            },
+            "line": 160,
+            "name": "Verify Activity fields gets updated",
+            "match": {
+              "location": "stepDefinitions.ActivityStepDefinition.verify_Activity_fields_gets_updated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:12.878Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 163,
+        "name": "Verify API: updateActivity API, with invalid activityId",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-updateactivity-api--with-invalid-activityid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 164,
+            "name": "\"System_Admin\" User \"Update\" Activity Payload  with invalid Param \u003d \"activityId\" and value\u003d\"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 68
+                },
+                {
+                  "val": "-9",
+                  "offset": 92
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1469000000,
+              "status": "passed"
+            },
+            "line": 165,
+            "name": "User calls \"updateActivity\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 166,
+            "name": "The API call is success with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 167,
+            "name": "\"message\" in response body is \"No activity found for activityId: -9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"No activity found for activityId: -9\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:14.405Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 170,
+        "name": "Verify API: updateActivity API, with no activityId",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-updateactivity-api--with-no-activityid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 171,
+            "name": "\"System_Admin\" User \"Update\" Activity Payload  with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1464000000,
+              "status": "passed"
+            },
+            "line": 172,
+            "name": "User calls \"updateActivity\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 173,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 174,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027activityId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027activityId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateActivity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-02T01:45:15.924Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 177,
+        "name": "Verify API: updateActivity API, with no pattern Body",
+        "description": "",
+        "id": "validating-activity-service-apis;verify-api:-updateactivity-api--with-no-pattern-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 178,
+            "name": "\"System_Admin\" User \"Update\" Activity Payload  with no Activity Body and Param \u003d \"activityId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"activityId\"",
+                  "offset": 81
+                }
+              ],
+              "location": "stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_no_Activity_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1493000000,
+              "status": "passed"
+            },
+            "line": 179,
+            "name": "User calls \"updateActivity\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateActivity\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 180,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 181,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.updateActivity(java.lang.String,java.lang.Integer,com.ibm.dc.activity.entity.Activity)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.updateActivity(java.lang.String,java.lang.Integer,com.ibm.dc.activity.entity.Activity)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateActivity"
+          }
+        ]
+      }
+    ],
+    "name": "Validating Activity-Service APIs",
+    "description": "",
+    "id": "validating-activity-service-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/test.feature",
+    "tags": [
+      {
+        "name": "@DC-Test-Suite",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@Test",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 16
+        }
+      }
+    ]
+  }
+]

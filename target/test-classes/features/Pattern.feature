@@ -132,8 +132,8 @@ Feature: Validating Pattern-Service APIs
     Then "message" in response body is "No pattern found for patternId: -9"
 
   @deletePattern
-  Scenario: Verify API: deletePattern API,  with no Param
-    Given "System_Admin" User invoke "deletePattern"
+  Scenario: Verify API: deletePattern API, with no Param
+    Given "System_Admin" User deletePattern with no Param
     When User calls "deletePattern" API with "Delete" http Request
     Then The API call is success with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'patternId' is not present"

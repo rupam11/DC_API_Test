@@ -61,7 +61,6 @@ public class PatternStepDefinition extends Utils {
 	@Given("{string} User {string} Pattern Payload  with invalid Param = {string} and value=\"{int}\"")
 	public void user_Pattern_Payload_with_invalid_Param(String userRole, String payloadReq,String param, int i) throws IOException {
 
-		//int invalidPatternId=Integer.parseInt(i);
 		reqPattern = data.updatePattern(respPattern);
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole)).body(reqPattern).queryParam(param,i);
@@ -277,19 +276,24 @@ public class PatternStepDefinition extends Utils {
 
 	@Given("{string} User {string} Pattern Payload  with no Pattern Body and Param = {string}")
 	public void user_Pattern_Payload_with_no_Pattern_Body(String userRole, String payloadReq, String param) throws IOException {
-		if (payloadReq.equalsIgnoreCase("Add"))
-		{	
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole));
-		}
-		else if (payloadReq.equalsIgnoreCase("Update"))
-		{
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParam(param, respPattern.getPatternId());
-			
-		}			
-		else
-			System.out.println("Issue in Payload creation request");
+//		if (payloadReq.equalsIgnoreCase("Add"))
+//		{	
+//			reqSpec=null;
+//			reqSpec = given().spec(requestSpecification(userRole));
+//		}
+//		else if (payloadReq.equalsIgnoreCase("Update"))
+//		{
+//			reqSpec=null;
+//			reqSpec = given().spec(requestSpecification(userRole)).queryParam(param, respPattern.getPatternId());
+//			
+//		}			
+//		else
+//			System.out.println("Issue in input request");
+	
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole));
+if (payloadReq.equalsIgnoreCase("Update"))
+		reqSpec = reqSpec.queryParam(param, respPattern.getPatternId());
 	
 	}
 	
