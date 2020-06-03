@@ -119,6 +119,12 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
   
+  @deleteTask
+  Scenario: Verify API: deleteTask update Task status as Passive
+    Given "System_Admin" User invoke deleteTask with Parameter: "taskId"
+    When User calls "deleteTask" API with "Delete" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify responseBody is instance of Task
  
   @deleteTask
   Scenario: Verify API: deleteTask API,  with invalid taskId
