@@ -17,7 +17,7 @@ Feature: Validating Activity-Service APIs
     Then Verify Total Activity_Count increased by 1
 
   @createActivity
-  Scenario: Verify API: createActivity API with no pattern Body
+  Scenario: Verify API: createActivity API with no activity Body
     Given "System_Admin" User "Add" Activity Payload  with no Activity Body and Param = "none"
     When User calls "createActivity" API with "Post" http Request
     Then The API call is success with StatusCode 400
