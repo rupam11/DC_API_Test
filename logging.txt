@@ -1,8 +1,8 @@
 Request method:	PUT
-Request URI:	https://9.51.192.136:9080/activity-service/updateActivity?activityId=-9
+Request URI:	https://9.51.192.136:9080/activity-service/updateActivity?activityId=12
 Proxy:			<none>
 Request params:	<none>
-Query params:	activityId=-9
+Query params:	activityId=12
 Form params:	<none>
 Path params:	<none>
 Headers:		user=ew0KICAidXNlckFjY291bnRTdGF0dXMiOiBudWxsLA0KICAidXNlckNyZWF0ZWRBdCI6ICIyMDIwLTA0LTI0IDAwOjI5OjIxIiwNCiAgInVzZXJDcmVhdGVkQnkiOiAicnVwYW1fc3lzIiwNCiAgInVzZXJFbWFpbCI6ICJydXBhbWt1bUBpbi5pYm0uY29tIiwNCiAgInVzZXJJZCI6IDUsDQogICJ1c2VyTmFtZSI6ICJydXBhbV9zeXMiLA0KICAidXNlclJvbGUiOiAiU3lzdGVtIEFkbWluIiwNCiAgInVzZXJTZXNzaW9uVG9rZW4iOiAiSW5hY3RpdmUiLA0KICAidXNlclN0YXR1cyI6ICJBY3RpdmUiLA0KICAidXNlclR5cGUiOiAiSUJNIiwNCiAgInVzZXJVcGRhdGVkQXQiOiAiMjAyMC0wNS0xNSAxMzowNzoyNSIsDQogICJ1c2VyVXBkYXRlZEJ5IjogInJ1cGFtX3N5cyINCn0=
@@ -10,92 +10,20 @@ Headers:		user=ew0KICAidXNlckFjY291bnRTdGF0dXMiOiBudWxsLA0KICAidXNlckNyZWF0ZWRBd
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "activityId": 12,
-    "activityCode": "New_New_New_New_New_New_New_New_New_New_New_New_ACT_12",
-    "activitySequence": 132,
-    "activityDisplaySequence": 132,
-    "activityName": "New_New_New_New_New_New_New_New_New_New_New_New_Post Migration Activities For Jboss",
-    "activityStatus": "Passive",
-    "activityPercentCompletion": "New_0",
-    "activityState": "Not Started",
-    "activityEffort": "New_New_New_New_New_New_New_New_New_New_New_New_0",
-    "activityOwner": "New_New_New_New_New_New_New_New_New_New_New_New_N/A",
-    "activityCreatedBy": "dchelp",
-    "activityCreatedAt": "2018-02-02 14:49:08",
-    "activityUpdatedBy": "rupam_sys",
-    "activityUpdatedAt": "2020-06-03 03:58:10",
-    "activityTasks": [
-        {
-            "percentCompletion": "0",
-            "taskApplicable": "Yes",
-            "taskCode": "TSK_247",
-            "taskComments": "",
-            "taskCreatedAt": "2020-03-08 00:48:00",
-            "taskCreatedBy": "dchelp",
-            "taskDescription": "Confirm IBM DBA access is enabled on source(DB Backup files path) and target server",
-            "taskDisplaySequence": 0,
-            "taskEffort": "",
-            "taskId": 247,
-            "taskOwner": "",
-            "taskProcessName": "",
-            "taskSequence": 0,
-            "taskSquadName": "Cloud Migration Factory",
-            "taskSquadType": "IBM",
-            "taskState": "Not Started",
-            "taskStatus": "Active",
-            "taskUpdatedAt": "0000-00-00 00:00:00",
-            "taskUpdatedBy": ""
-        }
-    ]
-}
-HTTP/1.1 200 
+Body:			<none>
+HTTP/1.1 400 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Wed, 03 Jun 2020 08:58:12 GMT
-Keep-Alive: timeout=60
+Date: Wed, 03 Jun 2020 09:28:05 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
-Connection: keep-alive
+Connection: close
 
 {
-    "activityId": 12,
-    "activityCode": "New_New_New_New_New_New_New_New_New_New_New_New_ACT_12",
-    "activitySequence": 132,
-    "activityDisplaySequence": 132,
-    "activityName": "New_New_New_New_New_New_New_New_New_New_New_New_Post Migration Activities For Jboss",
-    "activityStatus": "Passive",
-    "activityPercentCompletion": "0",
-    "activityState": "Not Started",
-    "activityEffort": "New_New_New_New_New_New_New_New_New_New_New_New_0",
-    "activityOwner": "New_New_New_New_New_New_New_New_New_New_New_New_N/A",
-    "activityCreatedBy": "dchelp",
-    "activityCreatedAt": "2018-02-02 14:49:08",
-    "activityUpdatedBy": "rupam_sys",
-    "activityUpdatedAt": "2020-06-03 03:58:12",
-    "activityTasks": [
-        {
-            "taskId": 247,
-            "taskCode": "TSK_247",
-            "taskSequence": 0,
-            "taskDisplaySequence": 0,
-            "taskDescription": "Confirm IBM DBA access is enabled on source(DB Backup files path) and target server",
-            "taskStatus": "Active",
-            "taskComments": "",
-            "taskApplicable": "Yes",
-            "percentCompletion": "0",
-            "taskState": "Not Started",
-            "taskEffort": "",
-            "taskOwner": "",
-            "taskCreatedBy": "dchelp",
-            "taskCreatedAt": "2020-03-08 00:48:00",
-            "taskUpdatedBy": "rupam_sys",
-            "taskUpdatedAt": "2020-06-03 03:58:12",
-            "taskProcessName": "",
-            "taskSquadName": "Cloud Migration Factory",
-            "taskSquadType": "IBM"
-        }
-    ]
+    "timestamp": "2020-06-03T09:28:05.125+0000",
+    "status": 400,
+    "error": "Bad Request",
+    "message": "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.updateActivity(java.lang.String,java.lang.Integer,com.ibm.dc.activity.entity.Activity)",
+    "path": "/updateActivity"
 }

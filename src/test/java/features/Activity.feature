@@ -49,9 +49,8 @@ Feature: Validating Activity-Service APIs
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
     Then Response should be List of Activities and size should be one
-
-  #Then Response Activity is same which was added
-  #Then Activity added exist in returned ActivityList
+		Then Response Activity is same which was added
+  
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityCode'
     Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityCode"
