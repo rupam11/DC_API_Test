@@ -121,7 +121,6 @@ public class SectorStepDefinition extends Utils {
 		Sector[] expAllSectors = response.getBody().as(Sector[].class);
 		assertArrayEquals("All Sectors not searched in case of no Search Criteria", expAllSectors, actAllSectors);
 	}
-	
 	@Then("Verify Total sector_Count increased by 1")
 	public void verify_Total_sector_Count_increased_by() {
 		int old_count=sectCount;
@@ -140,11 +139,6 @@ public class SectorStepDefinition extends Utils {
 	    	assertEquals("Sector with Passive status searched!!!", "Active", sec.getSectorStatus());
 	}
 
-	@Then("Created Sector should exist in the List of Sectors")
-	public void created_Sector_should_exist_in_the_List_of_Sectors() {
-		List<Sector> sectorList = Arrays.asList(respAllSectors);
-		assertThat(sectorList, hasItem(respSector));
-	}
 
 	@Given("{string} User {string} Sector Payload  with no Sector Body and Param = {string}")
 	public void user_sector_Payload_with_no_Sector_Body_and_Param(String userRole, String payloadReq, String param) throws IOException {
@@ -162,15 +156,26 @@ public class SectorStepDefinition extends Utils {
 																		
 	}
 	
-	/*@Given("{string} User invoke getSectorBySearchCriteria with invalid Parameter: {string} = {string}")
-	public void user_invoke_getSectorBySearchCriteria_with_invalid_Parameter(String string, String string2, String string3) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}*/
-	
 	@Then("Verify response will return List of Sectors with zero records")
 	public void verify_response_will_return_List_of_Sectors_with_zero_records() {
 	    respAllSectors = response.getBody().as(Sector[].class);
 		assertTrue("Count is not zero in case of invalid search criteria.", respAllSectors.length == 0);
 	}
+
+	@Given("{string} User {string} Sector Payload  with invalid Param = {string} and value=\"{int}\"")
+	public void user_Sector_Payload_with_invalid_Param_and_value(String userRole, String param, String payloadReq, int i) throws IOException {
+		reqSector = data.updateSector(respSector);
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqSector).queryParam(param,i);
+	}
+	
+	@Given("{string} User {string} Sector Payload  with no Param")
+	public void user_Sector_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
+			reqSector = data.updateSector(respSector);
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqSector);
+	}
+	
+	
+
 }
