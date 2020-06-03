@@ -129,13 +129,6 @@ public class PatternStepDefinition extends Utils {
 		}
 	}
 
-	@Given("{string} User invoke {string} with invalid Parameter: {string} = {string}")
-	public void user_invoke_api_with_invalid_Parameter(String userRole,String apiNm, String param, String var) throws IOException {
-			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,var);	
-	}
-	
-		
 	@Given("{string} User invoke getPatternBySearchCriteria with Parameter: {string} & {string} & {string} & {string}")
 	public void user_invoke_getPatternBySearchCriteria_with_all_Parameter(String userRole, String param1, String param2,String param3,String param4) throws IOException {
 		reqSpec = null;
@@ -158,35 +151,10 @@ public class PatternStepDefinition extends Utils {
 		assertEquals("Wrong Pattern filtered", respPattern, respAllPattern[0]);
 	}
 
-		@Then("Verify Pattern fields gets updated")
-		public void verify_Patternfields_gets_updated() {
+	@Then("Verify Pattern fields gets updated")
+	public void verify_Patternfields_gets_updated() {
 		respPattern = response.getBody().as(Pattern.class);
-//		expJsonObj=updateJson(new JSONObject(reqPattern),"pattern");
-//		actJsonObj=updateJson(new JSONObject(respPattern),"pattern");
-//		System.out.println("reqPattern After updatJson"+expJsonObj);
-//		System.out.println("respPattern After updatJson"+actJsonObj);
-//		Gson gson=new Gson();
-//		reqPattern=gson.fromJson(expJsonObj.toString(), Pattern.class);
-//		respPattern=gson.fromJson(actJsonObj.toString(), Pattern.class);
-//		System.out.println("reqPattern After Json to java"+expJsonObj);
-//		System.out.println("respPattern After json to java"+actJsonObj);
-//		
-		assertThat(reqPattern, is(respPattern));
-		
-//		assertEquals("mtch error",reqPattern.toString(),respPattern.toString());
-//		assertEquals("Pattern code not updated", reqPattern.getPatternCode(), respPattern.getPatternCode());
-//		assertEquals("Pattern Sequence not updated", reqPattern.getPatternSequence(), respPattern.getPatternSequence());
-//		assertEquals("Pattern DisplaySequence not updated", reqPattern.getPatternDisplaySequence(),
-//				respPattern.getPatternDisplaySequence());
-//		assertEquals("Pattern Name not updated", reqPattern.getPatternName(),
-//				respPattern.getPatternName());
-//		assertEquals("Pattern Status not updated", reqPattern.getPatternStatus(), respPattern.getPatternStatus());
-//		assertEquals("Pattern Completion not updated", reqPattern.getPatternCompletion(), respPattern.getPatternCompletion());
-//		assertEquals("Pattern Effort not updated", reqPattern.getPatternEffort(), respPattern.getPatternEffort());
-//		assertEquals("Pattern CreatedAt not updated", reqPattern.getPatternCreatedAt(), respPattern.getPatternCreatedAt());
-//		assertEquals("Pattern Created By not updated", reqPattern.getPatternCreatedBy(), respPattern.getPatternCreatedBy());
-//		assertEquals("Pattern Patterntatus not updated", reqPattern.getPatternStatus(), respPattern.getPatternStatus());
-//		assertEquals("Pattern Actvities not updated", reqPattern.getPatternActivities(), respPattern.getPatternActivities());		
+		assertThat(reqPattern, is(respPattern));		
 	}
 
 	@Then("Response should be list all Pattern=getAllPattern")
@@ -276,32 +244,12 @@ public class PatternStepDefinition extends Utils {
 
 	@Given("{string} User {string} Pattern Payload  with no Pattern Body and Param = {string}")
 	public void user_Pattern_Payload_with_no_Pattern_Body(String userRole, String payloadReq, String param) throws IOException {
-//		if (payloadReq.equalsIgnoreCase("Add"))
-//		{	
-//			reqSpec=null;
-//			reqSpec = given().spec(requestSpecification(userRole));
-//		}
-//		else if (payloadReq.equalsIgnoreCase("Update"))
-//		{
-//			reqSpec=null;
-//			reqSpec = given().spec(requestSpecification(userRole)).queryParam(param, respPattern.getPatternId());
-//			
-//		}			
-//		else
-//			System.out.println("Issue in input request");
-	
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole));
-if (payloadReq.equalsIgnoreCase("Update"))
-		reqSpec = reqSpec.queryParam(param, respPattern.getPatternId());
+		
+		if (payloadReq.equalsIgnoreCase("Update"))
+			reqSpec = reqSpec.queryParam(param, respPattern.getPatternId());
 	
-	}
-	
-	@Given ("{string} User deletePattern with no Param")
-	public void deletePattern_with_no_Param(String userRole) throws IOException {
-		reqSpec=null;
-		reqSpec = given().spec(requestSpecification(userRole));		
-	}
-	  
+	}	  
 
 }

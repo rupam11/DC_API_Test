@@ -57,5 +57,17 @@ public class CommonStepDefinition extends Utils {
 		assertEquals(Integer.parseInt(getKeyValueFromJsonResponse(response, keyName)), keyValue);
 	}
 	
+	@Given("{string} User invoke {string} with invalid Parameter: {string} = {string}")
+	public void user_invoke_api_with_invalid_Parameter(String userRole,String apiNm, String param, String var) throws IOException {
+			reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,var);	
+	}
+	
+	@Given ("{string} User {string} with no Param")
+	public void deletePattern_with_no_Param(String userRole,String apiNm) throws IOException {
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole));		
+	}
+
 	
 }

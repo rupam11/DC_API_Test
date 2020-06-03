@@ -102,12 +102,6 @@ public class ActivityStepDefinition extends Utils {
 																	
 	}
 
-	@Given("{string} User deleteActivity with no Param")
-	public void user_deleteActivity_with_no_Param(String userRole) throws IOException {
-		reqSpec=null;
-		reqSpec = given().spec(requestSpecification(userRole));		
-	}
-
 	@Given("{string} User invoke deleteActivity with Parameter: {string}")
 	public void user_invoke_deleteActivity_with_Parameter(String userRole, String param) throws IOException {
 	    reqSpec = null;
@@ -115,17 +109,18 @@ public class ActivityStepDefinition extends Utils {
 		
 	}
 	
-	@Given("{string} User invoke getActivityBySearchCriteria with invalid Parameter: {string} = {string}")
-	public void user_invoke_getActivityBySearchCriteria_with_invalid_Parameter(String userRole, String param, String var) throws IOException {
-		reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,var);	
-	}
-
 	@Then("Verify Activity_Count result is greater than or equal to 0")
 	public int get_Activity_count() {
-	    activity_Count = Integer.parseInt(response.getBody().asString());
-		assertTrue("Count is not correct", activity_Count >= 0);
+		activity_Count = Integer.parseInt(response.getBody().asString());
+	    assertTrue("Count is not correct", activity_Count >= 0);
 		return activity_Count;
+	}
+	
+	@Then("Verify Total activity count should be greater than 0")
+	public void verify_count_greater_than_0() {
+	    int act_Count = response.getBody().as(Activity[].class).length;
+	    System.out.println("activity_coiunt==="+act_Count);
+		assertTrue("No Activity searched back", act_Count != 0);		
 	}
 
 	@Then("Verify response will return Activity instance")

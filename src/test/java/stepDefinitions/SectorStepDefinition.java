@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import entity.Sector;
+import entity.Task;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import testBase.Utils;
@@ -67,7 +68,7 @@ public class SectorStepDefinition extends Utils {
 	@Then("Sector added exist in returned SectorList")
 	public void Sector_added_exist_in_returned_SectorList() {
 		List<Sector> sectorList = Arrays.asList(respAllSectors);
-		assertThat(sectorList, hasItems(respSector));
+		assertThat(sectorList, hasItem(respSector));
 	}
 
 	@Given("{string} User invoke getSectorBySearchCriteria with Parameter: {string}")
@@ -145,4 +146,31 @@ public class SectorStepDefinition extends Utils {
 		assertThat(sectorList, hasItem(respSector));
 	}
 
+	@Given("{string} User {string} Sector Payload  with no Sector Body and Param = {string}")
+	public void user_sector_Payload_with_no_Sector_Body_and_Param(String userRole, String payloadReq, String param) throws IOException {
+	    reqSpec=null;
+				reqSpec = given().spec(requestSpecification(userRole));
+			if (payloadReq.equalsIgnoreCase("Update"))
+					reqSpec = reqSpec.queryParam(param, respSector.getSectorId());
+	}
+	
+	@Given("{string} User invoke getSectorBySearchCriteria with Parameter: {string} & {string}")
+	public void user_invoke_getTaskBySearchCriteria_with_Parameter(String userRole, String param1, String param2) throws IOException {
+		 reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1,respSector.getSectorId())
+																		.queryParam(param2, respSector.getSectorName());
+																		
+	}
+	
+	/*@Given("{string} User invoke getSectorBySearchCriteria with invalid Parameter: {string} = {string}")
+	public void user_invoke_getSectorBySearchCriteria_with_invalid_Parameter(String string, String string2, String string3) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}*/
+	
+	@Then("Verify response will return List of Sectors with zero records")
+	public void verify_response_will_return_List_of_Sectors_with_zero_records() {
+	    respAllSectors = response.getBody().as(Sector[].class);
+		assertTrue("Count is not zero in case of invalid search criteria.", respAllSectors.length == 0);
+	}
 }

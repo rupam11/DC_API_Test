@@ -93,31 +93,31 @@ Feature: Validating Task API's
   
   @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskId'
-    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskId" = "-9"
+    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskId" = "-9"
     When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities with zero records
+    Then Verify response will return List of Tasks with zero records
 
   @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskDescription'
-    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskDescription" = "invalidDescriptionName"
+    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskDescription" = "invalidDescriptionName"
     When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities with zero records
+    Then Verify response will return List of Tasks with zero records
 
   @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskApplicable'
-    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskApplicable" = "invalidTaskApplicable"
+    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskApplicable" = "invalidTaskApplicable"
     When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities with zero records
+    Then Verify response will return List of Tasks with zero records
 
   @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskStatus'
-    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskStatus" = "invalidTaskStatus"
+    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskStatus" = "invalidTaskStatus"
     When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities with zero records
+    Then Verify response will return List of Tasks with zero records
   
   @deleteTask
   Scenario: Verify API: deleteTask update Task status as Passive
@@ -135,7 +135,7 @@ Feature: Validating Task API's
 
   @deleteTask
   Scenario: Verify API: deleteTask API, with no Param
-    Given "System_Admin" User deleteTask with no Param
+    Given "System_Admin" User "deleteTask" with no Param
     When User calls "deleteTask" API with "Delete" http Request
     Then The API call is success with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'taskId' is not present"

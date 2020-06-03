@@ -134,12 +134,6 @@ public class TaskStepDefinition extends Utils{
 			reqSpec.queryParam(param, respTask.getTaskStatus());
 	}
 
-	/*@Then("Response Task is added should be filtered")
-		public void response_Task_is_added_should_be_filtered() {
-		List<Task> getAllTaskList = Arrays.asList(respAllTasks);
-		assertThat(getAllTaskList, hasItem(respTask));		
-	}*/
-	
 	@Then("Response Task which was added should be filtered")
 	public void response_Task_is_added_should_be_filtered() {
 		List<Task> getAllTaskList = Arrays.asList(respAllTasks);
@@ -223,18 +217,6 @@ public class TaskStepDefinition extends Utils{
 			assertEquals("Wrong Task filtered", respTask.toString(), respAllTasks[0].toString());
 	}
 
-	@Given("{string} User invoke getTaskBySearchCriteria with invalid Parameter: {string} = {string}")
-	public void user_invoke_getTaskBySearchCriteria_with_invalid_Parameter(String userRole, String param, String var) throws IOException {
-	    reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,var);	
-	}
-
-	@Given("{string} User deleteTask with no Param")
-	public void user_deleteTask_with_no_Param(String userRole) throws IOException {
-	   reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole));	
-	}
-
 	@Given("{string} User {string} Task Payload  with invalid Param = {string} and value=\"{int}\"")
 	public void user_Task_Payload_with_invalid_Param_and_value(String userRole, String payloadReq, String param, int i) throws IOException {
 	    reqTask = data.updateTask(respTask);
@@ -255,18 +237,9 @@ public class TaskStepDefinition extends Utils{
 	    	assertEquals("Task with Passive status searched!!!"+task.getTaskId(), "Active", task.getTaskStatus());
 	    
 	}
-	/*
-	@Then("Response should be list of Tasks and satisfy the search: {string}")
-	public void response_should_be_list_of_Tasks_and_satisfy_the_search(String srchCriteria) {
-		respAllTasks = response.getBody().as(Task[].class);
-		for(Task t:respAllTasks)
-			assertTrue("Wrong list of Tasks searched back",respTask.getTaskApplicable().equalsIgnoreCase(t.getTaskApplicable()));
-	}*/
 	
 	@Then("Response should be List of Tasks and size should be one")
 	public void response_should_be_List_of_Tasks_and_size_should_be_one() {
-//		List<Task> getAllTaskList = Arrays.asList(respAllTasks);
-//		assertThat(getAllTaskList, hasSize(1));
 		respAllTasks = response.getBody().as(Task[].class);
 		assertTrue("Search by taskId do not list one Task", respAllTasks.length == 1);		
 	}
@@ -316,5 +289,12 @@ public class TaskStepDefinition extends Utils{
 		 reqSpec = null;
 		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqTask.getTaskId());
 	}
+	
+	@Then("Verify response will return List of Tasks with zero records")
+	public void verify_response_will_return_List_of_Tasks_with_zero_records() {
+	    respAllTasks = response.getBody().as(Task[].class);
+		assertTrue("Count is not correct", respAllTasks.length == 0);
+	}
+
 
 }
