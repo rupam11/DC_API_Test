@@ -10,13 +10,16 @@ import java.util.List;
 import com.google.gson.Gson;
 import entity.Activity;
 import entity.Category;
+import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
 import entity.Pattern;
 import entity.Process;
+import entity.Project;
 import entity.Sector;
 import entity.Task;
+import entity.User;
 
 public class JsonDataReader {
 
@@ -33,6 +36,10 @@ public class JsonDataReader {
 	BufferedReader bufferReader;
 	private Process process;
 	private Pattern pattern;
+	private Client client;
+	private Project project;
+	private User user;
+	
 
 	
 	//===================================================Initialize all private variable inside Constructor
@@ -46,6 +53,7 @@ public class JsonDataReader {
 		this.category=new Category();
 		this.process=new Process();
 		this.pattern=new Pattern();
+		this.client = new Client();
 	}
 
 	public Activity getActivityData() {
@@ -367,6 +375,134 @@ public class JsonDataReader {
 		
 		return ipPattern;
 	}
+	
+	public Project getProjectData() {
+		String ProjectFilePath=JSONDataFilePath+"Project/project.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(ProjectFilePath));
+			activity = gson.fromJson(bufferReader, Activity.class);
+			return project;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + ProjectFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+	
+	public Client getClientData() {
+		String ClientFilePath=JSONDataFilePath+"Client/client.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(ClientFilePath));
+			client = gson.fromJson(bufferReader, Client.class);
+			return client;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + ClientFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+	
+	public Client updateClientData(Client ipClient) throws IOException {
+		
+		 System.out.println("Entity to update"+ipClient.toString());
+			ipClient.setClientName("New_"+ipClient.getClientName());
+			
+			if(ipClient.getClientStatus().equalsIgnoreCase("Active"))
+				ipClient.setClientStatus("Passive");
+			else if(ipClient.getClientStatus().equalsIgnoreCase("Passive"))
+				ipClient.setClientStatus("Active");
+			else 
+				System.out.println("Please fix Client.json data");
+			
+			client.setClientOnboardedBy(configReader.getPropValue("update_CreatedBy"));
+			client.setClientOnboardedAt(configReader.getPropValue("update_CreatedAt"));
+			
+			
+		return ipClient;
+			}
+	
+	public Category getCategoryData() {
+		String CategoryFilePath=JSONDataFilePath+"Category/category.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(CategoryFilePath));
+			category = gson.fromJson(bufferReader, Category.class);
+			return category;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + CategoryFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+
+	}
+
+	public Category updateCategoryData(Category ipCategory) throws IOException {
+		
+	 System.out.println("Entity to update"+ipCategory.toString());
+		ipCategory.setCategoryName("New_"+ipCategory.getCategoryName());
+		
+		if(ipCategory.getCategoryStatus().equalsIgnoreCase("Active"))
+			ipCategory.setCategoryStatus("Passive");
+		else if(ipCategory.getCategoryStatus().equalsIgnoreCase("Passive"))
+			ipCategory.setCategoryStatus("Active");
+		else 
+			
+			System.out.println("Please fix category.json data");
+		
+		category.setCategoryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		category.setCategoryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+		
+	return ipCategory;
+		}
+
+	public User getUserData() {
+		String UserFilePath=JSONDataFilePath+"User/user.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(UserFilePath));
+			user = gson.fromJson(bufferReader, User.class);
+			return user;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + UserFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+
+	}
+	
+	public User updateUserData(User ipUser) throws IOException {
+		
+		 System.out.println("Entity to update"+ipUser.toString());
+		 ipUser.setUserName("New_"+ipUser.getUserName());
+			
+			if(ipUser.getUserStatus().equalsIgnoreCase("Active"))
+				ipUser.setUserStatus("Passive");
+			else if(ipUser.getUserStatus().equalsIgnoreCase("Passive"))
+				ipUser.setUserStatus("Active");
+			else 
+				System.out.println("Please fix category.json data");
+			
+			category.setCategoryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+			category.setCategoryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+			
+			
+		return ipUser;
+			}
 
 	
 }

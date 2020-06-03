@@ -1,0 +1,20 @@
+[{
+        "userId": 1,
+        "userName": "dchelp",
+        "userEmail": "dchelp@dcdev.com",
+        "userStatus": "Active",
+        "userType": "IBM",
+        "userRole": "System Admin",
+        "userSessionToken": "Inactive",
+        "userCreatedBy": "dchelp",
+        "userCreatedAt": "2020-04-08 12:03:31",
+        "userUpdatedBy": "dchelp",
+        "userUpdatedAt": "2020-06-02 04:42:02",
+        "userAccountStatus": {
+            "userPassword": "$2a$10$uPwdheJimnrAnkcy0mCyueuYvXJVAjxDvDOtiD1PCCWSKHuQ0mzsG",
+            "userAccountExpired": false,
+            "userWrongAttempts": 0,
+            "userAccountLocked": false,
+            "userPasswordLastUpdatedAt": "2020-04-08 12:03:31"
+        }
+    }]

@@ -3,13 +3,17 @@ package dataProvider;
 import java.io.IOException;
 
 import entity.Activity;
+import entity.Category;
+import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Mail;
 import entity.Pattern;
 import entity.Process;
+import entity.Project;
 import entity.Sector;
 import entity.Task;
+import entity.User;
 import testBase.Utils;
 
 public class TestDataBuild {
@@ -89,6 +93,45 @@ public class TestDataBuild {
 		Pattern opPattern=jsonReader.updatePatternData(ipPattern);
 		return opPattern;		
 	}
+	
+	public Client addClient() {
+		Client client = jsonReader.getClientData();		
+		return client;
+	}
+	
+	public Client updateClient(Client ipClient) throws IOException {
+		Client client = jsonReader.updateClientData(ipClient);
+		return client;
+	}
+
+	
+	public Category addCategory() {
+		Category category = jsonReader.getCategoryData();
+		return category;
+	}
+
+	public Category updateCategory(Category ipCategory) throws IOException {
+		Category upcategory = jsonReader.updateCategoryData(ipCategory);
+		return upcategory;
+	}
+
+
+	public User addUser() {
+		User user = jsonReader.getUserData();
+		return user;
+		
+	}
+	
+	public Project addProject() {
+		Project project = jsonReader.getProjectData();
+		return project;
+		
+	}
+	public User updateUser(User ipUser) throws IOException {
+		User opUser=jsonReader.updateUserData(ipUser);
+		return opUser;
+	}
+
 
 	
 }

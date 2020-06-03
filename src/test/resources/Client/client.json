@@ -1,0 +1,30 @@
+{
+        "clientId": 1000005,
+        "clientName": "RS-2",
+        "clientRuleIds": [
+        	1
+        ],
+        "clientGeography": "North America",
+        "clientIndustry": "Insurance",
+        "clientSector": "Financial Services",
+        "clientOnboardingDate": "2020-05-06",
+        "clientOffBoardingdate": "2020-05-12",
+        "clientStatus": "Active",
+        "clientHappinessIndex": "1234",
+        "clientEngagementHealth": "Good",
+        "clientEngagementState": "1234",
+        "projectIds": [
+            0
+        ],
+        "clientOnboardedBy": "ritu_sys",
+        "clientOnboardedAt": "2020-05-06 22:49:11",
+        "clientOffboardedBy": "ritu_sys",
+        "clientOffboardedAt": "2020-05-12 00:35:23",
+        "users": [
+            {
+                "userId": 11,
+                "userClientStatus": "Active",
+                "userClientRole": "Eval Admin"
+            }
+          ]
+    }

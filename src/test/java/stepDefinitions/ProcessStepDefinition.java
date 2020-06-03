@@ -1,7 +1,7 @@
 package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import entity.Activity;
 import entity.Process;
 import entity.Task;
 import io.cucumber.java.en.Given;
@@ -88,11 +89,11 @@ public class ProcessStepDefinition extends Utils {
 		assertEquals(old_count, get_Process_count());
 	}
 
-	@Then("Process added exist in returned ProcessList")
+	/*@Then("Process added exist in returned ProcessList")
 	public void Process_added_exist_in_returned_ProcessList() {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
-		assertThat(ProcessList, hasItems(respProcess));
-	}
+		assertThat(ProcessList, hasItem(respProcess));
+	}*/
 
 	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string}")
 	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param) throws IOException {
@@ -162,7 +163,7 @@ public class ProcessStepDefinition extends Utils {
 	@Then("Created Process should exist in the List of Process")
 	public void created_Process_should_exist_in_the_List_of_Process() {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
-		assertThat(ProcessList, hasItems(respProcess));
+		assertThat(ProcessList, hasItem(respProcess));
 	}
 	
 	/*@Then("Verify responseProcess is same as that of requestProcess")
@@ -183,5 +184,44 @@ public class ProcessStepDefinition extends Utils {
 	public void processcode_in_response_body_is_equal_to_output_of(String string) {
 		assertEquals("PRS_"+respProcess.getProcessId(), respProcess.getProcessCode());
 	}
+	
+	@Given("{string} User {string} Process Payload  with no Process Body and Param = {string}")
+	public void user_Process_Payload_with_no_Process_Body_and_Param(String userRole, String payloadReq, String param) throws IOException {
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole));
+		if (payloadReq.equalsIgnoreCase("Update"))
+				reqSpec = reqSpec.queryParam(param, respProcess.getProcessId());
+		
+	}
+	
+	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string} & {string} & {string}")
+	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param1, String param2, String param3) throws IOException {
+	    reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1,respProcess.getProcessId())
+																	.queryParam(param2, respProcess.getProcessName())
+																	.queryParam(param3, respProcess.getProcessStatus());
+																	
+	}
+	
+	@Then("Verify response will return List of Processes with zero records")
+	public void verify_response_will_return_List_of_Processes_with_zero_records() {
+	    respAllProcess = response.getBody().as(Process[].class);
+		assertTrue("Count is not correct", respAllProcess.length == 0);
+	}
+	
+	@Given("{string} User {string} Process Payload  with no Param")
+	public void user_Activity_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
+			reqProcess = data.updateProcess(respProcess);
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
+	}
+	
+	@Given("{string} User {string} Process Payload  with invalid Param = {string} and value=\"{int}\"")
+	public void user_Activity_Payload_with_invalid_Param_and_value(String userRole, String payloadReq,String param, int i) throws IOException {
+			reqProcess = data.updateProcess(respProcess);
+			reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param,i);
+	}
+
 
 }

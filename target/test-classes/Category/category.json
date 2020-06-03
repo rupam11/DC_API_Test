@@ -1,11 +1,10 @@
-{
-        "categoryId": 1666,
-        "categoryParentId": "16",
-        "categoryName": "Default",
+{		"categoryId": 100,
+        "categoryParentId": "1",
+        "categoryName": "Ritu-API-Test",
         "categorySequence": 1,
-        "categoryCreatedBy": "dchelp",
+        "categoryCreatedBy": "ritu_sys",
         "categoryCreatedAt": "2020-03-09 07:27:14",
         "categoryUpdatedBy": "dchelp",
         "categoryUpdatedAt": "2020-04-03 12:43:42",
         "categoryStatus": "Active"
-   }
+}        

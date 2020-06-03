@@ -51,12 +51,14 @@ Scenario: Verify API: getProcessBySearchCriteria API, search by 'processId'
 	Then Response Process is same which was added
 
 	@getProcessBySearchCriteria 
-Scenario: Verify API: getProcessBySearchCriteria API, search by 'ProcessName' 
+Scenario: Verify API: getProcessBySearchCriteria API, search by 'processName' 
 	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "ProcessName" 
 	When User calls "getProcessBySearchCriteria" API with "Get" http Request 
 	Then The API call is success with StatusCode 200
 		Then Verify response will return List of Process 
 		Then Created Process should exist in the List of Process
+	
+	
 	
 	@updateProcess 
 Scenario: Verify API: updateProcess API add Process paylod 

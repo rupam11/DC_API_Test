@@ -51,9 +51,31 @@ public enum APIResources {
 	getAllPatterns("pattern-service/getAllPatterns"),
 	getPatternCount("pattern-service/getPatternCount"),
 	getPatternBySearchCriteria("pattern-service/getPatternBySearchCriteria"),
-	updatePattern("pattern-service/updatePattern");
+	updatePattern("pattern-service/updatePattern"),
 	
-			
+	getCategoryCount("category-service/getCategoryCount"),
+	createCategory("category-service/createCategory"),
+	getAllCategories("category-service/getAllCategories"),
+	getCategoryListbyName("category-service/getCategoryListbyName"),
+	getCategoryBySearchCriteria("category-service/getCategoryBySearchCriteria"),
+	deleteCategory("category-service/deleteCategory"),
+	updateCategory("category-service/updateCategory"),
+	getCategoryNotinList("category-service/getCategoryNotinList"),
+	
+	
+	getClientCount("client-service/getClientCount"),
+	createClient("client-service/createClient"),
+	getAllClients("client-service/getAllClients"),
+	getAllProjectsIds("client-service/getAllProjectsIds"),
+	getClientBySearchCriteria("client-service/getClientBySearchCriteria"),
+	getClientUsers("client-service/getClientUsers"),
+	deleteClient("client-service/deleteClient"),
+	addUsersToClient("client-service/addUsersToClient"),
+	addProjectToClient("client-service/addProjectToClient"),
+	deleteProjectFromClient("client-service/deleteProjectFromClient"),
+	deleteUsersFromClient("client-service/deleteUsersFromClient"),
+	updateClient("client-service/updateClient"),
+	getAllUsers("user-service/getAllUsers");		
 	
 	private String resource;	
 	

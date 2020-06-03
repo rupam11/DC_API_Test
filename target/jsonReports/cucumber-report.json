@@ -3,11 +3,11 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-06-03T13:03:36.097Z",
+        "start_timestamp": "2020-06-03T15:20:01.813Z",
         "before": [
           {
             "result": {
-              "duration": 1933000000,
+              "duration": 2002000000,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1035000000,
+              "duration": 1253000000,
               "status": "passed"
             },
             "line": 7,
@@ -56,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 5828000000,
+              "duration": 4877000000,
               "status": "passed"
             },
             "line": 8,
@@ -78,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 32000000,
+              "duration": 17000000,
               "status": "passed"
             },
             "line": 9,
@@ -111,7 +111,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@getProcessCount"
@@ -119,11 +119,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:03:45.239Z",
+        "start_timestamp": "2020-06-03T15:20:10.225Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -150,7 +150,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1786000000,
+              "duration": 1247000000,
               "status": "passed"
             },
             "line": 14,
@@ -176,7 +176,7 @@
           },
           {
             "result": {
-              "duration": 1895000000,
+              "duration": 1670000000,
               "status": "passed"
             },
             "line": 15,
@@ -215,7 +215,7 @@
           },
           {
             "result": {
-              "duration": 184000000,
+              "duration": 118000000,
               "status": "passed"
             },
             "line": 17,
@@ -227,7 +227,7 @@
           },
           {
             "result": {
-              "duration": 3567000000,
+              "duration": 2161000000,
               "status": "passed"
             },
             "line": 18,
@@ -249,7 +249,7 @@
           },
           {
             "result": {
-              "duration": 50000000,
+              "duration": 36000000,
               "status": "passed"
             },
             "line": 19,
@@ -305,7 +305,7 @@
           },
           {
             "result": {
-              "duration": 4454000000,
+              "duration": 1487000000,
               "status": "passed"
             },
             "line": 22,
@@ -321,7 +321,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@createProcess"
@@ -329,7 +329,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:03:57.241Z",
+        "start_timestamp": "2020-06-03T15:20:16.977Z",
         "before": [
           {
             "result": {
@@ -342,6 +342,135 @@
           }
         ],
         "line": 26,
+        "name": "Verify API: createProcess API with no process Body",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-createprocess-api-with-no-process-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "\"System_Admin\" User \"Add\" Process Payload  with no Process Body and Param \u003d \"none\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"none\"",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload_with_no_Process_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1576000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User calls \"createProcess\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.createProcess(java.lang.String,com.ibm.dc.process.entity.Process)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.createProcess(java.lang.String,com.ibm.dc.process.entity.Process)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@createProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:18.627Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 33,
         "name": "Verify API: getAllProcess API return List of All Process",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getallprocess-api-return-list-of-all-process",
@@ -360,10 +489,10 @@
         "steps": [
           {
             "result": {
-              "duration": 19000000,
+              "duration": 9000000,
               "status": "passed"
             },
-            "line": 27,
+            "line": 34,
             "name": "\"System_Admin\" User invoke \"getAllProcess\"",
             "match": {
               "arguments": [
@@ -382,10 +511,10 @@
           },
           {
             "result": {
-              "duration": 1518000000,
+              "duration": 1541000000,
               "status": "passed"
             },
-            "line": 28,
+            "line": 35,
             "name": "User calls \"getAllProcess\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -406,7 +535,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 29,
+            "line": 36,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -421,10 +550,10 @@
           },
           {
             "result": {
-              "duration": 23000000,
+              "duration": 21000000,
               "status": "passed"
             },
-            "line": 30,
+            "line": 37,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -433,10 +562,10 @@
           },
           {
             "result": {
-              "duration": 1369000000,
+              "duration": 1353000000,
               "status": "passed"
             },
-            "line": 31,
+            "line": 38,
             "name": "Total number of Process in List is equal to getProcessCount",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.total_number_of_Process_in_List_is_equal_to_getProcessCount()"
@@ -445,13 +574,13 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 3000000,
               "status": "passed"
             },
-            "line": 32,
-            "name": "Process added exist in returned ProcessList",
+            "line": 39,
+            "name": "Created Process should exist in the List of Process",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.Process_added_exist_in_returned_ProcessList()"
+              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
             },
             "keyword": "Then "
           }
@@ -461,7 +590,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@getAllProcess"
@@ -469,10 +598,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:04:00.206Z",
+        "start_timestamp": "2020-06-03T15:20:21.587Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -480,7 +610,7 @@
             }
           }
         ],
-        "line": 36,
+        "line": 43,
         "name": "Verify API: getProcessBySearchCriteria API, search no SearchCriteria",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-no-searchcriteria",
@@ -499,10 +629,10 @@
         "steps": [
           {
             "result": {
-              "duration": 38000000,
+              "duration": 14000000,
               "status": "passed"
             },
-            "line": 37,
+            "line": 44,
             "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\"",
             "match": {
               "arguments": [
@@ -521,10 +651,10 @@
           },
           {
             "result": {
-              "duration": 1564000000,
+              "duration": 971000000,
               "status": "passed"
             },
-            "line": 38,
+            "line": 45,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -545,7 +675,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 39,
+            "line": 46,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -560,10 +690,10 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 40,
+            "line": 47,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -574,7 +704,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 42,
+            "line": 49,
             "name": "All Process should have Active Status",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.all_Process_should_have_Active_Status()"
@@ -587,7 +717,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@getProcessBySearchCriteria"
@@ -595,7 +725,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:04:01.893Z",
+        "start_timestamp": "2020-06-03T15:20:22.610Z",
         "before": [
           {
             "result": {
@@ -607,7 +737,7 @@
             }
           }
         ],
-        "line": 45,
+        "line": 52,
         "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid-",
@@ -626,10 +756,10 @@
         "steps": [
           {
             "result": {
-              "duration": 934000000,
+              "duration": 296000000,
               "status": "passed"
             },
-            "line": 46,
+            "line": 53,
             "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processId\"",
             "match": {
               "arguments": [
@@ -648,10 +778,10 @@
           },
           {
             "result": {
-              "duration": 2851000000,
+              "duration": 2350000000,
               "status": "passed"
             },
-            "line": 47,
+            "line": 54,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -672,7 +802,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 48,
+            "line": 55,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -687,10 +817,10 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 15000000,
               "status": "passed"
             },
-            "line": 49,
+            "line": 56,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -699,10 +829,10 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 50,
+            "line": 57,
             "name": "Response should be list of Process and size should be one",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
@@ -713,7 +843,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 51,
+            "line": 58,
             "name": "Response Process is same which was added",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.response_Process_is_same_which_was_added()"
@@ -726,7 +856,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@getProcessBySearchCriteria"
@@ -734,11 +864,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:04:05.751Z",
+        "start_timestamp": "2020-06-03T15:20:25.327Z",
         "before": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -746,8 +876,8 @@
             }
           }
         ],
-        "line": 54,
-        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027ProcessName\u0027",
+        "line": 61,
+        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processName\u0027",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processname-",
         "after": [
@@ -765,11 +895,11 @@
         "steps": [
           {
             "result": {
-              "duration": 31000000,
+              "duration": 23000000,
               "status": "passed"
             },
-            "line": 55,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"ProcessName\"",
+            "line": 62,
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processName\"",
             "match": {
               "arguments": [
                 {
@@ -777,7 +907,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"ProcessName\"",
+                  "val": "\"processName\"",
                   "offset": 70
                 }
               ],
@@ -787,10 +917,10 @@
           },
           {
             "result": {
-              "duration": 1592000000,
+              "duration": 2055000000,
               "status": "passed"
             },
-            "line": 56,
+            "line": 63,
             "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -811,7 +941,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 57,
+            "line": 64,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -826,10 +956,10 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 5000000,
               "status": "passed"
             },
-            "line": 58,
+            "line": 65,
             "name": "Verify response will return List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
@@ -838,11 +968,9 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: \nExpected: (a collection containing \u003cProcess [processId\u003d9, processCode\u003dPRS_9, processName\u003dPlan, processStatus\u003dActive, processCreatedBy\u003drupam_sys, processCreatedAt\u003d2020-06-03 08:04:03, processUpdatedBy\u003dNA, processUpdatedAt\u003d0000-00-00 00:00:00]\u003e)\n     but: a collection containing \u003cProcess [processId\u003d9, processCode\u003dPRS_9, processName\u003dPlan, processStatus\u003dActive, processCreatedBy\u003drupam_sys, processCreatedAt\u003d2020-06-03 08:04:03, processUpdatedBy\u003dNA, processUpdatedAt\u003d0000-00-00 00:00:00]\u003e was empty\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)\r\n\tat org.junit.Assert.assertThat(Assert.java:865)\r\n\tat org.junit.Assert.assertThat(Assert.java:832)\r\n\tat stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process(ProcessStepDefinition.java:165)\r\n\tat ✽.Created Process should exist in the List of Process(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Process.feature:59)\r\n",
-              "duration": 3000000,
-              "status": "failed"
+              "status": "passed"
             },
-            "line": 59,
+            "line": 66,
             "name": "Created Process should exist in the List of Process",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
@@ -855,7 +983,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@getProcessBySearchCriteria"
@@ -863,10 +991,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:04:07.466Z",
+        "start_timestamp": "2020-06-03T15:20:27.431Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -874,7 +1003,643 @@
             }
           }
         ],
-        "line": 62,
+        "line": 69,
+        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processStatus\u0027",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processstatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"processStatus\"",
+                  "offset": 70
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1433000000,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "Verify response will return List of Process",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "Created Process should exist in the List of Process",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getProcessBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:28.901Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 77,
+        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027 \u0026 \u0027processName\u0027 \u0026 \u0027processStatus\u0027",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid--\u0026--processname--\u0026--processstatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \u0027processId\u0027 \u0026 \u0027processName\u0027 \u0026 \u0027processStatus\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\u0027processId\u0027",
+                  "offset": 70
+                },
+                {
+                  "val": "\u0027processName\u0027",
+                  "offset": 84
+                },
+                {
+                  "val": "\u0027processStatus\u0027",
+                  "offset": 100
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1633000000,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "Response should be list of Process and size should be one",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 82,
+            "name": "Created Process should exist in the List of Process",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getProcessBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:30.591Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 85,
+        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processId\u0027",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"processId\"",
+                  "offset": 80
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 94
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2095000000,
+              "status": "passed"
+            },
+            "line": 87,
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 88,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "Verify response will return List of Processes with zero records",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getProcessBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:32.735Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 92,
+        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processName\u0027",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processname-",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processName\" \u003d \"invalidProcessCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"processName\"",
+                  "offset": 80
+                },
+                {
+                  "val": "\"invalidProcessCode\"",
+                  "offset": 96
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2123000000,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 95,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 96,
+            "name": "Verify response will return List of Processes with zero records",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getProcessBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:34.905Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 99,
+        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processStatus\u0027",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processstatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 100,
+            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processStatus\" \u003d \"invalidProcessName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"processStatus\"",
+                  "offset": 80
+                },
+                {
+                  "val": "\"invalidProcessName\"",
+                  "offset": 98
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1611000000,
+              "status": "passed"
+            },
+            "line": 101,
+            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getProcessBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 102,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 36000000,
+              "status": "passed"
+            },
+            "line": 103,
+            "name": "Verify response will return List of Processes with zero records",
+            "match": {
+              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@getProcessBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:36.594Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 107,
         "name": "Verify API: updateProcess API add Process paylod",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-updateprocess-api-add-process-paylod",
@@ -893,10 +1658,10 @@
         "steps": [
           {
             "result": {
-              "duration": 55000000,
+              "duration": 71000000,
               "status": "passed"
             },
-            "line": 63,
+            "line": 108,
             "name": "\"System_Admin\" User \"Update\" Process Payload with Param \u003d \"processId\"",
             "match": {
               "arguments": [
@@ -919,10 +1684,10 @@
           },
           {
             "result": {
-              "duration": 1836000000,
+              "duration": 1739000000,
               "status": "passed"
             },
-            "line": 64,
+            "line": 109,
             "name": "User calls \"updateProcess\" API with \"Put\" http Request",
             "match": {
               "arguments": [
@@ -943,7 +1708,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 65,
+            "line": 110,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -958,10 +1723,10 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 3000000,
               "status": "passed"
             },
-            "line": 66,
+            "line": 111,
             "name": "Verify Process fields gets updated",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_Processfields_gets_updated()"
@@ -974,7 +1739,7 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
           },
           {
             "name": "@updateProcess"
@@ -982,7 +1747,141 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-03T13:04:09.390Z",
+        "start_timestamp": "2020-06-03T15:20:38.429Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 114,
+        "name": "Verify API: updateProcess API, with invalid processId",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-invalid-processid",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 115,
+            "name": "\"System_Admin\" User \"Update\" Process Payload  with invalid Param \u003d \"processId\" and value\u003d\"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"processId\"",
+                  "offset": 67
+                },
+                {
+                  "val": "-9",
+                  "offset": 90
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1659000000,
+              "status": "passed"
+            },
+            "line": 116,
+            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 117,
+            "name": "The API call is success with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 37000000,
+              "status": "passed"
+            },
+            "line": 118,
+            "name": "\"message\" in response body is \"Process with id - -9 not found\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Process with id - -9 not found\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:40.227Z",
         "before": [
           {
             "result": {
@@ -994,7 +1893,264 @@
             }
           }
         ],
-        "line": 69,
+        "line": 121,
+        "name": "Verify API: updateProcess API, with no activityId",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-no-activityid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 122,
+            "name": "\"System_Admin\" User \"Update\" Process Payload  with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1656000000,
+              "status": "passed"
+            },
+            "line": 123,
+            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 124,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 125,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027processId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027processId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:41.965Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 128,
+        "name": "Verify API: updateProcess API, with no pattern Body",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-no-pattern-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 129,
+            "name": "\"System_Admin\" User \"Update\" Process Payload  with no Process Body and Param \u003d \"processId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"processId\"",
+                  "offset": 79
+                }
+              ],
+              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload_with_no_Process_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1594000000,
+              "status": "passed"
+            },
+            "line": 130,
+            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 131,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 132,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.updateProcess(java.lang.String,java.lang.Integer,com.ibm.dc.process.entity.Process)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.updateProcess(java.lang.String,java.lang.Integer,com.ibm.dc.process.entity.Process)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@updateProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:43.605Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 135,
         "name": "Verify API: deleteProcess update Process status as Passive",
         "description": "",
         "id": "validating-process-service-apis;verify-api:-deleteprocess-update-process-status-as-passive",
@@ -1013,10 +2169,10 @@
         "steps": [
           {
             "result": {
-              "duration": 36000000,
+              "duration": 14000000,
               "status": "passed"
             },
-            "line": 70,
+            "line": 136,
             "name": "\"System_Admin\" User invoke deleteProcess with Parameter: \"processId\"",
             "match": {
               "arguments": [
@@ -1035,10 +2191,10 @@
           },
           {
             "result": {
-              "duration": 1621000000,
+              "duration": 1579000000,
               "status": "passed"
             },
-            "line": 71,
+            "line": 137,
             "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
@@ -1059,7 +2215,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 72,
+            "line": 138,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1074,10 +2230,10 @@
           },
           {
             "result": {
-              "duration": 15000000,
+              "duration": 2000000,
               "status": "passed"
             },
-            "line": 73,
+            "line": 139,
             "name": "Verify response will return Process instance",
             "match": {
               "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
@@ -1086,10 +2242,10 @@
           },
           {
             "result": {
-              "duration": 72000000,
+              "duration": 18000000,
               "status": "passed"
             },
-            "line": 74,
+            "line": 140,
             "name": "\"processStatus\" in response body is \"Passive\"",
             "match": {
               "arguments": [
@@ -1112,7 +2268,266 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Process"
+            "name": "@Test"
+          },
+          {
+            "name": "@deleteProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:45.242Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 143,
+        "name": "Verify API: deleteProcess API,  with invalid processId",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-deleteprocess-api---with-invalid-processid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 144,
+            "name": "\"System_Admin\" User invoke \"deleteProcess\" with invalid Parameter: \"processId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"deleteProcess\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"processId\"",
+                  "offset": 67
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 81
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1627000000,
+              "status": "passed"
+            },
+            "line": 145,
+            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 146,
+            "name": "The API call is success with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 147,
+            "name": "\"message\" in response body is \"Process with id - -9 not found\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Process with id - -9 not found\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
+          },
+          {
+            "name": "@deleteProcess"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-03T15:20:46.914Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 150,
+        "name": "Verify API: deleteProcess API, with no Param",
+        "description": "",
+        "id": "validating-process-service-apis;verify-api:-deleteprocess-api--with-no-param",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 151,
+            "name": "\"System_Admin\" User \"deleteProcess\" with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"deleteProcess\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.deletePattern_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1582000000,
+              "status": "passed"
+            },
+            "line": 152,
+            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteProcess\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 153,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19000000,
+              "status": "passed"
+            },
+            "line": 154,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027processId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027processId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Test"
           },
           {
             "name": "@deleteProcess"
@@ -1124,7 +2539,7 @@
     "description": "",
     "id": "validating-process-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Process.feature",
+    "uri": "file:src/test/java/features/test.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -1135,7 +2550,7 @@
         }
       },
       {
-        "name": "@Process",
+        "name": "@Test",
         "type": "Tag",
         "location": {
           "line": 2,
