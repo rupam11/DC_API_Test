@@ -1,122 +1,74 @@
-@DC-Test-Suite @Test
+@DC-Test-Suite 
+@Test
+Feature: Validating Process-Service APIs 
 
-Feature: Validating Sector-Service APIs 
-
-@getSectorCount 
-Scenario: Verify API: getSectorCount API return Total Sector Count 
-	Given "System_Admin" User invoke "getSectorCount"
-	When User calls "getSectorCount" API with "Get" http Request 
-	Then Verify sector_Count result is greater than 0
+@getProcessCount 
+Scenario: Verify API: getProcessCount API return Total Process Count 
+	Given "System_Admin" User invoke "getProcessCount"
+	When User calls "getProcessCount" API with "Get" http Request 
+	Then Verify Process_Count result is greater than 0
 	Then The API call is success with StatusCode 200 
 		
-@createSector 
-Scenario: Verify API: createSector API add Sector paylod 
-	Given "System_Admin" User "Add" Sector Payload 
-	When User calls "createSector" API with "Post" http Request 
+@createProcess 
+Scenario: Verify API: createProcess API add Process paylod 
+	Given "System_Admin" User "Add" Process Payload with Param = "none" 
+	When User calls "createProcess" API with "Post" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response will return Sector instance 
-	Then Verify Total sector_Count increased by 1
+	Then Verify response will return Process instance
+	Then "processUpdatedBy" in response body is "NA"
+	Then "processUpdatedAt" in response body is "0000-00-00 00:00:00"
+	Then processId in response body is equal to output of "getActivityCount" 
+	Then processCode in response body is equal to output of "PRS_getProcessCount" 
+	Then Verify Total Process_Count increased by 1
+	#Then Verify responseProcess is same as that of requestProcess	
 
- @createSector
-  Scenario: Verify API: createSector API with no sector Body
-    Given "System_Admin" User "Add" Sector Payload  with no Sector Body and Param = "none"
-    When User calls "createSector" API with "Post" http Request
-    Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.createSector(java.lang.String,com.ibm.dc.sector.entity.Sector)"    
-
-@getAllSectors 
-Scenario: Verify API: getAllSectors API return List of All Sectors 
-	Given "System_Admin" User invoke "getAllSectors"
-	When User calls "getAllSectors" API with "Get" http Request 
+@getAllProcess
+Scenario: Verify API: getAllProcess API return List of All Process 
+	Given "System_Admin" User invoke "getAllProcess"
+	When User calls "getAllProcess" API with "Get" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify response will return List of Sectors 
-	Then Total number of Sector in List is equal to getSectorCount 
-	Then Sector added exist in returned SectorList 
-			
-@getSectorBySearchCriteria 
-Scenario: Verify API: getSectorBySearchCriteria API, search no SearchCriteria 
-	Given "System_Admin" User invoke "getSectorBySearchCriteria" 
-	When User calls "getSectorBySearchCriteria" API with "Get" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify response will return List of Sectors 
-	#Then Response should be list all Sectors=getAllSectors
-	Then All Sectors should have Active Status
+	Then Verify response will return List of Process 
+	Then Total number of Process in List is equal to getProcessCount 
+	Then Process added exist in returned ProcessList 
 	
-	@getSectorBySearchCriteria 
-Scenario: Verify API: getSectorBySearchCriteria API, search by 'searchId' 
-	Given "System_Admin" User invoke getSectorBySearchCriteria with Parameter: "sectorId" 
-	When User calls "getSectorBySearchCriteria" API with "Get" http Request
+		
+@getProcessBySearchCriteria 
+Scenario: Verify API: getProcessBySearchCriteria API, search no SearchCriteria 
+	Given "System_Admin" User invoke "getProcessBySearchCriteria" 
+	When User calls "getProcessBySearchCriteria" API with "Get" http Request 
+	Then The API call is success with StatusCode 200 
+	Then Verify response will return List of Process 
+	#Then Response should be list all Process=getAllProcess
+	Then All Process should have Active Status
+	
+	@getProcessBySearchCriteria 
+Scenario: Verify API: getProcessBySearchCriteria API, search by 'processId' 
+	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "processId" 
+	When User calls "getProcessBySearchCriteria" API with "Get" http Request
 	Then The API call is success with StatusCode 200
-		Then Verify response will return List of Sectors 
-	Then Response should be list of Sectors and size should be one 
-	Then Sector added exist in returned SectorList
-	
-	@getSectorBySearchCriteria 
-Scenario: Verify API: getSectorBySearchCriteria API, search by 'sectorName' 
-	Given "System_Admin" User invoke getSectorBySearchCriteria with Parameter: "sectorName" 
-	When User calls "getSectorBySearchCriteria" API with "Get" http Request 
+		Then Verify response will return List of Process 
+	Then Response should be list of Process and size should be one 
+	Then Response Process is same which was added
+
+	@getProcessBySearchCriteria 
+Scenario: Verify API: getProcessBySearchCriteria API, search by 'processName' 
+	Given "System_Admin" User invoke getProcessBySearchCriteria with Parameter: "processName" 
+	When User calls "getProcessBySearchCriteria" API with "Get" http Request 
 	Then The API call is success with StatusCode 200
-		Then Verify response will return List of Sectors 
-		Then Sector added exist in returned SectorList
-		
-		@getSectorBySearchCriteria
-  Scenario: Verify API: getSectorBySearchCriteria API, search by 'sectorId' & 'sectorName'
-    Given "System_Admin" User invoke getSectorBySearchCriteria with Parameter: 'sectorId' & 'sectorName'
-    When User calls "getSectorBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Sectors
-    Then Response should be list of Sectors and size should be one 
-   Then Sector added exist in returned SectorList
-    
-     @getSectorBySearchCriteria
-  Scenario: Verify API: getSectorBySearchCriteria API, search by invalid 'sectorId'
-    Given "System_Admin" User invoke "getSectorBySearchCriteria" with invalid Parameter: "sectorId" = "-9"
-    When User calls "getSectorBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Sectors with zero records
-
-  @getSectorBySearchCriteria
-  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskDescription'
-    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskDescription" = "invalidDescriptionName"
-    When User calls "getTaskBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Sectors with zero records
-		
-		@deleteSector 
-Scenario: Verify API: deleteSector update Sector status as Passive 
-	Given "System_Admin" User invoke deleteSector with Parameter: "sectorId" 
-	When User calls "deleteSector" API with "Delete" http Request 
+		Then Verify response will return List of Process 
+		Then Created Process should exist in the List of Process
+	
+	@updateProcess 
+Scenario: Verify API: updateProcess API add Process paylod 
+	Given  "System_Admin" User "Update" Process Payload with Param = "processId" 
+	When User calls "updateProcess" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify "SectorStatus" of particular "Sector" updated as Passive
+	Then Verify Process fields gets updated
 	
-	
-  @deleteSector
-  Scenario: Verify API: deleteSector API,  with invalid sectorId
-    Given "System_Admin" User invoke "deleteSector" with invalid Parameter: "sectorId" = "-9"
-    When User calls "deleteSector" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
-    Then "message" in response body is "Sector with id - -9 not found"
-
-  @deleteSector
-  Scenario: Verify API: deleteSector API, with no Param
-    Given "System_Admin" User "deleteSector" with no Param
-    When User calls "deleteSector" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required Integer parameter 'sectorId' is not present"	
-	
-	@updateSector 
-Scenario: Verify API: updateSector API add Sector paylod 
-	Given  "System_Admin" User "Update" Sector Payload 
-	When User calls "updateSector" API with "Put" http Request 
+	@deleteProcess 
+Scenario: Verify API: deleteProcess update Process status as Passive 
+	Given "System_Admin" User invoke deleteProcess with Parameter: "processId" 
+	When User calls "deleteProcess" API with "Delete" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify 'sectorName','sectorStatus','sectorCreatedBy','sectorCreatedAt' gets updated 
-
-  @updateSector
-  Scenario: Verify API: updateSector API, with no pattern Body
-    Given "System_Admin" User "Update" Sector Payload  with no Sector Body and Param = "sectorId"
-    When User calls "updateSector" API with "Put" http Request
-    Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.updateSector(java.lang.String,com.ibm.dc.sector.entity.Sector)"
-    
-
-  
+	Then Verify response will return Process instance
+	Then "processStatus" in response body is "Passive"
