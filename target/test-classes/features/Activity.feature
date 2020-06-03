@@ -30,7 +30,7 @@ Feature: Validating Activity-Service APIs
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities
     Then Total number of Activities in List is equal to getActivityCount
-  #Then Activity added exist in returned ActivityList
+  	Then Activity added exist in returned ActivityList
   
   @getActivityBySearchCriteria
   Scenario: Verify API: getActivityBySearchCriteria API, search no SearchCriteria
