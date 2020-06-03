@@ -4,7 +4,7 @@
             "taskSequence": 0,
             "taskDisplaySequence": 0,
             "taskDescription": "New Test Task to be deleted",
-            "taskStatus": "Passive",
+            "taskStatus": "Active",
             "taskComments": "None",
             "taskApplicable": "No",
             "percentCompletion": "0",

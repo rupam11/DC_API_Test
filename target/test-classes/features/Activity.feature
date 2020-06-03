@@ -17,13 +17,13 @@ Feature: Validating Activity-Service APIs
     Then Verify Total Activity_Count increased by 1
 
   @createActivity
-  Scenario: Verify API: createActivity API with no pattern Body
+  Scenario: Verify API: createActivity API with no activity Body
     Given "System_Admin" User "Add" Activity Payload  with no Activity Body and Param = "none"
     When User calls "createActivity" API with "Post" http Request
     Then The API call is success with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)"
 
-  @getAllActivitys
+  @getAllActivities
   Scenario: Verify API: getAllActivities API return List of All Activities
     Given "System_Admin" User invoke "getAllActivities"
     When User calls "getAllActivities" API with "Get" http Request

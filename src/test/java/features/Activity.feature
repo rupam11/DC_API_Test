@@ -23,7 +23,7 @@ Feature: Validating Activity-Service APIs
     Then The API call is success with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)"
 
-  @getAllActivitys
+  @getAllActivities
   Scenario: Verify API: getAllActivities API return List of All Activities
     Given "System_Admin" User invoke "getAllActivities"
     When User calls "getAllActivities" API with "Get" http Request

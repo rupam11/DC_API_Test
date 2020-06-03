@@ -1,7 +1,7 @@
 package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -142,7 +142,7 @@ public class SectorStepDefinition extends Utils {
 	@Then("Created Sector should exist in the List of Sectors")
 	public void created_Sector_should_exist_in_the_List_of_Sectors() {
 		List<Sector> sectorList = Arrays.asList(respAllSectors);
-		assertThat(sectorList, hasItems(respSector));
+		assertThat(sectorList, hasItem(respSector));
 	}
 
 }

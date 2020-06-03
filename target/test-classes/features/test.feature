@@ -1,181 +1,172 @@
 @DC-Test-Suite @Test
-Feature: Validating Activity-Service APIs
+Feature: Validating Task API's
 
-  @getActivityCount
-  Scenario: Verify API: getActivityCount API return Total Activity Count
-    Given "System_Admin" User invoke "getActivityCount"
-    When User calls "getActivityCount" API with "Get" http Request
-    Then Verify Activity_Count result is greater than or equal to 0
+  @getTaskCount
+  Scenario: Verify API: getTaskCount API return Total Task Count
+    Given "System_Admin" User invoke "getTaskCount"
+    When User calls "getTaskCount" API with "Get" http Request
     Then The API call is success with StatusCode 200
+    Then Verify task_Count result is greater than 0
 
-  @createActivity
-  Scenario: Verify API: createActivity API add Activity paylod
-    Given "System_Admin" User "Add" Activity Payload with Param = "none"
-    When User calls "createActivity" API with "Post" http Request
+  @createTask
+  Scenario: Verify API: createTask API add Task paylod
+    Given "System_Admin" "Add" Task Payload
+    When User calls "createTask" API with "Post" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return Activity instance
-    Then Verify Total Activity_Count increased by 1
-
-  @createActivity
-  Scenario: Verify API: createActivity API with no pattern Body
-    Given "System_Admin" User "Add" Activity Payload  with no Activity Body and Param = "none"
-    When User calls "createActivity" API with "Post" http Request
+    Then Verify responseBody is instance of Task
+    Then Verify Total task_Count increased by 1
+    Then Verify taskId, taskequence, taskDisplaySequence is equal to total_task_count
+    Then Verify Task_Code is equal to 'TSK_task_count'
+    
+    @createTask
+  Scenario: Verify API: createTask API with no task Body
+    Given "System_Admin" User "Add" Task Payload  with no Task Body and Param = "none"
+    When User calls "createTask" API with "Post" http Request
     Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)"
+    Then "message" in response body is "Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.createTask(java.lang.String,com.ibm.dc.task.entity.Task)"
+    
 
-  @getAllActivitys
-  Scenario: Verify API: getAllActivities API return List of All Activities
-    Given "System_Admin" User invoke "getAllActivities"
-    When User calls "getAllActivities" API with "Get" http Request
+  @getAllTasks
+  Scenario: Verify API: getAllTasks API return List of All Tasks
+    Given "System_Admin" User invoke "getAllTasks"
+    When User calls "getAllTasks" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Total number of Activities in List is equal to getActivityCount
-  #Then Activity added exist in returned ActivityList
+    Then Verify response will return List of Tasks
+    Then Total number of Tasks in List is equal to getTaskCount
+    #Then Response Task which was added should be filtered
+
+   @getTaskBySearchCriteria
+    Scenario: Verify API: getTaskBySearchCriteria API, search no SearchCriteria
+    Given "System_Admin" User invoke "getTaskBySearchCriteria"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Tasks
+    #Then Response should be list all Tasks=getAllTasks
+    Then All Tasks should have Active Status
+          
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskId' & 'taskDescription' & 'taskApplicable' & 'taskStatus'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with Parameter: 'taskId' & 'taskDescription' & 'taskApplicable' & 'taskStatus'
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Tasks
+    Then Response should be List of Tasks and size should be one
+    #Then Response Task which was added should be filtered
+    
+   @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskId'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with Parameter: "taskId"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
+    Then The API call is success with StatusCode 200
+    Then Verify response will return List of Tasks
+  Then Response should be List of Tasks and size should be one
   
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search no SearchCriteria
-    Given "System_Admin" User invoke "getActivityBySearchCriteria"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+  
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskApplicable'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with Parameter: "taskApplicable"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    #Then Response should be list all Activity=getAllActivities
-    Then All Activities should have Active Status
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityId'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityId"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+    Then Verify response will return List of Tasks
+  Then Each Task of returned TaskList should have same "taskApplicable"
+   #Then Response Task which was added should be filtered
+  
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskDescription'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with Parameter: "taskDescription"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Response should be List of Activities and size should be one
-
-  #Then Response Activity is same which was added
-  #Then Activity added exist in returned ActivityList
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityCode'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityCode"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+   Then Verify response will return List of Tasks
+  Then Each Task of returned TaskList should have same "taskDescription"
+#Then Response Task which was added should be filtered
+   
+   @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskStatus'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with Parameter: "taskStatus"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same activity "activityCode"
-    Then Activity added exist in returned ActivityList
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityName'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityName"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same activity "activityName"
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityState'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityState"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same activity "activityState"
-
-  #Then Activity added exist in returned ActivityList
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityStatus'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: "activityStatus"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities
-    Then Each Activity of returned ActivityList should have same activity "activityStatus"
-    Then Activity added exist in returned ActivityList
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by 'activityId' & 'activityCode' & 'activityName' & 'activityState' & 'activityStatus'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with Parameter: 'activityId' & 'activityCode' & 'activityName' & 'activityState' & 'activityStatus'
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
-    Then The API call is success with StatusCode 200
-    Then Response should be List of Activities and size should be one
-    Then Response Activity is same which was added
-    Then Activity added exist in returned ActivityList
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityId'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityId" = "-9"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+     Then Verify response will return List of Tasks
+  Then Each Task of returned TaskList should have same "taskStatus"
+  #Then Response Task which was added should be filtered    
+ 
+  
+  
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskId'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskId" = "-9"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityCode'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityCode" = "invalidActivityCode"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskDescription'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskDescription" = "invalidDescriptionName"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityName'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityName" = "invalidActivityName"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskApplicable'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskApplicable" = "invalidTaskApplicable"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
 
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityState'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityState" = "invalidActivityState"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+  @getTaskBySearchCriteria
+  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskStatus'
+    Given "System_Admin" User invoke getTaskBySearchCriteria with invalid Parameter: "taskStatus" = "invalidTaskStatus"
+    When User calls "getTaskBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Activities with zero records
-
-  @getActivityBySearchCriteria
-  Scenario: Verify API: getActivityBySearchCriteria API, search by invalid 'activityStatus'
-    Given "System_Admin" User invoke getActivityBySearchCriteria with invalid Parameter: "activityStatus" = "invalidActivityStatus"
-    When User calls "getActivityBySearchCriteria" API with "Get" http Request
+  
+  @deleteTask
+  Scenario: Verify API: deleteTask update Task status as Passive
+    Given "System_Admin" User invoke deleteTask with Parameter: "taskId"
+    When User calls "deleteTask" API with "Delete" http Request
     Then The API call is success with StatusCode 200
-    Then Verify response will return List of Activities with zero records
-
-  @deleteActivity
-  Scenario: Verify API: deleteActivity update Activity status as Passive
-    Given "System_Admin" User invoke deleteActivity with Parameter: "activityId"
-    When User calls "deleteActivity" API with "Delete" http Request
-    Then The API call is success with StatusCode 200
-    Then Verify response will return Activity instance
-    Then "activityStatus" in response body is "Passive"
-
-  @deleteActivity
-  Scenario: Verify API: deleteActivity API,  with invalid activityId
-    Given "System_Admin" User invoke "deleteActivity" with invalid Parameter: "activityId" = "-9"
-    When User calls "deleteActivity" API with "Delete" http Request
+    Then Verify responseBody is instance of Task
+ 
+  @deleteTask
+  Scenario: Verify API: deleteTask API,  with invalid taskId
+    Given "System_Admin" User invoke "deleteTask" with invalid Parameter: "taskId" = "-9"
+    When User calls "deleteTask" API with "Delete" http Request
     Then The API call is success with StatusCode 500
-    Then "message" in response body is "No activity found for activityId: -9"
+    Then "message" in response body is "Task with id - -9 not found"
 
-  @deleteActivity
-  Scenario: Verify API: deleteActivity API, with no Param
-    Given "System_Admin" User deleteActivity with no Param
-    When User calls "deleteActivity" API with "Delete" http Request
+  @deleteTask
+  Scenario: Verify API: deleteTask API, with no Param
+    Given "System_Admin" User deleteTask with no Param
+    When User calls "deleteTask" API with "Delete" http Request
     Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required Integer parameter 'activityId' is not present"
-
-  @updateActivity
-  Scenario: Verify API: updateActivity API add Activity paylod
-    Given "System_Admin" User "Update" Activity Payload with Param = "activityId"
-    When User calls "updateActivity" API with "Put" http Request
+    Then "message" in response body is "Required Integer parameter 'taskId' is not present"
+   
+  @updateTask
+  Scenario: Verify API: updateTask API add Task paylod
+    Given "System_Admin" "Update" Task Payload with Param = "taskId"
+    When User calls "updateTask" API with "Put" http Request
     Then The API call is success with StatusCode 200
-    Then Verify Activity fields gets updated
-
-  @updateActivity
-  Scenario: Verify API: updateActivity API, with invalid activityId
-    Given "System_Admin" User "Update" Activity Payload  with invalid Param = "activityId" and value="-9"
-    When User calls "updateActivity" API with "Put" http Request
+    Then Verify Task fields gets updated
+    
+     @updateTask
+  Scenario: Verify API: updateTask API, with invalid taskId
+    Given "System_Admin" User "Update" Task Payload  with invalid Param = "taskId" and value="-9"
+    When User calls "updateTask" API with "Put" http Request
     Then The API call is success with StatusCode 500
-    Then "message" in response body is "No activity found for activityId: -9"
+    Then "message" in response body is "Task with id - -9 not found"
 
-  @updateActivity
-  Scenario: Verify API: updateActivity API, with no activityId
-    Given "System_Admin" User "Update" Activity Payload  with no Param
-    When User calls "updateActivity" API with "Put" http Request
+  @updateTask
+  Scenario: Verify API: updateTask API, with no taskId
+    Given "System_Admin" User "Update" Task Payload  with no Param
+    When User calls "updateTask" API with "Put" http Request
     Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required Integer parameter 'activityId' is not present"
+    Then "message" in response body is "Required Integer parameter 'taskId' is not present"
 
-  @updateActivity
-  Scenario: Verify API: updateActivity API, with no pattern Body
-    Given "System_Admin" User "Update" Activity Payload  with no Activity Body and Param = "activityId"
-    When User calls "updateActivity" API with "Put" http Request
+  @updateTask
+  Scenario: Verify API: updateTask API, with no task Body
+    Given "System_Admin" User "Update" Task Payload  with no Task Body and Param = "taskId"
+    When User calls "updateTask" API with "Put" http Request
     Then The API call is success with StatusCode 400
-    Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.updateActivity(java.lang.String,java.lang.Integer,com.ibm.dc.activity.entity.Activity)"
+    Then "message" in response body is "Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.updateTask(java.lang.String,java.lang.Integer,com.ibm.dc.task.entity.Task)"
+    
+ 
+ 
