@@ -24,7 +24,7 @@ Scenario: Verify API: createIndustry API add Industry payload
   Scenario: Verify API: createIndustry API with no industry Body
     Given "System_Admin" User "Add" Industry Payload  with no Industry Body
     When User calls "createIndustry" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.createIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)"
     
     @getAllIndusties 
@@ -112,14 +112,14 @@ Scenario: Verify API: deleteIndustry update Industry status as Passive
   Scenario: Verify API: deleteIndustry API,  with invalid industryId
     Given "System_Admin" User invoke "deleteIndustry" with invalid Parameter: "industryId" = "-9"
     When User calls "deleteIndustry" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Industry with id - -9 not found"
 
   @deleteIndustry
   Scenario: Verify API: deleteIndustry API, with no Param
     Given "System_Admin" User "deleteIndustry" with no Param
     When User calls "deleteIndustry" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'industryId' is not present"	
  
  @updateIndustry 
@@ -133,7 +133,7 @@ Scenario: Verify API: updateIndustry API add Industry paylod
   Scenario: Verify API: updateIndustry API, with no Industry Body
     Given "System_Admin" User "Update" Industry Payload  with no Industry Body
     When User calls "updateIndustry" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)"
     
 

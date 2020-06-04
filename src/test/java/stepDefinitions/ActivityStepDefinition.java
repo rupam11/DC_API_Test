@@ -13,9 +13,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.skyscreamer.jsonassert.Customization;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.comparator.CustomComparator;
 
 import entity.Activity;
 import entity.Pattern;
+import entity.Task;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -210,7 +215,10 @@ public class ActivityStepDefinition extends Utils {
 	@Then("Verify Activity fields gets updated")
 	public void verify_Activity_fields_gets_updated() {
 	    respActivity = response.getBody().as(Activity.class);
-		assertThat(reqActivity, is(respActivity));
+		JSONAssert.assertEquals(new JSONObject(reqActivity).toString(), new JSONObject(respActivity).toString(), 
+				new CustomComparator(JSONCompareMode.LENIENT, 
+						new Customization("activityUpdatedAt", (o1, o2) -> true),
+						new Customization("activityUpdatedBy", (o1, o2) -> true)));
 	}
 
 	@Then("Activity added exist in returned ActivityList")

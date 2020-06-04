@@ -23,7 +23,8 @@ public class CommonStepDefinition extends Utils {
 
 	@Given("{string} User invoke {string}")
 	public void User_invoke(String userRole, String apiNm) throws IOException {
-		reqSpec = given().spec(requestSpecification(userRole));
+		reqSpec=null;
+			reqSpec = given().spec(requestSpecification(userRole));
 	}
 
 	@When("User calls {string} API with {string} http Request")
@@ -44,9 +45,16 @@ public class CommonStepDefinition extends Utils {
 
 	@Then("The API call is success with StatusCode {int}")
 	public void the_API_call_is_success_with_StatusCode(int expStatusCode) {
+
 		assertEquals(expStatusCode, response.getStatusCode());
 	}
+	
+	@Then("The API call is failed with StatusCode {int}")
+	public void the_API_call_is_failed_with_StatusCode(int expStatusCode) {
 
+		assertEquals(expStatusCode, response.getStatusCode());
+	}
+	
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String keyName, String keyValue) {
 		assertEquals(keyValue,getKeyValueFromJsonResponse(response, keyName));
@@ -68,6 +76,8 @@ public class CommonStepDefinition extends Utils {
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole));		
 	}
+
+	
 
 	
 }

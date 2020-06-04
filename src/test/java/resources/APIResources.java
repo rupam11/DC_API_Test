@@ -83,7 +83,9 @@ public enum APIResources {
 	deleteProjectFromClient("client-service/deleteProjectFromClient"),
 	deleteUsersFromClient("client-service/deleteUsersFromClient"),
 	updateClient("client-service/updateClient"),
-	getAllUsers("user-service/getAllUsers");		
+	getAllUsers("user-service/getAllUsers"),
+	
+	getAllProjects("project-service/getAllProjects");
 	
 	private String resource;	
 	

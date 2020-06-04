@@ -22,7 +22,7 @@ Feature: Validating Activity-Service APIs
   Scenario: Verify API: createActivity API with no activity Body
     Given "System_Admin" User "Add" Activity Payload  with no Activity Body and Param = "none"
     When User calls "createActivity" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.createActivity(java.lang.String,com.ibm.dc.activity.entity.Activity)"
 
   @getAllActivities
@@ -148,14 +148,14 @@ Feature: Validating Activity-Service APIs
   Scenario: Verify API: deleteActivity API,  with invalid activityId
     Given "System_Admin" User invoke "deleteActivity" with invalid Parameter: "activityId" = "-9"
     When User calls "deleteActivity" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
-    Then "message" in response body is "No activity found for activityId: -9"
+   Then The API call is failed with StatusCode 500
+    Then "message" in response body is "Activity with id - -9 not found"
 
   @deleteActivity
   Scenario: Verify API: deleteActivity API, with no Param
     Given "System_Admin" User "deleteActivity" with no Param
     When User calls "deleteActivity" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'activityId' is not present"
 
   @updateActivity
@@ -169,21 +169,22 @@ Feature: Validating Activity-Service APIs
   Scenario: Verify API: updateActivity API, with invalid activityId
     Given "System_Admin" User "Update" Activity Payload  with invalid Param = "activityId" and value="-9"
     When User calls "updateActivity" API with "Put" http Request
-    Then The API call is success with StatusCode 500
-    Then "message" in response body is "No activity found for activityId: -9"
+   Then The API call is failed with StatusCode 500
+    Then "message" in response body is "Activity with id - -9 not found"
+  
 
   @updateActivity
   Scenario: Verify API: updateActivity API, with no activityId
     Given "System_Admin" User "Update" Activity Payload  with no Param
     When User calls "updateActivity" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'activityId' is not present"
 
   @updateActivity
   Scenario: Verify API: updateActivity API, with no activity Body
     Given "System_Admin" User "Update" Activity Payload  with no Activity Body and Param = "activityId"
     When User calls "updateActivity" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.activity.entity.Activity com.ibm.dc.activity.controller.ActivityController.updateActivity(java.lang.String,java.lang.Integer,com.ibm.dc.activity.entity.Activity)"
     
 

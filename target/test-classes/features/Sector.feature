@@ -23,7 +23,7 @@ Scenario: Verify API: createSector API add Sector paylod
   Scenario: Verify API: createSector API with no sector Body
     Given "System_Admin" User "Add" Sector Payload  with no Sector Body and Param = "none"
     When User calls "createSector" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.createSector(java.lang.String,com.ibm.dc.sector.entity.Sector)"    
 
 @getAllSectors 
@@ -96,14 +96,14 @@ Scenario: Verify API: deleteSector update Sector status as Passive
   Scenario: Verify API: deleteSector API,  with invalid sectorId
     Given "System_Admin" User invoke "deleteSector" with invalid Parameter: "sectorId" = "-9"
     When User calls "deleteSector" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Sector with id - -9 not found"
 
   @deleteSector
   Scenario: Verify API: deleteSector API, with no Param
     Given "System_Admin" User "deleteSector" with no Param
     When User calls "deleteSector" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'sectorId' is not present"	
 	
 	@updateSector 
@@ -117,7 +117,7 @@ Scenario: Verify API: updateSector API add Sector paylod
   Scenario: Verify API: updateSector API, with no sector Body
     Given "System_Admin" User "Update" Sector Payload  with no Sector Body and Param = "sectorId"
     When User calls "updateSector" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.updateSector(java.lang.String,com.ibm.dc.sector.entity.Sector)"
     
 

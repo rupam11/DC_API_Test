@@ -159,8 +159,6 @@ public class PatternStepDefinition extends Utils {
 	@Then("Verify Pattern fields gets updated")
 	public void verify_Patternfields_gets_updated() {
 		respPattern = response.getBody().as(Pattern.class);
-		//assertThat(reqPattern, is(respPattern));
-		//respIndustry = response.getBody().as(Industry.class);
 		
 		JSONAssert.assertEquals(new JSONObject(reqPattern).toString(), new JSONObject(respPattern).toString(), 
 				new CustomComparator(JSONCompareMode.LENIENT, 

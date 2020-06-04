@@ -27,7 +27,7 @@ Feature: Validating Process-Service APIs
   Scenario: Verify API: createProcess API with no process Body
     Given "System_Admin" User "Add" Process Payload  with no Process Body and Param = "none"
     When User calls "createProcess" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.createProcess(java.lang.String,com.ibm.dc.process.entity.Process)"
 
   @getAllProcess
@@ -113,21 +113,21 @@ Feature: Validating Process-Service APIs
   Scenario: Verify API: updateProcess API, with invalid processId
     Given "System_Admin" User "Update" Process Payload  with invalid Param = "processId" and value="-9"
     When User calls "updateProcess" API with "Put" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Process with id - -9 not found"
 
   @updateProcess
   Scenario: Verify API: updateProcess API, with no activityId
     Given "System_Admin" User "Update" Process Payload  with no Param
     When User calls "updateProcess" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'processId' is not present"
 
   @updateProcess
   Scenario: Verify API: updateProcess API, with no process Body
     Given "System_Admin" User "Update" Process Payload  with no Process Body and Param = "processId"
     When User calls "updateProcess" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.updateProcess(java.lang.String,java.lang.Integer,com.ibm.dc.process.entity.Process)"
 
   @deleteProcess
@@ -142,12 +142,12 @@ Feature: Validating Process-Service APIs
   Scenario: Verify API: deleteProcess API,  with invalid processId
     Given "System_Admin" User invoke "deleteProcess" with invalid Parameter: "processId" = "-9"
     When User calls "deleteProcess" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Process with id - -9 not found"
 
   @deleteProcess
   Scenario: Verify API: deleteProcess API, with no Param
     Given "System_Admin" User "deleteProcess" with no Param
     When User calls "deleteProcess" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'processId' is not present"

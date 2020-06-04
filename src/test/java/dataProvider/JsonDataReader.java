@@ -99,13 +99,13 @@ public class JsonDataReader {
 			throw new RuntimeException("Json file not found at path : ");
 		}
 		
-		ipActivity.setActivityCode("New_"+ipActivity.getActivityCode());
-		ipActivity.setActivitySequence(ipActivity.getActivitySequence()+10);
-		ipActivity.setActivityDisplaySequence(ipActivity.getActivityDisplaySequence()+10);
-		ipActivity.setActivityName("New_"+ipActivity.getActivityName());
-		ipActivity.setActivityPercentCompletion("New_"+ipActivity.getActivityPercentCompletion());
-		ipActivity.setActivityEffort("New_"+ipActivity.getActivityEffort());
-		ipActivity.setActivityOwner("New_"+ipActivity.getActivityOwner());
+		ipActivity.setActivityCode("New_Code_"+ipActivity.getActivityCode());
+		ipActivity.setActivitySequence(10+ipActivity.getActivitySequence());
+		ipActivity.setActivityDisplaySequence(10+ipActivity.getActivityDisplaySequence());
+		ipActivity.setActivityName("New_actNm_"+ipActivity.getActivityName());
+		ipActivity.setActivityPercentCompletion("New_%_"+ipActivity.getActivityPercentCompletion());
+		ipActivity.setActivityEffort("New_effort_"+ipActivity.getActivityEffort());
+		ipActivity.setActivityOwner("New_owner_"+ipActivity.getActivityOwner());
 		ipActivity.setActivityCreatedBy(configReader.getPropValue("update_CreatedBy"));
 		ipActivity.setActivityCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
@@ -192,9 +192,9 @@ public class JsonDataReader {
 	}
 	
 	public Task updateTaskData(Task ipTask) throws IOException {
-		ipTask.setTaskCode("New_"+ipTask.getTaskCode());
-		ipTask.setTaskSequence(ipTask.getTaskSequence()+1);
-		ipTask.setTaskDisplaySequence(ipTask.getTaskDisplaySequence ()+1);
+		ipTask.setTaskCode("New_code_"+ipTask.getTaskCode());
+		ipTask.setTaskSequence(10+ipTask.getTaskSequence());
+		ipTask.setTaskDisplaySequence(10+ipTask.getTaskDisplaySequence ());
 		
 		if(ipTask.getTaskStatus().equalsIgnoreCase("Active"))
 			ipTask.setTaskStatus("Passive");
@@ -203,7 +203,7 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix task.json data");
 		
-		ipTask.setTaskComments(ipTask.getTaskComments()+"_new_comment");
+		ipTask.setTaskComments("New_comment_"+ipTask.getTaskComments());
 		
 		if(ipTask.getTaskApplicable().equalsIgnoreCase("No"))
 			ipTask.setTaskApplicable("Yes");
@@ -212,14 +212,15 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix task.json data");
 		
-		ipTask.setPercentCompletion(ipTask.getPercentCompletion()+10);
-		ipTask.setTaskEffort("New_"+ipTask.getTaskEffort());
-		ipTask.setTaskOwner("New_"+ipTask.getTaskOwner());
+		ipTask.setPercentCompletion("New_percent_"+ipTask.getPercentCompletion());
+		ipTask.setTaskDescription("New_description_"+ipTask.getTaskDescription());
+		ipTask.setTaskEffort("New_taskeffort_"+ipTask.getTaskEffort());
+		ipTask.setTaskOwner("New_owner_"+ipTask.getTaskOwner());
 		ipTask.setTaskCreatedBy(configReader.getPropValue("update_CreatedBy"));
 		ipTask.setTaskCreatedAt(configReader.getPropValue("update_CreatedAt"));
-		ipTask.setTaskProcessName("New_"+ipTask.getTaskProcessName());
-		ipTask.setTaskSquadName("New_"+ipTask.getTaskSquadName());
-		ipTask.setTaskSquadType("New_"+ipTask.getTaskSquadType());
+		ipTask.setTaskProcessName("New_process_nm_"+ipTask.getTaskProcessName());
+		ipTask.setTaskSquadName("New_squadNm_"+ipTask.getTaskSquadName());
+		ipTask.setTaskSquadType("New_squadType_"+ipTask.getTaskSquadType());
 		
 		return ipTask;
 	}

@@ -15,7 +15,14 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import org.json.JSONObject;
+import org.skyscreamer.jsonassert.Customization;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.comparator.CustomComparator;
+
 import entity.Activity;
+import entity.Pattern;
 import entity.Sector;
 import entity.Task;
 import io.cucumber.java.en.Given;
@@ -137,7 +144,8 @@ public class TaskStepDefinition extends Utils{
 	@Then("Response Task which was added should be filtered")
 	public void response_Task_is_added_should_be_filtered() {
 		List<Task> getAllTaskList = Arrays.asList(respAllTasks);
-		assertThat(getAllTaskList, hasItem(respTask));	
+		assertThat(getAllTaskList, hasItem(respTask));
+		
 	}
 	
 	@Then("Response should be list all Tasks=getAllTasks")
@@ -157,19 +165,11 @@ public class TaskStepDefinition extends Utils{
 	
 	@Then("Verify Task fields gets updated")
 	public void verify_Task_fields_gets_updated() {
-	    Task updatedTask=response.getBody().as(Task.class);
-	    assertEquals(updatedTask.getTaskCode(), respTask.getTaskCode());
-	    assertEquals(updatedTask.getTaskSequence(), respTask.getTaskSequence());
-	    assertEquals(updatedTask.getTaskDisplaySequence(), respTask.getTaskDisplaySequence());
-	    assertEquals(updatedTask.getTaskStatus(), respTask.getTaskStatus());
-	    assertEquals(updatedTask.getTaskComments(), respTask.getTaskComments());
-	    assertEquals(updatedTask.getTaskApplicable(), respTask.getTaskApplicable());
-	    assertEquals(updatedTask.getPercentCompletion(), respTask.getPercentCompletion());
-	    assertEquals(updatedTask.getTaskEffort(), respTask.getTaskEffort());
-	    assertEquals(updatedTask.getTaskOwner(), respTask.getTaskOwner());
-	    assertEquals(updatedTask.getTaskCreatedBy(), respTask.getTaskCreatedBy());
-	    assertEquals(updatedTask.getTaskSquadName(), respTask.getTaskSquadName());
-	    assertEquals(updatedTask.getTaskSquadType(), respTask.getTaskSquadType());
+	    respTask = response.getBody().as(Task.class);
+	    JSONAssert.assertEquals(new JSONObject(reqTask).toString(), new JSONObject(respTask).toString(), 
+				new CustomComparator(JSONCompareMode.LENIENT, 
+						new Customization("taskUpdatedAt", (o1, o2) -> true),
+						new Customization("taskUpdatedBy", (o1, o2) -> true)));
 	  }	
 	
 	@Given("{string} User {string} Task Payload  with no Task Body and Param = {string}")

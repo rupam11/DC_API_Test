@@ -24,7 +24,7 @@ Feature: Validating Task API's
   Scenario: Verify API: createTask API with no task Body
     Given "System_Admin" User "Add" Task Payload  with no Task Body and Param = "none"
     When User calls "createTask" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.createTask(java.lang.String,com.ibm.dc.task.entity.Task)"
     
 
@@ -53,7 +53,9 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Tasks
     Then Response should be List of Tasks and size should be one
-    #Then Response Task which was added should be filtered
+    Then Response Task which was added should be filtered 
+    
+    
     
    @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskId'
@@ -71,7 +73,7 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Tasks
   Then Each Task of returned TaskList should have same "taskApplicable"
-   #Then Response Task which was added should be filtered
+   Then Response Task which was added should be filtered
   
   @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskDescription'
@@ -80,7 +82,7 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
    Then Verify response will return List of Tasks
   Then Each Task of returned TaskList should have same "taskDescription"
-#Then Response Task which was added should be filtered
+Then Response Task which was added should be filtered
    
    @getTaskBySearchCriteria
   Scenario: Verify API: getTaskBySearchCriteria API, search by 'taskStatus'
@@ -89,7 +91,7 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
      Then Verify response will return List of Tasks
   Then Each Task of returned TaskList should have same "taskStatus"
-  #Then Response Task which was added should be filtered    
+  Then Response Task which was added should be filtered    
  
   
   
@@ -132,14 +134,14 @@ Feature: Validating Task API's
   Scenario: Verify API: deleteTask API,  with invalid taskId
     Given "System_Admin" User invoke "deleteTask" with invalid Parameter: "taskId" = "-9"
     When User calls "deleteTask" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
+   Then The API call is failed with StatusCode 500
     Then "message" in response body is "Task with id - -9 not found"
 
   @deleteTask
   Scenario: Verify API: deleteTask API, with no Param
     Given "System_Admin" User "deleteTask" with no Param
     When User calls "deleteTask" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'taskId' is not present"
    
   @updateTask
@@ -149,26 +151,26 @@ Feature: Validating Task API's
     Then The API call is success with StatusCode 200
     Then Verify Task fields gets updated
     
+    
+    
      @updateTask
   Scenario: Verify API: updateTask API, with invalid taskId
     Given "System_Admin" User "Update" Task Payload  with invalid Param = "taskId" and value="-9"
     When User calls "updateTask" API with "Put" http Request
-    Then The API call is success with StatusCode 500
+   Then The API call is failed with StatusCode 500
     Then "message" in response body is "Task with id - -9 not found"
 
   @updateTask
   Scenario: Verify API: updateTask API, with no taskId
     Given "System_Admin" User "Update" Task Payload  with no Param
     When User calls "updateTask" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'taskId' is not present"
 
   @updateTask
   Scenario: Verify API: updateTask API, with no task Body
     Given "System_Admin" User "Update" Task Payload  with no Task Body and Param = "taskId"
     When User calls "updateTask" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.updateTask(java.lang.String,java.lang.Integer,com.ibm.dc.task.entity.Task)"
-    
- 
- 
+   

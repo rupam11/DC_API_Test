@@ -22,7 +22,7 @@ Feature: Validating Pattern-Service APIs
   Scenario: Verify API: createPattern API with no pattern Body
     Given "System_Admin" User "Add" Pattern Payload  with no Pattern Body and Param = "none"
     When User calls "createPattern" API with "Post" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.createPattern(java.lang.String,com.ibm.dc.pattern.entity.Pattern)"
 
   @getAllPatterns
@@ -129,14 +129,14 @@ Feature: Validating Pattern-Service APIs
   Scenario: Verify API: deletePattern API,  with invalid patternId
     Given "System_Admin" User invoke "deletePattern" with invalid Parameter: "patternId" = "-9"
     When User calls "deletePattern" API with "Delete" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Pattern with id - -9 not found"
 
   @deletePattern
   Scenario: Verify API: deletePattern API, with no Param
     Given "System_Admin" User "deletePattern" with no Param
     When User calls "deletePattern" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'patternId' is not present"
 
   @updatePattern
@@ -150,19 +150,19 @@ Feature: Validating Pattern-Service APIs
   Scenario: Verify API: updatePattern API, with invalid patternId
     Given "System_Admin" User "Update" Pattern Payload  with invalid Param = "patternId" and value="-9"
     When User calls "updatePattern" API with "Put" http Request
-    Then The API call is success with StatusCode 500
+    Then The API call is failed with StatusCode 500
     Then "message" in response body is "Pattern with id - -9 not found"    
 
   @updatePattern
   Scenario: Verify API: updatePattern API, with no patternId
     Given "System_Admin" User "Update" Pattern Payload  with no Param
     When User calls "updatePattern" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required Integer parameter 'patternId' is not present"
 
   @updatePattern
   Scenario: Verify API: updatePattern API, with no pattern Body
     Given "System_Admin" User "Update" Pattern Payload  with no Pattern Body and Param = "patternId"
     When User calls "updatePattern" API with "Put" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is failed with StatusCode 400
     Then "message" in response body is "Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.updatePattern(java.lang.String,java.lang.Integer,com.ibm.dc.pattern.entity.Pattern)"

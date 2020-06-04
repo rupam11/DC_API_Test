@@ -1,13 +1,13 @@
 [
   {
-    "line": 4,
+    "line": 5,
     "elements": [
       {
-        "start_timestamp": "2020-06-04T00:29:11.520Z",
+        "start_timestamp": "2020-06-04T08:34:46.474Z",
         "before": [
           {
             "result": {
-              "duration": 1485000000,
+              "duration": 1752000000,
               "status": "passed"
             },
             "match": {
@@ -15,10 +15,10 @@
             }
           }
         ],
-        "line": 7,
-        "name": "Verify API: getPatternCount API return Total Pattern Count",
+        "line": 8,
+        "name": "Verify API: getIndustryCount API return Total Industry Count",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatterncount-api-return-total-pattern-count",
+        "id": "validating-industry-service-apis;verify-api:-getindustrycount-api-return-total-industry-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1054000000,
+              "duration": 1301000000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "\"System_Admin\" User invoke \"getPatternCount\"",
+            "line": 9,
+            "name": "\"System_Admin\" User invoke \"getIndustryCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getPatternCount\"",
+                  "val": "\"getIndustryCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 4260000000,
+              "duration": 4513000000,
               "status": "passed"
             },
-            "line": 9,
-            "name": "User calls \"getPatternCount\" API with \"Get\" http Request",
+            "line": 10,
+            "name": "User calls \"getIndustryCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternCount\"",
+                  "val": "\"getIndustryCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 38
+                  "offset": 39
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -78,20 +78,21 @@
           },
           {
             "result": {
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "Verify Pattern_Count result is greater than or equal to 0",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.get_Pattern_count()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 11,
+            "name": "Verify industry_Count result is greater than 0",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.get_industry_count()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -113,19 +114,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternCount"
+            "name": "@getIndustryCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:18.578Z",
+        "start_timestamp": "2020-06-04T08:34:54.440Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -133,10 +133,10 @@
             }
           }
         ],
-        "line": 14,
-        "name": "Verify API: createPattern API add Pattern paylod",
+        "line": 15,
+        "name": "Verify API: createIndustry API add Industry payload",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-createpattern-api-add-pattern-paylod",
+        "id": "validating-industry-service-apis;verify-api:-createindustry-api-add-industry-payload",
         "after": [
           {
             "result": {
@@ -152,46 +152,42 @@
         "steps": [
           {
             "result": {
-              "duration": 1036000000,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "\"System_Admin\" User \"Add\" Pattern Payload with Param \u003d \"none\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Add\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"none\"",
-                  "offset": 55
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1717000000,
+              "duration": 1647000000,
               "status": "passed"
             },
             "line": 16,
-            "name": "User calls \"createPattern\" API with \"Post\" http Request",
+            "name": "\"System_Admin\" User \"Add\" Industry Payload",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createPattern\"",
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.IndustryStepDefinition.user_Industry_Payload(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2384000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User calls \"createIndustry\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -202,7 +198,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 17,
+            "line": 18,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -217,25 +213,25 @@
           },
           {
             "result": {
-              "duration": 119000000,
+              "duration": 142000000,
               "status": "passed"
             },
-            "line": 18,
-            "name": "Verify response will return Pattern instance",
+            "line": 19,
+            "name": "Verify response will return Industry instance",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_Pattern_instance()"
+              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_Industry_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1453000000,
+              "duration": 1587000000,
               "status": "passed"
             },
-            "line": 19,
-            "name": "Verify Total Pattern_Count increased by 1",
+            "line": 20,
+            "name": "Verify Total industry_Count increased by 1",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_Total_Pattern_Count_increased_by()"
+              "location": "stepDefinitions.IndustryStepDefinition.verify_Total_industry_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -248,15 +244,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@createPattern"
+            "name": "@createIndustry"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:22.941Z",
+        "start_timestamp": "2020-06-04T08:35:00.265Z",
         "before": [
           {
             "result": {
@@ -267,10 +263,10 @@
             }
           }
         ],
-        "line": 22,
-        "name": "Verify API: createPattern API with no pattern Body",
+        "line": 24,
+        "name": "Verify API: createIndustry API with no industry Body",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-createpattern-api-with-no-pattern-body",
+        "id": "validating-industry-service-apis;verify-api:-createindustry-api-with-no-industry-body",
         "after": [
           {
             "result": {
@@ -286,11 +282,11 @@
         "steps": [
           {
             "result": {
-              "duration": 13000000,
+              "duration": 11000000,
               "status": "passed"
             },
-            "line": 23,
-            "name": "\"System_Admin\" User \"Add\" Pattern Payload  with no Pattern Body and Param \u003d \"none\"",
+            "line": 25,
+            "name": "\"System_Admin\" User \"Add\" Industry Payload  with no Industry Body",
             "match": {
               "arguments": [
                 {
@@ -300,32 +296,28 @@
                 {
                   "val": "\"Add\"",
                   "offset": 20
-                },
-                {
-                  "val": "\"none\"",
-                  "offset": 76
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Pattern_Body(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_industry_Payload_with_no_Industry_Body_and_Param(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1569000000,
+              "duration": 4989000000,
               "status": "passed"
             },
-            "line": 24,
-            "name": "User calls \"createPattern\" API with \"Post\" http Request",
+            "line": 26,
+            "name": "User calls \"createIndustry\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createPattern\"",
+                  "val": "\"createIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -336,26 +328,26 @@
             "result": {
               "status": "passed"
             },
-            "line": 25,
-            "name": "The API call is success with StatusCode 400",
+            "line": 27,
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
                   "val": "400",
-                  "offset": 40
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1710000000,
+              "duration": 4131000000,
               "status": "passed"
             },
-            "line": 26,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.createPattern(java.lang.String,com.ibm.dc.pattern.entity.Pattern)\"",
+            "line": 28,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.createIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
             "match": {
               "arguments": [
                 {
@@ -363,7 +355,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.createPattern(java.lang.String,com.ibm.dc.pattern.entity.Pattern)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.createIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
                   "offset": 30
                 }
               ],
@@ -380,18 +372,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@createPattern"
+            "name": "@createIndustry"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:26.269Z",
+        "start_timestamp": "2020-06-04T08:35:09.450Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -399,10 +392,10 @@
             }
           }
         ],
-        "line": 29,
-        "name": "Verify API: getAllPatterns API return List of All Pattern",
+        "line": 31,
+        "name": "Verify API: getAllIndustries API return List of All Industries",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getallpatterns-api-return-list-of-all-pattern",
+        "id": "validating-industry-service-apis;verify-api:-getallindustries-api-return-list-of-all-industries",
         "after": [
           {
             "result": {
@@ -418,10 +411,11 @@
         "steps": [
           {
             "result": {
+              "duration": 27000000,
               "status": "passed"
             },
-            "line": 30,
-            "name": "\"System_Admin\" User invoke \"getAllPatterns\"",
+            "line": 32,
+            "name": "\"System_Admin\" User invoke \"getAllIndustries\"",
             "match": {
               "arguments": [
                 {
@@ -429,7 +423,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getAllPatterns\"",
+                  "val": "\"getAllIndustries\"",
                   "offset": 27
                 }
               ],
@@ -439,20 +433,20 @@
           },
           {
             "result": {
-              "duration": 3263000000,
+              "duration": 3741000000,
               "status": "passed"
             },
-            "line": 31,
-            "name": "User calls \"getAllPatterns\" API with \"Get\" http Request",
+            "line": 33,
+            "name": "User calls \"getAllIndustries\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getAllPatterns\"",
+                  "val": "\"getAllIndustries\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 37
+                  "offset": 39
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -461,9 +455,10 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
-            "line": 32,
+            "line": 34,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -478,25 +473,37 @@
           },
           {
             "result": {
-              "duration": 123000000,
+              "duration": 44000000,
               "status": "passed"
             },
-            "line": 33,
-            "name": "Verify response will return List of Pattern",
+            "line": 35,
+            "name": "Verify response will return List of Industries",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1432000000,
+              "duration": 2111000000,
               "status": "passed"
             },
-            "line": 34,
-            "name": "Total number of Pattern in List is equal to getPatternCount",
+            "line": 36,
+            "name": "Total number of Industry in List is equal to getIndustryCount",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.total_number_of_Pattern_in_List_is_equal_to_getPatternCount()"
+              "location": "stepDefinitions.IndustryStepDefinition.total_number_of_Industry_in_List_is_equal_to_getIndustryCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 52000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Industry added exist in returned Industry List",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
             },
             "keyword": "Then "
           }
@@ -509,15 +516,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getAllPatterns"
+            "name": "@getAllIndusties"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:31.112Z",
+        "start_timestamp": "2020-06-04T08:35:15.461Z",
         "before": [
           {
             "result": {
@@ -528,14 +535,13 @@
             }
           }
         ],
-        "line": 38,
-        "name": "Verify API: getPatternBySearchCriteria API, search no SearchCriteria",
+        "line": 40,
+        "name": "Verify API: getIndustryBySearchCriteria API, search no SearchCriteria",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-no-searchcriteria",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-no-searchcriteria",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -548,10 +554,11 @@
         "steps": [
           {
             "result": {
+              "duration": 11000000,
               "status": "passed"
             },
-            "line": 39,
-            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\"",
+            "line": 41,
+            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\"",
             "match": {
               "arguments": [
                 {
@@ -559,7 +566,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 27
                 }
               ],
@@ -569,20 +576,20 @@
           },
           {
             "result": {
-              "duration": 895000000,
+              "duration": 2659000000,
               "status": "passed"
             },
-            "line": 40,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "line": 42,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -593,7 +600,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 41,
+            "line": 43,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -611,10 +618,10 @@
               "duration": 15000000,
               "status": "passed"
             },
-            "line": 42,
-            "name": "Verify response will return List of Pattern",
+            "line": 44,
+            "name": "Verify response will return List of Industries",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
             },
             "keyword": "Then "
           },
@@ -622,10 +629,10 @@
             "result": {
               "status": "passed"
             },
-            "line": 44,
-            "name": "All Pattern should have Active Status",
+            "line": 46,
+            "name": "All Industries should have Active Status",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.all_Pattern_should_have_Active_Status()"
+              "location": "stepDefinitions.IndustryStepDefinition.all_Industries_should_have_Active_Status()"
             },
             "keyword": "Then "
           }
@@ -638,125 +645,136 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:32.054Z",
+        "start_timestamp": "2020-06-04T08:35:18.194Z",
         "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryId\u0027",
+        "description": "",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 271000000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industryId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"industryId\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2454000000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getIndustryBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Verify response will return List of Industries",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
+            },
+            "keyword": "Then "
+          },
           {
             "result": {
               "duration": 3000000,
               "status": "passed"
             },
+            "line": 54,
+            "name": "Response should be list of Industries and size should be one",
             "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 47,
-        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternId\u0027",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 169000000,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 70
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2051000000,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.IndustryStepDefinition.response_should_be_list_of_Industries_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 24000000,
               "status": "passed"
             },
-            "line": 51,
-            "name": "Verify response will return List of Pattern",
+            "line": 55,
+            "name": "Industry added exist in returned Industry List",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "Response should be list of Pattern and size should be one",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.response_should_be_list_of_Pattern_and_size_should_be_one()"
+              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
             },
             "keyword": "Then "
           }
@@ -769,19 +787,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:34.362Z",
+        "start_timestamp": "2020-06-04T08:35:20.960Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -789,10 +807,10 @@
             }
           }
         ],
-        "line": 57,
-        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternName\u0027",
+        "line": 58,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryName\u0027",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternname-",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryname-",
         "after": [
           {
             "result": {
@@ -808,11 +826,11 @@
         "steps": [
           {
             "result": {
-              "duration": 28000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 58,
-            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternName\"",
+            "line": 59,
+            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industryName\"",
             "match": {
               "arguments": [
                 {
@@ -820,30 +838,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"patternName\"",
-                  "offset": 70
+                  "val": "\"industryName\"",
+                  "offset": 71
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2086000000,
+              "duration": 2176000000,
               "status": "passed"
             },
-            "line": 59,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "line": 60,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -854,7 +872,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 60,
+            "line": 61,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -869,13 +887,13 @@
           },
           {
             "result": {
-              "duration": 19000000,
+              "duration": 4000000,
               "status": "passed"
             },
-            "line": 61,
-            "name": "Verify response will return List of Pattern",
+            "line": 62,
+            "name": "Verify response will return List of Industries",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
             },
             "keyword": "Then "
           },
@@ -883,16 +901,10 @@
             "result": {
               "status": "passed"
             },
-            "line": 62,
-            "name": "Each Pattern of returned PatternList should have same pattern \"PatternName\"",
+            "line": 63,
+            "name": "Industry added exist in returned Industry List",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"PatternName\"",
-                  "offset": 62
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
             },
             "keyword": "Then "
           }
@@ -905,15 +917,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:36.522Z",
+        "start_timestamp": "2020-06-04T08:35:23.181Z",
         "before": [
           {
             "result": {
@@ -925,9 +937,9 @@
           }
         ],
         "line": 66,
-        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternState\u0027",
+        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industrySectorName\u0027",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternstate-",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industrysectorname-",
         "after": [
           {
             "result": {
@@ -943,11 +955,11 @@
         "steps": [
           {
             "result": {
-              "duration": 16000000,
+              "duration": 5000000,
               "status": "passed"
             },
             "line": 67,
-            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternState\"",
+            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industrySectorName\"",
             "match": {
               "arguments": [
                 {
@@ -955,30 +967,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"patternState\"",
-                  "offset": 70
+                  "val": "\"industrySectorName\"",
+                  "offset": 71
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 3636000000,
+              "duration": 4208000000,
               "status": "passed"
             },
             "line": 68,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1004,13 +1016,13 @@
           },
           {
             "result": {
-              "duration": 35000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 70,
-            "name": "Verify response will return List of Pattern",
+            "name": "Verify response will return List of Industries",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
             },
             "keyword": "Then "
           },
@@ -1019,15 +1031,9 @@
               "status": "passed"
             },
             "line": 71,
-            "name": "Each Pattern of returned PatternList should have same pattern \"patternState\"",
+            "name": "Industry added exist in returned Industry List",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"patternState\"",
-                  "offset": 62
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
             },
             "keyword": "Then "
           }
@@ -1040,15 +1046,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:40.242Z",
+        "start_timestamp": "2020-06-04T08:35:27.432Z",
         "before": [
           {
             "result": {
@@ -1059,10 +1065,10 @@
             }
           }
         ],
-        "line": 75,
-        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternStatus\u0027",
+        "line": 74,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryId\u0027 \u0026 \u0027industryName\u0027 \u0026 \u0027industrySectorName\u0027",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternstatus-",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryid--\u0026--industryname--\u0026--industrysectorname-",
         "after": [
           {
             "result": {
@@ -1081,8 +1087,8 @@
               "duration": 25000000,
               "status": "passed"
             },
-            "line": 76,
-            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternStatus\"",
+            "line": 75,
+            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \u0027industryId\u0027 \u0026 \u0027industryName\u0027 \u0026 \u0027industrySectorName\u0027",
             "match": {
               "arguments": [
                 {
@@ -1090,30 +1096,38 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"patternStatus\"",
-                  "offset": 70
+                  "val": "\u0027industryId\u0027",
+                  "offset": 71
+                },
+                {
+                  "val": "\u0027industryName\u0027",
+                  "offset": 86
+                },
+                {
+                  "val": "\u0027industrySectorName\u0027",
+                  "offset": 103
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 3170000000,
+              "duration": 2250000000,
               "status": "passed"
             },
-            "line": 77,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "line": 76,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1124,7 +1138,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 78,
+            "line": 77,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1139,13 +1153,24 @@
           },
           {
             "result": {
-              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "Verify response will return List of Industries",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15000000,
               "status": "passed"
             },
             "line": 79,
-            "name": "Verify response will return List of Pattern",
+            "name": "Response should be list of Industries and size should be one",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.response_should_be_list_of_Industries_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
@@ -1154,15 +1179,9 @@
               "status": "passed"
             },
             "line": 80,
-            "name": "Each Pattern of returned PatternList should have same pattern \"patternStatus\"",
+            "name": "Industry added exist in returned Industry List",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"patternStatus\"",
-                  "offset": 62
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
             },
             "keyword": "Then "
           }
@@ -1175,18 +1194,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:43.481Z",
+        "start_timestamp": "2020-06-04T08:35:29.734Z",
         "before": [
           {
             "result": {
+              "duration": 7000000,
               "status": "passed"
             },
             "match": {
@@ -1194,10 +1214,10 @@
             }
           }
         ],
-        "line": 84,
-        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternId\u0027 \u0026 \u0027patternName\u0027 \u0026 \u0027patternState\u0027 \u0026 \u0027patternStatus\u0027",
+        "line": 83,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternid--\u0026--patternname--\u0026--patternstate--\u0026--patternstatus-",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
         "after": [
           {
             "result": {
@@ -1213,11 +1233,10 @@
         "steps": [
           {
             "result": {
-              "duration": 25000000,
               "status": "passed"
             },
-            "line": 85,
-            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \u0027patternId\u0027 \u0026 \u0027patternName\u0027 \u0026 \u0027patternState\u0027 \u0026 \u0027patternStatus\u0027",
+            "line": 84,
+            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industryId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1225,272 +1244,15 @@
                   "offset": 0
                 },
                 {
-                  "val": "\u0027patternId\u0027",
-                  "offset": 70
-                },
-                {
-                  "val": "\u0027patternName\u0027",
-                  "offset": 84
-                },
-                {
-                  "val": "\u0027patternState\u0027",
-                  "offset": 100
-                },
-                {
-                  "val": "\u0027patternStatus\u0027",
-                  "offset": 117
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_all_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1752000000,
-              "status": "passed"
-            },
-            "line": 86,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 87,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6000000,
-              "status": "passed"
-            },
-            "line": 88,
-            "name": "Response should be list of Pattern and size should be one",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.response_should_be_list_of_Pattern_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@getPatternBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:29:45.280Z",
-        "before": [
-          {
-            "result": {
-              "duration": 10000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 93,
-        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternId\u0027",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 3000000,
-              "status": "passed"
-            },
-            "line": 94,
-            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"patternId\"",
-                  "offset": 80
+                  "val": "\"industryId\"",
+                  "offset": 81
                 },
                 {
                   "val": "\"-9\"",
-                  "offset": 94
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2051000000,
-              "status": "passed"
-            },
-            "line": 95,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 96,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 12000000,
-              "status": "passed"
-            },
-            "line": 97,
-            "name": "Verify response will return List of Pattern with zero records",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@getPatternBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:29:47.381Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 100,
-        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternName\u0027",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 101,
-            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternName\" \u003d \"invalidPatternName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"patternName\"",
-                  "offset": 80
-                },
-                {
-                  "val": "\"invalidPatternName\"",
                   "offset": 96
                 }
               ],
@@ -1500,20 +1262,20 @@
           },
           {
             "result": {
-              "duration": 2121000000,
+              "duration": 1943000000,
               "status": "passed"
             },
-            "line": 102,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "line": 85,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1524,7 +1286,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 103,
+            "line": 86,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1539,13 +1301,12 @@
           },
           {
             "result": {
-              "duration": 12000000,
               "status": "passed"
             },
-            "line": 104,
-            "name": "Verify response will return List of Pattern with zero records",
+            "line": 87,
+            "name": "Verify response will return List of Industries with zero records",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1558,19 +1319,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:49.550Z",
+        "start_timestamp": "2020-06-04T08:35:31.710Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1578,10 +1338,135 @@
             }
           }
         ],
-        "line": 107,
-        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternState\u0027",
+        "line": 90,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternstate-",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 91,
+            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industryName\" \u003d \"invalidIndustryName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getIndustryBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"industryName\"",
+                  "offset": 81
+                },
+                {
+                  "val": "\"invalidIndustryName\"",
+                  "offset": 98
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2167000000,
+              "status": "passed"
+            },
+            "line": 92,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getIndustryBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "Verify response will return List of Industries with zero records",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Industry"
+          },
+          {
+            "name": "@getIndustryBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T08:35:33.936Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 97,
+        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
+        "description": "",
+        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
         "after": [
           {
             "result": {
@@ -1600,8 +1485,8 @@
               "duration": 4000000,
               "status": "passed"
             },
-            "line": 108,
-            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternState\" \u003d \"invalidPatternState\"",
+            "line": 98,
+            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industrySectorName\" \u003d \"invalidIndustrySectorName\"",
             "match": {
               "arguments": [
                 {
@@ -1609,16 +1494,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"patternState\"",
-                  "offset": 80
+                  "val": "\"industrySectorName\"",
+                  "offset": 81
                 },
                 {
-                  "val": "\"invalidPatternState\"",
-                  "offset": 97
+                  "val": "\"invalidIndustrySectorName\"",
+                  "offset": 104
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1627,20 +1512,20 @@
           },
           {
             "result": {
-              "duration": 2012000000,
+              "duration": 2742000000,
               "status": "passed"
             },
-            "line": 109,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "line": 99,
+            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"getIndustryBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 50
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1651,7 +1536,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 110,
+            "line": 100,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1666,13 +1551,13 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 19000000,
               "status": "passed"
             },
-            "line": 111,
-            "name": "Verify response will return List of Pattern with zero records",
+            "line": 101,
+            "name": "Verify response will return List of Industries with zero records",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
+              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1685,15 +1570,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@getPatternBySearchCriteria"
+            "name": "@getIndustryBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:51.600Z",
+        "start_timestamp": "2020-06-04T08:35:36.748Z",
         "before": [
           {
             "result": {
@@ -1704,10 +1589,128 @@
             }
           }
         ],
-        "line": 114,
-        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternStatus\u0027",
+        "line": 104,
+        "name": "Verify API: deleteIndustry update Industry status as Passive",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternstatus-",
+        "id": "validating-industry-service-apis;verify-api:-deleteindustry-update-industry-status-as-passive",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 105,
+            "name": "\"System_Admin\" User invoke deleteIndustry with Parameter: \"industryId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"industryId\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_deleteIndustry_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1268000000,
+              "status": "passed"
+            },
+            "line": 106,
+            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteIndustry\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 107,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 108,
+            "name": "Verify IndustryStatus of particular Industry updated as Passive",
+            "match": {
+              "location": "stepDefinitions.IndustryStepDefinition.verify_IndustryStatus_updated_as_Passive()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Industry"
+          },
+          {
+            "name": "@deleteIndustry"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T08:35:38.075Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 112,
+        "name": "Verify API: deleteIndustry API,  with invalid industryId",
+        "description": "",
+        "id": "validating-industry-service-apis;verify-api:-deleteindustry-api---with-invalid-industryid",
         "after": [
           {
             "result": {
@@ -1726,8 +1729,8 @@
               "duration": 5000000,
               "status": "passed"
             },
-            "line": 115,
-            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternStatus\" \u003d \"invalidPatternStatus\"",
+            "line": 113,
+            "name": "\"System_Admin\" User invoke \"deleteIndustry\" with invalid Parameter: \"industryId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1735,281 +1738,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getPatternBySearchCriteria\"",
+                  "val": "\"deleteIndustry\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"patternStatus\"",
-                  "offset": 80
-                },
-                {
-                  "val": "\"invalidPatternStatus\"",
-                  "offset": 98
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1602000000,
-              "status": "passed"
-            },
-            "line": 116,
-            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getPatternBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 117,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 118,
-            "name": "Verify response will return List of Pattern with zero records",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@getPatternBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:29:53.235Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 121,
-        "name": "Verify API: deletePattern update Pattern status as Passive",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-deletepattern-update-pattern-status-as-passive",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 122,
-            "name": "\"System_Admin\" User invoke deletePattern with Parameter: \"patternId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 57
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_invoke_deletePattern_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1603000000,
-              "status": "passed"
-            },
-            "line": 123,
-            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deletePattern\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 124,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 125,
-            "name": "Verify response will return Pattern instance",
-            "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_Pattern_instance()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 29000000,
-              "status": "passed"
-            },
-            "line": 126,
-            "name": "\"patternStatus\" in response body is \"Passive\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"patternStatus\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Passive\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@deletePattern"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:29:54.895Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 129,
-        "name": "Verify API: deletePattern API,  with invalid patternId",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-deletepattern-api---with-invalid-patternid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 130,
-            "name": "\"System_Admin\" User invoke \"deletePattern\" with invalid Parameter: \"patternId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deletePattern\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 67
+                  "val": "\"industryId\"",
+                  "offset": 68
                 },
                 {
                   "val": "\"-9\"",
-                  "offset": 81
+                  "offset": 83
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -2018,20 +1756,20 @@
           },
           {
             "result": {
-              "duration": 1604000000,
+              "duration": 2516000000,
               "status": "passed"
             },
-            "line": 131,
-            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
+            "line": 114,
+            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deletePattern\"",
+                  "val": "\"deleteIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2042,7 +1780,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 132,
+            "line": 115,
             "name": "The API call is success with StatusCode 500",
             "match": {
               "arguments": [
@@ -2057,11 +1795,11 @@
           },
           {
             "result": {
-              "duration": 25000000,
+              "duration": 27000000,
               "status": "passed"
             },
-            "line": 133,
-            "name": "\"message\" in response body is \"Pattern with id - -9 not found\"",
+            "line": 116,
+            "name": "\"message\" in response body is \"Industry with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -2069,7 +1807,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Pattern with id - -9 not found\"",
+                  "val": "\"Industry with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -2086,15 +1824,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@deletePattern"
+            "name": "@deleteIndustry"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:56.561Z",
+        "start_timestamp": "2020-06-04T08:35:40.672Z",
         "before": [
           {
             "result": {
@@ -2106,10 +1844,10 @@
             }
           }
         ],
-        "line": 136,
-        "name": "Verify API: deletePattern API, with no Param",
+        "line": 119,
+        "name": "Verify API: deleteIndustry API, with no Param",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-deletepattern-api--with-no-param",
+        "id": "validating-industry-service-apis;verify-api:-deleteindustry-api--with-no-param",
         "after": [
           {
             "result": {
@@ -2125,11 +1863,11 @@
         "steps": [
           {
             "result": {
-              "duration": 7000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 137,
-            "name": "\"System_Admin\" User \"deletePattern\" with no Param",
+            "line": 120,
+            "name": "\"System_Admin\" User \"deleteIndustry\" with no Param",
             "match": {
               "arguments": [
                 {
@@ -2137,7 +1875,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deletePattern\"",
+                  "val": "\"deleteIndustry\"",
                   "offset": 20
                 }
               ],
@@ -2147,20 +1885,20 @@
           },
           {
             "result": {
-              "duration": 1518000000,
+              "duration": 2255000000,
               "status": "passed"
             },
-            "line": 138,
-            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
+            "line": 121,
+            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deletePattern\"",
+                  "val": "\"deleteIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2171,26 +1909,26 @@
             "result": {
               "status": "passed"
             },
-            "line": 139,
-            "name": "The API call is success with StatusCode 400",
+            "line": 122,
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
                   "val": "400",
-                  "offset": 40
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 21000000,
+              "duration": 27000000,
               "status": "passed"
             },
-            "line": 140,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027patternId\u0027 is not present\"",
+            "line": 123,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027industryId\u0027 is not present\"",
             "match": {
               "arguments": [
                 {
@@ -2198,7 +1936,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required Integer parameter \u0027patternId\u0027 is not present\"",
+                  "val": "\"Required Integer parameter \u0027industryId\u0027 is not present\"",
                   "offset": 30
                 }
               ],
@@ -2215,19 +1953,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@deletePattern"
+            "name": "@deleteIndustry"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:58.127Z",
+        "start_timestamp": "2020-06-04T08:35:43.013Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -2235,13 +1972,14 @@
             }
           }
         ],
-        "line": 143,
-        "name": "Verify API: updatePattern API add Pattern paylod",
+        "line": 126,
+        "name": "Verify API: updateIndustry API add Industry paylod",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api-add-pattern-paylod",
+        "id": "validating-industry-service-apis;verify-api:-updateindustry-api-add-industry-paylod",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -2254,11 +1992,11 @@
         "steps": [
           {
             "result": {
-              "duration": 29000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 144,
-            "name": "\"System_Admin\" User \"Update\" Pattern Payload with Param \u003d \"patternId\"",
+            "line": 127,
+            "name": "\"System_Admin\" User \"Update\" Industry Payload",
             "match": {
               "arguments": [
                 {
@@ -2268,32 +2006,28 @@
                 {
                   "val": "\"Update\"",
                   "offset": 20
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 58
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_Industry_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1516000000,
+              "duration": 1196000000,
               "status": "passed"
             },
-            "line": 145,
-            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "line": 128,
+            "name": "User calls \"updateIndustry\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updatePattern\"",
+                  "val": "\"updateIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2304,7 +2038,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 146,
+            "line": 129,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -2319,14 +2053,13 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: patternActivities[activityCode\u003dACT_21].activityCreatedAt\nExpected: 2020-03-08 00:48:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskCreatedAt\nExpected: 2020-03-08 00:48:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskUpdatedAt\nExpected: 0000-00-00 00:00:00\n     got: NA\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskUpdatedBy\nExpected: \n     got: 0000-00-00 00:00:00\n ; patternActivities[activityCode\u003dACT_21].activityUpdatedAt\nExpected: 0000-00-00 00:00:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityUpdatedBy\nExpected: \n     got: rupam_sys\n\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:482)\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:464)\r\n\tat stepDefinitions.PatternStepDefinition.verify_Patternfields_gets_updated(PatternStepDefinition.java:165)\r\n\tat ✽.Verify Pattern fields gets updated(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Pattern.feature:147)\r\n",
-              "duration": 47000000,
-              "status": "failed"
+              "duration": 38000000,
+              "status": "passed"
             },
-            "line": 147,
-            "name": "Verify Pattern fields gets updated",
+            "line": 130,
+            "name": "Verify Industry fields gets updated",
             "match": {
-              "location": "stepDefinitions.PatternStepDefinition.verify_Patternfields_gets_updated()"
+              "location": "stepDefinitions.IndustryStepDefinition.verify_Industry_fields_gets_updated()"
             },
             "keyword": "Then "
           }
@@ -2339,151 +2072,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@updatePattern"
+            "name": "@updateIndustry"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T00:29:59.735Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 150,
-        "name": "Verify API: updatePattern API, with invalid patternId",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-invalid-patternid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 13000000,
-              "status": "passed"
-            },
-            "line": 151,
-            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with invalid Param \u003d \"patternId\" and value\u003d\"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 67
-                },
-                {
-                  "val": "-9",
-                  "offset": 90
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_invalid_Param(java.lang.String,java.lang.String,java.lang.String,int)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1550000000,
-              "status": "passed"
-            },
-            "line": 152,
-            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updatePattern\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 153,
-            "name": "The API call is success with StatusCode 500",
-            "match": {
-              "arguments": [
-                {
-                  "val": "500",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 23000000,
-              "status": "passed"
-            },
-            "line": 154,
-            "name": "\"message\" in response body is \"Pattern with id - -9 not found\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Pattern with id - -9 not found\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@updatePattern"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:30:01.374Z",
+        "start_timestamp": "2020-06-04T08:35:44.280Z",
         "before": [
           {
             "result": {
@@ -2495,13 +2092,14 @@
             }
           }
         ],
-        "line": 157,
-        "name": "Verify API: updatePattern API, with no patternId",
+        "line": 133,
+        "name": "Verify API: updateIndustry API, with no Industry Body",
         "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-no-patternid",
+        "id": "validating-industry-service-apis;verify-api:-updateindustry-api--with-no-industry-body",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -2514,11 +2112,11 @@
         "steps": [
           {
             "result": {
-              "duration": 26000000,
+              "duration": 5000000,
               "status": "passed"
             },
-            "line": 158,
-            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with no Param",
+            "line": 134,
+            "name": "\"System_Admin\" User \"Update\" Industry Payload  with no Industry Body",
             "match": {
               "arguments": [
                 {
@@ -2530,26 +2128,26 @@
                   "offset": 20
                 }
               ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.IndustryStepDefinition.user_industry_Payload_with_no_Industry_Body_and_Param(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2115000000,
+              "duration": 1904000000,
               "status": "passed"
             },
-            "line": 159,
-            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "line": 135,
+            "name": "User calls \"updateIndustry\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updatePattern\"",
+                  "val": "\"updateIndustry\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 36
+                  "offset": 37
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2558,150 +2156,19 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
-            "line": 160,
-            "name": "The API call is success with StatusCode 400",
+            "line": 136,
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
                   "val": "400",
-                  "offset": 40
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 25000000,
-              "status": "passed"
-            },
-            "line": 161,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027patternId\u0027 is not present\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required Integer parameter \u0027patternId\u0027 is not present\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Pattern"
-          },
-          {
-            "name": "@updatePattern"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T00:30:03.564Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 164,
-        "name": "Verify API: updatePattern API, with no pattern Body",
-        "description": "",
-        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-no-pattern-body",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 165,
-            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with no Pattern Body and Param \u003d \"patternId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"patternId\"",
-                  "offset": 79
-                }
-              ],
-              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Pattern_Body(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1620000000,
-              "status": "passed"
-            },
-            "line": 166,
-            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updatePattern\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 167,
-            "name": "The API call is success with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
@@ -2710,8 +2177,8 @@
               "duration": 23000000,
               "status": "passed"
             },
-            "line": 168,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.updatePattern(java.lang.String,java.lang.Integer,com.ibm.dc.pattern.entity.Pattern)\"",
+            "line": 137,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
             "match": {
               "arguments": [
                 {
@@ -2719,7 +2186,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.updatePattern(java.lang.String,java.lang.Integer,com.ibm.dc.pattern.entity.Pattern)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
                   "offset": 30
                 }
               ],
@@ -2736,19 +2203,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Pattern"
+            "name": "@Industry"
           },
           {
-            "name": "@updatePattern"
+            "name": "@updateIndustry"
           }
         ]
       }
     ],
-    "name": "Validating Pattern-Service APIs",
+    "name": "Validating Industry-Service APIs",
     "description": "",
-    "id": "validating-pattern-service-apis",
+    "id": "validating-industry-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Pattern.feature",
+    "uri": "file:src/test/java/features/Industry.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -2767,7 +2234,7 @@
         }
       },
       {
-        "name": "@Pattern",
+        "name": "@Industry",
         "type": "Tag",
         "location": {
           "line": 3,
