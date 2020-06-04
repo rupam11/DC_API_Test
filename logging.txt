@@ -1,5 +1,5 @@
-Request method:	PUT
-Request URI:	https://9.51.192.136:9080/industry-service/updateIndustry
+Request method:	POST
+Request URI:	https://9.51.192.136:9080/mail-service/sendMail
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -15,15 +15,15 @@ HTTP/1.1 400
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Date: Thu, 04 Jun 2020 08:36:01 GMT
+Date: Thu, 04 Jun 2020 09:18:16 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: close
 
 {
-    "timestamp": "2020-06-04T08:36:01.566+0000",
+    "timestamp": "2020-06-04T09:18:16.788+0000",
     "status": 400,
     "error": "Bad Request",
-    "message": "Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)",
-    "path": "/updateIndustry"
+    "message": "Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)",
+    "path": "/sendMail"
 }

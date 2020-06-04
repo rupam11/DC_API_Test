@@ -1,13 +1,13 @@
 [
   {
-    "line": 5,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-06-04T08:34:46.474Z",
+        "start_timestamp": "2020-06-04T09:17:44.127Z",
         "before": [
           {
             "result": {
-              "duration": 1752000000,
+              "duration": 2839000000,
               "status": "passed"
             },
             "match": {
@@ -15,10 +15,10 @@
             }
           }
         ],
-        "line": 8,
-        "name": "Verify API: getIndustryCount API return Total Industry Count",
+        "line": 7,
+        "name": "Verify API: sendMail sends mail",
         "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrycount-api-return-total-industry-count",
+        "id": "validating-activity-api-s;verify-api:-sendmail-sends-mail",
         "after": [
           {
             "result": {
@@ -34,74 +34,137 @@
         "steps": [
           {
             "result": {
-              "duration": 1301000000,
+              "duration": 1957000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "\"System_Admin\" Add Mail Payload",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                }
+              ],
+              "location": "stepDefinitions.MailStepDefinition.add_Mail_Payload(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8033000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "\"System_Admin\" User invoke \"getIndustryCount\"",
+            "name": "User calls \"sendMail\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
+                  "val": "\"sendMail\"",
+                  "offset": 11
                 },
                 {
-                  "val": "\"getIndustryCount\"",
-                  "offset": 27
+                  "val": "\"Post\"",
+                  "offset": 31
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
             },
-            "keyword": "Given "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 4513000000,
+              "duration": 169000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "User calls \"getIndustryCount\" API with \"Get\" http Request",
+            "name": "Verify responseBody is instance of ResponseStatus",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryCount\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.MailStepDefinition.verify_responseBody_is_instance_of_ResponseStatus()"
             },
-            "keyword": "When "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 11,
-            "name": "Verify industry_Count result is greater than 0",
+            "name": "The API call is success with StatusCode 200",
             "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.get_industry_count()"
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
+              "duration": 2308000000,
               "status": "passed"
             },
             "line": 12,
-            "name": "The API call is success with StatusCode 200",
+            "name": "\"messageCode\" in response body is 0",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 40
+                  "val": "\"messageCode\"",
+                  "offset": 0
+                },
+                {
+                  "val": "0",
+                  "offset": 34
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 34000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "\"message\" in response body is \"Success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Success\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 35000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "\"displayMessage\" in response body is \"Mail sent successfully\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"displayMessage\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Mail sent successfully\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -111,21 +174,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Demo"
+            "name": "@Test"
           },
           {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryCount"
+            "name": "@sendMail"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-04T08:34:54.440Z",
+        "start_timestamp": "2020-06-04T09:17:59.732Z",
         "before": [
           {
             "result": {
+              "duration": 7000000,
               "status": "passed"
             },
             "match": {
@@ -133,10 +194,10 @@
             }
           }
         ],
-        "line": 15,
-        "name": "Verify API: createIndustry API add Industry payload",
+        "line": 17,
+        "name": "Verify API: sendMail fail in case body is not passed",
         "description": "",
-        "id": "validating-industry-service-apis;verify-api:-createindustry-api-add-industry-payload",
+        "id": "validating-activity-api-s;verify-api:-sendmail-fail-in-case-body-is-not-passed",
         "after": [
           {
             "result": {
@@ -152,141 +213,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1647000000,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"System_Admin\" User \"Add\" Industry Payload",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Add\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_Industry_Payload(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2384000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "User calls \"createIndustry\" API with \"Post\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"createIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Post\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
+              "duration": 28000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 142000000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "Verify response will return Industry instance",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_Industry_instance()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1587000000,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "Verify Total industry_Count increased by 1",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_Total_industry_Count_increased_by()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@createIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:00.265Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 24,
-        "name": "Verify API: createIndustry API with no industry Body",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-createindustry-api-with-no-industry-body",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "\"System_Admin\" User \"Add\" Industry Payload  with no Industry Body",
+            "name": "\"System_Admin\" User invoke \"sendMail\"",
             "match": {
               "arguments": [
                 {
@@ -294,30 +225,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Add\"",
-                  "offset": 20
+                  "val": "\"sendMail\"",
+                  "offset": 27
                 }
               ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_industry_Payload_with_no_Industry_Body_and_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 4989000000,
+              "duration": 1566000000,
               "status": "passed"
             },
-            "line": 26,
-            "name": "User calls \"createIndustry\" API with \"Post\" http Request",
+            "line": 19,
+            "name": "User calls \"sendMail\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createIndustry\"",
+                  "val": "\"sendMail\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 37
+                  "offset": 31
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -328,7 +259,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 27,
+            "line": 20,
             "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
@@ -343,11 +274,11 @@
           },
           {
             "result": {
-              "duration": 4131000000,
+              "duration": 30000000,
               "status": "passed"
             },
-            "line": 28,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.createIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
+            "line": 21,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)\"",
             "match": {
               "arguments": [
                 {
@@ -355,7 +286,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.createIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)\"",
                   "offset": 30
                 }
               ],
@@ -369,1853 +300,19 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Demo"
+            "name": "@Test"
           },
           {
-            "name": "@Industry"
-          },
-          {
-            "name": "@createIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:09.450Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 31,
-        "name": "Verify API: getAllIndustries API return List of All Industries",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getallindustries-api-return-list-of-all-industries",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 27000000,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "\"System_Admin\" User invoke \"getAllIndustries\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getAllIndustries\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3741000000,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "User calls \"getAllIndustries\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getAllIndustries\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 44000000,
-              "status": "passed"
-            },
-            "line": 35,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2111000000,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "Total number of Industry in List is equal to getIndustryCount",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.total_number_of_Industry_in_List_is_equal_to_getIndustryCount()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 52000000,
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "Industry added exist in returned Industry List",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getAllIndusties"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:15.461Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 40,
-        "name": "Verify API: getIndustryBySearchCriteria API, search no SearchCriteria",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-no-searchcriteria",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2659000000,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 15000000,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "All Industries should have Active Status",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.all_Industries_should_have_Active_Status()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:18.194Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 49,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryId\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 271000000,
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industryId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"industryId\"",
-                  "offset": 71
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2454000000,
-              "status": "passed"
-            },
-            "line": 51,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 53,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 3000000,
-              "status": "passed"
-            },
-            "line": 54,
-            "name": "Response should be list of Industries and size should be one",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.response_should_be_list_of_Industries_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 55,
-            "name": "Industry added exist in returned Industry List",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:20.960Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 58,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryName\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 12000000,
-              "status": "passed"
-            },
-            "line": 59,
-            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industryName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"industryName\"",
-                  "offset": 71
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2176000000,
-              "status": "passed"
-            },
-            "line": 60,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 61,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4000000,
-              "status": "passed"
-            },
-            "line": 62,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 63,
-            "name": "Industry added exist in returned Industry List",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:23.181Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 66,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industrySectorName\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industrysectorname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 67,
-            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \"industrySectorName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"industrySectorName\"",
-                  "offset": 71
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 4208000000,
-              "status": "passed"
-            },
-            "line": 68,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 69,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 70,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 71,
-            "name": "Industry added exist in returned Industry List",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:27.432Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 74,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by \u0027industryId\u0027 \u0026 \u0027industryName\u0027 \u0026 \u0027industrySectorName\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by--industryid--\u0026--industryname--\u0026--industrysectorname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 25000000,
-              "status": "passed"
-            },
-            "line": 75,
-            "name": "\"System_Admin\" User invoke getIndustryBySearchCriteria with Parameter: \u0027industryId\u0027 \u0026 \u0027industryName\u0027 \u0026 \u0027industrySectorName\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\u0027industryId\u0027",
-                  "offset": 71
-                },
-                {
-                  "val": "\u0027industryName\u0027",
-                  "offset": 86
-                },
-                {
-                  "val": "\u0027industrySectorName\u0027",
-                  "offset": 103
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2250000000,
-              "status": "passed"
-            },
-            "line": 76,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 77,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 78,
-            "name": "Verify response will return List of Industries",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 15000000,
-              "status": "passed"
-            },
-            "line": 79,
-            "name": "Response should be list of Industries and size should be one",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.response_should_be_list_of_Industries_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 80,
-            "name": "Industry added exist in returned Industry List",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:29.734Z",
-        "before": [
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 83,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 84,
-            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industryId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"industryId\"",
-                  "offset": 81
-                },
-                {
-                  "val": "\"-9\"",
-                  "offset": 96
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1943000000,
-              "status": "passed"
-            },
-            "line": 85,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 86,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 87,
-            "name": "Verify response will return List of Industries with zero records",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:31.710Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 90,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 91,
-            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industryName\" \u003d \"invalidIndustryName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"industryName\"",
-                  "offset": 81
-                },
-                {
-                  "val": "\"invalidIndustryName\"",
-                  "offset": 98
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2167000000,
-              "status": "passed"
-            },
-            "line": 92,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 93,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 16000000,
-              "status": "passed"
-            },
-            "line": 94,
-            "name": "Verify response will return List of Industries with zero records",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:33.936Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 97,
-        "name": "Verify API: getIndustryBySearchCriteria API, search by invalid \u0027industryId\u0027",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-getindustrybysearchcriteria-api--search-by-invalid--industryid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 4000000,
-              "status": "passed"
-            },
-            "line": 98,
-            "name": "\"System_Admin\" User invoke \"getIndustryBySearchCriteria\" with invalid Parameter: \"industrySectorName\" \u003d \"invalidIndustrySectorName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"industrySectorName\"",
-                  "offset": 81
-                },
-                {
-                  "val": "\"invalidIndustrySectorName\"",
-                  "offset": 104
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2742000000,
-              "status": "passed"
-            },
-            "line": 99,
-            "name": "User calls \"getIndustryBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getIndustryBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 50
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 100,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 19000000,
-              "status": "passed"
-            },
-            "line": 101,
-            "name": "Verify response will return List of Industries with zero records",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@getIndustryBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:36.748Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 104,
-        "name": "Verify API: deleteIndustry update Industry status as Passive",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-deleteindustry-update-industry-status-as-passive",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 24000000,
-              "status": "passed"
-            },
-            "line": 105,
-            "name": "\"System_Admin\" User invoke deleteIndustry with Parameter: \"industryId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"industryId\"",
-                  "offset": 58
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_invoke_deleteIndustry_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1268000000,
-              "status": "passed"
-            },
-            "line": 106,
-            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 107,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4000000,
-              "status": "passed"
-            },
-            "line": 108,
-            "name": "Verify IndustryStatus of particular Industry updated as Passive",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_IndustryStatus_updated_as_Passive()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@deleteIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:38.075Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 112,
-        "name": "Verify API: deleteIndustry API,  with invalid industryId",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-deleteindustry-api---with-invalid-industryid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 113,
-            "name": "\"System_Admin\" User invoke \"deleteIndustry\" with invalid Parameter: \"industryId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deleteIndustry\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"industryId\"",
-                  "offset": 68
-                },
-                {
-                  "val": "\"-9\"",
-                  "offset": 83
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2516000000,
-              "status": "passed"
-            },
-            "line": 114,
-            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 115,
-            "name": "The API call is success with StatusCode 500",
-            "match": {
-              "arguments": [
-                {
-                  "val": "500",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 27000000,
-              "status": "passed"
-            },
-            "line": 116,
-            "name": "\"message\" in response body is \"Industry with id - -9 not found\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Industry with id - -9 not found\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@deleteIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:40.672Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 119,
-        "name": "Verify API: deleteIndustry API, with no Param",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-deleteindustry-api--with-no-param",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 120,
-            "name": "\"System_Admin\" User \"deleteIndustry\" with no Param",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deleteIndustry\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.deletePattern_with_no_Param(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2255000000,
-              "status": "passed"
-            },
-            "line": 121,
-            "name": "User calls \"deleteIndustry\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 122,
-            "name": "The API call is failed with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 27000000,
-              "status": "passed"
-            },
-            "line": 123,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027industryId\u0027 is not present\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required Integer parameter \u0027industryId\u0027 is not present\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@deleteIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:43.013Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 126,
-        "name": "Verify API: updateIndustry API add Industry paylod",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-updateindustry-api-add-industry-paylod",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 16000000,
-              "status": "passed"
-            },
-            "line": 127,
-            "name": "\"System_Admin\" User \"Update\" Industry Payload",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_Industry_Payload(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1196000000,
-              "status": "passed"
-            },
-            "line": 128,
-            "name": "User calls \"updateIndustry\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 129,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 38000000,
-              "status": "passed"
-            },
-            "line": 130,
-            "name": "Verify Industry fields gets updated",
-            "match": {
-              "location": "stepDefinitions.IndustryStepDefinition.verify_Industry_fields_gets_updated()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@updateIndustry"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-04T08:35:44.280Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 133,
-        "name": "Verify API: updateIndustry API, with no Industry Body",
-        "description": "",
-        "id": "validating-industry-service-apis;verify-api:-updateindustry-api--with-no-industry-body",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 134,
-            "name": "\"System_Admin\" User \"Update\" Industry Payload  with no Industry Body",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.IndustryStepDefinition.user_industry_Payload_with_no_Industry_Body_and_Param(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1904000000,
-              "status": "passed"
-            },
-            "line": 135,
-            "name": "User calls \"updateIndustry\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateIndustry\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 136,
-            "name": "The API call is failed with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 23000000,
-              "status": "passed"
-            },
-            "line": 137,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required request body is missing: public com.ibm.dc.industry.entity.Industry com.ibm.dc.industry.controller.IndustryController.updateIndustry(java.lang.String,com.ibm.dc.industry.entity.Industry)\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Industry"
-          },
-          {
-            "name": "@updateIndustry"
+            "name": "@sendMail"
           }
         ]
       }
     ],
-    "name": "Validating Industry-Service APIs",
+    "name": "Validating Activity API\u0027s",
     "description": "",
-    "id": "validating-industry-service-apis",
+    "id": "validating-activity-api-s",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Industry.feature",
+    "uri": "file:src/test/java/features/test.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -2226,18 +323,10 @@
         }
       },
       {
-        "name": "@Demo",
+        "name": "@Test",
         "type": "Tag",
         "location": {
           "line": 2,
-          "column": 1
-        }
-      },
-      {
-        "name": "@Industry",
-        "type": "Tag",
-        "location": {
-          "line": 3,
           "column": 1
         }
       }
