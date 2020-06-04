@@ -1,4 +1,5 @@
 @DC-Test-Suite
+@Demo
 @Pattern
 Feature: Validating Pattern-Service APIs
 
@@ -68,8 +69,8 @@ Feature: Validating Pattern-Service APIs
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Pattern
     Then Each Pattern of returned PatternList should have same pattern "patternState"
-
   #Then Pattern added exist in returned PatternList
+  
   @getPatternBySearchCriteria
   Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternStatus'
     Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: "patternStatus"
@@ -77,17 +78,17 @@ Feature: Validating Pattern-Service APIs
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Pattern
     Then Each Pattern of returned PatternList should have same pattern "patternStatus"
-
   # Then Pattern added exist in returned PatternList
+  
   @getPatternBySearchCriteria
   Scenario: Verify API: getPatternBySearchCriteria API, search by 'patternId' & 'patternName' & 'patternState' & 'patternStatus'
     Given "System_Admin" User invoke getPatternBySearchCriteria with Parameter: 'patternId' & 'patternName' & 'patternState' & 'patternStatus'
     When User calls "getPatternBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Response should be list of Pattern and size should be one
-
   # Then Response Pattern is same which was added
   #Then Pattern added exist in returned PatternList
+  
   @getPatternBySearchCriteria
   Scenario: Verify API: getPatternBySearchCriteria API, search by invalid 'patternId'
     Given "System_Admin" User invoke "getPatternBySearchCriteria" with invalid Parameter: "patternId" = "-9"
@@ -129,7 +130,7 @@ Feature: Validating Pattern-Service APIs
     Given "System_Admin" User invoke "deletePattern" with invalid Parameter: "patternId" = "-9"
     When User calls "deletePattern" API with "Delete" http Request
     Then The API call is success with StatusCode 500
-    Then "message" in response body is "No pattern found for patternId: -9"
+    Then "message" in response body is "Pattern with id - -9 not found"
 
   @deletePattern
   Scenario: Verify API: deletePattern API, with no Param
@@ -150,7 +151,7 @@ Feature: Validating Pattern-Service APIs
     Given "System_Admin" User "Update" Pattern Payload  with invalid Param = "patternId" and value="-9"
     When User calls "updatePattern" API with "Put" http Request
     Then The API call is success with StatusCode 500
-    Then "message" in response body is "No pattern found for patternId: -9"
+    Then "message" in response body is "Pattern with id - -9 not found"    
 
   @updatePattern
   Scenario: Verify API: updatePattern API, with no patternId

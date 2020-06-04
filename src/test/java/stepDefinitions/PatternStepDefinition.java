@@ -16,10 +16,15 @@ import java.util.List;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matcher;
 import org.json.JSONObject;
+import org.skyscreamer.jsonassert.Customization;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.comparator.CustomComparator;
 import org.springframework.util.Assert;
 
 import com.google.gson.Gson;
 
+import entity.Industry;
 import entity.Pattern;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -154,7 +159,17 @@ public class PatternStepDefinition extends Utils {
 	@Then("Verify Pattern fields gets updated")
 	public void verify_Patternfields_gets_updated() {
 		respPattern = response.getBody().as(Pattern.class);
-		assertThat(reqPattern, is(respPattern));		
+		//assertThat(reqPattern, is(respPattern));
+		//respIndustry = response.getBody().as(Industry.class);
+		
+		JSONAssert.assertEquals(new JSONObject(reqPattern).toString(), new JSONObject(respPattern).toString(), 
+				new CustomComparator(JSONCompareMode.LENIENT, 
+						new Customization("patternUpdatedAt", (o1, o2) -> true),
+						new Customization("patternUpdatedBy", (o1, o2) -> true)));
+//						new Customization("activityUpdatedAt", (o1, o2) -> true)),
+//						new Customization("activityUpdatedBy", (o1, o2) -> true)),
+//						new Customization("taskUpdatedAt", (o1, o2) -> true)),
+//						new Customization("taskUpdatedBy", (o1, o2) -> true)));
 	}
 
 	@Then("Response should be list all Pattern=getAllPattern")

@@ -7,6 +7,7 @@ import entity.Category;
 import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.Industry;
 import entity.Mail;
 import entity.Pattern;
 import entity.Process;
@@ -130,6 +131,16 @@ public class TestDataBuild {
 	public User updateUser(User ipUser) throws IOException {
 		User opUser=jsonReader.updateUserData(ipUser);
 		return opUser;
+	}
+
+	public Industry addIndustry() {
+		Industry industry = jsonReader.getIndustryData();
+		return industry;
+	}
+
+	public Industry updateIndustry(Industry ipIndustry) throws IOException {
+		Industry opindustry = jsonReader.updateIndustryData(ipIndustry);
+		return opindustry;
 	}
 
 

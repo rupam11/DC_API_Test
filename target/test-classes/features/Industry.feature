@@ -1,4 +1,7 @@
-@DC-Test-Suite @Test
+@DC-Test-Suite
+@Demo
+@Industry
+
 Feature: Validating Industry-Service APIs
 
 @getIndustryCount 

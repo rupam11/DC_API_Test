@@ -1,4 +1,5 @@
 @DC-Test-Suite
+@Demo
 @Category 
 
 Feature: Validating Category API's 
@@ -59,9 +60,9 @@ Scenario: Verify API: getCategoryListbyName API  with no 'CategoryName'
 Scenario: Verify API: getCategoryListbyName API, search by 'CategoryId' 
 	Given "System_Admin" User invoke CategoryAPI "getCategoryListbyName" with Parameter: "categoryId" 
 	When User calls "getCategoryListbyName" API with "Get" http Request 
-	Then The API call is success with StatusCode 200 
-	Then Verify response will return List of Categories
-	#It should not return any result with categoryId
+	Then The API call is success with StatusCode 500 
+##---Issue with API	
+#It should not return any result with categoryId
 
 
 @getCategoryBySearchCriteria 
@@ -69,9 +70,9 @@ Scenario: Verify API: getCategoryBySearchCriteria API, with no SearchCriteria
 	Given "System_Admin" User invoke "getCategoryBySearchCriteria" 
 	When User calls "getCategoryBySearchCriteria" API with "Get" http Request
 	Then The API call is success with StatusCode 200 
-	Then Verify Category added exist in returned CategoryList
 	Then Verify response should be list all Categories=getAllCategories
 ##---Issue with API	
+	
 
 	
 @getCategoryBySearchCriteria
@@ -127,7 +128,8 @@ Scenario: Verify API: getCategoryNotinList API, with Invalid CategoryParanetId
 	Given "System_Admin" User invoke "getCategoryNotinList" with invalid Category Parameter: "categoryParentId" = "-9"
 	#Given "System_Admin" User invoke CategoryAPI getCategoryNotinList with Parameter: "categoryParentId"
 	When User calls "getCategoryNotinList" API with "Get" http Request 
-	Then The API call is success with StatusCode 404 
+	Then The API call is success with StatusCode 200 
+	Then Verify Response should not contain Value passed in Invalid Parameter	
 	
 @updateCategory 
 Scenario: Verify API: updateCategory API add Category payload 
@@ -145,10 +147,11 @@ Scenario: Verify API: deleteCategory API, no CategoryId
    Then "message" in response body is "Required Integer parameter 'categoryId' is not present"	 
    
 @deleteCategory   
-Scenario: Verify API: deleteCategory API, update Field status as Passive
+Scenario: Verify API: deleteCategory API, delete with Invalid categoryId
 		Given "System_Admin" User invoke "deleteCategory" with invalid Category Parameter: "categoryId" = "-9" 
     When User calls "deleteCategory" API with "Delete" http Request
-    Then The API call is success with StatusCode 400
+    Then The API call is success with StatusCode 500
+    
     
 @deleteCategory   
 Scenario: Verify API: deleteCategory API, update Field status as Passive

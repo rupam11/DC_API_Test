@@ -96,7 +96,7 @@ public class SectorStepDefinition extends Utils {
 		assertEquals("Wrong Sector filtered", respSector, respAllSectors[0]);
 	}
 
-	@Then("Verify {string},{string},{string},{string} gets updated")
+	@Then("Verify {string},{string},{string},{string} gets updated for given Sector")
 	public void verify_gets_updated(String sectorName, String sectorStatus, String sectorCreatedBy,
 			String sectorCreatedAt) {
 		respSector = response.getBody().as(Sector.class);
@@ -108,8 +108,8 @@ public class SectorStepDefinition extends Utils {
 				respSector.getSectorCreatedAt());
 	}
 
-	@Then("Verify {string} of particular {string} updated as Passive")
-	public void verify_of_particular_updated_as_Passive(String string, String string2) {
+	@Then("Verify SectorStatus of particular Sector updated as Passive")
+	public void verify_SectorStatus_updated_as_Passive() {
 		respSector = response.getBody().as(Sector.class);
 		assertEquals("Sector not Deactivated!!!", "Passive", respSector.getSectorStatus());
 	}
@@ -162,13 +162,13 @@ public class SectorStepDefinition extends Utils {
 		assertTrue("Count is not zero in case of invalid search criteria.", respAllSectors.length == 0);
 	}
 
-	@Given("{string} User {string} Sector Payload  with invalid Param = {string} and value=\"{int}\"")
+	/*@Given("{string} User {string} Sector Payload  with invalid Param = {string} and value=\"{int}\"")
 	public void user_Sector_Payload_with_invalid_Param_and_value(String userRole, String param, String payloadReq, int i) throws IOException {
 		reqSector = data.updateSector(respSector);
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole)).body(reqSector).queryParam(param,i);
 	}
-	
+	*/
 	@Given("{string} User {string} Sector Payload  with no Param")
 	public void user_Sector_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
 			reqSector = data.updateSector(respSector);

@@ -1,4 +1,6 @@
-@DC-Test-Suite @Sector
+@DC-Test-Suite
+@Demo
+@Sector
 
 Feature: Validating Sector-Service APIs 
 
@@ -76,9 +78,9 @@ Scenario: Verify API: getSectorBySearchCriteria API, search by 'sectorName'
     Then Verify response will return List of Sectors with zero records
 
   @getSectorBySearchCriteria
-  Scenario: Verify API: getTaskBySearchCriteria API, search by invalid 'taskDescription'
-    Given "System_Admin" User invoke "getTaskBySearchCriteria" with invalid Parameter: "taskDescription" = "invalidDescriptionName"
-    When User calls "getTaskBySearchCriteria" API with "Get" http Request
+  Scenario: Verify API: getSectorBySearchCriteria API, search by invalid 'sectorName'
+    Given "System_Admin" User invoke "getSectorBySearchCriteria" with invalid Parameter: "sectorName" = "invalidSectorName"
+    When User calls "getSectorBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Sectors with zero records
 		
@@ -87,7 +89,7 @@ Scenario: Verify API: deleteSector update Sector status as Passive
 	Given "System_Admin" User invoke deleteSector with Parameter: "sectorId" 
 	When User calls "deleteSector" API with "Delete" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify "SectorStatus" of particular "Sector" updated as Passive
+	Then Verify SectorStatus of particular Sector updated as Passive
 	
 	
   @deleteSector
@@ -109,10 +111,10 @@ Scenario: Verify API: updateSector API add Sector paylod
 	Given  "System_Admin" User "Update" Sector Payload 
 	When User calls "updateSector" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
-	Then Verify 'sectorName','sectorStatus','sectorCreatedBy','sectorCreatedAt' gets updated 
+	Then Verify 'sectorName','sectorStatus','sectorCreatedBy','sectorCreatedAt' gets updated for given Sector
 
   @updateSector
-  Scenario: Verify API: updateSector API, with no pattern Body
+  Scenario: Verify API: updateSector API, with no sector Body
     Given "System_Admin" User "Update" Sector Payload  with no Sector Body and Param = "sectorId"
     When User calls "updateSector" API with "Put" http Request
     Then The API call is success with StatusCode 400

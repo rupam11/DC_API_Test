@@ -13,6 +13,7 @@ import entity.Category;
 import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.Industry;
 import entity.Mail;
 import entity.Pattern;
 import entity.Process;
@@ -38,6 +39,7 @@ public class JsonDataReader {
 	private Pattern pattern;
 	private Client client;
 	private Project project;
+	private Industry industry;
 	private User user;
 	
 
@@ -54,6 +56,7 @@ public class JsonDataReader {
 		this.process=new Process();
 		this.pattern=new Pattern();
 		this.client = new Client();
+		this.industry = new Industry();
 	}
 
 	public Activity getActivityData() {
@@ -146,7 +149,7 @@ public class JsonDataReader {
 		else if(ipSector.getSectorStatus().equalsIgnoreCase("Passive"))
 			ipSector.setSectorStatus("Active");
 		else 
-			System.out.println("Please fix task.json data");
+			System.out.println("Please fix sector.json data");
 		
 		sector.setSectorCreatedBy(configReader.getPropValue("update_CreatedBy"));
 		sector.setSectorCreatedAt(configReader.getPropValue("update_CreatedAt"));
@@ -503,6 +506,39 @@ public class JsonDataReader {
 			
 		return ipUser;
 			}
+
+	public Industry getIndustryData() {
+		String IndustryFilePath=JSONDataFilePath+"Industry/industry.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(IndustryFilePath));
+			industry = gson.fromJson(bufferReader, Industry.class);
+			return industry;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + IndustryFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Industry updateIndustryData(Industry ipIndustry) throws IOException {
+		ipIndustry.setIndustryName("New_"+ipIndustry.getIndustryName());
+		
+		if(ipIndustry.getIndustryStatus().equalsIgnoreCase("Active"))
+			ipIndustry.setIndustryStatus("Passive");
+		else if(ipIndustry.getIndustryStatus().equalsIgnoreCase("Passive"))
+			ipIndustry.setIndustryStatus("Active");
+		else 
+			System.out.println("Please fix industry.json data");
+		
+		industry.setIndustryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		industry.setIndustryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+			return ipIndustry;
+	}
 
 	
 }

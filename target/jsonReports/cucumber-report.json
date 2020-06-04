@@ -1,13 +1,13 @@
 [
   {
-    "line": 3,
+    "line": 4,
     "elements": [
       {
-        "start_timestamp": "2020-06-03T15:20:01.813Z",
+        "start_timestamp": "2020-06-04T00:29:11.520Z",
         "before": [
           {
             "result": {
-              "duration": 2002000000,
+              "duration": 1485000000,
               "status": "passed"
             },
             "match": {
@@ -15,10 +15,10 @@
             }
           }
         ],
-        "line": 6,
-        "name": "Verify API: getProcessCount API return Total Process Count",
+        "line": 7,
+        "name": "Verify API: getPatternCount API return Total Pattern Count",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocesscount-api-return-total-process-count",
+        "id": "validating-pattern-service-apis;verify-api:-getpatterncount-api-return-total-pattern-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1253000000,
+              "duration": 1054000000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "\"System_Admin\" User invoke \"getProcessCount\"",
+            "line": 8,
+            "name": "\"System_Admin\" User invoke \"getPatternCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getProcessCount\"",
+                  "val": "\"getPatternCount\"",
                   "offset": 27
                 }
               ],
@@ -56,15 +56,15 @@
           },
           {
             "result": {
-              "duration": 4877000000,
+              "duration": 4260000000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "User calls \"getProcessCount\" API with \"Get\" http Request",
+            "line": 9,
+            "name": "User calls \"getPatternCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getProcessCount\"",
+                  "val": "\"getPatternCount\"",
                   "offset": 11
                 },
                 {
@@ -78,13 +78,12 @@
           },
           {
             "result": {
-              "duration": 17000000,
               "status": "passed"
             },
-            "line": 9,
-            "name": "Verify Process_Count result is greater than 0",
+            "line": 10,
+            "name": "Verify Pattern_Count result is greater than or equal to 0",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.get_Process_count()"
+              "location": "stepDefinitions.PatternStepDefinition.get_Pattern_count()"
             },
             "keyword": "Then "
           },
@@ -92,7 +91,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 10,
+            "line": 11,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -111,15 +110,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getProcessCount"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:10.225Z",
+        "start_timestamp": "2020-06-04T00:29:18.578Z",
         "before": [
           {
             "result": {
@@ -131,10 +133,10 @@
             }
           }
         ],
-        "line": 13,
-        "name": "Verify API: createProcess API add Process paylod",
+        "line": 14,
+        "name": "Verify API: createPattern API add Pattern paylod",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-createprocess-api-add-process-paylod",
+        "id": "validating-pattern-service-apis;verify-api:-createpattern-api-add-pattern-paylod",
         "after": [
           {
             "result": {
@@ -150,11 +152,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1247000000,
+              "duration": 1036000000,
               "status": "passed"
             },
-            "line": 14,
-            "name": "\"System_Admin\" User \"Add\" Process Payload with Param \u003d \"none\"",
+            "line": 15,
+            "name": "\"System_Admin\" User \"Add\" Pattern Payload with Param \u003d \"none\"",
             "match": {
               "arguments": [
                 {
@@ -170,21 +172,21 @@
                   "offset": 55
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1670000000,
+              "duration": 1717000000,
               "status": "passed"
             },
-            "line": 15,
-            "name": "User calls \"createProcess\" API with \"Post\" http Request",
+            "line": 16,
+            "name": "User calls \"createPattern\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createProcess\"",
+                  "val": "\"createPattern\"",
                   "offset": 11
                 },
                 {
@@ -200,7 +202,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 16,
+            "line": 17,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -215,103 +217,25 @@
           },
           {
             "result": {
-              "duration": 118000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "Verify response will return Process instance",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2161000000,
+              "duration": 119000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "\"processUpdatedBy\" in response body is \"NA\"",
+            "name": "Verify response will return Pattern instance",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"processUpdatedBy\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"NA\"",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_Pattern_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 36000000,
+              "duration": 1453000000,
               "status": "passed"
             },
             "line": 19,
-            "name": "\"processUpdatedAt\" in response body is \"0000-00-00 00:00:00\"",
+            "name": "Verify Total Pattern_Count increased by 1",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"processUpdatedAt\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"0000-00-00 00:00:00\"",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "processId in response body is equal to output of \"getActivityCount\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getActivityCount\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.processid_in_response_body_is_equal_to_output_of(java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "processCode in response body is equal to output of \"PRS_getProcessCount\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"PRS_getProcessCount\"",
-                  "offset": 51
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.processcode_in_response_body_is_equal_to_output_of(java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1487000000,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "Verify Total Process_Count increased by 1",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_Total_Process_Count_increased_by()"
+              "location": "stepDefinitions.PatternStepDefinition.verify_Total_Pattern_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -321,19 +245,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@createProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@createPattern"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:16.977Z",
+        "start_timestamp": "2020-06-04T00:29:22.941Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -341,10 +267,667 @@
             }
           }
         ],
-        "line": 26,
-        "name": "Verify API: createProcess API with no process Body",
+        "line": 22,
+        "name": "Verify API: createPattern API with no pattern Body",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-createprocess-api-with-no-process-body",
+        "id": "validating-pattern-service-apis;verify-api:-createpattern-api-with-no-pattern-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "\"System_Admin\" User \"Add\" Pattern Payload  with no Pattern Body and Param \u003d \"none\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Add\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"none\"",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Pattern_Body(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1569000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User calls \"createPattern\" API with \"Post\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"createPattern\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1710000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.createPattern(java.lang.String,com.ibm.dc.pattern.entity.Pattern)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.createPattern(java.lang.String,com.ibm.dc.pattern.entity.Pattern)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@createPattern"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:26.269Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 29,
+        "name": "Verify API: getAllPatterns API return List of All Pattern",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getallpatterns-api-return-list-of-all-pattern",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "\"System_Admin\" User invoke \"getAllPatterns\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getAllPatterns\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3263000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User calls \"getAllPatterns\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getAllPatterns\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 123000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Verify response will return List of Pattern",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1432000000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Total number of Pattern in List is equal to getPatternCount",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.total_number_of_Pattern_in_List_is_equal_to_getPatternCount()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getAllPatterns"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:31.112Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 38,
+        "name": "Verify API: getPatternBySearchCriteria API, search no SearchCriteria",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-no-searchcriteria",
+        "after": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 895000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "Verify response will return List of Pattern",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "All Pattern should have Active Status",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.all_Pattern_should_have_Active_Status()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:32.054Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 47,
+        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternId\u0027",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 169000000,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"patternId\"",
+                  "offset": 70
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2051000000,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Verify response will return List of Pattern",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "Response should be list of Pattern and size should be one",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.response_should_be_list_of_Pattern_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:34.362Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 57,
+        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternName\u0027",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternname-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"patternName\"",
+                  "offset": 70
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2086000000,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19000000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "Verify response will return List of Pattern",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "Each Pattern of returned PatternList should have same pattern \"PatternName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PatternName\"",
+                  "offset": 62
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:36.522Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 66,
+        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternState\u0027",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternstate-",
         "after": [
           {
             "result": {
@@ -363,8 +946,8 @@
               "duration": 16000000,
               "status": "passed"
             },
-            "line": 27,
-            "name": "\"System_Admin\" User \"Add\" Process Payload  with no Process Body and Param \u003d \"none\"",
+            "line": 67,
+            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternState\"",
             "match": {
               "arguments": [
                 {
@@ -372,421 +955,25 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Add\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"none\"",
-                  "offset": 76
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload_with_no_Process_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1576000000,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "User calls \"createProcess\" API with \"Post\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"createProcess\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Post\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "The API call is success with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 21000000,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.createProcess(java.lang.String,com.ibm.dc.process.entity.Process)\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.createProcess(java.lang.String,com.ibm.dc.process.entity.Process)\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@createProcess"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:18.627Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 33,
-        "name": "Verify API: getAllProcess API return List of All Process",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getallprocess-api-return-list-of-all-process",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "\"System_Admin\" User invoke \"getAllProcess\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getAllProcess\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1541000000,
-              "status": "passed"
-            },
-            "line": 35,
-            "name": "User calls \"getAllProcess\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getAllProcess\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 21000000,
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "Verify response will return List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1353000000,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "Total number of Process in List is equal to getProcessCount",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.total_number_of_Process_in_List_is_equal_to_getProcessCount()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 3000000,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "Created Process should exist in the List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getAllProcess"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:21.587Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 43,
-        "name": "Verify API: getProcessBySearchCriteria API, search no SearchCriteria",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-no-searchcriteria",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 14000000,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 971000000,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "Verify response will return List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "All Process should have Active Status",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.all_Process_should_have_Active_Status()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getProcessBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:22.610Z",
-        "before": [
-          {
-            "result": {
-              "duration": 2000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 52,
-        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 296000000,
-              "status": "passed"
-            },
-            "line": 53,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"processId\"",
+                  "val": "\"patternState\"",
                   "offset": 70
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2350000000,
+              "duration": 3636000000,
               "status": "passed"
             },
-            "line": 54,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "line": 68,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 11
                 },
                 {
@@ -802,7 +989,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 55,
+            "line": 69,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -817,291 +1004,30 @@
           },
           {
             "result": {
-              "duration": 15000000,
-              "status": "passed"
-            },
-            "line": 56,
-            "name": "Verify response will return List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 57,
-            "name": "Response should be list of Process and size should be one",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 58,
-            "name": "Response Process is same which was added",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.response_Process_is_same_which_was_added()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getProcessBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:25.327Z",
-        "before": [
-          {
-            "result": {
-              "duration": 4000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 61,
-        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processName\u0027",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 23000000,
-              "status": "passed"
-            },
-            "line": 62,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"processName\"",
-                  "offset": 70
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2055000000,
-              "status": "passed"
-            },
-            "line": 63,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 64,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 65,
-            "name": "Verify response will return List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 66,
-            "name": "Created Process should exist in the List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getProcessBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:27.431Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 69,
-        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processStatus\u0027",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processstatus-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 4000000,
+              "duration": 35000000,
               "status": "passed"
             },
             "line": 70,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \"processStatus\"",
+            "name": "Verify response will return List of Pattern",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"processStatus\"",
-                  "offset": 70
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
             },
-            "keyword": "Given "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1433000000,
               "status": "passed"
             },
             "line": 71,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "name": "Each Pattern of returned PatternList should have same pattern \"patternState\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
+                  "val": "\"patternState\"",
+                  "offset": 62
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 72,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 73,
-            "name": "Verify response will return List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 74,
-            "name": "Created Process should exist in the List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
+              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -1111,19 +1037,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getProcessBySearchCriteria"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:28.901Z",
+        "start_timestamp": "2020-06-04T00:29:40.242Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1131,10 +1059,10 @@
             }
           }
         ],
-        "line": 77,
-        "name": "Verify API: getProcessBySearchCriteria API, search by \u0027processId\u0027 \u0026 \u0027processName\u0027 \u0026 \u0027processStatus\u0027",
+        "line": 75,
+        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternStatus\u0027",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by--processid--\u0026--processname--\u0026--processstatus-",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternstatus-",
         "after": [
           {
             "result": {
@@ -1150,11 +1078,11 @@
         "steps": [
           {
             "result": {
-              "duration": 18000000,
+              "duration": 25000000,
               "status": "passed"
             },
-            "line": 78,
-            "name": "\"System_Admin\" User invoke getProcessBySearchCriteria with Parameter: \u0027processId\u0027 \u0026 \u0027processName\u0027 \u0026 \u0027processStatus\u0027",
+            "line": 76,
+            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \"patternStatus\"",
             "match": {
               "arguments": [
                 {
@@ -1162,33 +1090,25 @@
                   "offset": 0
                 },
                 {
-                  "val": "\u0027processId\u0027",
+                  "val": "\"patternStatus\"",
                   "offset": 70
-                },
-                {
-                  "val": "\u0027processName\u0027",
-                  "offset": 84
-                },
-                {
-                  "val": "\u0027processStatus\u0027",
-                  "offset": 100
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1633000000,
+              "duration": 3170000000,
               "status": "passed"
             },
-            "line": 79,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "line": 77,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 11
                 },
                 {
@@ -1199,44 +1119,50 @@
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "Verify response will return List of Pattern",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()"
+            },
+            "keyword": "Then "
           },
           {
             "result": {
               "status": "passed"
             },
             "line": 80,
-            "name": "The API call is success with StatusCode 200",
+            "name": "Each Pattern of returned PatternList should have same pattern \"patternStatus\"",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 40
+                  "val": "\"patternStatus\"",
+                  "offset": 62
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "line": 81,
-            "name": "Response should be list of Process and size should be one",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 82,
-            "name": "Created Process should exist in the List of Process",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()"
+              "location": "stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -1246,19 +1172,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getProcessBySearchCriteria"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:30.591Z",
+        "start_timestamp": "2020-06-04T00:29:43.481Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1266,10 +1194,10 @@
             }
           }
         ],
-        "line": 85,
-        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processId\u0027",
+        "line": 84,
+        "name": "Verify API: getPatternBySearchCriteria API, search by \u0027patternId\u0027 \u0026 \u0027patternName\u0027 \u0026 \u0027patternState\u0027 \u0026 \u0027patternStatus\u0027",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processid-",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by--patternid--\u0026--patternname--\u0026--patternstate--\u0026--patternstatus-",
         "after": [
           {
             "result": {
@@ -1285,11 +1213,11 @@
         "steps": [
           {
             "result": {
-              "duration": 10000000,
+              "duration": 25000000,
               "status": "passed"
             },
-            "line": 86,
-            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processId\" \u003d \"-9\"",
+            "line": 85,
+            "name": "\"System_Admin\" User invoke getPatternBySearchCriteria with Parameter: \u0027patternId\u0027 \u0026 \u0027patternName\u0027 \u0026 \u0027patternState\u0027 \u0026 \u0027patternStatus\u0027",
             "match": {
               "arguments": [
                 {
@@ -1297,11 +1225,142 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
+                  "val": "\u0027patternId\u0027",
+                  "offset": 70
+                },
+                {
+                  "val": "\u0027patternName\u0027",
+                  "offset": 84
+                },
+                {
+                  "val": "\u0027patternState\u0027",
+                  "offset": 100
+                },
+                {
+                  "val": "\u0027patternStatus\u0027",
+                  "offset": 117
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_all_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1752000000,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 87,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 88,
+            "name": "Response should be list of Pattern and size should be one",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.response_should_be_list_of_Pattern_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:45.280Z",
+        "before": [
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 93,
+        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternId\u0027",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"processId\"",
+                  "val": "\"patternId\"",
                   "offset": 80
                 },
                 {
@@ -1315,15 +1374,15 @@
           },
           {
             "result": {
-              "duration": 2095000000,
+              "duration": 2051000000,
               "status": "passed"
             },
-            "line": 87,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
+            "line": 95,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 11
                 },
                 {
@@ -1339,7 +1398,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 88,
+            "line": 96,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1354,13 +1413,13 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 89,
-            "name": "Verify response will return List of Processes with zero records",
+            "line": 97,
+            "name": "Verify response will return List of Pattern with zero records",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
+              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
             },
             "keyword": "Then "
           }
@@ -1370,19 +1429,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getProcessBySearchCriteria"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:32.735Z",
+        "start_timestamp": "2020-06-04T00:29:47.381Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1390,14 +1451,13 @@
             }
           }
         ],
-        "line": 92,
-        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processName\u0027",
+        "line": 100,
+        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternName\u0027",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processname-",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternname-",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1410,11 +1470,11 @@
         "steps": [
           {
             "result": {
-              "duration": 11000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 93,
-            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processName\" \u003d \"invalidProcessCode\"",
+            "line": 101,
+            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternName\" \u003d \"invalidPatternName\"",
             "match": {
               "arguments": [
                 {
@@ -1422,15 +1482,15 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getProcessBySearchCriteria\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"processName\"",
+                  "val": "\"patternName\"",
                   "offset": 80
                 },
                 {
-                  "val": "\"invalidProcessCode\"",
+                  "val": "\"invalidPatternName\"",
                   "offset": 96
                 }
               ],
@@ -1440,155 +1500,31 @@
           },
           {
             "result": {
-              "duration": 2123000000,
-              "status": "passed"
-            },
-            "line": 94,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 95,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 96,
-            "name": "Verify response will return List of Processes with zero records",
-            "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getProcessBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:34.905Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 99,
-        "name": "Verify API: getProcessBySearchCriteria API, search by invalid \u0027processStatus\u0027",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-getprocessbysearchcriteria-api--search-by-invalid--processstatus-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 100,
-            "name": "\"System_Admin\" User invoke \"getProcessBySearchCriteria\" with invalid Parameter: \"processStatus\" \u003d \"invalidProcessName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"processStatus\"",
-                  "offset": 80
-                },
-                {
-                  "val": "\"invalidProcessName\"",
-                  "offset": 98
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1611000000,
-              "status": "passed"
-            },
-            "line": 101,
-            "name": "User calls \"getProcessBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getProcessBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 49
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
+              "duration": 2121000000,
               "status": "passed"
             },
             "line": 102,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 103,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1603,13 +1539,13 @@
           },
           {
             "result": {
-              "duration": 36000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 103,
-            "name": "Verify response will return List of Processes with zero records",
+            "line": 104,
+            "name": "Verify response will return List of Pattern with zero records",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()"
+              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
             },
             "keyword": "Then "
           }
@@ -1619,15 +1555,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getProcessBySearchCriteria"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:36.594Z",
+        "start_timestamp": "2020-06-04T00:29:49.550Z",
         "before": [
           {
             "result": {
@@ -1640,9 +1579,9 @@
           }
         ],
         "line": 107,
-        "name": "Verify API: updateProcess API add Process paylod",
+        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternState\u0027",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-updateprocess-api-add-process-paylod",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternstate-",
         "after": [
           {
             "result": {
@@ -1658,11 +1597,11 @@
         "steps": [
           {
             "result": {
-              "duration": 71000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "line": 108,
-            "name": "\"System_Admin\" User \"Update\" Process Payload with Param \u003d \"processId\"",
+            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternState\" \u003d \"invalidPatternState\"",
             "match": {
               "arguments": [
                 {
@@ -1670,34 +1609,38 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Update\"",
-                  "offset": 20
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 27
                 },
                 {
-                  "val": "\"processId\"",
-                  "offset": 58
+                  "val": "\"patternState\"",
+                  "offset": 80
+                },
+                {
+                  "val": "\"invalidPatternState\"",
+                  "offset": 97
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1739000000,
+              "duration": 2012000000,
               "status": "passed"
             },
             "line": 109,
-            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateProcess\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Put\"",
-                  "offset": 36
+                  "val": "\"Get\"",
+                  "offset": 49
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1723,13 +1666,13 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 111,
-            "name": "Verify Process fields gets updated",
+            "name": "Verify response will return List of Pattern with zero records",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_Processfields_gets_updated()"
+              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
             },
             "keyword": "Then "
           }
@@ -1739,15 +1682,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@updateProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:38.429Z",
+        "start_timestamp": "2020-06-04T00:29:51.600Z",
         "before": [
           {
             "result": {
@@ -1759,270 +1705,9 @@
           }
         ],
         "line": 114,
-        "name": "Verify API: updateProcess API, with invalid processId",
+        "name": "Verify API: getPatternBySearchCriteria API, search by invalid \u0027patternStatus\u0027",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-invalid-processid",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 13000000,
-              "status": "passed"
-            },
-            "line": 115,
-            "name": "\"System_Admin\" User \"Update\" Process Payload  with invalid Param \u003d \"processId\" and value\u003d\"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"processId\"",
-                  "offset": 67
-                },
-                {
-                  "val": "-9",
-                  "offset": 90
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1659000000,
-              "status": "passed"
-            },
-            "line": 116,
-            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateProcess\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 117,
-            "name": "The API call is success with StatusCode 500",
-            "match": {
-              "arguments": [
-                {
-                  "val": "500",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 37000000,
-              "status": "passed"
-            },
-            "line": 118,
-            "name": "\"message\" in response body is \"Process with id - -9 not found\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Process with id - -9 not found\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@updateProcess"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:40.227Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 121,
-        "name": "Verify API: updateProcess API, with no activityId",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-no-activityid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 28000000,
-              "status": "passed"
-            },
-            "line": 122,
-            "name": "\"System_Admin\" User \"Update\" Process Payload  with no Param",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_no_Param(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1656000000,
-              "status": "passed"
-            },
-            "line": 123,
-            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateProcess\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 124,
-            "name": "The API call is success with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 26000000,
-              "status": "passed"
-            },
-            "line": 125,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027processId\u0027 is not present\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required Integer parameter \u0027processId\u0027 is not present\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@updateProcess"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T15:20:41.965Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 128,
-        "name": "Verify API: updateProcess API, with no pattern Body",
-        "description": "",
-        "id": "validating-process-service-apis;verify-api:-updateprocess-api--with-no-pattern-body",
+        "id": "validating-pattern-service-apis;verify-api:-getpatternbysearchcriteria-api--search-by-invalid--patternstatus-",
         "after": [
           {
             "result": {
@@ -2041,8 +1726,8 @@
               "duration": 5000000,
               "status": "passed"
             },
-            "line": 129,
-            "name": "\"System_Admin\" User \"Update\" Process Payload  with no Process Body and Param \u003d \"processId\"",
+            "line": 115,
+            "name": "\"System_Admin\" User invoke \"getPatternBySearchCriteria\" with invalid Parameter: \"patternStatus\" \u003d \"invalidPatternStatus\"",
             "match": {
               "arguments": [
                 {
@@ -2050,34 +1735,38 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Update\"",
-                  "offset": 20
+                  "val": "\"getPatternBySearchCriteria\"",
+                  "offset": 27
                 },
                 {
-                  "val": "\"processId\"",
-                  "offset": 79
+                  "val": "\"patternStatus\"",
+                  "offset": 80
+                },
+                {
+                  "val": "\"invalidPatternStatus\"",
+                  "offset": 98
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_Process_Payload_with_no_Process_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1594000000,
+              "duration": 1602000000,
               "status": "passed"
             },
-            "line": 130,
-            "name": "User calls \"updateProcess\" API with \"Put\" http Request",
+            "line": 116,
+            "name": "User calls \"getPatternBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateProcess\"",
+                  "val": "\"getPatternBySearchCriteria\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Put\"",
-                  "offset": 36
+                  "val": "\"Get\"",
+                  "offset": 49
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2086,15 +1775,14 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
-            "line": 131,
-            "name": "The API call is success with StatusCode 400",
+            "line": 117,
+            "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
                 {
-                  "val": "400",
+                  "val": "200",
                   "offset": 40
                 }
               ],
@@ -2104,23 +1792,13 @@
           },
           {
             "result": {
-              "duration": 24000000,
+              "duration": 11000000,
               "status": "passed"
             },
-            "line": 132,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.updateProcess(java.lang.String,java.lang.Integer,com.ibm.dc.process.entity.Process)\"",
+            "line": 118,
+            "name": "Verify response will return List of Pattern with zero records",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required request body is missing: public com.ibm.dc.process.entity.Process com.ibm.dc.process.controller.ProcessController.updateProcess(java.lang.String,java.lang.Integer,com.ibm.dc.process.entity.Process)\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()"
             },
             "keyword": "Then "
           }
@@ -2130,19 +1808,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@updateProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@getPatternBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:43.605Z",
+        "start_timestamp": "2020-06-04T00:29:53.235Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -2150,10 +1830,10 @@
             }
           }
         ],
-        "line": 135,
-        "name": "Verify API: deleteProcess update Process status as Passive",
+        "line": 121,
+        "name": "Verify API: deletePattern update Pattern status as Passive",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-deleteprocess-update-process-status-as-passive",
+        "id": "validating-pattern-service-apis;verify-api:-deletepattern-update-pattern-status-as-passive",
         "after": [
           {
             "result": {
@@ -2169,11 +1849,10 @@
         "steps": [
           {
             "result": {
-              "duration": 14000000,
               "status": "passed"
             },
-            "line": 136,
-            "name": "\"System_Admin\" User invoke deleteProcess with Parameter: \"processId\"",
+            "line": 122,
+            "name": "\"System_Admin\" User invoke deletePattern with Parameter: \"patternId\"",
             "match": {
               "arguments": [
                 {
@@ -2181,25 +1860,25 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"processId\"",
+                  "val": "\"patternId\"",
                   "offset": 57
                 }
               ],
-              "location": "stepDefinitions.ProcessStepDefinition.user_invoke_deleteProcess_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.PatternStepDefinition.user_invoke_deletePattern_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1579000000,
+              "duration": 1603000000,
               "status": "passed"
             },
-            "line": 137,
-            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
+            "line": 123,
+            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteProcess\"",
+                  "val": "\"deletePattern\"",
                   "offset": 11
                 },
                 {
@@ -2215,7 +1894,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 138,
+            "line": 124,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -2230,27 +1909,27 @@
           },
           {
             "result": {
-              "duration": 2000000,
+              "duration": 7000000,
               "status": "passed"
             },
-            "line": 139,
-            "name": "Verify response will return Process instance",
+            "line": 125,
+            "name": "Verify response will return Pattern instance",
             "match": {
-              "location": "stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()"
+              "location": "stepDefinitions.PatternStepDefinition.verify_response_will_return_Pattern_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 29000000,
               "status": "passed"
             },
-            "line": 140,
-            "name": "\"processStatus\" in response body is \"Passive\"",
+            "line": 126,
+            "name": "\"patternStatus\" in response body is \"Passive\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"processStatus\"",
+                  "val": "\"patternStatus\"",
                   "offset": 0
                 },
                 {
@@ -2268,15 +1947,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@deleteProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@deletePattern"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:45.242Z",
+        "start_timestamp": "2020-06-04T00:29:54.895Z",
         "before": [
           {
             "result": {
@@ -2287,10 +1969,10 @@
             }
           }
         ],
-        "line": 143,
-        "name": "Verify API: deleteProcess API,  with invalid processId",
+        "line": 129,
+        "name": "Verify API: deletePattern API,  with invalid patternId",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-deleteprocess-api---with-invalid-processid",
+        "id": "validating-pattern-service-apis;verify-api:-deletepattern-api---with-invalid-patternid",
         "after": [
           {
             "result": {
@@ -2306,11 +1988,11 @@
         "steps": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 9000000,
               "status": "passed"
             },
-            "line": 144,
-            "name": "\"System_Admin\" User invoke \"deleteProcess\" with invalid Parameter: \"processId\" \u003d \"-9\"",
+            "line": 130,
+            "name": "\"System_Admin\" User invoke \"deletePattern\" with invalid Parameter: \"patternId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -2318,11 +2000,11 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteProcess\"",
+                  "val": "\"deletePattern\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"processId\"",
+                  "val": "\"patternId\"",
                   "offset": 67
                 },
                 {
@@ -2336,15 +2018,15 @@
           },
           {
             "result": {
-              "duration": 1627000000,
+              "duration": 1604000000,
               "status": "passed"
             },
-            "line": 145,
-            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
+            "line": 131,
+            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteProcess\"",
+                  "val": "\"deletePattern\"",
                   "offset": 11
                 },
                 {
@@ -2360,7 +2042,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 146,
+            "line": 132,
             "name": "The API call is success with StatusCode 500",
             "match": {
               "arguments": [
@@ -2375,11 +2057,11 @@
           },
           {
             "result": {
-              "duration": 22000000,
+              "duration": 25000000,
               "status": "passed"
             },
-            "line": 147,
-            "name": "\"message\" in response body is \"Process with id - -9 not found\"",
+            "line": 133,
+            "name": "\"message\" in response body is \"Pattern with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -2387,7 +2069,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Process with id - -9 not found\"",
+                  "val": "\"Pattern with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -2401,15 +2083,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@deleteProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@deletePattern"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T15:20:46.914Z",
+        "start_timestamp": "2020-06-04T00:29:56.561Z",
         "before": [
           {
             "result": {
@@ -2421,10 +2106,10 @@
             }
           }
         ],
-        "line": 150,
-        "name": "Verify API: deleteProcess API, with no Param",
+        "line": 136,
+        "name": "Verify API: deletePattern API, with no Param",
         "description": "",
-        "id": "validating-process-service-apis;verify-api:-deleteprocess-api--with-no-param",
+        "id": "validating-pattern-service-apis;verify-api:-deletepattern-api--with-no-param",
         "after": [
           {
             "result": {
@@ -2440,11 +2125,11 @@
         "steps": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 7000000,
               "status": "passed"
             },
-            "line": 151,
-            "name": "\"System_Admin\" User \"deleteProcess\" with no Param",
+            "line": 137,
+            "name": "\"System_Admin\" User \"deletePattern\" with no Param",
             "match": {
               "arguments": [
                 {
@@ -2452,7 +2137,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteProcess\"",
+                  "val": "\"deletePattern\"",
                   "offset": 20
                 }
               ],
@@ -2462,15 +2147,15 @@
           },
           {
             "result": {
-              "duration": 1582000000,
+              "duration": 1518000000,
               "status": "passed"
             },
-            "line": 152,
-            "name": "User calls \"deleteProcess\" API with \"Delete\" http Request",
+            "line": 138,
+            "name": "User calls \"deletePattern\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteProcess\"",
+                  "val": "\"deletePattern\"",
                   "offset": 11
                 },
                 {
@@ -2486,7 +2171,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 153,
+            "line": 139,
             "name": "The API call is success with StatusCode 400",
             "match": {
               "arguments": [
@@ -2501,11 +2186,11 @@
           },
           {
             "result": {
-              "duration": 19000000,
+              "duration": 21000000,
               "status": "passed"
             },
-            "line": 154,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027processId\u0027 is not present\"",
+            "line": 140,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027patternId\u0027 is not present\"",
             "match": {
               "arguments": [
                 {
@@ -2513,7 +2198,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required Integer parameter \u0027processId\u0027 is not present\"",
+                  "val": "\"Required Integer parameter \u0027patternId\u0027 is not present\"",
                   "offset": 30
                 }
               ],
@@ -2527,19 +2212,543 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@deleteProcess"
+            "name": "@Pattern"
+          },
+          {
+            "name": "@deletePattern"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:58.127Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 143,
+        "name": "Verify API: updatePattern API add Pattern paylod",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api-add-pattern-paylod",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 29000000,
+              "status": "passed"
+            },
+            "line": 144,
+            "name": "\"System_Admin\" User \"Update\" Pattern Payload with Param \u003d \"patternId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"patternId\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1516000000,
+              "status": "passed"
+            },
+            "line": 145,
+            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updatePattern\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 146,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: patternActivities[activityCode\u003dACT_21].activityCreatedAt\nExpected: 2020-03-08 00:48:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskCreatedAt\nExpected: 2020-03-08 00:48:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskUpdatedAt\nExpected: 0000-00-00 00:00:00\n     got: NA\n ; patternActivities[activityCode\u003dACT_21].activityTasks[percentCompletion\u003d0].taskUpdatedBy\nExpected: \n     got: 0000-00-00 00:00:00\n ; patternActivities[activityCode\u003dACT_21].activityUpdatedAt\nExpected: 0000-00-00 00:00:00\n     got: 2020-06-03 19:30:14\n ; patternActivities[activityCode\u003dACT_21].activityUpdatedBy\nExpected: \n     got: rupam_sys\n\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:482)\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:464)\r\n\tat stepDefinitions.PatternStepDefinition.verify_Patternfields_gets_updated(PatternStepDefinition.java:165)\r\n\tat ✽.Verify Pattern fields gets updated(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Pattern.feature:147)\r\n",
+              "duration": 47000000,
+              "status": "failed"
+            },
+            "line": 147,
+            "name": "Verify Pattern fields gets updated",
+            "match": {
+              "location": "stepDefinitions.PatternStepDefinition.verify_Patternfields_gets_updated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@updatePattern"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:29:59.735Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 150,
+        "name": "Verify API: updatePattern API, with invalid patternId",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-invalid-patternid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 151,
+            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with invalid Param \u003d \"patternId\" and value\u003d\"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"patternId\"",
+                  "offset": 67
+                },
+                {
+                  "val": "-9",
+                  "offset": 90
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_invalid_Param(java.lang.String,java.lang.String,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1550000000,
+              "status": "passed"
+            },
+            "line": 152,
+            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updatePattern\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 153,
+            "name": "The API call is success with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 154,
+            "name": "\"message\" in response body is \"Pattern with id - -9 not found\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Pattern with id - -9 not found\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@updatePattern"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:30:01.374Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 157,
+        "name": "Verify API: updatePattern API, with no patternId",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-no-patternid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 158,
+            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2115000000,
+              "status": "passed"
+            },
+            "line": 159,
+            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updatePattern\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 160,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 161,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027patternId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027patternId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@updatePattern"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-04T00:30:03.564Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 164,
+        "name": "Verify API: updatePattern API, with no pattern Body",
+        "description": "",
+        "id": "validating-pattern-service-apis;verify-api:-updatepattern-api--with-no-pattern-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 165,
+            "name": "\"System_Admin\" User \"Update\" Pattern Payload  with no Pattern Body and Param \u003d \"patternId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"patternId\"",
+                  "offset": 79
+                }
+              ],
+              "location": "stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Pattern_Body(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1620000000,
+              "status": "passed"
+            },
+            "line": 166,
+            "name": "User calls \"updatePattern\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updatePattern\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 167,
+            "name": "The API call is success with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 168,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.updatePattern(java.lang.String,java.lang.Integer,com.ibm.dc.pattern.entity.Pattern)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.pattern.entity.Pattern com.ibm.dc.pattern.controller.PatternController.updatePattern(java.lang.String,java.lang.Integer,com.ibm.dc.pattern.entity.Pattern)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Pattern"
+          },
+          {
+            "name": "@updatePattern"
           }
         ]
       }
     ],
-    "name": "Validating Process-Service APIs",
+    "name": "Validating Pattern-Service APIs",
     "description": "",
-    "id": "validating-process-service-apis",
+    "id": "validating-pattern-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/test.feature",
+    "uri": "file:src/test/java/features/Pattern.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -2550,10 +2759,18 @@
         }
       },
       {
-        "name": "@Test",
+        "name": "@Demo",
         "type": "Tag",
         "location": {
           "line": 2,
+          "column": 1
+        }
+      },
+      {
+        "name": "@Pattern",
+        "type": "Tag",
+        "location": {
+          "line": 3,
           "column": 1
         }
       }

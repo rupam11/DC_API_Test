@@ -25,6 +25,14 @@ public enum APIResources {
 	getAllSectors("sector-service/getAllSectors"),
 	updateSector("sector-service/updateSector"),
 	
+
+	createIndustry("industry-service/createIndustry"),
+	deleteIndustry("industry-service/deleteIndustry"),
+	getIndustryBySearchCriteria("industry-service/getIndustryBySearchCriteria"),
+	getIndustryCount("industry-service/getIndustryCount"),
+	getAllIndustries("industry-service/getAllIndustries"),
+	updateIndustry("industry-service/updateIndustry"),
+	
 	createBpmnDiagram("bpmn-service/createBpmnDiagram"),
 	getBpmnDiagram("bpmn-service/getBpmnDiagram"),
 	

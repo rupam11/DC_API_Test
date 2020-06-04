@@ -1,4 +1,6 @@
-@DC-Test-Suite @Task
+@DC-Test-Suite
+@Demo
+@Task
 Feature: Validating Task API's
 
   @getTaskCount

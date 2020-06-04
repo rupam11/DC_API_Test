@@ -49,7 +49,7 @@ public class CommonStepDefinition extends Utils {
 
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String keyName, String keyValue) {
-		assertEquals(getKeyValueFromJsonResponse(response, keyName), keyValue);
+		assertEquals(keyValue,getKeyValueFromJsonResponse(response, keyName));
 	}
 	
 	@Then("{string} in response body is {int}")

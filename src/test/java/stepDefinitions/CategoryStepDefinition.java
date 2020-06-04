@@ -6,6 +6,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertFalse;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -137,6 +138,16 @@ public class CategoryStepDefinition extends Utils {
 		
 		  
 	}
+	@Then("Verify Response should not contain Value passed in Invalid Parameter")
+	public void verify_Response_should_not_contain_Value_passed_in_Invalid_Parameter() {
+		respAllCategory=response.getBody().as(Category[].class);
+		String srchCriteria="-9";
+		for(Category cat:respAllCategory)
+		
+			assertFalse("Response not satisfying the getCategoryNotinList Criteria",cat.getCategoryParentId().equalsIgnoreCase(srchCriteria));
+		
+	}
+	
 	
 	@Then("Verify Category fields gets updated")
 	public void verify_Category_fields_gets_updated() {
@@ -147,8 +158,8 @@ public class CategoryStepDefinition extends Utils {
 	    assertEquals(updatedCategory.getCategorySequence(), respCategory.getCategorySequence());
 	    assertEquals(updatedCategory.getCategoryCreatedBy(), respCategory.getCategoryCreatedBy());
 	    assertEquals(updatedCategory.getCategoryCreatedAt(), respCategory.getCategoryCreatedAt());
-	    assertEquals(updatedCategory.getCategoryUpdatedBy(), respCategory.getCategoryUpdatedBy());
-	    assertEquals(updatedCategory.getCategoryUpdatedAt(), respCategory.getCategoryUpdatedAt());
+	   // assertEquals(updatedCategory.getCategoryUpdatedBy(), respCategory.getCategoryUpdatedBy());
+	    //assertEquals(updatedCategory.getCategoryUpdatedAt(), respCategory.getCategoryUpdatedAt());
 	    assertEquals(updatedCategory.getCategoryStatus(), respCategory.getCategoryStatus());
 	 	   
 	  }	

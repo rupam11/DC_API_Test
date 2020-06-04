@@ -1,4 +1,6 @@
-@DC-Test-Suite @Activity
+@DC-Test-Suite 
+@Demo
+@Activity
 Feature: Validating Activity-Service APIs
 
   @getActivityCount
@@ -178,7 +180,7 @@ Feature: Validating Activity-Service APIs
     Then "message" in response body is "Required Integer parameter 'activityId' is not present"
 
   @updateActivity
-  Scenario: Verify API: updateActivity API, with no pattern Body
+  Scenario: Verify API: updateActivity API, with no activity Body
     Given "System_Admin" User "Update" Activity Payload  with no Activity Body and Param = "activityId"
     When User calls "updateActivity" API with "Put" http Request
     Then The API call is success with StatusCode 400
