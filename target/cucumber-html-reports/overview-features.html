@@ -50,9 +50,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                797,
-                24,
-                6,
+                818,
+                25,
+                8,
                 0,
                 0
             ],
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 827) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 851) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -106,8 +106,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                154,
-                24
+                157,
+                25
             ],
             backgroundColor: [
                 "#00B000",
@@ -140,7 +140,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 178) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 182) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -153,8 +153,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                   3,
-                   5
+                   4,
+                   6
                ],
                backgroundColor: [
                 "#00B000",
@@ -187,7 +187,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 8) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 10) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -230,7 +230,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Delivery-Curator-Rest-API</td>
         <td>1</td>
-      <td>04 Jun 2020, 14:39</td>
+      <td>05 Jun 2020, 10:07</td>
     </tr>
   </tbody>
 </table>
@@ -338,11 +338,28 @@ $(document).ready(function() {
         <td  class="failed"    >8</td>
         <td class="total">23</td>
 
-        <td class="duration" data-value="222514000000">3:42.514</td>
+        <td class="duration" data-value="59078000000">59.078</td>
         <td class="failed">Failed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_1_3034665598.html">Validating Category API's</a></td>
+        <td class="tagname"><a href="report-feature_1_1558312815.html">Validating BPMN API's</a></td>
+
+        <td      class="passed"    >10</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">13</td>
+
+        <td  class="passed"    >1</td>
+        <td  class="failed"    >1</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="1912000000">1.912</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_2_3034665598.html">Validating Category API's</a></td>
 
         <td      class="passed"    >74</td>
         <td      class="failed"    >2</td>
@@ -355,11 +372,11 @@ $(document).ready(function() {
         <td  class="failed"    >2</td>
         <td class="total">19</td>
 
-        <td class="duration" data-value="64903000000">1:4.903</td>
+        <td class="duration" data-value="35595000000">35.595</td>
         <td class="failed">Failed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_2_1137325707.html">Validating Client API's</a></td>
+        <td class="tagname"><a href="report-feature_3_1137325707.html">Validating Client API's</a></td>
 
         <td      class="passed"    >200</td>
         <td      class="failed"    >8</td>
@@ -372,11 +389,11 @@ $(document).ready(function() {
         <td  class="failed"    >8</td>
         <td class="total">43</td>
 
-        <td class="duration" data-value="173837000000">2:53.837</td>
+        <td class="duration" data-value="107180000000">1:47.180</td>
         <td class="failed">Failed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_3_2643457886.html">Validating Industry-Service APIs</a></td>
+        <td class="tagname"><a href="report-feature_4_2643457886.html">Validating Industry-Service APIs</a></td>
 
         <td      class="passed"    >78</td>
         <td >0</td>
@@ -389,11 +406,28 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">17</td>
 
-        <td class="duration" data-value="34538000000">34.538</td>
+        <td class="duration" data-value="35187000000">35.187</td>
         <td class="passed">Passed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_4_839748350.html">Validating Pattern-Service APIs</a></td>
+        <td class="tagname"><a href="report-feature_5_4268684983.html">Validating Mail API's</a></td>
+
+        <td      class="passed"    >11</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">11</td>
+
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="4768000000">4.768</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_6_839748350.html">Validating Pattern-Service APIs</a></td>
 
         <td      class="passed"    >91</td>
         <td      class="failed"    >1</td>
@@ -406,11 +440,11 @@ $(document).ready(function() {
         <td  class="failed"    >1</td>
         <td class="total">21</td>
 
-        <td class="duration" data-value="146805000000">2:26.805</td>
+        <td class="duration" data-value="48901000000">48.901</td>
         <td class="failed">Failed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_5_3758911197.html">Validating Process-Service APIs</a></td>
+        <td class="tagname"><a href="report-feature_7_3758911197.html">Validating Process-Service APIs</a></td>
 
         <td      class="passed"    >90</td>
         <td >0</td>
@@ -423,11 +457,11 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">19</td>
 
-        <td class="duration" data-value="62088000000">1:2.088</td>
+        <td class="duration" data-value="41083000000">41.083</td>
         <td class="passed">Passed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_6_856608550.html">Validating Sector-Service APIs</a></td>
+        <td class="tagname"><a href="report-feature_8_856608550.html">Validating Sector-Service APIs</a></td>
 
         <td      class="passed"    >69</td>
         <td >0</td>
@@ -440,11 +474,11 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">15</td>
 
-        <td class="duration" data-value="47467000000">47.467</td>
+        <td class="duration" data-value="32203000000">32.203</td>
         <td class="passed">Passed</td>
       </tr>
       <tr>
-        <td class="tagname"><a href="report-feature_7_719616133.html">Validating Task API's</a></td>
+        <td class="tagname"><a href="report-feature_9_719616133.html">Validating Task API's</a></td>
 
         <td      class="passed"    >92</td>
         <td      class="failed"    >5</td>
@@ -457,7 +491,7 @@ $(document).ready(function() {
         <td  class="failed"    >5</td>
         <td class="total">21</td>
 
-        <td class="duration" data-value="90769000000">1:30.769</td>
+        <td class="duration" data-value="46474000000">46.474</td>
         <td class="failed">Failed</td>
       </tr>
   </tbody>
@@ -465,33 +499,33 @@ $(document).ready(function() {
   <tfoot class="total">
     <tr>
       <td></td>
-      <td>797</td>
-      <td>24</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0</td>
-      <td>827</td>
-
-      <td>154</td>
-      <td>24</td>
-      <td>178</td>
-
-      <td class="duration">14:2.921</td>
+      <td>818</td>
+      <td>25</td>
       <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>851</td>
+
+      <td>157</td>
+      <td>25</td>
+      <td>182</td>
+
+      <td class="duration">6:52.381</td>
+      <td>10</td>
     </tr>
     <tr>
       <td></td>
-      <td>96.37%</td>
-      <td>2.90%</td>
-      <td>0.73%</td>
+      <td>96.12%</td>
+      <td>2.94%</td>
+      <td>0.94%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>86.52%</td>
-      <td>13.48%</td>
+      <td>86.26%</td>
+      <td>13.74%</td>
       <td></td>
       <td></td>
-      <td>37.50%</td>
+      <td>40.00%</td>
     </tr>
   </tfoot>
 </table>

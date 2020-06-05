@@ -1,7 +1,7 @@
 @DC-Test-Suite
 @Demo
 @Mail
-Feature: Validating Activity API's 
+Feature: Validating Mail API's 
 
 
 @sendMail 

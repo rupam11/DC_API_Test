@@ -1,54 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: cucumber.Options.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 62, Failures: 9, Errors: 7, Skipped: 0, Time elapsed: 156.461 s <<< FAILURE! - in cucumber.Options.TestRunner
-Validating Category API's.Verify API: createCategory API add without Category paylod  Time elapsed: 1.252 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<200>
-
-Validating Category API's.Verify API: getCategoryListbyName API, search by 'CategoryId'  Time elapsed: 2.023 s  <<< FAILURE!
-java.lang.AssertionError: expected:<500> but was:<200>
-
-Validating Category API's.Verify API: getCategoryBySearchCriteria API, with no SearchCriteria  Time elapsed: 4.252 s  <<< FAILURE!
-java.lang.AssertionError: All Categories not searched in case of no Search Criteria: array lengths differed, expected.length=105 actual.length=1
-
-Validating Client API's.Verify API: getClientBySearchCriteria API, search no SearchCriteria  Time elapsed: 5.104 s  <<< FAILURE!
-java.lang.AssertionError: All Client not searched in case of no Search Criteria: array lengths differed, expected.length=73 actual.length=1
-
-Validating Client API's.Verify API: getClientUsers API, search by invalid 'clientId'  Time elapsed: 1.526 s  <<< ERROR!
-com.fasterxml.jackson.databind.exc.MismatchedInputException: 
-Cannot deserialize instance of `[Lentity.Client;` out of START_OBJECT token
- at [Source: (String)"{"timestamp":"2020-06-04T05:14:51.217+0000","status":500,"error":"Internal Server Error","message":"Client with id - -9 not found","path":"/getClientUsers"}"; line: 1, column: 1]
-
-Validating Client API's.Verify API: addProjectToClient API, to add Project to Client  Time elapsed: 0.04 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: addUsersToClient API, with Invalid clientId  Time elapsed: 0.06 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: addUsersToClient API, with Invalid Parameter-clientName  Time elapsed: 0.069 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: addUsersToClient API, to add user to Client  Time elapsed: 2.686 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<500>
-
-Validating Client API's.Verify API: deleteProjectFromClient API, to delete Project from Client  Time elapsed: 0.058 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: deleteProjectFromClient API, to delete Project from Client with Invalid Client Id  Time elapsed: 0.091 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: deleteProjectFromClient API, to delete Project from Client with Invalid Parameter ClientName  Time elapsed: 0.057 s  <<< ERROR!
-java.lang.IllegalArgumentException: No enum constant resources.APIResources.getAllProjects
-
-Validating Client API's.Verify API: deleteUsersFromClient API, to add user to Client  Time elapsed: 4.546 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<400>
-
-Validating Client API's.Verify API: deleteUsersFromClient API, to delete user from Client with invalid value clientId  Time elapsed: 3.361 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<[Client with id - -9 not found]> but was:<[Required Integer parameter 'userId' is not present]>
-
-Validating Client API's.Verify API: deleteUsersFromClient API, to delete user from Client with invalid parameter ClientName  Time elapsed: 3.296 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<... Integer parameter '[client]Id' is not present> but was:<... Integer parameter '[user]Id' is not present>
-
-Validating Client API's.Verify API: deleteClient API, with No Client Id  Time elapsed: 0.826 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<200>
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.192 s <<< FAILURE! - in cucumber.Options.TestRunner
+Validating BPMN API's.Verify API: getBpmnDiagram API get BpmnDiagram using 'name' parameter  Time elapsed: 1.232 s  <<< ERROR!
+java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'application/octet-stream'.
 

@@ -10,6 +10,7 @@ import java.util.List;
 import com.google.gson.Gson;
 import entity.Activity;
 import entity.Category;
+import entity.Cic;
 import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
@@ -41,6 +42,7 @@ public class JsonDataReader {
 	private Project project;
 	private Industry industry;
 	private User user;
+	private Cic cic;
 	
 
 	
@@ -57,6 +59,7 @@ public class JsonDataReader {
 		this.pattern=new Pattern();
 		this.client = new Client();
 		this.industry = new Industry();
+		this.cic=new Cic();
 	}
 
 	public Activity getActivityData() {
@@ -539,6 +542,40 @@ public class JsonDataReader {
 		industry.setIndustryCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipIndustry;
+	}
+
+	
+	public Cic updateIndustryData(Cic ipCic) throws IOException {
+		ipCic.setCicName("New_"+ipCic.getCicName());
+		
+		if(ipCic.getCicStatus().equalsIgnoreCase("Active"))
+			ipCic.setCicStatus("Passive");
+		else if(ipCic.getCicStatus().equalsIgnoreCase("Passive"))
+			ipCic.setCicStatus("Active");
+		else 
+			System.out.println("Please fix cic.json data");
+		
+		industry.setIndustryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		industry.setIndustryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+			return ipCic;
+	}
+
+	public Cic getCicData() {
+		String CicFilePath=JSONDataFilePath+"Cic/cic.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(CicFilePath));
+			cic = gson.fromJson(bufferReader, Cic.class);
+			return cic;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + CicFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
 	}
 
 	

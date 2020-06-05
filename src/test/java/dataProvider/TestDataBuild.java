@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import entity.Activity;
 import entity.Category;
+import entity.Cic;
 import entity.Client;
 import entity.DiagramDetails;
 import entity.Field;
@@ -142,6 +143,18 @@ public class TestDataBuild {
 		Industry opindustry = jsonReader.updateIndustryData(ipIndustry);
 		return opindustry;
 	}
+	
+
+	public Cic addCic() {
+		Cic cic = jsonReader.getCicData();
+		return cic;
+	}
+
+	public Cic updateCic(Cic ipCic) throws IOException {
+		Cic opcic = jsonReader.updateIndustryData(ipCic);
+		return opcic;
+	}
+
 
 
 	

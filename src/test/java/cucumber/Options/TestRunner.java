@@ -11,8 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features= {"src/test/java/features"},
 		glue= {"stepDefinitions"},
-		tags= {"@DC-Test-Suite","@BPMN"},
-		plugin="json:target/jsonReports/cucumber-report.json")
+		tags= {"@DC-Test-Suite","@Cic"},
+		plugin= {"json:target/jsonReports/cucumber-report.json"})
 public class TestRunner {
 	
 }

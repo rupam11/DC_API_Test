@@ -33,6 +33,13 @@ public enum APIResources {
 	getAllIndustries("industry-service/getAllIndustries"),
 	updateIndustry("industry-service/updateIndustry"),
 	
+	createCic("cic-service/createCic"),
+	deleteCic("cic-service/deleteCic"),
+	getCicBySearchCriteria("cic-service/getCicBySearchCriteria"),
+	getCicCount("cic-service/getCicCount"),
+	getAllCics("cic-service/getAllCics"),
+	updateCic("cic-service/updateCic"),
+	
 	createBpmnDiagram("bpmn-service/createBpmnDiagram"),
 	getBpmnDiagram("bpmn-service/getBpmnDiagram"),
 	

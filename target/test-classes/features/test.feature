@@ -1,21 +1,9 @@
 @DC-Test-Suite
 @Test 
-Feature: Validating Activity API's 
+Feature: Validating Cic-Service APIs
 
-
-@sendMail 
-Scenario: Verify API: sendMail sends mail
-	Given "System_Admin" Add Mail Payload 
-	When User calls "sendMail" API with "Post" http Request 
-	Then Verify responseBody is instance of ResponseStatus
-	Then The API call is success with StatusCode 200 
-	Then "messageCode" in response body is 0
-	Then "message" in response body is "Success" 
-	Then "displayMessage" in response body is "Mail sent successfully"
-	
-@sendMail 
-Scenario: Verify API: sendMail fail in case body is not passed
-	Given "System_Admin" User invoke "sendMail"
-	When User calls "sendMail" API with "Post" http Request 
-	Then The API call is failed with StatusCode 400 
-		Then "message" in responseA new era of business is here, and it's time for a new business model: the #CognitiveEnterprise. Three building blocks can help you start the transformation. body is "Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)"
+@getCicCount 
+Scenario: Verify API: getCicCount API return Total Cic Count 
+	Given "System_Admin" User invoke "getCicCount"
+	When User calls "getCicCount" API with "Get" http Request 
+	Then Verify cic_Count result is greater than 0  
