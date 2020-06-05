@@ -18,6 +18,4 @@ Scenario: Verify API: sendMail fail in case body is not passed
 	Given "System_Admin" User invoke "sendMail"
 	When User calls "sendMail" API with "Post" http Request 
 	Then The API call is failed with StatusCode 400 
-		Then "message" in response body is "Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)"
-	
-	
+		Then "message" in responseA new era of business is here, and it's time for a new business model: the #CognitiveEnterprise. Three building blocks can help you start the transformation. body is "Required request body is missing: public com.ibm.dc.mail.entity.ResponseStatus com.ibm.dc.mail.controller.MailController.sendMail(java.lang.String,com.ibm.dc.mail.entity.Mail)"

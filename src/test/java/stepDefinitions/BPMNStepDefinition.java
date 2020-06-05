@@ -15,6 +15,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
+import resources.APIResources;
 import testBase.Utils;
 
 public class BPMNStepDefinition extends Utils {
@@ -34,7 +36,7 @@ public class BPMNStepDefinition extends Utils {
 		reqSpec = given().spec(requestSpecification(userRole)).body(reqBpmn);
 	}
 
-	@Then("verify that ResponseStatus instance is returned as response")
+	@Then("Verify that ResponseStatus instance is returned as response")
 	public void verify_that_ResponseStatus_instance_is_returned_as_response() {
 		respRespStatus = response.getBody().as(ResponseStatus.class);
 		assertThat(respRespStatus, instanceOf(ResponseStatus.class));
@@ -51,11 +53,26 @@ public class BPMNStepDefinition extends Utils {
 		System.out.println("API Called ::: getBpmnDiagram with Method === Get");
 		respSpec = new ResponseSpecBuilder().expectContentType("application.octent").build();	}
 	
-	@Then("verify response will return InputStreamResource instance")
+	@Then("Verify response will return InputStreamResource instance")
 	public void verify_response_will_return_InputStreamResource_instance() {
 		getBpmnDiagramResponse = response.getBody().as(InputStreamResource.class);
 		System.out.println("getBpmnDiagramResponse=== "+getBpmnDiagramResponse.toString());
-		//assertThat(getBPMNResponse, instanceOf(InputStreamResource.class));
+		assertThat(getBpmnDiagramResponse, instanceOf(InputStreamResource.class));
 	}
+	
+	@When("User calls {string} API with Get http Request")
+	public void user_calls_API_with_http_Request(String apiNm) {
+		APIResources resourceAPI = APIResources.valueOf(apiNm);
+		System.out.println("API Called ::: getBpmnDiagram with Method === Get");
+		respSpec = new ResponseSpecBuilder().build();
+		response = reqSpec.when().get(resourceAPI.getResource()).then().spec(respSpec).extract().response();}
+	
+	@Then("{string} in response-header should be {string}")
+	public void verify_resposneHedaer(String headerKey,String headerValue) {
+	    System.out.println("verification step yet to be written:: \n headerKey = "+headerKey+"\t headerValue = "+headerValue);
+	}
+	
+
+	
 
 }
