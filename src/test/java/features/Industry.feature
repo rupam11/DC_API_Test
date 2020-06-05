@@ -87,14 +87,14 @@ Scenario: Verify API: getIndustryBySearchCriteria API, search by 'industrySector
     Then Verify response will return List of Industries with zero records
 
   @getIndustryBySearchCriteria
-  Scenario: Verify API: getIndustryBySearchCriteria API, search by invalid 'industryId'
+  Scenario: Verify API: getIndustryBySearchCriteria API, search by invalid 'industryName'
     Given "System_Admin" User invoke "getIndustryBySearchCriteria" with invalid Parameter: "industryName" = "invalidIndustryName"
     When User calls "getIndustryBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200
     Then Verify response will return List of Industries with zero records
     
     @getIndustryBySearchCriteria
-  Scenario: Verify API: getIndustryBySearchCriteria API, search by invalid 'industryId'
+  Scenario: Verify API: getIndustryBySearchCriteria API, search by invalid 'industrySectorName'
     Given "System_Admin" User invoke "getIndustryBySearchCriteria" with invalid Parameter: "industrySectorName" = "invalidIndustrySectorName"
     When User calls "getIndustryBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200

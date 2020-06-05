@@ -12,6 +12,7 @@ import entity.Activity;
 import entity.Category;
 import entity.Cic;
 import entity.Client;
+import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Industry;
@@ -43,6 +44,7 @@ public class JsonDataReader {
 	private Industry industry;
 	private User user;
 	private Cic cic;
+	private Country country;
 	
 
 	
@@ -60,6 +62,7 @@ public class JsonDataReader {
 		this.client = new Client();
 		this.industry = new Industry();
 		this.cic=new Cic();
+		this.country=new Country();
 	}
 
 	public Activity getActivityData() {
@@ -545,7 +548,7 @@ public class JsonDataReader {
 	}
 
 	
-	public Cic updateIndustryData(Cic ipCic) throws IOException {
+	public Cic updateCicData(Cic ipCic) throws IOException {
 		ipCic.setCicName("New_"+ipCic.getCicName());
 		
 		if(ipCic.getCicStatus().equalsIgnoreCase("Active"))
@@ -555,20 +558,20 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix cic.json data");
 		
-		industry.setIndustryCreatedBy(configReader.getPropValue("update_CreatedBy"));
-		industry.setIndustryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		cic.setCicCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		cic.setCicCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipCic;
 	}
 
 	public Cic getCicData() {
-		String CicFilePath=JSONDataFilePath+"Cic/cic.json";
+		String CountryFilePath=JSONDataFilePath+"Country/country.json";
 		try {
-			bufferReader = new BufferedReader(new FileReader(CicFilePath));
+			bufferReader = new BufferedReader(new FileReader(CountryFilePath));
 			cic = gson.fromJson(bufferReader, Cic.class);
 			return cic;
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("Json file not found at path : " + CicFilePath);
+			throw new RuntimeException("Json file not found at path : " + CountryFilePath);
 		} finally {
 			try {
 				if (bufferReader != null)
@@ -576,6 +579,40 @@ public class JsonDataReader {
 			} catch (IOException ignore) {
 			}
 		}
+	}
+
+
+	public Country getCountryData() {
+		String CountryFilePath=JSONDataFilePath+"Country/country.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(CountryFilePath));
+			country = gson.fromJson(bufferReader, Country.class);
+			return country;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + CountryFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Country updateCountryData(Country ipCountry) throws IOException {
+		ipCountry.setCountryName("New_"+ipCountry.getCountryName());
+		
+		if(ipCountry.getCountryStatus().equalsIgnoreCase("Active"))
+			ipCountry.setCountryStatus("Passive");
+		else if(ipCountry.getCountryStatus().equalsIgnoreCase("Passive"))
+			ipCountry.setCountryStatus("Active");
+		else 
+			System.out.println("Please fix country.json data");
+		
+		country.setCountryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		country.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+			return ipCountry;
 	}
 
 	

@@ -78,7 +78,7 @@ Scenario: Verify API: getCicBySearchCriteria API, search by 'cicName'
     Then Verify response will return List of Cics with zero records
 
   @getCicBySearchCriteria
-  Scenario: Verify API: getCicBySearchCriteria API, search by invalid 'cicId'
+  Scenario: Verify API: getCicBySearchCriteria API, search by invalid 'cicName'
     Given "System_Admin" User invoke "getCicBySearchCriteria" with invalid Parameter: "cicName" = "invalidCicName"
     When User calls "getCicBySearchCriteria" API with "Get" http Request
     Then The API call is success with StatusCode 200

@@ -6,6 +6,7 @@ import entity.Activity;
 import entity.Category;
 import entity.Cic;
 import entity.Client;
+import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
 import entity.Industry;
@@ -151,8 +152,18 @@ public class TestDataBuild {
 	}
 
 	public Cic updateCic(Cic ipCic) throws IOException {
-		Cic opcic = jsonReader.updateIndustryData(ipCic);
+		Cic opcic = jsonReader.updateCicData(ipCic);
 		return opcic;
+	}
+
+	public Country addCountry() {
+		Country country = jsonReader.getCountryData();
+		return country;
+	}
+
+	public Country updateCountry(Country ipCountry) throws IOException {
+		Country opCountry = jsonReader.updateCountryData(ipCountry);
+		return opCountry;
 	}
 
 

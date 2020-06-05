@@ -40,6 +40,13 @@ public enum APIResources {
 	getAllCics("cic-service/getAllCics"),
 	updateCic("cic-service/updateCic"),
 	
+	createCountry("country-service/createCountry"),
+	deleteCountry("country-service/deleteCountry"),
+	getCountryBySearchCriteria("country-service/getCountryBySearchCriteria"),
+	getCountryCount("country-service/getCountryCount"),
+	getAllCountries("country-service/getAllCountries"),
+	updateCountry("country-service/updateCountry"),
+	
 	createBpmnDiagram("bpmn-service/createBpmnDiagram"),
 	getBpmnDiagram("bpmn-service/getBpmnDiagram"),
 	
