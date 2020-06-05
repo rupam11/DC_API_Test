@@ -89,12 +89,6 @@ public class ProcessStepDefinition extends Utils {
 		assertEquals(old_count, get_Process_count());
 	}
 
-	/*@Then("Process added exist in returned ProcessList")
-	public void Process_added_exist_in_returned_ProcessList() {
-		List<Process> ProcessList = Arrays.asList(respAllProcess);
-		assertThat(ProcessList, hasItem(respProcess));
-	}*/
-
 	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string}")
 	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param) throws IOException {
 		if (param.equalsIgnoreCase("ProcessId"))
@@ -165,16 +159,7 @@ public class ProcessStepDefinition extends Utils {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
 		assertThat(ProcessList, hasItem(respProcess));
 	}
-	
-	/*@Then("Verify responseProcess is same as that of requestProcess")
-	public void verify_responseProcess_is_same_as_that_of_requestProcess() {
-		expJsonObj=updateJson(new JSONObject(reqProcess),"process");
-		actJsonObj=updateJson(new JSONObject(respProcess),"process");
-		System.out.println("Request:::"+expJsonObj.toString());
-		System.out.println("Response:::"+actJsonObj.toString());
-		assertEquals("Response is not created correctly",expJsonObj,actJsonObj);
-	}*/
-	
+		
 	@Then("processId in response body is equal to output of {string}")
 	public void processid_in_response_body_is_equal_to_output_of(String string) {
 		assertEquals(process_Count+1, respProcess.getProcessId());

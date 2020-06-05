@@ -117,7 +117,7 @@ Feature: Validating Process-Service APIs
     Then "message" in response body is "Process with id - -9 not found"
 
   @updateProcess
-  Scenario: Verify API: updateProcess API, with no activityId
+  Scenario: Verify API: updateProcess API, with no squadId
     Given "System_Admin" User "Update" Process Payload  with no Param
     When User calls "updateProcess" API with "Put" http Request
     Then The API call is failed with StatusCode 400

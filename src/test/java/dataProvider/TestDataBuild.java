@@ -15,6 +15,7 @@ import entity.Pattern;
 import entity.Process;
 import entity.Project;
 import entity.Sector;
+import entity.Squad;
 import entity.Task;
 import entity.User;
 import testBase.Utils;
@@ -164,6 +165,16 @@ public class TestDataBuild {
 	public Country updateCountry(Country ipCountry) throws IOException {
 		Country opCountry = jsonReader.updateCountryData(ipCountry);
 		return opCountry;
+	}
+
+	public Squad addSquad() {
+		Squad squad = jsonReader.getSquadData();
+		return squad;
+	}
+
+	public Squad updateSquad(Squad ipSquad) throws IOException {
+		Squad opSquad = jsonReader.updateSquadData(ipSquad);
+		return opSquad;
 	}
 
 

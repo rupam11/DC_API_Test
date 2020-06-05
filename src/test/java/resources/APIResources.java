@@ -25,13 +25,19 @@ public enum APIResources {
 	getAllSectors("sector-service/getAllSectors"),
 	updateSector("sector-service/updateSector"),
 	
-
 	createIndustry("industry-service/createIndustry"),
 	deleteIndustry("industry-service/deleteIndustry"),
 	getIndustryBySearchCriteria("industry-service/getIndustryBySearchCriteria"),
 	getIndustryCount("industry-service/getIndustryCount"),
 	getAllIndustries("industry-service/getAllIndustries"),
 	updateIndustry("industry-service/updateIndustry"),
+	
+	createSquad("squad-service/createSquad"),
+	deleteSquad("squad-service/deleteSquad"),
+	getSquadBySearchCriteria("squad-service/getSquadBySearchCriteria"),
+	getSquadCount("squad-service/getSquadCount"),
+	getAllSquads("squad-service/getAllSquads"),
+	updateSquad("squad-service/updateSquad"),
 	
 	createCic("cic-service/createCic"),
 	deleteCic("cic-service/deleteCic"),

@@ -21,6 +21,7 @@ import entity.Pattern;
 import entity.Process;
 import entity.Project;
 import entity.Sector;
+import entity.Squad;
 import entity.Task;
 import entity.User;
 
@@ -45,6 +46,7 @@ public class JsonDataReader {
 	private User user;
 	private Cic cic;
 	private Country country;
+	private Squad squad;
 	
 
 	
@@ -63,6 +65,7 @@ public class JsonDataReader {
 		this.industry = new Industry();
 		this.cic=new Cic();
 		this.country=new Country();
+		this.squad=new Squad();
 	}
 
 	public Activity getActivityData() {
@@ -613,6 +616,39 @@ public class JsonDataReader {
 		country.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipCountry;
+	}
+
+	public Squad getSquadData() {
+		String SquadFilePath=JSONDataFilePath+"Squad/squad.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(SquadFilePath));
+			squad = gson.fromJson(bufferReader, Squad.class);
+			return squad;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + SquadFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Squad updateSquadData(Squad ipSquad) throws IOException {
+	ipSquad.setSquadName("New_"+ipSquad.getSquadName());
+		
+		if(ipSquad.getSquadStatus().equalsIgnoreCase("Active"))
+			ipSquad.setSquadStatus("Passive");
+		else if(ipSquad.getSquadStatus().equalsIgnoreCase("Passive"))
+			ipSquad.setSquadStatus("Active");
+		else 
+			System.out.println("Please fix squad.json data");
+		
+		country.setCountryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		country.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+			return ipSquad;
 	}
 
 	

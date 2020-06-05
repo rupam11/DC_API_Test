@@ -3,11 +3,11 @@
     "line": 5,
     "elements": [
       {
-        "start_timestamp": "2020-06-05T09:52:42.700Z",
+        "start_timestamp": "2020-06-05T11:01:56.969Z",
         "before": [
           {
             "result": {
-              "duration": 1996000000,
+              "duration": 4994000000,
               "status": "passed"
             },
             "match": {
@@ -16,9 +16,9 @@
           }
         ],
         "line": 8,
-        "name": "Verify API: getCountryCount API return Total Country Count",
+        "name": "Verify API: getSquadCount API return Total Squad Count",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrycount-api-return-total-country-count",
+        "id": "validating-squad-service-apis;verify-api:-getsquadcount-api-return-total-squad-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1184000000,
+              "duration": 4261000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "\"System_Admin\" User invoke \"getCountryCount\"",
+            "name": "\"System_Admin\" User invoke \"getSquadCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCountryCount\"",
+                  "val": "\"getSquadCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 5433000000,
+              "duration": 13443000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "User calls \"getCountryCount\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryCount\"",
+                  "val": "\"getSquadCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 38
+                  "offset": 36
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -78,13 +78,13 @@
           },
           {
             "result": {
-              "duration": 28000000,
+              "duration": 18000000,
               "status": "passed"
             },
             "line": 11,
-            "name": "Verify country_Count result is greater than 0",
+            "name": "Verify squad_Count result is greater than 0",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.get_country_count()"
+              "location": "stepDefinitions.SquadStepDefinition.get_squad_count()"
             },
             "keyword": "Then "
           },
@@ -114,18 +114,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryCount"
+            "name": "@getSquadCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:52:51.597Z",
+        "start_timestamp": "2020-06-05T11:02:20.158Z",
         "before": [
           {
             "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -134,9 +135,9 @@
           }
         ],
         "line": 15,
-        "name": "Verify API: createCountry API add Country payload",
+        "name": "Verify API: createSquad API add Squad payload",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-createcountry-api-add-country-payload",
+        "id": "validating-squad-service-apis;verify-api:-createsquad-api-add-squad-payload",
         "after": [
           {
             "result": {
@@ -152,11 +153,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1116000000,
+              "duration": 1722000000,
               "status": "passed"
             },
             "line": 16,
-            "name": "\"System_Admin\" User \"Add\" Country Payload",
+            "name": "\"System_Admin\" User \"Add\" Squad Payload with Param \u003d \"none\"",
             "match": {
               "arguments": [
                 {
@@ -166,28 +167,32 @@
                 {
                   "val": "\"Add\"",
                   "offset": 20
+                },
+                {
+                  "val": "\"none\"",
+                  "offset": 53
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_Country_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1568000000,
+              "duration": 1799000000,
               "status": "passed"
             },
             "line": 17,
-            "name": "User calls \"createCountry\" API with \"Post\" http Request",
+            "name": "User calls \"createSquad\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createCountry\"",
+                  "val": "\"createSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -213,25 +218,25 @@
           },
           {
             "result": {
-              "duration": 182000000,
+              "duration": 531000000,
               "status": "passed"
             },
             "line": 19,
-            "name": "Verify response will return Country instance",
+            "name": "Verify response will return Squad instance",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_response_will_return_Country_instance()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_Squad_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1427000000,
+              "duration": 2574000000,
               "status": "passed"
             },
             "line": 20,
-            "name": "Verify Total country_Count increased by 1",
+            "name": "Verify Total squad_Count increased by 1",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_Total_country_Count_increased_by()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_Total_squad_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -244,19 +249,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@createCountry"
+            "name": "@createSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:52:55.930Z",
+        "start_timestamp": "2020-06-05T11:02:26.960Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "match": {
@@ -265,9 +270,9 @@
           }
         ],
         "line": 24,
-        "name": "Verify API: createCountry API with no country Body",
+        "name": "Verify API: createSquad API with no squad Body",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-createcountry-api-with-no-country-body",
+        "id": "validating-squad-service-apis;verify-api:-createsquad-api-with-no-squad-body",
         "after": [
           {
             "result": {
@@ -284,11 +289,11 @@
         "steps": [
           {
             "result": {
-              "duration": 18000000,
+              "duration": 50000000,
               "status": "passed"
             },
             "line": 25,
-            "name": "\"System_Admin\" User \"Add\" Country Payload  with no Country Body",
+            "name": "\"System_Admin\" User \"Add\" Squad Payload  with no Squad Body",
             "match": {
               "arguments": [
                 {
@@ -300,26 +305,26 @@
                   "offset": 20
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_country_Payload_with_no_Country_Body_and_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1586000000,
+              "duration": 1751000000,
               "status": "passed"
             },
             "line": 26,
-            "name": "User calls \"createCountry\" API with \"Post\" http Request",
+            "name": "User calls \"createSquad\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createCountry\"",
+                  "val": "\"createSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -345,11 +350,11 @@
           },
           {
             "result": {
-              "duration": 1822000000,
+              "duration": 2352000000,
               "status": "passed"
             },
             "line": 28,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.country.entity.Country com.ibm.dc.country.controller.CountryController.createCountry(java.lang.String,com.ibm.dc.country.entity.Country)\"",
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.createSquad(java.lang.String,com.ibm.dc.squad.entity.Squad)\"",
             "match": {
               "arguments": [
                 {
@@ -357,7 +362,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.country.entity.Country com.ibm.dc.country.controller.CountryController.createCountry(java.lang.String,com.ibm.dc.country.entity.Country)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.createSquad(java.lang.String,com.ibm.dc.squad.entity.Squad)\"",
                   "offset": 30
                 }
               ],
@@ -374,15 +379,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@createCountry"
+            "name": "@createSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:52:59.571Z",
+        "start_timestamp": "2020-06-05T11:02:31.218Z",
         "before": [
           {
             "result": {
@@ -395,9 +400,9 @@
           }
         ],
         "line": 31,
-        "name": "Verify API: getAllCountries API return List of All Countries",
+        "name": "Verify API: getAllSquads API return List of All Squads",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getallcountries-api-return-list-of-all-countries",
+        "id": "validating-squad-service-apis;verify-api:-getallsquads-api-return-list-of-all-squads",
         "after": [
           {
             "result": {
@@ -413,11 +418,11 @@
         "steps": [
           {
             "result": {
-              "duration": 17000000,
+              "duration": 47000000,
               "status": "passed"
             },
             "line": 32,
-            "name": "\"System_Admin\" User invoke \"getAllCountries\"",
+            "name": "\"System_Admin\" User invoke \"getAllSquads\"",
             "match": {
               "arguments": [
                 {
@@ -425,7 +430,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getAllCountries\"",
+                  "val": "\"getAllSquads\"",
                   "offset": 27
                 }
               ],
@@ -435,20 +440,20 @@
           },
           {
             "result": {
-              "duration": 2084000000,
+              "duration": 2229000000,
               "status": "passed"
             },
             "line": 33,
-            "name": "User calls \"getAllCountries\" API with \"Get\" http Request",
+            "name": "User calls \"getAllSquads\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getAllCountries\"",
+                  "val": "\"getAllSquads\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 38
+                  "offset": 35
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -474,37 +479,37 @@
           },
           {
             "result": {
-              "duration": 20000000,
+              "duration": 62000000,
               "status": "passed"
             },
             "line": 35,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1469000000,
+              "duration": 1633000000,
               "status": "passed"
             },
             "line": 36,
-            "name": "Total number of Country in List is equal to getCountryCount",
+            "name": "Total number of Squad in List is equal to getSquadCount",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.total_number_of_Country_in_List_is_equal_to_getCountryCount()"
+              "location": "stepDefinitions.SquadStepDefinition.total_number_of_Squad_in_List_is_equal_to_getSquadCount()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 37,
-            "name": "Country added exist in returned Country List",
+            "name": "Squad added exist in returned Squad List",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()"
+              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
             },
             "keyword": "Then "
           }
@@ -517,7 +522,7 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
             "name": "@getAllIndusties"
@@ -525,7 +530,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:03.214Z",
+        "start_timestamp": "2020-06-05T11:02:35.265Z",
         "before": [
           {
             "result": {
@@ -538,9 +543,9 @@
           }
         ],
         "line": 40,
-        "name": "Verify API: getCountryBySearchCriteria API, search no SearchCriteria",
+        "name": "Verify API: getSquadBySearchCriteria API, search no SearchCriteria",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-no-searchcriteria",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-no-searchcriteria",
         "after": [
           {
             "result": {
@@ -556,11 +561,11 @@
         "steps": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 25000000,
               "status": "passed"
             },
             "line": 41,
-            "name": "\"System_Admin\" User invoke \"getCountryBySearchCriteria\"",
+            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\"",
             "match": {
               "arguments": [
                 {
@@ -568,7 +573,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 27
                 }
               ],
@@ -578,20 +583,20 @@
           },
           {
             "result": {
-              "duration": 1553000000,
+              "duration": 1701000000,
               "status": "passed"
             },
             "line": 42,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -600,6 +605,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 43,
@@ -617,24 +623,26 @@
           },
           {
             "result": {
-              "duration": 11000000,
+              "duration": 25000000,
               "status": "passed"
             },
             "line": 44,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: All Squads not searched in case of no Search Criteria: array lengths differed, expected.length\u003d18 actual.length\u003d0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.internal.ComparisonCriteria.assertArraysAreSameLength(ComparisonCriteria.java:71)\r\n\tat org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:32)\r\n\tat org.junit.Assert.internalArrayEquals(Assert.java:473)\r\n\tat org.junit.Assert.assertArrayEquals(Assert.java:265)\r\n\tat stepDefinitions.SquadStepDefinition.response_should_be_list_all_Squads_getAllSquads(SquadStepDefinition.java:133)\r\n\tat ✽.Response should be list all Squads\u003dgetAllSquads(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Squad.feature:45)\r\n",
+              "duration": 1666000000,
+              "status": "failed"
             },
-            "line": 46,
-            "name": "All Countries should have Active Status",
+            "line": 45,
+            "name": "Response should be list all Squads\u003dgetAllSquads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.all_Countries_should_have_Active_Status()"
+              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_all_Squads_getAllSquads()"
             },
             "keyword": "Then "
           }
@@ -647,19 +655,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:04.814Z",
+        "start_timestamp": "2020-06-05T11:02:39.201Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "match": {
@@ -668,12 +676,13 @@
           }
         ],
         "line": 49,
-        "name": "Verify API: getCountryBySearchCriteria API, search by \u0027countryId\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadId\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by--countryid-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadid-",
         "after": [
           {
             "result": {
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -686,11 +695,11 @@
         "steps": [
           {
             "result": {
-              "duration": 148000000,
+              "duration": 921000000,
               "status": "passed"
             },
             "line": 50,
-            "name": "\"System_Admin\" User invoke getCountryBySearchCriteria with Parameter: \"countryId\"",
+            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadId\"",
             "match": {
               "arguments": [
                 {
@@ -698,30 +707,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"countryId\"",
-                  "offset": 70
+                  "val": "\"squadId\"",
+                  "offset": 68
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_invoke_getCountryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1608000000,
+              "duration": 2478000000,
               "status": "passed"
             },
             "line": 51,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -747,25 +756,25 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 27000000,
               "status": "passed"
             },
             "line": 53,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 6000000,
+              "duration": 22000000,
               "status": "passed"
             },
             "line": 54,
-            "name": "Response should be list of Countries and size should be one",
+            "name": "Response should be list of Squads and size should be one",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.response_should_be_list_of_Countries_and_size_should_be_one()"
+              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_of_Squads_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
@@ -774,9 +783,9 @@
               "status": "passed"
             },
             "line": 55,
-            "name": "Country added exist in returned Country List",
+            "name": "Squad added exist in returned Squad List",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()"
+              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
             },
             "keyword": "Then "
           }
@@ -789,19 +798,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:06.676Z",
+        "start_timestamp": "2020-06-05T11:02:42.922Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -810,9 +819,9 @@
           }
         ],
         "line": 58,
-        "name": "Verify API: getCountryBySearchCriteria API, search by \u0027countryName\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadName\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by--countryname-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadname-",
         "after": [
           {
             "result": {
@@ -828,11 +837,11 @@
         "steps": [
           {
             "result": {
-              "duration": 94000000,
+              "duration": 61000000,
               "status": "passed"
             },
             "line": 59,
-            "name": "\"System_Admin\" User invoke getCountryBySearchCriteria with Parameter: \"countryName\"",
+            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadName\"",
             "match": {
               "arguments": [
                 {
@@ -840,30 +849,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"countryName\"",
-                  "offset": 70
+                  "val": "\"squadName\"",
+                  "offset": 68
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_invoke_getCountryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1718000000,
+              "duration": 2376000000,
               "status": "passed"
             },
             "line": 60,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -889,13 +898,13 @@
           },
           {
             "result": {
-              "duration": 6000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 62,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
@@ -904,9 +913,9 @@
               "status": "passed"
             },
             "line": 63,
-            "name": "Country added exist in returned Country List",
+            "name": "Squad added exist in returned Squad List",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()"
+              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
             },
             "keyword": "Then "
           }
@@ -919,18 +928,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:08.527Z",
+        "start_timestamp": "2020-06-05T11:02:45.444Z",
         "before": [
           {
             "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -939,9 +949,9 @@
           }
         ],
         "line": 66,
-        "name": "Verify API: getCountryBySearchCriteria API, search by \u0027countrySectorName\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadSectorName\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by--countrysectorname-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadsectorname-",
         "after": [
           {
             "result": {
@@ -957,11 +967,11 @@
         "steps": [
           {
             "result": {
-              "duration": 4000000,
+              "duration": 97000000,
               "status": "passed"
             },
             "line": 67,
-            "name": "\"System_Admin\" User invoke getCountryBySearchCriteria with Parameter: \"countrySectorName\"",
+            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadSectorName\"",
             "match": {
               "arguments": [
                 {
@@ -969,30 +979,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"countrySectorName\"",
-                  "offset": 70
+                  "val": "\"squadSectorName\"",
+                  "offset": 68
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_invoke_getCountryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1012000000,
+              "duration": 1530000000,
               "status": "passed"
             },
             "line": 68,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1018,13 +1028,13 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 70,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
@@ -1033,9 +1043,9 @@
               "status": "passed"
             },
             "line": 71,
-            "name": "Country added exist in returned Country List",
+            "name": "Squad added exist in returned Squad List",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()"
+              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
             },
             "keyword": "Then "
           }
@@ -1048,19 +1058,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:09.572Z",
+        "start_timestamp": "2020-06-05T11:02:47.129Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -1069,9 +1079,9 @@
           }
         ],
         "line": 74,
-        "name": "Verify API: getCountryBySearchCriteria API, search by \u0027countryId\u0027 \u0026 \u0027countryName\u0027 \u0026 \u0027countrySectorName\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadId\u0027 \u0026 \u0027squadName\u0027 \u0026 \u0027squadSectorName\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by--countryid--\u0026--countryname--\u0026--countrysectorname-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadid--\u0026--squadname--\u0026--squadsectorname-",
         "after": [
           {
             "result": {
@@ -1087,11 +1097,11 @@
         "steps": [
           {
             "result": {
-              "duration": 13000000,
+              "duration": 148000000,
               "status": "passed"
             },
             "line": 75,
-            "name": "\"System_Admin\" User invoke getCountryBySearchCriteria with Parameter: \u0027countryId\u0027 \u0026 \u0027countryName\u0027 \u0026 \u0027countrySectorName\u0027",
+            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \u0027squadId\u0027 \u0026 \u0027squadName\u0027 \u0026 \u0027squadSectorName\u0027",
             "match": {
               "arguments": [
                 {
@@ -1099,38 +1109,38 @@
                   "offset": 0
                 },
                 {
-                  "val": "\u0027countryId\u0027",
-                  "offset": 70
+                  "val": "\u0027squadId\u0027",
+                  "offset": 68
                 },
                 {
-                  "val": "\u0027countryName\u0027",
-                  "offset": 84
+                  "val": "\u0027squadName\u0027",
+                  "offset": 80
                 },
                 {
-                  "val": "\u0027countrySectorName\u0027",
-                  "offset": 100
+                  "val": "\u0027squadSectorName\u0027",
+                  "offset": 94
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1550000000,
+              "duration": 2224000000,
               "status": "passed"
             },
             "line": 76,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1156,25 +1166,25 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 78,
-            "name": "Verify response will return List of Countries",
+            "name": "Verify response will return List of Squads",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()"
+              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 79,
-            "name": "Response should be list of Countries and size should be one",
+            "name": "Response should be list of Squads and size should be one",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.response_should_be_list_of_Countries_and_size_should_be_one()"
+              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_of_Squads_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
@@ -1183,9 +1193,9 @@
               "status": "passed"
             },
             "line": 80,
-            "name": "Country added exist in returned Country List",
+            "name": "Squad added exist in returned Squad List",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()"
+              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
             },
             "keyword": "Then "
           }
@@ -1198,19 +1208,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:11.195Z",
+        "start_timestamp": "2020-06-05T11:02:49.573Z",
         "before": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1219,9 +1229,9 @@
           }
         ],
         "line": 83,
-        "name": "Verify API: getCountryBySearchCriteria API, search by invalid \u0027countryId\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadId\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by-invalid--countryid-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadid-",
         "after": [
           {
             "result": {
@@ -1237,11 +1247,11 @@
         "steps": [
           {
             "result": {
-              "duration": 17000000,
+              "duration": 116000000,
               "status": "passed"
             },
             "line": 84,
-            "name": "\"System_Admin\" User invoke \"getCountryBySearchCriteria\" with invalid Parameter: \"countryId\" \u003d \"-9\"",
+            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1249,16 +1259,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"countryId\"",
-                  "offset": 80
+                  "val": "\"squadId\"",
+                  "offset": 78
                 },
                 {
                   "val": "\"-9\"",
-                  "offset": 94
+                  "offset": 90
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1267,20 +1277,20 @@
           },
           {
             "result": {
-              "duration": 1775000000,
+              "duration": 2155000000,
               "status": "passed"
             },
             "line": 85,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1306,13 +1316,13 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 18000000,
               "status": "passed"
             },
             "line": 87,
-            "name": "Verify response will return List of Countries with zero records",
+            "name": "Verify response will return List of Squads with zero records",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_response_will_return_List_of_Countries_with_zero_records()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1325,19 +1335,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:13.031Z",
+        "start_timestamp": "2020-06-05T11:02:51.914Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1346,9 +1355,9 @@
           }
         ],
         "line": 90,
-        "name": "Verify API: getCountryBySearchCriteria API, search by invalid \u0027countryName\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadName\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by-invalid--countryname-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadname-",
         "after": [
           {
             "result": {
@@ -1364,11 +1373,11 @@
         "steps": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 41000000,
               "status": "passed"
             },
             "line": 91,
-            "name": "\"System_Admin\" User invoke \"getCountryBySearchCriteria\" with invalid Parameter: \"countryName\" \u003d \"invalidCountryName\"",
+            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadName\" \u003d \"invalidSquadName\"",
             "match": {
               "arguments": [
                 {
@@ -1376,16 +1385,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"countryName\"",
-                  "offset": 80
+                  "val": "\"squadName\"",
+                  "offset": 78
                 },
                 {
-                  "val": "\"invalidCountryName\"",
-                  "offset": 96
+                  "val": "\"invalidSquadName\"",
+                  "offset": 92
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1394,20 +1403,20 @@
           },
           {
             "result": {
-              "duration": 1532000000,
+              "duration": 2180000000,
               "status": "passed"
             },
             "line": 92,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1433,13 +1442,13 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 94,
-            "name": "Verify response will return List of Countries with zero records",
+            "name": "Verify response will return List of Squads with zero records",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_response_will_return_List_of_Countries_with_zero_records()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1452,15 +1461,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:14.610Z",
+        "start_timestamp": "2020-06-05T11:02:54.193Z",
         "before": [
           {
             "result": {
@@ -1473,9 +1482,9 @@
           }
         ],
         "line": 97,
-        "name": "Verify API: getCountryBySearchCriteria API, search by invalid \u0027countryGeographyName\u0027",
+        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadStatus\u0027",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-getcountrybysearchcriteria-api--search-by-invalid--countrygeographyname-",
+        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadstatus-",
         "after": [
           {
             "result": {
@@ -1491,11 +1500,11 @@
         "steps": [
           {
             "result": {
-              "duration": 10000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 98,
-            "name": "\"System_Admin\" User invoke \"getCountryBySearchCriteria\" with invalid Parameter: \"countryGeographyName\" \u003d \"invalidCountryGeographyName\"",
+            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadStatus\" \u003d \"invalidSquadStatus\"",
             "match": {
               "arguments": [
                 {
@@ -1503,16 +1512,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"countryGeographyName\"",
-                  "offset": 80
+                  "val": "\"squadStatus\"",
+                  "offset": 78
                 },
                 {
-                  "val": "\"invalidCountryGeographyName\"",
-                  "offset": 105
+                  "val": "\"invalidSquadStatus\"",
+                  "offset": 94
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1521,20 +1530,20 @@
           },
           {
             "result": {
-              "duration": 1572000000,
+              "duration": 1651000000,
               "status": "passed"
             },
             "line": 99,
-            "name": "User calls \"getCountryBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getCountryBySearchCriteria\"",
+                  "val": "\"getSquadBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 49
+                  "offset": 47
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1560,13 +1569,13 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 101,
-            "name": "Verify response will return List of Countries with zero records",
+            "name": "Verify response will return List of Squads with zero records",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_response_will_return_List_of_Countries_with_zero_records()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1579,19 +1588,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@getCountryBySearchCriteria"
+            "name": "@getSquadBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:16.253Z",
+        "start_timestamp": "2020-06-05T11:02:55.905Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1600,9 +1608,9 @@
           }
         ],
         "line": 104,
-        "name": "Verify API: deleteCountry update Country status as Passive",
+        "name": "Verify API: deleteSquad update Squad status as Passive",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-deletecountry-update-country-status-as-passive",
+        "id": "validating-squad-service-apis;verify-api:-deletesquad-update-squad-status-as-passive",
         "after": [
           {
             "result": {
@@ -1618,11 +1626,11 @@
         "steps": [
           {
             "result": {
-              "duration": 12000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 105,
-            "name": "\"System_Admin\" User invoke deleteCountry with Parameter: \"countryId\"",
+            "name": "\"System_Admin\" User invoke deleteSquad with Parameter: \"squadId\"",
             "match": {
               "arguments": [
                 {
@@ -1630,30 +1638,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"countryId\"",
-                  "offset": 57
+                  "val": "\"squadId\"",
+                  "offset": 55
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_invoke_deleteCountry_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_invoke_deleteSquad_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 910000000,
+              "duration": 1457000000,
               "status": "passed"
             },
             "line": 106,
-            "name": "User calls \"deleteCountry\" API with \"Delete\" http Request",
+            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteCountry\"",
+                  "val": "\"deleteSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1679,13 +1687,13 @@
           },
           {
             "result": {
-              "duration": 4000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 108,
-            "name": "Verify CountryStatus of particular Country updated as Passive",
+            "name": "Verify SquadStatus of particular Squad updated as Passive",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_CountryStatus_updated_as_Passive()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_SquadStatus_updated_as_Passive()"
             },
             "keyword": "Then "
           }
@@ -1698,18 +1706,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@deleteCountry"
+            "name": "@deleteSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:17.212Z",
+        "start_timestamp": "2020-06-05T11:02:57.415Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1718,9 +1727,9 @@
           }
         ],
         "line": 112,
-        "name": "Verify API: deleteCountry API,  with invalid countryId",
+        "name": "Verify API: deleteSquad API,  with invalid squadId",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-deletecountry-api---with-invalid-countryid",
+        "id": "validating-squad-service-apis;verify-api:-deletesquad-api---with-invalid-squadid",
         "after": [
           {
             "result": {
@@ -1736,11 +1745,11 @@
         "steps": [
           {
             "result": {
-              "duration": 10000000,
+              "duration": 24000000,
               "status": "passed"
             },
             "line": 113,
-            "name": "\"System_Admin\" User invoke \"deleteCountry\" with invalid Parameter: \"countryId\" \u003d \"-9\"",
+            "name": "\"System_Admin\" User invoke \"deleteSquad\" with invalid Parameter: \"squadId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1748,16 +1757,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteCountry\"",
+                  "val": "\"deleteSquad\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"countryId\"",
-                  "offset": 67
+                  "val": "\"squadId\"",
+                  "offset": 65
                 },
                 {
                   "val": "\"-9\"",
-                  "offset": 81
+                  "offset": 77
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1766,20 +1775,20 @@
           },
           {
             "result": {
-              "duration": 1984000000,
+              "duration": 1623000000,
               "status": "passed"
             },
             "line": 114,
-            "name": "User calls \"deleteCountry\" API with \"Delete\" http Request",
+            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteCountry\"",
+                  "val": "\"deleteSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1805,11 +1814,11 @@
           },
           {
             "result": {
-              "duration": 20000000,
+              "duration": 38000000,
               "status": "passed"
             },
             "line": 116,
-            "name": "\"message\" in response body is \"Country with id - -9 not found\"",
+            "name": "\"message\" in response body is \"Squad with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -1817,7 +1826,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Country with id - -9 not found\"",
+                  "val": "\"Squad with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -1834,19 +1843,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@deleteCountry"
+            "name": "@deleteSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:19.253Z",
+        "start_timestamp": "2020-06-05T11:02:59.160Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1855,9 +1863,9 @@
           }
         ],
         "line": 119,
-        "name": "Verify API: deleteCountry API, with no Param",
+        "name": "Verify API: deleteSquad API, with no Param",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-deletecountry-api--with-no-param",
+        "id": "validating-squad-service-apis;verify-api:-deletesquad-api--with-no-param",
         "after": [
           {
             "result": {
@@ -1873,11 +1881,11 @@
         "steps": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 120,
-            "name": "\"System_Admin\" User \"deleteCountry\" with no Param",
+            "name": "\"System_Admin\" User \"deleteSquad\" with no Param",
             "match": {
               "arguments": [
                 {
@@ -1885,7 +1893,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteCountry\"",
+                  "val": "\"deleteSquad\"",
                   "offset": 20
                 }
               ],
@@ -1895,20 +1903,20 @@
           },
           {
             "result": {
-              "duration": 1557000000,
+              "duration": 1525000000,
               "status": "passed"
             },
             "line": 121,
-            "name": "User calls \"deleteCountry\" API with \"Delete\" http Request",
+            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteCountry\"",
+                  "val": "\"deleteSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1934,11 +1942,11 @@
           },
           {
             "result": {
-              "duration": 22000000,
+              "duration": 64000000,
               "status": "passed"
             },
             "line": 123,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027countryId\u0027 is not present\"",
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027squadId\u0027 is not present\"",
             "match": {
               "arguments": [
                 {
@@ -1946,7 +1954,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required Integer parameter \u0027countryId\u0027 is not present\"",
+                  "val": "\"Required Integer parameter \u0027squadId\u0027 is not present\"",
                   "offset": 30
                 }
               ],
@@ -1963,19 +1971,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@deleteCountry"
+            "name": "@deleteSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:20.866Z",
+        "start_timestamp": "2020-06-05T11:03:00.927Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -1984,12 +1992,13 @@
           }
         ],
         "line": 126,
-        "name": "Verify API: updateCountry API add Country paylod",
+        "name": "Verify API: updateSquad API add Squad paylod",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-updatecountry-api-add-country-paylod",
+        "id": "validating-squad-service-apis;verify-api:-updatesquad-api-add-squad-paylod",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -2002,11 +2011,11 @@
         "steps": [
           {
             "result": {
-              "duration": 8000000,
+              "duration": 50000000,
               "status": "passed"
             },
             "line": 127,
-            "name": "\"System_Admin\" User \"Update\" Country Payload",
+            "name": "\"System_Admin\" User \"Update\" Squad Payload with Param \u003d \"squadId\"",
             "match": {
               "arguments": [
                 {
@@ -2016,28 +2025,32 @@
                 {
                   "val": "\"Update\"",
                   "offset": 20
+                },
+                {
+                  "val": "\"squadId\"",
+                  "offset": 56
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_Country_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 901000000,
+              "duration": 1672000000,
               "status": "passed"
             },
             "line": 128,
-            "name": "User calls \"updateCountry\" API with \"Put\" http Request",
+            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateCountry\"",
+                  "val": "\"updateSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2063,13 +2076,13 @@
           },
           {
             "result": {
-              "duration": 31000000,
+              "duration": 51000000,
               "status": "passed"
             },
             "line": 130,
-            "name": "Verify Country fields gets updated",
+            "name": "Verify Squad fields gets updated",
             "match": {
-              "location": "stepDefinitions.CountryStepDefinition.verify_Country_fields_gets_updated()"
+              "location": "stepDefinitions.SquadStepDefinition.verify_Squad_fields_gets_updated()"
             },
             "keyword": "Then "
           }
@@ -2082,18 +2095,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@updateCountry"
+            "name": "@updateSquad"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T09:53:21.837Z",
+        "start_timestamp": "2020-06-05T11:03:02.764Z",
         "before": [
           {
             "result": {
+              "duration": 10000000,
               "status": "passed"
             },
             "match": {
@@ -2102,9 +2116,9 @@
           }
         ],
         "line": 133,
-        "name": "Verify API: updateCountry API, with no Country Body",
+        "name": "Verify API: updateSquad API, with invalid squadId",
         "description": "",
-        "id": "validating-country-service-apis;verify-api:-updatecountry-api--with-no-country-body",
+        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-invalid-squadid",
         "after": [
           {
             "result": {
@@ -2121,11 +2135,11 @@
         "steps": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 51000000,
               "status": "passed"
             },
             "line": 134,
-            "name": "\"System_Admin\" User \"Update\" Country Payload  with no Country Body",
+            "name": "\"System_Admin\" User \"Update\" Squad Payload  with invalid Param \u003d \"squadId\" and value\u003d\"-9\"",
             "match": {
               "arguments": [
                 {
@@ -2135,28 +2149,36 @@
                 {
                   "val": "\"Update\"",
                   "offset": 20
+                },
+                {
+                  "val": "\"squadId\"",
+                  "offset": 65
+                },
+                {
+                  "val": "-9",
+                  "offset": 86
                 }
               ],
-              "location": "stepDefinitions.CountryStepDefinition.user_country_Payload_with_no_Country_Body_and_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.SquadStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1536000000,
+              "duration": 1631000000,
               "status": "passed"
             },
             "line": 135,
-            "name": "User calls \"updateCountry\" API with \"Put\" http Request",
+            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateCountry\"",
+                  "val": "\"updateSquad\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 36
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -2168,11 +2190,11 @@
               "status": "passed"
             },
             "line": 136,
-            "name": "The API call is failed with StatusCode 400",
+            "name": "The API call is failed with StatusCode 500",
             "match": {
               "arguments": [
                 {
-                  "val": "400",
+                  "val": "500",
                   "offset": 39
                 }
               ],
@@ -2182,11 +2204,11 @@
           },
           {
             "result": {
-              "duration": 20000000,
+              "duration": 31000000,
               "status": "passed"
             },
             "line": 137,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.country.entity.Country com.ibm.dc.country.controller.CountryController.updateCountry(java.lang.String,com.ibm.dc.country.entity.Country)\"",
+            "name": "\"message\" in response body is \"Squad with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -2194,7 +2216,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.country.entity.Country com.ibm.dc.country.controller.CountryController.updateCountry(java.lang.String,com.ibm.dc.country.entity.Country)\"",
+                  "val": "\"Squad with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -2211,19 +2233,281 @@
             "name": "@Demo"
           },
           {
-            "name": "@Country"
+            "name": "@Squad"
           },
           {
-            "name": "@updateCountry"
+            "name": "@updateSquad"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-05T11:03:04.548Z",
+        "before": [
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 140,
+        "name": "Verify API: updateSquad API, with no squadId",
+        "description": "",
+        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-no-squadid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 141,
+            "name": "\"System_Admin\" User \"Update\" Squad Payload  with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1616000000,
+              "status": "passed"
+            },
+            "line": 142,
+            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateSquad\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 143,
+            "name": "The API call is failed with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 47000000,
+              "status": "passed"
+            },
+            "line": 144,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027squadId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027squadId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Squad"
+          },
+          {
+            "name": "@updateSquad"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-05T11:03:06.417Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 147,
+        "name": "Verify API: updateSquad API, with no squad Body",
+        "description": "",
+        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-no-squad-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 148,
+            "name": "\"System_Admin\" User \"Update\" Squad Payload  with no Squad Body and Param \u003d \"squadId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"squadId\"",
+                  "offset": 75
+                }
+              ],
+              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1674000000,
+              "status": "passed"
+            },
+            "line": 149,
+            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateSquad\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 150,
+            "name": "The API call is failed with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 33000000,
+              "status": "passed"
+            },
+            "line": 151,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.updateSquad(java.lang.String,java.lang.Integer,com.ibm.dc.squad.entity.Squad)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.updateSquad(java.lang.String,java.lang.Integer,com.ibm.dc.squad.entity.Squad)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Squad"
+          },
+          {
+            "name": "@updateSquad"
           }
         ]
       }
     ],
-    "name": "Validating Country-Service APIs",
+    "name": "Validating Squad-Service APIs",
     "description": "",
-    "id": "validating-country-service-apis",
+    "id": "validating-squad-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Country.feature",
+    "uri": "file:src/test/java/features/Squad.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -2242,7 +2526,7 @@
         }
       },
       {
-        "name": "@Country",
+        "name": "@Squad",
         "type": "Tag",
         "location": {
           "line": 3,
