@@ -9,6 +9,7 @@ import entity.Client;
 import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.Geography;
 import entity.Industry;
 import entity.Mail;
 import entity.Pattern;
@@ -175,6 +176,17 @@ public class TestDataBuild {
 	public Squad updateSquad(Squad ipSquad) throws IOException {
 		Squad opSquad = jsonReader.updateSquadData(ipSquad);
 		return opSquad;
+	}
+
+
+	public Geography addGeography() {
+		Geography geo = jsonReader.getGeographyData();
+		return geo;
+	}
+
+	public Geography updateGeography(Geography ipGeo) throws IOException {
+		Geography opGeo = jsonReader.updateGeographydData(ipGeo);
+		return opGeo;
 	}
 
 

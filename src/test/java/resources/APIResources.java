@@ -32,12 +32,20 @@ public enum APIResources {
 	getAllIndustries("industry-service/getAllIndustries"),
 	updateIndustry("industry-service/updateIndustry"),
 	
+	createGeography("geography-service/createGeography"),
+	deleteGeography("geography-service/deleteGeography"),
+	getGeographyBySearchCriteria("geography-service/getGeographyBySearchCriteria"),
+	getGeographyCount("geography-service/getGeographyCount"),
+	getAllGeographies("geography-service/getAllGeographies"),
+	updateGeography("geography-service/updateGeography"),
+	
 	createSquad("squad-service/createSquad"),
 	deleteSquad("squad-service/deleteSquad"),
 	getSquadBySearchCriteria("squad-service/getSquadBySearchCriteria"),
 	getSquadCount("squad-service/getSquadCount"),
 	getAllSquads("squad-service/getAllSquads"),
 	updateSquad("squad-service/updateSquad"),
+	
 	
 	createCic("cic-service/createCic"),
 	deleteCic("cic-service/deleteCic"),

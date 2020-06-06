@@ -3,11 +3,11 @@
     "line": 5,
     "elements": [
       {
-        "start_timestamp": "2020-06-05T11:01:56.969Z",
+        "start_timestamp": "2020-06-06T15:55:41.238Z",
         "before": [
           {
             "result": {
-              "duration": 4994000000,
+              "duration": 2230000000,
               "status": "passed"
             },
             "match": {
@@ -16,9 +16,9 @@
           }
         ],
         "line": 8,
-        "name": "Verify API: getSquadCount API return Total Squad Count",
+        "name": "Verify API: getGeographyCount API return Total Geography Count",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadcount-api-return-total-squad-count",
+        "id": "validating-geography-service-apis;verify-api:-getgeographycount-api-return-total-geography-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 4261000000,
+              "duration": 1109000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "\"System_Admin\" User invoke \"getSquadCount\"",
+            "name": "\"System_Admin\" User invoke \"getGeographyCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSquadCount\"",
+                  "val": "\"getGeographyCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 13443000000,
+              "duration": 5058000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "User calls \"getSquadCount\" API with \"Get\" http Request",
+            "name": "User calls \"getGeographyCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadCount\"",
+                  "val": "\"getGeographyCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 36
+                  "offset": 40
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -82,9 +82,9 @@
               "status": "passed"
             },
             "line": 11,
-            "name": "Verify squad_Count result is greater than 0",
+            "name": "Verify geography_Count result is greater than 0",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.get_squad_count()"
+              "location": "stepDefinitions.GeographyStepDefinition.get_geography_count()"
             },
             "keyword": "Then "
           },
@@ -114,19 +114,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadCount"
+            "name": "@getGeographyCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:20.158Z",
+        "start_timestamp": "2020-06-06T15:55:49.949Z",
         "before": [
           {
             "result": {
-              "duration": 4000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -135,9 +135,9 @@
           }
         ],
         "line": 15,
-        "name": "Verify API: createSquad API add Squad payload",
+        "name": "Verify API: createGeography API add Geography payload",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-createsquad-api-add-squad-payload",
+        "id": "validating-geography-service-apis;verify-api:-creategeography-api-add-geography-payload",
         "after": [
           {
             "result": {
@@ -153,11 +153,11 @@
         "steps": [
           {
             "result": {
-              "duration": 1722000000,
+              "duration": 1281000000,
               "status": "passed"
             },
             "line": 16,
-            "name": "\"System_Admin\" User \"Add\" Squad Payload with Param \u003d \"none\"",
+            "name": "\"System_Admin\" User \"Add\" Geography Payload",
             "match": {
               "arguments": [
                 {
@@ -167,32 +167,28 @@
                 {
                   "val": "\"Add\"",
                   "offset": 20
-                },
-                {
-                  "val": "\"none\"",
-                  "offset": 53
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.GeographyStepDefinition.user_Geography_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1799000000,
+              "duration": 2010000000,
               "status": "passed"
             },
             "line": 17,
-            "name": "User calls \"createSquad\" API with \"Post\" http Request",
+            "name": "User calls \"createGeography\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createSquad\"",
+                  "val": "\"createGeography\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 34
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -218,25 +214,25 @@
           },
           {
             "result": {
-              "duration": 531000000,
+              "duration": 169000000,
               "status": "passed"
             },
             "line": 19,
-            "name": "Verify response will return Squad instance",
+            "name": "Verify response will return Geography instance",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_Squad_instance()"
+              "location": "stepDefinitions.GeographyStepDefinition.verify_response_will_return_Geography_instance()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2574000000,
+              "duration": 1627000000,
               "status": "passed"
             },
             "line": 20,
-            "name": "Verify Total squad_Count increased by 1",
+            "name": "Verify Total geography_Count increased by 1",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_Total_squad_Count_increased_by()"
+              "location": "stepDefinitions.GeographyStepDefinition.verify_Total_geography_Count_increased_by()"
             },
             "keyword": "Then "
           }
@@ -249,19 +245,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@createSquad"
+            "name": "@createGeography"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:26.960Z",
+        "start_timestamp": "2020-06-06T15:55:55.083Z",
         "before": [
           {
             "result": {
-              "duration": 9000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -270,13 +266,12 @@
           }
         ],
         "line": 24,
-        "name": "Verify API: createSquad API with no squad Body",
+        "name": "Verify API: createGeography API with no geography Body",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-createsquad-api-with-no-squad-body",
+        "id": "validating-geography-service-apis;verify-api:-creategeography-api-with-no-geography-body",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -289,11 +284,11 @@
         "steps": [
           {
             "result": {
-              "duration": 50000000,
+              "duration": 31000000,
               "status": "passed"
             },
             "line": 25,
-            "name": "\"System_Admin\" User \"Add\" Squad Payload  with no Squad Body",
+            "name": "\"System_Admin\" User invoke \"createGeography\"",
             "match": {
               "arguments": [
                 {
@@ -301,30 +296,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Add\"",
-                  "offset": 20
+                  "val": "\"createGeography\"",
+                  "offset": 27
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1751000000,
+              "duration": 2358000000,
               "status": "passed"
             },
             "line": 26,
-            "name": "User calls \"createSquad\" API with \"Post\" http Request",
+            "name": "User calls \"createGeography\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createSquad\"",
+                  "val": "\"createGeography\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 34
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -350,11 +345,11 @@
           },
           {
             "result": {
-              "duration": 2352000000,
+              "duration": 1795000000,
               "status": "passed"
             },
             "line": 28,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.createSquad(java.lang.String,com.ibm.dc.squad.entity.Squad)\"",
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.geo.entity.Geography com.ibm.dc.geo.controller.GeographyController.createGeography(java.lang.String,com.ibm.dc.geo.entity.Geography)\"",
             "match": {
               "arguments": [
                 {
@@ -362,7 +357,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.createSquad(java.lang.String,com.ibm.dc.squad.entity.Squad)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.geo.entity.Geography com.ibm.dc.geo.controller.GeographyController.createGeography(java.lang.String,com.ibm.dc.geo.entity.Geography)\"",
                   "offset": 30
                 }
               ],
@@ -379,19 +374,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@createSquad"
+            "name": "@createGeography"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:31.218Z",
+        "start_timestamp": "2020-06-06T15:55:59.312Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 3000000,
               "status": "passed"
             },
             "match": {
@@ -400,9 +395,9 @@
           }
         ],
         "line": 31,
-        "name": "Verify API: getAllSquads API return List of All Squads",
+        "name": "Verify API: getAllGeographies API return List of All Geographies",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getallsquads-api-return-list-of-all-squads",
+        "id": "validating-geography-service-apis;verify-api:-getallgeographies-api-return-list-of-all-geographies",
         "after": [
           {
             "result": {
@@ -418,11 +413,11 @@
         "steps": [
           {
             "result": {
-              "duration": 47000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 32,
-            "name": "\"System_Admin\" User invoke \"getAllSquads\"",
+            "name": "\"System_Admin\" User invoke \"getAllGeographies\"",
             "match": {
               "arguments": [
                 {
@@ -430,7 +425,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getAllSquads\"",
+                  "val": "\"getAllGeographies\"",
                   "offset": 27
                 }
               ],
@@ -440,20 +435,20 @@
           },
           {
             "result": {
-              "duration": 2229000000,
+              "duration": 3273000000,
               "status": "passed"
             },
             "line": 33,
-            "name": "User calls \"getAllSquads\" API with \"Get\" http Request",
+            "name": "User calls \"getAllGeographies\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getAllSquads\"",
+                  "val": "\"getAllGeographies\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 35
+                  "offset": 40
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -479,37 +474,37 @@
           },
           {
             "result": {
-              "duration": 62000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 35,
-            "name": "Verify response will return List of Squads",
+            "name": "Verify response will return List of Geographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
+              "location": "stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1633000000,
+              "duration": 1661000000,
               "status": "passed"
             },
             "line": 36,
-            "name": "Total number of Squad in List is equal to getSquadCount",
+            "name": "Total number of Geography in List is equal to getGeographyCount",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.total_number_of_Squad_in_List_is_equal_to_getSquadCount()"
+              "location": "stepDefinitions.GeographyStepDefinition.total_number_of_Geography_in_List_is_equal_to_getGeographyCount()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 22000000,
               "status": "passed"
             },
             "line": 37,
-            "name": "Squad added exist in returned Squad List",
+            "name": "Geography added exist in returned Geography List",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
+              "location": "stepDefinitions.GeographyStepDefinition.geography_added_exist_in_returned_GeographyList()"
             },
             "keyword": "Then "
           }
@@ -522,7 +517,7 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
             "name": "@getAllIndusties"
@@ -530,11 +525,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:35.265Z",
+        "start_timestamp": "2020-06-06T15:56:04.450Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "match": {
@@ -543,12 +538,13 @@
           }
         ],
         "line": 40,
-        "name": "Verify API: getSquadBySearchCriteria API, search no SearchCriteria",
+        "name": "Verify API: getGeographyBySearchCriteria API, search no SearchCriteria",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-no-searchcriteria",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-no-searchcriteria",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -565,7 +561,7 @@
               "status": "passed"
             },
             "line": 41,
-            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\"",
+            "name": "\"System_Admin\" User invoke \"getGeographyBySearchCriteria\"",
             "match": {
               "arguments": [
                 {
@@ -573,7 +569,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 27
                 }
               ],
@@ -583,20 +579,20 @@
           },
           {
             "result": {
-              "duration": 1701000000,
+              "duration": 3600000000,
               "status": "passed"
             },
             "line": 42,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -605,7 +601,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 43,
@@ -623,26 +618,25 @@
           },
           {
             "result": {
-              "duration": 25000000,
+              "duration": 46000000,
               "status": "passed"
             },
             "line": 44,
-            "name": "Verify response will return List of Squads",
+            "name": "Verify response will return List of Geographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
+              "location": "stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: All Squads not searched in case of no Search Criteria: array lengths differed, expected.length\u003d18 actual.length\u003d0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.internal.ComparisonCriteria.assertArraysAreSameLength(ComparisonCriteria.java:71)\r\n\tat org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:32)\r\n\tat org.junit.Assert.internalArrayEquals(Assert.java:473)\r\n\tat org.junit.Assert.assertArrayEquals(Assert.java:265)\r\n\tat stepDefinitions.SquadStepDefinition.response_should_be_list_all_Squads_getAllSquads(SquadStepDefinition.java:133)\r\n\tat ✽.Response should be list all Squads\u003dgetAllSquads(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Squad.feature:45)\r\n",
-              "duration": 1666000000,
-              "status": "failed"
+              "duration": 1892000000,
+              "status": "passed"
             },
             "line": 45,
-            "name": "Response should be list all Squads\u003dgetAllSquads",
+            "name": "Response should be list all Geographies\u003dgetAllGeographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_all_Squads_getAllSquads()"
+              "location": "stepDefinitions.GeographyStepDefinition.response_should_be_list_all_Geographies_getAllGeographies()"
             },
             "keyword": "Then "
           }
@@ -655,19 +649,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:39.201Z",
+        "start_timestamp": "2020-06-06T15:56:10.152Z",
         "before": [
           {
             "result": {
-              "duration": 7000000,
+              "duration": 3000000,
               "status": "passed"
             },
             "match": {
@@ -676,13 +670,12 @@
           }
         ],
         "line": 49,
-        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadId\u0027",
+        "name": "Verify API: getGeographyBySearchCriteria API, search by \u0027geographyId\u0027",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadid-",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-by--geographyid-",
         "after": [
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -695,11 +688,11 @@
         "steps": [
           {
             "result": {
-              "duration": 921000000,
+              "duration": 1467000000,
               "status": "passed"
             },
             "line": 50,
-            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadId\"",
+            "name": "\"System_Admin\" User invoke getGeographyBySearchCriteria with Parameter: \"geographyId\"",
             "match": {
               "arguments": [
                 {
@@ -707,30 +700,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"squadId\"",
-                  "offset": 68
+                  "val": "\"geographyId\"",
+                  "offset": 72
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.GeographyStepDefinition.user_invoke_getGeographyBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2478000000,
+              "duration": 2057000000,
               "status": "passed"
             },
             "line": 51,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -756,36 +749,37 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 53,
-            "name": "Verify response will return List of Squads",
+            "name": "Verify response will return List of Geographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
+              "location": "stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 22000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 54,
-            "name": "Response should be list of Squads and size should be one",
+            "name": "Response should be list of Geographies and size should be one",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_of_Squads_and_size_should_be_one()"
+              "location": "stepDefinitions.GeographyStepDefinition.response_should_be_list_of_Geographies_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 55,
-            "name": "Squad added exist in returned Squad List",
+            "name": "Geography added exist in returned Geography List",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
+              "location": "stepDefinitions.GeographyStepDefinition.geography_added_exist_in_returned_GeographyList()"
             },
             "keyword": "Then "
           }
@@ -798,19 +792,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:42.922Z",
+        "start_timestamp": "2020-06-06T15:56:13.929Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "match": {
@@ -819,9 +813,9 @@
           }
         ],
         "line": 58,
-        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadName\u0027",
+        "name": "Verify API: getGeographyBySearchCriteria API, search by \u0027geographyName\u0027",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadname-",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-by--geographyname-",
         "after": [
           {
             "result": {
@@ -837,11 +831,11 @@
         "steps": [
           {
             "result": {
-              "duration": 61000000,
+              "duration": 72000000,
               "status": "passed"
             },
             "line": 59,
-            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadName\"",
+            "name": "\"System_Admin\" User invoke getGeographyBySearchCriteria with Parameter: \"geographyName\"",
             "match": {
               "arguments": [
                 {
@@ -849,30 +843,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"squadName\"",
-                  "offset": 68
+                  "val": "\"geographyName\"",
+                  "offset": 72
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.GeographyStepDefinition.user_invoke_getGeographyBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2376000000,
+              "duration": 2428000000,
               "status": "passed"
             },
             "line": 60,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -898,24 +892,25 @@
           },
           {
             "result": {
-              "duration": 11000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 62,
-            "name": "Verify response will return List of Squads",
+            "name": "Verify response will return List of Geographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
+              "location": "stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()"
             },
             "keyword": "Then "
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 63,
-            "name": "Squad added exist in returned Squad List",
+            "name": "Geography added exist in returned Geography List",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
+              "location": "stepDefinitions.GeographyStepDefinition.geography_added_exist_in_returned_GeographyList()"
             },
             "keyword": "Then "
           }
@@ -928,19 +923,18 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:45.444Z",
+        "start_timestamp": "2020-06-06T15:56:16.490Z",
         "before": [
           {
             "result": {
-              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -949,9 +943,9 @@
           }
         ],
         "line": 66,
-        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadSectorName\u0027",
+        "name": "Verify API: getGeographyBySearchCriteria API, search by \u0027geographyId\u0027 \u0026 \u0027geographyName\u0027",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadsectorname-",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-by--geographyid--\u0026--geographyname-",
         "after": [
           {
             "result": {
@@ -967,11 +961,11 @@
         "steps": [
           {
             "result": {
-              "duration": 97000000,
+              "duration": 64000000,
               "status": "passed"
             },
             "line": 67,
-            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \"squadSectorName\"",
+            "name": "\"System_Admin\" User invoke getGeographyBySearchCriteria with Parameter: \u0027geographyId\u0027 \u0026 \u0027geographyName\u0027",
             "match": {
               "arguments": [
                 {
@@ -979,30 +973,34 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"squadSectorName\"",
-                  "offset": 68
+                  "val": "\u0027geographyId\u0027",
+                  "offset": 72
+                },
+                {
+                  "val": "\u0027geographyName\u0027",
+                  "offset": 88
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.GeographyStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1530000000,
+              "duration": 1796000000,
               "status": "passed"
             },
             "line": 68,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1028,13 +1026,25 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 70,
-            "name": "Verify response will return List of Squads",
+            "name": "Verify response will return List of Geographies",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
+              "location": "stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "Response should be list of Geographies and size should be one",
+            "match": {
+              "location": "stepDefinitions.GeographyStepDefinition.response_should_be_list_of_Geographies_and_size_should_be_one()"
             },
             "keyword": "Then "
           },
@@ -1042,10 +1052,10 @@
             "result": {
               "status": "passed"
             },
-            "line": 71,
-            "name": "Squad added exist in returned Squad List",
+            "line": 72,
+            "name": "Geography added exist in returned Geography List",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
+              "location": "stepDefinitions.GeographyStepDefinition.geography_added_exist_in_returned_GeographyList()"
             },
             "keyword": "Then "
           }
@@ -1058,15 +1068,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:47.129Z",
+        "start_timestamp": "2020-06-06T15:56:18.405Z",
         "before": [
           {
             "result": {
@@ -1078,10 +1088,10 @@
             }
           }
         ],
-        "line": 74,
-        "name": "Verify API: getSquadBySearchCriteria API, search by \u0027squadId\u0027 \u0026 \u0027squadName\u0027 \u0026 \u0027squadSectorName\u0027",
+        "line": 75,
+        "name": "Verify API: getGeographyBySearchCriteria API, search by invalid \u0027geographyId\u0027",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by--squadid--\u0026--squadname--\u0026--squadsectorname-",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-by-invalid--geographyid-",
         "after": [
           {
             "result": {
@@ -1097,11 +1107,11 @@
         "steps": [
           {
             "result": {
-              "duration": 148000000,
+              "duration": 27000000,
               "status": "passed"
             },
-            "line": 75,
-            "name": "\"System_Admin\" User invoke getSquadBySearchCriteria with Parameter: \u0027squadId\u0027 \u0026 \u0027squadName\u0027 \u0026 \u0027squadSectorName\u0027",
+            "line": 76,
+            "name": "\"System_Admin\" User invoke \"getGeographyBySearchCriteria\" with invalid Parameter: \"geographyId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1109,38 +1119,38 @@
                   "offset": 0
                 },
                 {
-                  "val": "\u0027squadId\u0027",
-                  "offset": 68
+                  "val": "\"getGeographyBySearchCriteria\"",
+                  "offset": 27
                 },
                 {
-                  "val": "\u0027squadName\u0027",
-                  "offset": 80
+                  "val": "\"geographyId\"",
+                  "offset": 82
                 },
                 {
-                  "val": "\u0027squadSectorName\u0027",
-                  "offset": 94
+                  "val": "\"-9\"",
+                  "offset": 98
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2224000000,
+              "duration": 1799000000,
               "status": "passed"
             },
-            "line": 76,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "line": 77,
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1149,9 +1159,10 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
-            "line": 77,
+            "line": 78,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1169,33 +1180,10 @@
               "duration": 10000000,
               "status": "passed"
             },
-            "line": 78,
-            "name": "Verify response will return List of Squads",
-            "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
             "line": 79,
-            "name": "Response should be list of Squads and size should be one",
+            "name": "Verify response will return List of Geographies with zero records",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.response_should_be_list_of_Squads_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 80,
-            "name": "Squad added exist in returned Squad List",
-            "match": {
-              "location": "stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()"
+              "location": "stepDefinitions.GeographyStepDefinition.verify_response_will_return_List_of_Geographies_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1208,15 +1196,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:49.573Z",
+        "start_timestamp": "2020-06-06T15:56:20.293Z",
         "before": [
           {
             "result": {
@@ -1228,10 +1216,10 @@
             }
           }
         ],
-        "line": 83,
-        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadId\u0027",
+        "line": 82,
+        "name": "Verify API: getGeographyBySearchCriteria API, search by invalid \u0027geographyName\u0027",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadid-",
+        "id": "validating-geography-service-apis;verify-api:-getgeographybysearchcriteria-api--search-by-invalid--geographyname-",
         "after": [
           {
             "result": {
@@ -1247,11 +1235,11 @@
         "steps": [
           {
             "result": {
-              "duration": 116000000,
+              "duration": 13000000,
               "status": "passed"
             },
-            "line": 84,
-            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadId\" \u003d \"-9\"",
+            "line": 83,
+            "name": "\"System_Admin\" User invoke \"getGeographyBySearchCriteria\" with invalid Parameter: \"geographyName\" \u003d \"invalidGeographyName\"",
             "match": {
               "arguments": [
                 {
@@ -1259,16 +1247,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"squadId\"",
-                  "offset": 78
+                  "val": "\"geographyName\"",
+                  "offset": 82
                 },
                 {
-                  "val": "\"-9\"",
-                  "offset": 90
+                  "val": "\"invalidGeographyName\"",
+                  "offset": 100
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1277,20 +1265,20 @@
           },
           {
             "result": {
-              "duration": 2155000000,
+              "duration": 2451000000,
               "status": "passed"
             },
-            "line": 85,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "line": 84,
+            "name": "User calls \"getGeographyBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"getGeographyBySearchCriteria\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 47
+                  "offset": 51
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1301,7 +1289,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 86,
+            "line": 85,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1316,13 +1304,13 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 11000000,
               "status": "passed"
             },
-            "line": 87,
-            "name": "Verify response will return List of Squads with zero records",
+            "line": 86,
+            "name": "Verify response will return List of Geographies with zero records",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
+              "location": "stepDefinitions.GeographyStepDefinition.verify_response_will_return_List_of_Geographies_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1335,18 +1323,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@getGeographyBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:51.914Z",
+        "start_timestamp": "2020-06-06T15:56:22.824Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1354,13 +1343,14 @@
             }
           }
         ],
-        "line": 90,
-        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadName\u0027",
+        "line": 89,
+        "name": "Verify API: deleteGeography update Geography status as Passive",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadname-",
+        "id": "validating-geography-service-apis;verify-api:-deletegeography-update-geography-status-as-passive",
         "after": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1373,11 +1363,11 @@
         "steps": [
           {
             "result": {
-              "duration": 41000000,
+              "duration": 5000000,
               "status": "passed"
             },
-            "line": 91,
-            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadName\" \u003d \"invalidSquadName\"",
+            "line": 90,
+            "name": "\"System_Admin\" User invoke deleteGeography with Parameter: \"geographyId\"",
             "match": {
               "arguments": [
                 {
@@ -1385,38 +1375,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"squadName\"",
-                  "offset": 78
-                },
-                {
-                  "val": "\"invalidSquadName\"",
-                  "offset": 92
+                  "val": "\"geographyId\"",
+                  "offset": 59
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.GeographyStepDefinition.user_invoke_deleteGeography_with_Parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2180000000,
+              "duration": 1760000000,
               "status": "passed"
             },
-            "line": 92,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "line": 91,
+            "name": "User calls \"deleteGeography\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"deleteGeography\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Get\"",
-                  "offset": 47
+                  "val": "\"Delete\"",
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1427,7 +1409,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 93,
+            "line": 92,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1442,13 +1424,13 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 7000000,
               "status": "passed"
             },
-            "line": 94,
-            "name": "Verify response will return List of Squads with zero records",
+            "line": 93,
+            "name": "Verify GeographyStatus of particular Geography updated as Passive",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
+              "location": "stepDefinitions.GeographyStepDefinition.verify_GeographyStatus_updated_as_Passive()"
             },
             "keyword": "Then "
           }
@@ -1461,15 +1443,15 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@deleteGeography"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:54.193Z",
+        "start_timestamp": "2020-06-06T15:56:24.627Z",
         "before": [
           {
             "result": {
@@ -1482,9 +1464,9 @@
           }
         ],
         "line": 97,
-        "name": "Verify API: getSquadBySearchCriteria API, search by invalid \u0027squadStatus\u0027",
+        "name": "Verify API: deleteGeography API,  with invalid geographyId",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-getsquadbysearchcriteria-api--search-by-invalid--squadstatus-",
+        "id": "validating-geography-service-apis;verify-api:-deletegeography-api---with-invalid-geographyid",
         "after": [
           {
             "result": {
@@ -1500,11 +1482,11 @@
         "steps": [
           {
             "result": {
-              "duration": 7000000,
+              "duration": 5000000,
               "status": "passed"
             },
             "line": 98,
-            "name": "\"System_Admin\" User invoke \"getSquadBySearchCriteria\" with invalid Parameter: \"squadStatus\" \u003d \"invalidSquadStatus\"",
+            "name": "\"System_Admin\" User invoke \"deleteGeography\" with invalid Parameter: \"geographyId\" \u003d \"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1512,16 +1494,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"deleteGeography\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"squadStatus\"",
-                  "offset": 78
+                  "val": "\"geographyId\"",
+                  "offset": 69
                 },
                 {
-                  "val": "\"invalidSquadStatus\"",
-                  "offset": 94
+                  "val": "\"-9\"",
+                  "offset": 85
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1530,20 +1512,20 @@
           },
           {
             "result": {
-              "duration": 1651000000,
+              "duration": 1761000000,
               "status": "passed"
             },
             "line": 99,
-            "name": "User calls \"getSquadBySearchCriteria\" API with \"Get\" http Request",
+            "name": "User calls \"deleteGeography\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSquadBySearchCriteria\"",
+                  "val": "\"deleteGeography\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Get\"",
-                  "offset": 47
+                  "val": "\"Delete\"",
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1555,27 +1537,37 @@
               "status": "passed"
             },
             "line": 100,
-            "name": "The API call is success with StatusCode 200",
+            "name": "The API call is failed with StatusCode 500",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 40
+                  "val": "500",
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 46000000,
               "status": "passed"
             },
             "line": 101,
-            "name": "Verify response will return List of Squads with zero records",
+            "name": "\"message\" in response body is \"Geography with id - -9 not found\"",
             "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()"
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Geography with id - -9 not found\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -1588,18 +1580,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@getSquadBySearchCriteria"
+            "name": "@deleteGeography"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:55.905Z",
+        "start_timestamp": "2020-06-06T15:56:26.517Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1608,9 +1601,9 @@
           }
         ],
         "line": 104,
-        "name": "Verify API: deleteSquad update Squad status as Passive",
+        "name": "Verify API: deleteGeography API, with no Param",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-deletesquad-update-squad-status-as-passive",
+        "id": "validating-geography-service-apis;verify-api:-deletegeography-api--with-no-param",
         "after": [
           {
             "result": {
@@ -1626,11 +1619,11 @@
         "steps": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 13000000,
               "status": "passed"
             },
             "line": 105,
-            "name": "\"System_Admin\" User invoke deleteSquad with Parameter: \"squadId\"",
+            "name": "\"System_Admin\" User \"deleteGeography\" with no Param",
             "match": {
               "arguments": [
                 {
@@ -1638,30 +1631,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"squadId\"",
-                  "offset": 55
+                  "val": "\"deleteGeography\"",
+                  "offset": 20
                 }
               ],
-              "location": "stepDefinitions.SquadStepDefinition.user_invoke_deleteSquad_with_Parameter(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.deletePattern_with_no_Param(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1457000000,
+              "duration": 2963000000,
               "status": "passed"
             },
             "line": 106,
-            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
+            "name": "User calls \"deleteGeography\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteSquad\"",
+                  "val": "\"deleteGeography\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 34
+                  "offset": 38
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1673,138 +1666,11 @@
               "status": "passed"
             },
             "line": 107,
-            "name": "The API call is success with StatusCode 200",
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 108,
-            "name": "Verify SquadStatus of particular Squad updated as Passive",
-            "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_SquadStatus_updated_as_Passive()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Squad"
-          },
-          {
-            "name": "@deleteSquad"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T11:02:57.415Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 112,
-        "name": "Verify API: deleteSquad API,  with invalid squadId",
-        "description": "",
-        "id": "validating-squad-service-apis;verify-api:-deletesquad-api---with-invalid-squadid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 24000000,
-              "status": "passed"
-            },
-            "line": 113,
-            "name": "\"System_Admin\" User invoke \"deleteSquad\" with invalid Parameter: \"squadId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deleteSquad\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"squadId\"",
-                  "offset": 65
-                },
-                {
-                  "val": "\"-9\"",
-                  "offset": 77
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1623000000,
-              "status": "passed"
-            },
-            "line": 114,
-            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 115,
-            "name": "The API call is failed with StatusCode 500",
-            "match": {
-              "arguments": [
-                {
-                  "val": "500",
+                  "val": "400",
                   "offset": 39
                 }
               ],
@@ -1814,11 +1680,11 @@
           },
           {
             "result": {
-              "duration": 38000000,
+              "duration": 53000000,
               "status": "passed"
             },
-            "line": 116,
-            "name": "\"message\" in response body is \"Squad with id - -9 not found\"",
+            "line": 108,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027geographyId\u0027 is not present\"",
             "match": {
               "arguments": [
                 {
@@ -1826,7 +1692,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Squad with id - -9 not found\"",
+                  "val": "\"Required Integer parameter \u0027geographyId\u0027 is not present\"",
                   "offset": 30
                 }
               ],
@@ -1843,18 +1709,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@deleteSquad"
+            "name": "@deleteGeography"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T11:02:59.160Z",
+        "start_timestamp": "2020-06-06T15:56:29.596Z",
         "before": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1862,10 +1729,10 @@
             }
           }
         ],
-        "line": 119,
-        "name": "Verify API: deleteSquad API, with no Param",
+        "line": 111,
+        "name": "Verify API: updateGeography API add Geography paylod",
         "description": "",
-        "id": "validating-squad-service-apis;verify-api:-deletesquad-api--with-no-param",
+        "id": "validating-geography-service-apis;verify-api:-updategeography-api-add-geography-paylod",
         "after": [
           {
             "result": {
@@ -1879,13 +1746,132 @@
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 112,
+            "name": "\"System_Admin\" User \"Update\" Geography Payload",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.GeographyStepDefinition.user_Geography_Payload(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4377000000,
+              "status": "passed"
+            },
+            "line": 113,
+            "name": "User calls \"updateGeography\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateGeography\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 38
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 114,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 80000000,
+              "status": "passed"
+            },
+            "line": 115,
+            "name": "Verify Geography fields gets updated",
+            "match": {
+              "location": "stepDefinitions.GeographyStepDefinition.verify_Geography_fields_gets_updated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Geography"
+          },
+          {
+            "name": "@updateGeography"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-06T15:56:34.209Z",
+        "before": [
           {
             "result": {
               "duration": 6000000,
               "status": "passed"
             },
-            "line": 120,
-            "name": "\"System_Admin\" User \"deleteSquad\" with no Param",
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 118,
+        "name": "Verify API: updateGeography API, with no geography Body",
+        "description": "",
+        "id": "validating-geography-service-apis;verify-api:-updategeography-api--with-no-geography-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 119,
+            "name": "\"System_Admin\" User invoke \"getGeographyCount\"",
             "match": {
               "arguments": [
                 {
@@ -1893,60 +1879,60 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteSquad\"",
-                  "offset": 20
+                  "val": "\"getGeographyCount\"",
+                  "offset": 27
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.deletePattern_with_no_Param(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1525000000,
+              "duration": 1776000000,
+              "status": "passed"
+            },
+            "line": 120,
+            "name": "User calls \"updateGeography\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateGeography\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 38
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
               "status": "passed"
             },
             "line": 121,
-            "name": "User calls \"deleteSquad\" API with \"Delete\" http Request",
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 34
+                  "val": "400",
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
-            "keyword": "When "
+            "keyword": "Then "
           },
           {
             "result": {
+              "duration": 39000000,
               "status": "passed"
             },
             "line": 122,
-            "name": "The API call is failed with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 64000000,
-              "status": "passed"
-            },
-            "line": 123,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027squadId\u0027 is not present\"",
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.geo.entity.Geography com.ibm.dc.geo.controller.GeographyController.updateGeography(java.lang.String,com.ibm.dc.geo.entity.Geography)\"",
             "match": {
               "arguments": [
                 {
@@ -1954,7 +1940,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required Integer parameter \u0027squadId\u0027 is not present\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.geo.entity.Geography com.ibm.dc.geo.controller.GeographyController.updateGeography(java.lang.String,com.ibm.dc.geo.entity.Geography)\"",
                   "offset": 30
                 }
               ],
@@ -1971,543 +1957,19 @@
             "name": "@Demo"
           },
           {
-            "name": "@Squad"
+            "name": "@Geography"
           },
           {
-            "name": "@deleteSquad"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T11:03:00.927Z",
-        "before": [
-          {
-            "result": {
-              "duration": 2000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 126,
-        "name": "Verify API: updateSquad API add Squad paylod",
-        "description": "",
-        "id": "validating-squad-service-apis;verify-api:-updatesquad-api-add-squad-paylod",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 50000000,
-              "status": "passed"
-            },
-            "line": 127,
-            "name": "\"System_Admin\" User \"Update\" Squad Payload with Param \u003d \"squadId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"squadId\"",
-                  "offset": 56
-                }
-              ],
-              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1672000000,
-              "status": "passed"
-            },
-            "line": 128,
-            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 129,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 51000000,
-              "status": "passed"
-            },
-            "line": 130,
-            "name": "Verify Squad fields gets updated",
-            "match": {
-              "location": "stepDefinitions.SquadStepDefinition.verify_Squad_fields_gets_updated()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Squad"
-          },
-          {
-            "name": "@updateSquad"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T11:03:02.764Z",
-        "before": [
-          {
-            "result": {
-              "duration": 10000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 133,
-        "name": "Verify API: updateSquad API, with invalid squadId",
-        "description": "",
-        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-invalid-squadid",
-        "after": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 51000000,
-              "status": "passed"
-            },
-            "line": 134,
-            "name": "\"System_Admin\" User \"Update\" Squad Payload  with invalid Param \u003d \"squadId\" and value\u003d\"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"squadId\"",
-                  "offset": 65
-                },
-                {
-                  "val": "-9",
-                  "offset": 86
-                }
-              ],
-              "location": "stepDefinitions.SquadStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1631000000,
-              "status": "passed"
-            },
-            "line": 135,
-            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 136,
-            "name": "The API call is failed with StatusCode 500",
-            "match": {
-              "arguments": [
-                {
-                  "val": "500",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 31000000,
-              "status": "passed"
-            },
-            "line": 137,
-            "name": "\"message\" in response body is \"Squad with id - -9 not found\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Squad with id - -9 not found\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Squad"
-          },
-          {
-            "name": "@updateSquad"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T11:03:04.548Z",
-        "before": [
-          {
-            "result": {
-              "duration": 13000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 140,
-        "name": "Verify API: updateSquad API, with no squadId",
-        "description": "",
-        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-no-squadid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 31000000,
-              "status": "passed"
-            },
-            "line": 141,
-            "name": "\"System_Admin\" User \"Update\" Squad Payload  with no Param",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                }
-              ],
-              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Param(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1616000000,
-              "status": "passed"
-            },
-            "line": 142,
-            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 143,
-            "name": "The API call is failed with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 47000000,
-              "status": "passed"
-            },
-            "line": 144,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027squadId\u0027 is not present\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required Integer parameter \u0027squadId\u0027 is not present\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Squad"
-          },
-          {
-            "name": "@updateSquad"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T11:03:06.417Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 147,
-        "name": "Verify API: updateSquad API, with no squad Body",
-        "description": "",
-        "id": "validating-squad-service-apis;verify-api:-updatesquad-api--with-no-squad-body",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 18000000,
-              "status": "passed"
-            },
-            "line": 148,
-            "name": "\"System_Admin\" User \"Update\" Squad Payload  with no Squad Body and Param \u003d \"squadId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Update\"",
-                  "offset": 20
-                },
-                {
-                  "val": "\"squadId\"",
-                  "offset": 75
-                }
-              ],
-              "location": "stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1674000000,
-              "status": "passed"
-            },
-            "line": 149,
-            "name": "User calls \"updateSquad\" API with \"Put\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"updateSquad\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Put\"",
-                  "offset": 34
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 150,
-            "name": "The API call is failed with StatusCode 400",
-            "match": {
-              "arguments": [
-                {
-                  "val": "400",
-                  "offset": 39
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 33000000,
-              "status": "passed"
-            },
-            "line": 151,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.updateSquad(java.lang.String,java.lang.Integer,com.ibm.dc.squad.entity.Squad)\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"message\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"Required request body is missing: public com.ibm.dc.squad.entity.Squad com.ibm.dc.squad.controller.SquadController.updateSquad(java.lang.String,java.lang.Integer,com.ibm.dc.squad.entity.Squad)\"",
-                  "offset": 30
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@Squad"
-          },
-          {
-            "name": "@updateSquad"
+            "name": "@updateGeography"
           }
         ]
       }
     ],
-    "name": "Validating Squad-Service APIs",
+    "name": "Validating Geography-Service APIs",
     "description": "",
-    "id": "validating-squad-service-apis",
+    "id": "validating-geography-service-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/Squad.feature",
+    "uri": "file:src/test/java/features/Geography.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -2526,7 +1988,7 @@
         }
       },
       {
-        "name": "@Squad",
+        "name": "@Geography",
         "type": "Tag",
         "location": {
           "line": 3,

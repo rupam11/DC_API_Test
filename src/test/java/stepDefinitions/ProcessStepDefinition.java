@@ -8,62 +8,42 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.json.JSONObject;
-import org.skyscreamer.jsonassert.JSONParser;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import entity.Activity;
 import entity.Process;
-import entity.Task;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.http.ContentType;
 import testBase.Utils;
 
 public class ProcessStepDefinition extends Utils {
 
-	static Process reqProcess,respProcess;
+	static Process reqProcess, respProcess;
 	Process[] respAllProcess;
 	static int process_Count;
 	CommonStepDefinition cmnStepDef;
-	JSONObject jsonObject,actJsonObj,expJsonObj;
+	JSONObject jsonObject, actJsonObj, expJsonObj;
 
 	public ProcessStepDefinition() throws IOException {
 		cmnStepDef = new CommonStepDefinition();
-		
-	}
 
+	}
 
 	@Given("{string} User {string} Process Payload with Param = {string}")
-	public void user_Process_Payload(String userRole, String payloadReq,String param) throws IOException {
-		if (payloadReq.equalsIgnoreCase("Add"))
-		{
+	public void user_Process_Payload(String userRole, String payloadReq, String param) throws IOException {
+		if (payloadReq.equalsIgnoreCase("Add")) {
 			reqProcess = data.addProcess();
 			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
-		}
-		else if (payloadReq.equalsIgnoreCase("Update"))
-		{
+		} else if (payloadReq.equalsIgnoreCase("Update")) {
 			reqProcess = data.updateProcess(respProcess);
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param, respProcess.getProcessId());
-			
-		}			
-		else
+			reqSpec = null;
+			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param,
+					respProcess.getProcessId());
+
+		} else
 			System.out.println("Issue in Payload creation request");
-	
+
 	}
-	
-		
+
 	@Then("Verify Process_Count result is greater than 0")
 	public int get_Process_count() {
 		process_Count = Integer.parseInt(response.getBody().asString());
@@ -73,33 +53,31 @@ public class ProcessStepDefinition extends Utils {
 
 	@Then("Verify response will return Process instance")
 	public void verify_response_will_return_Process_instance() {
-		respProcess = response.getBody().as(Process.class);		
+		respProcess = response.getBody().as(Process.class);
 	}
 
 	@Then("Verify response will return List of Process")
-		public void verify_response_will_return_List_of_Process() {
+	public void verify_response_will_return_List_of_Process() {
 
 		respAllProcess = response.getBody().as(Process[].class);
 	}
 
 	@Then("Total number of Process in List is equal to getProcessCount")
 	public void total_number_of_Process_in_List_is_equal_to_getProcessCount() throws IOException {
-		int old_count=process_Count;
+		int old_count = process_Count;
 		cmnStepDef.user_calls_API_with_http_Request("getProcessCount", "Get");
 		assertEquals(old_count, get_Process_count());
 	}
 
 	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string}")
-	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param) throws IOException {
-		if (param.equalsIgnoreCase("ProcessId"))
-		{
+	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param)
+			throws IOException {
+		if (param.equalsIgnoreCase("ProcessId")) {
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respProcess.getProcessId());		
-		}			
-		else if (param.equalsIgnoreCase("ProcessName"))
-		{				
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param, respProcess.getProcessId());
+		} else if (param.equalsIgnoreCase("ProcessName")) {
 			reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,respProcess.getProcessName());
+			reqSpec = given().spec(requestSpecification(userRole)).queryParams(param, respProcess.getProcessName());
 		}
 	}
 
@@ -114,8 +92,8 @@ public class ProcessStepDefinition extends Utils {
 		assertEquals("Wrong Process filtered", respProcess, respAllProcess[0]);
 	}
 
-		@Then("Verify Process fields gets updated")
-		public void verify_Processfields_gets_updated() {
+	@Then("Verify Process fields gets updated")
+	public void verify_Processfields_gets_updated() {
 //		    Process updatedProcess=response.getBody().as(Process.class);
 		reqProcess = response.getBody().as(Process.class);
 		assertEquals("Process name not updated", reqProcess.getProcessName(), reqProcess.getProcessName());
@@ -133,25 +111,25 @@ public class ProcessStepDefinition extends Utils {
 		Process[] expAllProcess = response.getBody().as(Process[].class);
 		assertArrayEquals("All Process not searched in case of no Search Criteria", expAllProcess, actAllProcess);
 	}
-	
+
 	@Then("Verify Total Process_Count increased by 1")
 	public void verify_Total_Process_Count_increased_by() {
-		int old_count=process_Count;
-		System.out.println("OLD COunt = "+old_count);
+		int old_count = process_Count;
+		System.out.println("OLD COunt = " + old_count);
 		cmnStepDef.user_calls_API_with_http_Request("getProcessCount", "Get");
-		assertEquals(old_count+1, get_Process_count());
+		assertEquals(old_count + 1, get_Process_count());
 	}
 
 	@Given("{string} User invoke deleteProcess with Parameter: {string}")
 	public void user_invoke_deleteProcess_with_Parameter(String userRole, String param) throws IOException {
 		reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param,reqProcess.getProcessId());
+		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param, reqProcess.getProcessId());
 	}
-	
+
 	@Then("All Process should have Active Status")
 	public void all_Process_should_have_Active_Status() {
-	    for(Process sec:respAllProcess)
-	    	assertEquals("Process with Passive status searched!!!", "Active", sec.getProcessStatus());
+		for (Process sec : respAllProcess)
+			assertEquals("Process with Passive status searched!!!", "Active", sec.getProcessStatus());
 	}
 
 	@Then("Created Process should exist in the List of Process")
@@ -159,54 +137,55 @@ public class ProcessStepDefinition extends Utils {
 		List<Process> ProcessList = Arrays.asList(respAllProcess);
 		assertThat(ProcessList, hasItem(respProcess));
 	}
-		
+
 	@Then("processId in response body is equal to output of {string}")
 	public void processid_in_response_body_is_equal_to_output_of(String string) {
-		assertEquals(process_Count+1, respProcess.getProcessId());
+		assertEquals(process_Count + 1, respProcess.getProcessId());
 	}
 
 	@Then("processCode in response body is equal to output of {string}")
 	public void processcode_in_response_body_is_equal_to_output_of(String string) {
-		assertEquals("PRS_"+respProcess.getProcessId(), respProcess.getProcessCode());
-	}
-	
-	@Given("{string} User {string} Process Payload  with no Process Body and Param = {string}")
-	public void user_Process_Payload_with_no_Process_Body_and_Param(String userRole, String payloadReq, String param) throws IOException {
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole));
-		if (payloadReq.equalsIgnoreCase("Update"))
-				reqSpec = reqSpec.queryParam(param, respProcess.getProcessId());
-		
-	}
-	
-	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string} & {string} & {string}")
-	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param1, String param2, String param3) throws IOException {
-	    reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1,respProcess.getProcessId())
-																	.queryParam(param2, respProcess.getProcessName())
-																	.queryParam(param3, respProcess.getProcessStatus());
-																	
-	}
-	
-	@Then("Verify response will return List of Processes with zero records")
-	public void verify_response_will_return_List_of_Processes_with_zero_records() {
-	    respAllProcess = response.getBody().as(Process[].class);
-		assertTrue("Count is not correct", respAllProcess.length == 0);
-	}
-	
-	@Given("{string} User {string} Process Payload  with no Param")
-	public void user_Activity_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
-			reqProcess = data.updateProcess(respProcess);
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
-	}
-	
-	@Given("{string} User {string} Process Payload  with invalid Param = {string} and value=\"{int}\"")
-	public void user_Activity_Payload_with_invalid_Param_and_value(String userRole, String payloadReq,String param, int i) throws IOException {
-			reqProcess = data.updateProcess(respProcess);
-			reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param,i);
+		assertEquals("PRS_" + respProcess.getProcessId(), respProcess.getProcessCode());
 	}
 
+	@Given("{string} User {string} Process Payload  with no Process Body and Param = {string}")
+	public void user_Process_Payload_with_no_Process_Body_and_Param(String userRole, String payloadReq, String param)
+			throws IOException {
+		reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole));
+		if (payloadReq.equalsIgnoreCase("Update"))
+			reqSpec = reqSpec.queryParam(param, respProcess.getProcessId());
+
+	}
+
+	@Given("{string} User invoke getProcessBySearchCriteria with Parameter: {string} & {string} & {string}")
+	public void user_invoke_getProcessBySearchCriteria_with_Parameter(String userRole, String param1, String param2,
+			String param3) throws IOException {
+		reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1, respProcess.getProcessId())
+				.queryParam(param2, respProcess.getProcessName()).queryParam(param3, respProcess.getProcessStatus());
+
+	}
+
+	@Then("Verify response will return List of Processes with zero records")
+	public void verify_response_will_return_List_of_Processes_with_zero_records() {
+		respAllProcess = response.getBody().as(Process[].class);
+		assertTrue("Count is not correct", respAllProcess.length == 0);
+	}
+
+	@Given("{string} User {string} Process Payload  with no Param")
+	public void user_Activity_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
+		reqProcess = data.updateProcess(respProcess);
+		reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess);
+	}
+
+	@Given("{string} User {string} Process Payload  with invalid Param = {string} and value=\"{int}\"")
+	public void user_Activity_Payload_with_invalid_Param_and_value(String userRole, String payloadReq, String param,
+			int i) throws IOException {
+		reqProcess = data.updateProcess(respProcess);
+		reqSpec = null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqProcess).queryParam(param, i);
+	}
 
 }

@@ -15,6 +15,7 @@ import entity.Client;
 import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.Geography;
 import entity.Industry;
 import entity.Mail;
 import entity.Pattern;
@@ -47,6 +48,7 @@ public class JsonDataReader {
 	private Cic cic;
 	private Country country;
 	private Squad squad;
+	private Geography geography;
 	
 
 	
@@ -66,6 +68,7 @@ public class JsonDataReader {
 		this.cic=new Cic();
 		this.country=new Country();
 		this.squad=new Squad();
+		this.geography=new Geography();
 	}
 
 	public Activity getActivityData() {
@@ -370,7 +373,6 @@ public class JsonDataReader {
 		ipPattern.setPatternSequence(ipPattern.getPatternSequence()+10);
 		ipPattern.setPatternDisplaySequence(ipPattern.getPatternDisplaySequence()+10);
 		ipPattern.setPatternName("New_"+ipPattern.getPatternName());
-		//ipPattern.setPatternCompletion("New_"+ipPattern.getPatternCompletion());
 		ipPattern.setPatternEffort("New_"+ipPattern.getPatternEffort());
 		ipPattern.setPatternOwner("New_"+ipPattern.getPatternOwner());
 		ipPattern.setPatternCreatedBy(configReader.getPropValue("update_CreatedBy"));
@@ -435,8 +437,8 @@ public class JsonDataReader {
 			else 
 				System.out.println("Please fix Client.json data");
 			
-			client.setClientOnboardedBy(configReader.getPropValue("update_CreatedBy"));
-			client.setClientOnboardedAt(configReader.getPropValue("update_CreatedAt"));
+			ipClient.setClientOnboardedBy(configReader.getPropValue("update_CreatedBy"));
+			ipClient.setClientOnboardedAt(configReader.getPropValue("update_CreatedAt"));
 			
 			
 		return ipClient;
@@ -473,8 +475,8 @@ public class JsonDataReader {
 			
 			System.out.println("Please fix category.json data");
 		
-		category.setCategoryCreatedBy(configReader.getPropValue("update_CreatedBy"));
-		category.setCategoryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		ipCategory.setCategoryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipCategory.setCategoryCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 		
 	return ipCategory;
@@ -561,8 +563,8 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix cic.json data");
 		
-		cic.setCicCreatedBy(configReader.getPropValue("update_CreatedBy"));
-		cic.setCicCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		ipCic.setCicCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipCic.setCicCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipCic;
 	}
@@ -612,8 +614,8 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix country.json data");
 		
-		country.setCountryCreatedBy(configReader.getPropValue("update_CreatedBy"));
-		country.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		ipCountry.setCountryCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipCountry.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipCountry;
 	}
@@ -645,10 +647,43 @@ public class JsonDataReader {
 		else 
 			System.out.println("Please fix squad.json data");
 		
-		country.setCountryCreatedBy(configReader.getPropValue("update_CreatedBy"));
-		country.setCountryCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		ipSquad.setSquadCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipSquad.setSquadCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipSquad;
+	}
+
+	public Geography getGeographyData() {
+		String GeographyFilePath=JSONDataFilePath+"Geography/geography.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(GeographyFilePath));
+			geography = gson.fromJson(bufferReader, Geography.class);
+			return geography;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + GeographyFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Geography updateGeographydData(Geography ipGeo) throws IOException {
+		ipGeo.setGeographyName("New_"+ipGeo.getGeographyName());
+		
+		if(ipGeo.getGeographyStatus().equalsIgnoreCase("Active"))
+			ipGeo.setGeographyStatus("Passive");
+		else if(ipGeo.getGeographyStatus().equalsIgnoreCase("Passive"))
+			ipGeo.setGeographyStatus("Active");
+		else 
+			System.out.println("Please fix geography.json data");
+		
+		ipGeo.setGeographyCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipGeo.setGeographyCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		
+			return ipGeo;
 	}
 
 	
