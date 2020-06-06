@@ -139,46 +139,17 @@ public class GeographyStepDefinition extends Utils {
 		respAllGeography = response.getBody().as(Geography[].class);
 		assertTrue("Count is not zero in case of invalid search criteria.", respAllGeography.length == 0);
 	}
-/*
-	@Given("{string} User {string} Geography Payload  with no Param")
-	public void user_Geography_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
-		reqGeography = data.updateGeography(respGeography);
-		reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).body(reqGeography);
-	}*/
 
 	@Given("{string} User {string} Geography Payload")
 	public void user_Geography_Payload(String userRole, String payloadReq) throws IOException {
-		if (payloadReq.equalsIgnoreCase("Add")) {
+		if (payloadReq.equalsIgnoreCase("Add"))
 			reqGeography = data.addGeography();
-			reqSpec = given().spec(requestSpecification(userRole)).body(reqGeography);
-		} else if (payloadReq.equalsIgnoreCase("Update")) {
+		else if (payloadReq.equalsIgnoreCase("Update"))
 			reqGeography = data.updateGeography(respGeography);
-			//reqSpec = null;
-			reqSpec = given().spec(requestSpecification(userRole)).body(reqGeography);
-					//.queryParam(param,respGeography.getGeographyId());
-
-		} else
+		else
 			System.out.println("Issue in Payload creation request");
 
+		reqSpec=null;
+		reqSpec = given().spec(requestSpecification(userRole)).body(reqGeography);
 	}
-
-	/*@Given("{string} User {string} Geography Payload  with invalid Param = {string} and value=\"{int}\"")
-	public void user_Activity_Payload_with_invalid_Param_and_value(String userRole, String payloadReq, String param,
-			int i) throws IOException {
-		reqGeography = data.updateGeography(respGeography);
-		reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).body(reqGeography).queryParam(param, i);
-	}*/
-/*
-	@Given("{string} User {string} Geography Payload  with no Geography Body")
-	public void user_Geography_Payload_with_no_Geography_Body_and_Param(String userRole, String payloadReq)
-			throws IOException {
-		reqSpec = null;
-		
-//		if (payloadReq.equalsIgnoreCase("Update"))
-//			reqSpec = reqSpec.queryParam(param, respGeography.getGeographyId());
-
-	}*/
-
 }
