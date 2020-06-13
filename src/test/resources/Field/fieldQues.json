@@ -1,0 +1,60 @@
+{
+        "fieldId": 239,
+        "fieldParentId": "239",
+        "fieldVersion": "1.0",
+        "fieldDisplaySequence": 239,
+        "fieldType": "Number",
+        "fieldOptions": [
+            {
+                "optionId": 1,
+                "optionLabel": "2 Weeks",
+                "optionValue": "2 Weeks",
+                "optionVersion": "1.0",
+                "optionDisplayFlag": true
+            },
+            {
+                "optionId": 2,
+                "optionLabel": "3 Weeks",
+                "optionValue": "3 Weeks",
+                "optionVersion": "1.0",
+                "optionDisplayFlag": true
+            },
+            {
+                "optionId": 3,
+                "optionLabel": "4 Weeks",
+                "optionValue": "4 Weeks",
+                "optionVersion": "1.0",
+                "optionDisplayFlag": true
+            },
+            {
+                "optionId": 4,
+                "optionLabel": "8 Weeks",
+                "optionValue": "8 Weeks",
+                "optionVersion": "1.0",
+                "optionDisplayFlag": true
+            }
+        ],
+        "fieldValue": "this is blank please do set it",
+        "fieldRuleIds": [
+            {
+                "ruleParentId": "52"
+            }
+        ],
+        "fieldName": " Total Deployable Unit Cost",
+        "fieldGuidance": "File",
+        "fieldConstraints": "Calculated",
+        "fieldCategory": "Cost Model",
+        "fieldTemplateName": "Application Estimation",
+        "fieldQuestion": "=====TEST 'createQuestion' FIELD QUESTION=====",
+        "fieldIndustry": "All",
+        "fieldSector": "All",
+        "fieldComment": " Total Deploy-able Unit Cost Comment",
+        "fieldValueSource": "Rule",
+        "fieldValueSourceComment": "",
+        "fieldUsability": 1,
+        "fieldStatus": "Active",
+        "fieldCreatedBy": "dchelp",
+        "fieldUpdatedBy": "skvarghe",
+        "fieldCreatedAt": "2020-03-23 05:07:46",
+        "fieldUpdatedAt": "2020-06-08 14:01:16"
+    }

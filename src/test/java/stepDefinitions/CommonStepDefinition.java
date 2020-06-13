@@ -32,7 +32,7 @@ public class CommonStepDefinition extends Utils {
 		APIResources resourceAPI = APIResources.valueOf(apiNm);
 		System.out.println("API Called ::: " + apiNm + " with Method === " + method);
 		respSpec = new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
-
+		
 		if (method.equalsIgnoreCase("Post"))
 			response = reqSpec.when().post(resourceAPI.getResource()).then().spec(respSpec).extract().response();
 		else if (method.equalsIgnoreCase("Get"))

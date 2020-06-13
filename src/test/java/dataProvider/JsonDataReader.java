@@ -15,12 +15,15 @@ import entity.Client;
 import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.FieldRuleId;
 import entity.Geography;
 import entity.Industry;
 import entity.Mail;
+import entity.Options;
 import entity.Pattern;
 import entity.Process;
 import entity.Project;
+import entity.Rule;
 import entity.Sector;
 import entity.Squad;
 import entity.Task;
@@ -49,6 +52,8 @@ public class JsonDataReader {
 	private Country country;
 	private Squad squad;
 	private Geography geography;
+	private Options option;
+	private Rule rule;
 	
 
 	
@@ -255,8 +260,13 @@ public class JsonDataReader {
 	}
 
 	
-	public Field getFieldData() {
+	public Field getFieldData(String fieldPurpose) {
 		String FieldFilePath=JSONDataFilePath+"Field/field.json";
+		if(fieldPurpose.equalsIgnoreCase("Add_Field"))
+			FieldFilePath=JSONDataFilePath+"Field/field.json";
+		else if(fieldPurpose.equalsIgnoreCase("Pass_Question"))
+			FieldFilePath=JSONDataFilePath+"Field/fieldQues.json";
+		
 		try {
 			bufferReader = new BufferedReader(new FileReader(FieldFilePath));
 			field = gson.fromJson(bufferReader, Field.class);
@@ -272,9 +282,50 @@ public class JsonDataReader {
 		}
 	}
 
-	public Field updateFieldData(Field ipField) {
-		// TODO Auto-generated method stub
-		return null;
+	public Field updateFieldData(Field ipField,FieldRuleId ruleId) throws IOException {
+		String OptionFilePath=JSONDataFilePath+"Field/option.json";
+		
+		List<Options> optionList=new ArrayList<Options>();
+		try {
+			bufferReader = new BufferedReader(new FileReader(OptionFilePath));
+			option=gson.fromJson(bufferReader, Options.class);
+			optionList.add(option);
+			ipField.setFieldOptions(optionList);
+		}
+		catch (FileNotFoundException e) {
+			throw new RuntimeException("Option Json file not found at path : "+OptionFilePath);
+		}
+		ipField.setFieldCategory("New_"+ipField.getFieldCategory());
+		ipField.setFieldComment("New_"+ipField.getFieldComment());
+		ipField.setFieldConstraints("New_"+ipField.getFieldConstraints());
+		ipField.setFieldCreatedBy(configReader.getPropValue("update_CreatedBy"));
+		ipField.setFieldCreatedAt(configReader.getPropValue("update_CreatedAt"));
+		ipField.setFieldDisplaySequence(10+ipField.getFieldDisplaySequence());
+		ipField.setFieldGuidance("New_"+ipField.getFieldGuidance());
+		ipField.setFieldIndustry("New_"+ipField.getFieldIndustry());
+		ipField.setFieldName("New_"+ipField.getFieldName());
+		ipField.setFieldParentId("New_"+ipField.getFieldParentId());
+		ipField.setFieldQuestion("New_"+ipField.getFieldQuestion());
+		
+		List<FieldRuleId> fieldRuleList=ipField.getFieldRuleIds();
+		fieldRuleList.add(ruleId);
+		ipField.setFieldRuleIds(fieldRuleList);
+		
+		ipField.setFieldSector("New_"+ipField.getFieldSector());
+		if(ipField.getFieldStatus().equalsIgnoreCase("Active"))
+			ipField.setFieldStatus("Passive");
+		else if(ipField.getFieldStatus().equalsIgnoreCase("Passive"))
+			ipField.setFieldStatus("Active");
+		ipField.setFieldTemplateName("New_"+ipField.getFieldTemplateName());
+		ipField.setFieldType("New_"+ipField.getFieldType());
+		ipField.setFieldUsability(10+ipField.getFieldUsability());
+		ipField.setFieldValue("New_"+ipField.getFieldValue());
+		ipField.setFieldValueSource("New_"+ipField.getFieldValueSource());
+		ipField.setFieldVersion((Double.parseDouble(ipField.getFieldVersion())+1.0)+"");
+		
+		
+		return ipField;
+		
 	}
 
 	public Process getProcessData() {
@@ -684,6 +735,23 @@ public class JsonDataReader {
 		ipGeo.setGeographyCreatedAt(configReader.getPropValue("update_CreatedAt"));
 		
 			return ipGeo;
+	}
+
+	public Rule getRuleData() {
+		String RuleFilePath=JSONDataFilePath+"Field/rule.json";
+		try {
+			bufferReader = new BufferedReader(new FileReader(RuleFilePath));
+			rule = gson.fromJson(bufferReader, Rule.class);
+			return rule;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + RuleFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
 	}
 
 	

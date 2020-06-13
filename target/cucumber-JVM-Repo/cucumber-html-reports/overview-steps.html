@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Delivery-Curator-Rest-API</td>
+        <td>1</td>
+      <td>12 Jun 2020, 12:03</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.activity_added_exist_in_returned_ActivityList()</td>
+              <td>5</td>
+              <td class="duration" data-value="8800000">0.008</td>
+              <td class="duration" data-value="8800000">0.017</td>
+              <td class="duration" data-value="44000000">0.044</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.all_Activities_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.each_Activity_of_returned_ActivityList_should_have_same_activity(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="500000">0.000</td>
+              <td class="duration" data-value="500000">0.001</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.get_Activity_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.response_Activity_is_same_which_was_added()</td>
+              <td>2</td>
+              <td class="duration" data-value="500000">0.000</td>
+              <td class="duration" data-value="500000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.response_should_be_list_of_Activity_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.009</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.total_number_of_Activities_in_List_is_equal_to_getActivityCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="503000000">0.503</td>
+              <td class="duration" data-value="503000000">0.964</td>
+              <td class="duration" data-value="1006000000">1.006</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)</td>
+              <td>1</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_no_Activity_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="72000000">0.072</td>
+              <td class="duration" data-value="72000000">0.133</td>
+              <td class="duration" data-value="144000000">0.144</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_Activity_Payload_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_invoke_deleteActivity_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="66200000">0.066</td>
+              <td class="duration" data-value="66200000">0.187</td>
+              <td class="duration" data-value="331000000">0.331</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.user_invoke_getActivityBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_Activity_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="48000000">0.048</td>
+              <td class="duration" data-value="48000000">0.048</td>
+              <td class="duration" data-value="48000000">0.048</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_Total_Activity_Count_increased_by(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="1796000000">1.796</td>
+              <td class="duration" data-value="1796000000">1.796</td>
+              <td class="duration" data-value="1796000000">1.796</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_count_greater_than_0()</td>
+              <td>5</td>
+              <td class="duration" data-value="20800000">0.020</td>
+              <td class="duration" data-value="20800000">0.057</td>
+              <td class="duration" data-value="104000000">0.104</td>
+              <td class="failed">80.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_response_will_return_Activity_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="69000000">0.069</td>
+              <td class="duration" data-value="69000000">0.132</td>
+              <td class="duration" data-value="138000000">0.138</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities()</td>
+              <td>7</td>
+              <td class="duration" data-value="42428571">0.042</td>
+              <td class="duration" data-value="42428571">0.153</td>
+              <td class="duration" data-value="297000000">0.297</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ActivityStepDefinition.verify_response_will_return_List_of_Activities_with_zero_records()</td>
+              <td>5</td>
+              <td class="duration" data-value="20400000">0.020</td>
+              <td class="duration" data-value="20400000">0.036</td>
+              <td class="duration" data-value="102000000">0.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.add_DiagramDetails_Payload(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.user_calls_API_with_http_Request(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="901000000">0.901</td>
+              <td class="duration" data-value="901000000">0.901</td>
+              <td class="duration" data-value="901000000">0.901</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.user_invoke_getBpmnDiagram_with_Parameters_name(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.verify_response_will_return_InputStreamResource_instance()</td>
+              <td>1</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.verify_resposneHedaer(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.BPMNStepDefinition.verify_that_ResponseStatus_instance_is_returned_as_response()</td>
+              <td>1</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.Category_added_exist_in_returned_CategoryList()</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.Verify_responseBody_is_instance_of__Category()</td>
+              <td>2</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.008</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.category_Count_increased(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="1401000000">1.401</td>
+              <td class="duration" data-value="1401000000">1.401</td>
+              <td class="duration" data-value="1401000000">1.401</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.category_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="40000000">0.040</td>
+              <td class="duration" data-value="40000000">0.042</td>
+              <td class="duration" data-value="80000000">0.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.get_category_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.response_should_be_list_of_Category_and_satisfy_the_search(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="6500000">0.006</td>
+              <td class="duration" data-value="6500000">0.008</td>
+              <td class="duration" data-value="13000000">0.013</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.response_should_be_list_of_Catgoey_and_size_should_be_one()</td>
+              <td>1</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.user_invoke_CategoryAPI_getCategoryNotinList_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.user_invoke_api_with_invalid_Category_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="11750000">0.011</td>
+              <td class="duration" data-value="11750000">0.015</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.user_invoke_category_with_Parameter(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="10666666">0.010</td>
+              <td class="duration" data-value="10666666">0.012</td>
+              <td class="duration" data-value="64000000">0.064</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.verify_CategoryList_with_zero_Category()</td>
+              <td>2</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.006</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.verify_Category_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.verify_Category_with_NoSearchCriteria()</td>
+              <td>1</td>
+              <td class="duration" data-value="2951000000">2.951</td>
+              <td class="duration" data-value="2951000000">2.951</td>
+              <td class="duration" data-value="2951000000">2.951</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.verify_Response_should_not_contain_Value_passed_in_Invalid_Parameter()</td>
+              <td>1</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CategoryStepDefinition.verify_response_will_return_List_of_Categories()</td>
+              <td>4</td>
+              <td class="duration" data-value="12750000">0.012</td>
+              <td class="duration" data-value="12750000">0.021</td>
+              <td class="duration" data-value="51000000">0.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.Cic_added_exist_in_returned_CicList()</td>
+              <td>4</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">25.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.Verify_response_will_return_List_of_Cics()</td>
+              <td>5</td>
+              <td class="duration" data-value="7800000">0.007</td>
+              <td class="duration" data-value="7800000">0.020</td>
+              <td class="duration" data-value="39000000">0.039</td>
+              <td class="failed">80.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.get_cic_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.response_should_be_list_all_Cics_getAllCics()</td>
+              <td>1</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.response_should_be_list_of_Cics_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.total_number_of_Cic_in_List_is_equal_to_getCicCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1545000000">1.545</td>
+              <td class="duration" data-value="1545000000">1.545</td>
+              <td class="duration" data-value="1545000000">1.545</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.user_Cic_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="23500000">0.023</td>
+              <td class="duration" data-value="23500000">0.034</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.user_cic_Payload_with_no_Cic_Body_and_Param(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="9500000">0.009</td>
+              <td class="duration" data-value="9500000">0.010</td>
+              <td class="duration" data-value="19000000">0.019</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.user_invoke_deleteCic_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.user_invoke_getCicBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.012</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.verify_CicStatus_updated_as_Passive()</td>
+              <td>1</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.verify_Cic_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.verify_Total_cic_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1481000000">1.481</td>
+              <td class="duration" data-value="1481000000">1.481</td>
+              <td class="duration" data-value="1481000000">1.481</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.verify_response_will_return_Cic_instance()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CicStepDefinition.verify_response_will_return_List_of_Cics_with_zero_records()</td>
+              <td>3</td>
+              <td class="duration" data-value="7333333">0.007</td>
+              <td class="duration" data-value="7333333">0.010</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.Verify_responseBody_is_instance_of__Client()</td>
+              <td>1</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.client_Count_increased(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="1409000000">1.409</td>
+              <td class="duration" data-value="1409000000">1.409</td>
+              <td class="duration" data-value="1409000000">1.409</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.client_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.027</td>
+              <td class="duration" data-value="50000000">0.050</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.get_client_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.projectIds_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.018</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.project_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.005</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.response_should_be_list_of_Client_and_satisfy_the_search(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="6375000">0.006</td>
+              <td class="duration" data-value="6375000">0.013</td>
+              <td class="duration" data-value="51000000">0.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.save_the_project_details()</td>
+              <td>6</td>
+              <td class="duration" data-value="86666666">0.086</td>
+              <td class="duration" data-value="86666666">0.239</td>
+              <td class="duration" data-value="520000000">0.520</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.save_the_user_details()</td>
+              <td>5</td>
+              <td class="duration" data-value="10800000">0.010</td>
+              <td class="duration" data-value="10800000">0.030</td>
+              <td class="duration" data-value="54000000">0.054</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.user_Payload(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.user_delete_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="4500000">0.004</td>
+              <td class="duration" data-value="4500000">0.005</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.user_invoke_client_with_Parameter(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>20</td>
+              <td class="duration" data-value="14200000">0.014</td>
+              <td class="duration" data-value="14200000">0.026</td>
+              <td class="duration" data-value="284000000">0.284</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_Category_with_NoSearchCriteria()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_ClientList_with_zero_records()</td>
+              <td>10</td>
+              <td class="duration" data-value="15400000">0.015</td>
+              <td class="duration" data-value="15400000">0.033</td>
+              <td class="duration" data-value="154000000">0.154</td>
+              <td class="failed">90.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_Client_added_exist_in_returned_ClientList()</td>
+              <td>9</td>
+              <td class="duration" data-value="222222">0.000</td>
+              <td class="duration" data-value="222222">0.001</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="failed">88.89%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_response_will_return_Client_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="7500000">0.007</td>
+              <td class="duration" data-value="7500000">0.008</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_response_will_return_List_of_Clients()</td>
+              <td>3</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="duration" data-value="20000000">0.044</td>
+              <td class="duration" data-value="60000000">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ClientStepDefinition.verify_response_will_return_List_of_ProjectIds()</td>
+              <td>2</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)</td>
+              <td>56</td>
+              <td class="duration" data-value="29803571">0.029</td>
+              <td class="duration" data-value="29803571">1.203</td>
+              <td class="duration" data-value="1669000000">1.669</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.deletePattern_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="11333333">0.011</td>
+              <td class="duration" data-value="11333333">0.050</td>
+              <td class="duration" data-value="136000000">0.136</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,int)</td>
+              <td>2</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.017</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)</td>
+              <td>80</td>
+              <td class="duration" data-value="61200000">0.061</td>
+              <td class="duration" data-value="61200000">3.285</td>
+              <td class="duration" data-value="4896000000">4.896</td>
+              <td class="failed">93.75%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)</td>
+              <td>59</td>
+              <td class="duration" data-value="84745">0.000</td>
+              <td class="duration" data-value="84745">0.001</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="failed">98.31%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)</td>
+              <td>223</td>
+              <td class="duration" data-value="103139">0.000</td>
+              <td class="duration" data-value="103139">0.009</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="failed">96.86%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)</td>
+              <td>292</td>
+              <td class="duration" data-value="1791582191">1.791</td>
+              <td class="duration" data-value="1791582191">6.283</td>
+              <td class="duration" data-value="523142000000">8:43.142</td>
+              <td class="failed">99.66%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>64</td>
+              <td class="duration" data-value="8984375">0.008</td>
+              <td class="duration" data-value="8984375">0.073</td>
+              <td class="duration" data-value="575000000">0.575</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.Country_added_exist_in_returned_CountryList()</td>
+              <td>10</td>
+              <td class="duration" data-value="200000">0.000</td>
+              <td class="duration" data-value="200000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.Verify_response_will_return_List_of_Countries()</td>
+              <td>12</td>
+              <td class="duration" data-value="7333333">0.007</td>
+              <td class="duration" data-value="7333333">0.015</td>
+              <td class="duration" data-value="88000000">0.088</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.all_Countries_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.get_country_count()</td>
+              <td>2</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.014</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.response_should_be_list_all_Countries_getAllCountries()</td>
+              <td>1</td>
+              <td class="duration" data-value="1458000000">1.458</td>
+              <td class="duration" data-value="1458000000">1.458</td>
+              <td class="duration" data-value="1458000000">1.458</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.response_should_be_list_of_Countries_and_size_should_be_one()</td>
+              <td>4</td>
+              <td class="duration" data-value="4250000">0.004</td>
+              <td class="duration" data-value="4250000">0.011</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.total_number_of_Country_in_List_is_equal_to_getCountryCount()</td>
+              <td>2</td>
+              <td class="duration" data-value="1595000000">1.595</td>
+              <td class="duration" data-value="1595000000">1.709</td>
+              <td class="duration" data-value="3190000000">3.190</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.user_Country_Payload(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="31250000">0.031</td>
+              <td class="duration" data-value="31250000">0.061</td>
+              <td class="duration" data-value="125000000">0.125</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.user_country_Payload_with_no_Country_Body_and_Param(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.013</td>
+              <td class="duration" data-value="46000000">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.user_invoke_deleteCountry_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.013</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.user_invoke_getCountryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="12500000">0.012</td>
+              <td class="duration" data-value="12500000">0.016</td>
+              <td class="duration" data-value="75000000">0.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.012</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.verify_CountryStatus_updated_as_Passive()</td>
+              <td>2</td>
+              <td class="duration" data-value="2500000">0.002</td>
+              <td class="duration" data-value="2500000">0.003</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.verify_Country_fields_gets_updated()</td>
+              <td>2</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.006</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.verify_Total_country_Count_increased_by()</td>
+              <td>2</td>
+              <td class="duration" data-value="1515000000">1.515</td>
+              <td class="duration" data-value="1515000000">1.533</td>
+              <td class="duration" data-value="3030000000">3.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.verify_response_will_return_Country_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="796500000">0.796</td>
+              <td class="duration" data-value="796500000">1.590</td>
+              <td class="duration" data-value="1593000000">1.593</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.CountryStepDefinition.verify_response_will_return_List_of_Countries_with_zero_records()</td>
+              <td>6</td>
+              <td class="duration" data-value="13500000">0.013</td>
+              <td class="duration" data-value="13500000">0.017</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.Verify_response_will_return_List_of_Geographies()</td>
+              <td>5</td>
+              <td class="duration" data-value="5400000">0.005</td>
+              <td class="duration" data-value="5400000">0.010</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.geography_added_exist_in_returned_GeographyList()</td>
+              <td>4</td>
+              <td class="duration" data-value="250000">0.000</td>
+              <td class="duration" data-value="250000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.get_geography_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.response_should_be_list_all_Geographies_getAllGeographies()</td>
+              <td>1</td>
+              <td class="duration" data-value="1385000000">1.385</td>
+              <td class="duration" data-value="1385000000">1.385</td>
+              <td class="duration" data-value="1385000000">1.385</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.response_should_be_list_of_Geographies_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.total_number_of_Geography_in_List_is_equal_to_getGeographyCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.user_Geography_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.018</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.user_invoke_deleteGeography_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.user_invoke_getGeographyBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.012</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.verify_GeographyStatus_updated_as_Passive()</td>
+              <td>1</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.verify_Geography_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.verify_Total_geography_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1417000000">1.417</td>
+              <td class="duration" data-value="1417000000">1.417</td>
+              <td class="duration" data-value="1417000000">1.417</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.verify_response_will_return_Geography_instance()</td>
+              <td>1</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.GeographyStepDefinition.verify_response_will_return_List_of_Geographies_with_zero_records()</td>
+              <td>2</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.024</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.Hooks.afterScenario()</td>
+              <td>282</td>
+              <td class="duration" data-value="24822">0.000</td>
+              <td class="duration" data-value="24822">0.001</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.Hooks.beforeScenario()</td>
+              <td>282</td>
+              <td class="duration" data-value="7684397">0.007</td>
+              <td class="duration" data-value="7684397">2.054</td>
+              <td class="duration" data-value="2167000000">2.167</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.Industry_added_exist_in_returned_IndustryList()</td>
+              <td>10</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.Verify_response_will_return_List_of_Industries()</td>
+              <td>12</td>
+              <td class="duration" data-value="5166666">0.005</td>
+              <td class="duration" data-value="5166666">0.014</td>
+              <td class="duration" data-value="62000000">0.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.all_Industries_should_have_Active_Status()</td>
+              <td>2</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.get_industry_count()</td>
+              <td>2</td>
+              <td class="duration" data-value="9500000">0.009</td>
+              <td class="duration" data-value="9500000">0.010</td>
+              <td class="duration" data-value="19000000">0.019</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.response_should_be_list_of_Industries_and_size_should_be_one()</td>
+              <td>4</td>
+              <td class="duration" data-value="750000">0.000</td>
+              <td class="duration" data-value="750000">0.002</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.total_number_of_Industry_in_List_is_equal_to_getIndustryCount()</td>
+              <td>2</td>
+              <td class="duration" data-value="1429000000">1.429</td>
+              <td class="duration" data-value="1429000000">1.442</td>
+              <td class="duration" data-value="2858000000">2.858</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.user_Industry_Payload(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="17500000">0.017</td>
+              <td class="duration" data-value="17500000">0.033</td>
+              <td class="duration" data-value="70000000">0.070</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.user_industry_Payload_with_no_Industry_Body_and_Param(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="75750000">0.075</td>
+              <td class="duration" data-value="75750000">0.269</td>
+              <td class="duration" data-value="303000000">0.303</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.user_invoke_deleteIndustry_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.011</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.user_invoke_getIndustryBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="9500000">0.009</td>
+              <td class="duration" data-value="9500000">0.011</td>
+              <td class="duration" data-value="57000000">0.057</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.012</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.verify_IndustryStatus_updated_as_Passive()</td>
+              <td>2</td>
+              <td class="duration" data-value="2500000">0.002</td>
+              <td class="duration" data-value="2500000">0.003</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.verify_Industry_fields_gets_updated()</td>
+              <td>2</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.016</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.verify_Total_industry_Count_increased_by()</td>
+              <td>2</td>
+              <td class="duration" data-value="1454000000">1.454</td>
+              <td class="duration" data-value="1454000000">1.496</td>
+              <td class="duration" data-value="2908000000">2.908</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.verify_response_will_return_Industry_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.IndustryStepDefinition.verify_response_will_return_List_of_Industries_with_zero_records()</td>
+              <td>6</td>
+              <td class="duration" data-value="16333333">0.016</td>
+              <td class="duration" data-value="16333333">0.027</td>
+              <td class="duration" data-value="98000000">0.098</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.MailStepDefinition.add_Mail_Payload(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.MailStepDefinition.verify_responseBody_is_instance_of_ResponseStatus()</td>
+              <td>1</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.all_Pattern_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.each_Pattern_of_returned_PatternList_should_have_same_pattern(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="333333">0.000</td>
+              <td class="duration" data-value="333333">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.get_Pattern_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.response_should_be_list_of_Pattern_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.total_number_of_Pattern_in_List_is_equal_to_getPatternCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1431000000">1.431</td>
+              <td class="duration" data-value="1431000000">1.431</td>
+              <td class="duration" data-value="1431000000">1.431</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_Pattern_Payload(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="23500000">0.023</td>
+              <td class="duration" data-value="23500000">0.028</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_invalid_Param(java.lang.String,java.lang.String,java.lang.String,int)</td>
+              <td>1</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="40000000">0.040</td>
+              <td class="duration" data-value="40000000">0.040</td>
+              <td class="duration" data-value="40000000">0.040</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_Pattern_Payload_with_no_Pattern_Body(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="9500000">0.009</td>
+              <td class="duration" data-value="9500000">0.010</td>
+              <td class="duration" data-value="19000000">0.019</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_invoke_deletePattern_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.015</td>
+              <td class="duration" data-value="44000000">0.044</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.user_invoke_getPatternBySearchCriteria_with_all_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.verify_PatternList_with_zero_Pattern()</td>
+              <td>4</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.013</td>
+              <td class="duration" data-value="48000000">0.048</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.verify_Patternfields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.verify_Total_Pattern_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.verify_response_will_return_List_of_Pattern()</td>
+              <td>6</td>
+              <td class="duration" data-value="12166666">0.012</td>
+              <td class="duration" data-value="12166666">0.035</td>
+              <td class="duration" data-value="73000000">0.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.PatternStepDefinition.verify_response_will_return_Pattern_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.005</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.all_Process_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.created_Process_should_exist_in_the_List_of_Process()</td>
+              <td>4</td>
+              <td class="duration" data-value="750000">0.000</td>
+              <td class="duration" data-value="750000">0.002</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.get_Process_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.processcode_in_response_body_is_equal_to_output_of(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.processid_in_response_body_is_equal_to_output_of(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.response_Process_is_same_which_was_added()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.response_should_be_list_of_Process_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.total_number_of_Process_in_List_is_equal_to_getProcessCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1470000000">1.470</td>
+              <td class="duration" data-value="1470000000">1.470</td>
+              <td class="duration" data-value="1470000000">1.470</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_Activity_Payload_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_Process_Payload(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.016</td>
+              <td class="duration" data-value="30000000">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_Process_Payload_with_no_Process_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.013</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_invoke_deleteProcess_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="18000000">0.018</td>
+              <td class="duration" data-value="18000000">0.037</td>
+              <td class="duration" data-value="54000000">0.054</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.user_invoke_getProcessBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="duration" data-value="10000000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.verify_Processfields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.verify_Total_Process_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="duration" data-value="1468000000">1.468</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Process()</td>
+              <td>5</td>
+              <td class="duration" data-value="5400000">0.005</td>
+              <td class="duration" data-value="5400000">0.013</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.verify_response_will_return_List_of_Processes_with_zero_records()</td>
+              <td>3</td>
+              <td class="duration" data-value="9666666">0.009</td>
+              <td class="duration" data-value="9666666">0.010</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.ProcessStepDefinition.verify_response_will_return_Process_instance()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()</td>
+              <td>4</td>
+              <td class="duration" data-value="250000">0.000</td>
+              <td class="duration" data-value="250000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()</td>
+              <td>5</td>
+              <td class="duration" data-value="12800000">0.012</td>
+              <td class="duration" data-value="12800000">0.027</td>
+              <td class="duration" data-value="64000000">0.064</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.all_Sectors_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.get_sector_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.response_should_be_list_of_Sectors_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.012</td>
+              <td class="duration" data-value="18000000">0.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.total_number_of_Sector_in_List_is_equal_to_getSectorCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="duration" data-value="1435000000">1.435</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="141500000">0.141</td>
+              <td class="duration" data-value="141500000">0.260</td>
+              <td class="duration" data-value="283000000">0.283</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.user_invoke_deleteSector_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="duration" data-value="22000000">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="66000000">0.066</td>
+              <td class="duration" data-value="66000000">0.096</td>
+              <td class="duration" data-value="132000000">0.132</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.user_sector_Payload_with_no_Sector_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.012</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.verify_SectorStatus_updated_as_Passive()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.verify_Total_sector_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1376000000">1.376</td>
+              <td class="duration" data-value="1376000000">1.376</td>
+              <td class="duration" data-value="1376000000">1.376</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.verify_gets_updated(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.verify_response_will_return_List_of_Sectors_with_zero_records()</td>
+              <td>2</td>
+              <td class="duration" data-value="20500000">0.020</td>
+              <td class="duration" data-value="20500000">0.023</td>
+              <td class="duration" data-value="41000000">0.041</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SectorStepDefinition.verify_response_will_return_Sector_instance()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.Squad_added_exist_in_returned_SquadList()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.Verify_response_will_return_List_of_Squads()</td>
+              <td>6</td>
+              <td class="duration" data-value="4666666">0.004</td>
+              <td class="duration" data-value="4666666">0.011</td>
+              <td class="duration" data-value="28000000">0.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.get_squad_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="duration" data-value="7000000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.response_should_be_list_all_Squads_getAllSquads()</td>
+              <td>1</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.response_should_be_list_of_Squads_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="2500000">0.002</td>
+              <td class="duration" data-value="2500000">0.003</td>
+              <td class="duration" data-value="5000000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.total_number_of_Squad_in_List_is_equal_to_getSquadCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1457000000">1.457</td>
+              <td class="duration" data-value="1457000000">1.457</td>
+              <td class="duration" data-value="1457000000">1.457</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_Activity_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)</td>
+              <td>1</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="duration" data-value="21000000">0.021</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_Squad_Payload(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="23000000">0.023</td>
+              <td class="duration" data-value="23000000">0.028</td>
+              <td class="duration" data-value="46000000">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="101000000">0.101</td>
+              <td class="duration" data-value="101000000">0.101</td>
+              <td class="duration" data-value="101000000">0.101</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_Squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="77000000">0.077</td>
+              <td class="duration" data-value="77000000">0.077</td>
+              <td class="duration" data-value="77000000">0.077</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_invoke_deleteSquad_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="duration" data-value="9000000">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_invoke_getSquadBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="10333333">0.010</td>
+              <td class="duration" data-value="10333333">0.012</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.user_squad_Payload_with_no_Squad_Body_and_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.verify_SquadStatus_updated_as_Passive()</td>
+              <td>1</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.verify_Squad_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="duration" data-value="6000000">0.006</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.verify_Total_squad_Count_increased_by()</td>
+              <td>1</td>
+              <td class="duration" data-value="1396000000">1.396</td>
+              <td class="duration" data-value="1396000000">1.396</td>
+              <td class="duration" data-value="1396000000">1.396</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.verify_response_will_return_List_of_Squads_with_zero_records()</td>
+              <td>3</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="duration" data-value="27000000">0.043</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.SquadStepDefinition.verify_response_will_return_Squad_instance()</td>
+              <td>1</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="duration" data-value="3000000">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.Verify_responseBody_is_instance_of_Task()</td>
+              <td>2</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.all_Tasks_should_have_Active_Status()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.each_Task_of_returned_TaskList_should_have_same(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="333333">0.000</td>
+              <td class="duration" data-value="333333">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.get_task_count()</td>
+              <td>1</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.response_Task_is_added_should_be_filtered()</td>
+              <td>4</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.014</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.response_should_be_List_of_Tasks_and_size_should_be_one()</td>
+              <td>2</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.006</td>
+              <td class="duration" data-value="8000000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.task_Count_incraesed(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="duration" data-value="1420000000">1.420</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.task_Payload(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="duration" data-value="27000000">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.task_Payload_with_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.total_number_of_Tasks_in_List_is_equal_to_getTaskCount()</td>
+              <td>1</td>
+              <td class="duration" data-value="1422000000">1.422</td>
+              <td class="duration" data-value="1422000000">1.422</td>
+              <td class="duration" data-value="1422000000">1.422</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_Task_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Param(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="duration" data-value="20000000">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Task_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.016</td>
+              <td class="duration" data-value="24000000">0.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_invoke_deleteTask_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="11500000">0.011</td>
+              <td class="duration" data-value="11500000">0.012</td>
+              <td class="duration" data-value="46000000">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.verify_Task_fields_gets_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()</td>
+              <td>7</td>
+              <td class="duration" data-value="10428571">0.010</td>
+              <td class="duration" data-value="10428571">0.024</td>
+              <td class="duration" data-value="73000000">0.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks_with_zero_records()</td>
+              <td>4</td>
+              <td class="duration" data-value="12500000">0.012</td>
+              <td class="duration" data-value="12500000">0.016</td>
+              <td class="duration" data-value="50000000">0.050</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.verify_taskAttributes()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepDefinitions.TaskStepDefinition.verify_taskCode()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>228</td>
+            <td>1874</td>
+            <td class="duration">0.314</td>
+            <td class="duration">8:43.142</td>
+            <td class="duration">9:49.669</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

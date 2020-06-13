@@ -1,7 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: cucumber.Options.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.192 s <<< FAILURE! - in cucumber.Options.TestRunner
-Validating BPMN API's.Verify API: getBpmnDiagram API get BpmnDiagram using 'name' parameter  Time elapsed: 1.232 s  <<< ERROR!
-java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'application/octet-stream'.
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 20.954 s <<< FAILURE! - in cucumber.Options.TestRunner
+Validating Cic-Service APIs.Verify API: updateFieldByRuleId API return 'ok' [need clarification on its functionality]  Time elapsed: 1.899 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected content-type "JSON" doesn't match actual content-type "text/plain;charset=UTF-8".
+
 

@@ -11,63 +11,63 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	@NotNull
+	
 	private int bookId;
 	
 	
-	@NotNull
+	
 	private String bookParentId;
 	
 	
-	@NotNull
+	
 	private String bookName;
 	
 	
-	@NotNull
+	
 	private List<Integer> bookRuleIds;
 	
 	
-	@NotNull
+	
 	private String bookType;
 	
 	
-	@NotNull
+	
 	private String bookIndustryName;
 	
 	
-	@NotNull
+	
 	private String bookSectorName;
 	
 	
-	@NotNull
+	
 	private String bookStatus;
 	
 	
-	@NotNull
+	
 	private String bookVersion;
 	
 	
-	@NotNull
+	
 	private String bookCreatedBy;
 	
 	
-	@NotNull
+	
 	private String bookCreatedAt;
 	
 	
-	@NotNull
+	
 	private String bookUpdatedBy;
 	
 	
-	@NotNull
+	
 	private String bookUpdatedAt;
 	
 	
-	@NotNull
+	
 	List<Template> templates = new ArrayList<Template>();
 	
 	
-	@NotNull
+	
 	List<BookUser> users = new ArrayList<BookUser>();
 	
 	public Book() {
@@ -91,11 +91,11 @@ public class Book implements Serializable {
 	 * @param templates
 	 * @param users
 	 */
-	public Book(@NotNull int bookId, @NotNull String bookParentId, @NotNull String bookName,
-			@NotNull List<Integer> bookRuleIds, @NotNull String bookType, @NotNull String bookIndustryName,
-			@NotNull String bookSectorName, @NotNull String bookStatus, @NotNull String bookVersion,
-			@NotNull String bookCreatedBy, @NotNull String bookCreatedAt, @NotNull String bookUpdatedBy,
-			@NotNull String bookUpdatedAt, @NotNull List<Template> templates, @NotNull List<BookUser> users) {
+	public Book( int bookId,  String bookParentId,  String bookName,
+			 List<Integer> bookRuleIds,  String bookType,  String bookIndustryName,
+			 String bookSectorName,  String bookStatus,  String bookVersion,
+			 String bookCreatedBy,  String bookCreatedAt,  String bookUpdatedBy,
+			 String bookUpdatedAt,  List<Template> templates,  List<BookUser> users) {
 		super();
 		this.bookId = bookId;
 		this.bookParentId = bookParentId;

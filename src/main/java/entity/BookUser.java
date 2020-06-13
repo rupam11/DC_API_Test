@@ -9,19 +9,19 @@ public class BookUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	@NotNull
+	
 	private int userId;
 	
 	
-	@NotNull
+	
 	private String userBookAccess;// Read/Write/Both
 	
 	
-	@NotNull
+	
 	private String userBookPassword;
 
 	
-	@NotNull
+	
 	private boolean userBookRegistered;
 	
 	public BookUser() {
@@ -34,8 +34,8 @@ public class BookUser implements Serializable {
 	 * @param userBookPassword
 	 * @param userBookRegistered
 	 */
-	public BookUser(@NotNull int userId, @NotNull String userBookAccess, @NotNull String userBookPassword,
-			@NotNull boolean userBookRegistered) {
+	public BookUser( int userId,  String userBookAccess,  String userBookPassword,
+			 boolean userBookRegistered) {
 		super();
 		this.userId = userId;
 		this.userBookAccess = userBookAccess;

@@ -10,7 +10,7 @@
         "fieldName": "Host Manufacturer ",
         "fieldGuidance": "File",
         "fieldConstraints": "Required",
-        "fieldCategory": "Default",
+        "fieldCategory": "Onboarding",
         "fieldTemplateName": "Inventory Summary",
         "fieldQuestion": "Please mention the Host Manufacturer ",
         "fieldIndustry": "Insurance",

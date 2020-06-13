@@ -42,8 +42,8 @@ Scenario: Verify API: getCountryBySearchCriteria API, search no SearchCriteria
 	When User calls "getCountryBySearchCriteria" API with "Get" http Request 
 	Then The API call is success with StatusCode 200 
 	Then Verify response will return List of Countries 
-	#Then Response should be list all Countries=getAllCountries
-	Then All Countries should have Active Status
+	Then Response should be list all Countries=getAllCountries
+#	Then All Countries should have Active Status
 	
 	@getCountryBySearchCriteria 
 Scenario: Verify API: getCountryBySearchCriteria API, search by 'countryId' 

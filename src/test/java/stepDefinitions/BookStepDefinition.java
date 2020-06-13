@@ -33,9 +33,11 @@ public class BookStepDefinition extends Utils {
 	@Given("{string} User {string} Book Payload")
 	public void user_Book_Payload(String userRole, String payloadReq) throws IOException {
 		if (payloadReq.equalsIgnoreCase("Add"))
-			reqBook = data.addBook();
+			//reqBook = data.addBook();
+			System.out.println();
 		else if (payloadReq.equalsIgnoreCase("Update"))
-			reqBook = data.updateBook(respBook);
+			//reqBook = data.updateBook(respBook);
+			System.out.println();
 		else
 			System.out.println("Issue in Payload creation request");
 
@@ -148,10 +150,9 @@ public class BookStepDefinition extends Utils {
 	public void user_invoke_getTaskBySearchCriteria_with_Parameter(String userRole, String param1, String param2,
 			String param3) throws IOException {
 		reqSpec = null;
-		reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1, respBook.getBookId())
+		/*reqSpec = given().spec(requestSpecification(userRole)).queryParams(param1, respBook.getBookId())
 				.queryParam(param2, respBook.getBookName());
-				.queryParam(param3, respBook.getBookGeographyName());
-		;
+				.queryParam(param3, respBook.getBookGeographyName());*/
 
 	}
 
@@ -163,7 +164,7 @@ public class BookStepDefinition extends Utils {
 
 	@Given("{string} User {string} Book Payload  with no Param")
 	public void user_Book_Payload_with_no_Param(String userRole, String payloadReq) throws IOException {
-		reqBook = data.updateBook(respBook);
+		//reqBook = data.updateBook(respBook);
 		reqSpec = null;
 		reqSpec = given().spec(requestSpecification(userRole)).body(reqBook);
 	}

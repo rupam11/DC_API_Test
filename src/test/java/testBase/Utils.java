@@ -56,16 +56,16 @@ public class Utils {
 		return js.get(key).toString();
 
 	}
-	
-	public JSONObject updateJson(JSONObject jsonObject, String service) {
-		jsonObject.put(service+"CreatedBy","");
-		jsonObject.put(service+"CreatedAt","");
-		jsonObject.put(service+"UpdatedBy","");
-		jsonObject.put(service+"UpdatedAt","");
-		jsonObject.put(service+"Id","");
-		jsonObject.put(service+"Code","");
-		return jsonObject;
-	}
+//	
+//	public JSONObject updateJson(JSONObject jsonObject, String service) {
+//		jsonObject.put(service+"CreatedBy","");
+//		jsonObject.put(service+"CreatedAt","");
+//		jsonObject.put(service+"UpdatedBy","");
+//		jsonObject.put(service+"UpdatedAt","");
+//		jsonObject.put(service+"Id","");
+//		jsonObject.put(service+"Code","");
+//		return jsonObject;
+//	}
 	
 	
 }

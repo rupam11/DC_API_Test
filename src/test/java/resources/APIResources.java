@@ -67,6 +67,7 @@ public enum APIResources {
 	sendMail("mail-service/sendMail"),
 	
 	createField("field-service/createField"),
+	createQuestion("field-service/createQuestion"),
 	deleteField("field-service/deleteField"),
 	fields_init("field-service/fields/init"),
 	getAllFields("field-service/getAllFields"),
@@ -176,10 +177,11 @@ public enum APIResources {
 	updateBook("book-service,updateBook"),
 	updateCategoryToTemplatesToBook("book-service,updateCategoryToTemplatesToBook"),
 	updateFieldToTemplatesToBook("book-service,updateFieldToTemplatesToBook"),
-	updateTemplateToBook("book-service,updateTemplateToBook");
+	updateTemplateToBook("book-service,updateTemplateToBook"),
 	
+	getAllRules("rule-service,getAllRules");
 	
-	private String resource;	
+	String resource;	
 	
 	APIResources(String resource){
 		this.resource=resource;

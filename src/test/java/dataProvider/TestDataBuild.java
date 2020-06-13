@@ -9,12 +9,14 @@ import entity.Client;
 import entity.Country;
 import entity.DiagramDetails;
 import entity.Field;
+import entity.FieldRuleId;
 import entity.Geography;
 import entity.Industry;
 import entity.Mail;
 import entity.Pattern;
 import entity.Process;
 import entity.Project;
+import entity.Rule;
 import entity.Sector;
 import entity.Squad;
 import entity.Task;
@@ -68,13 +70,19 @@ public class TestDataBuild {
 		return mail;
 	}
 
-		public Field addField() {
-		Field field=jsonReader.getFieldData();
+		public Field addField(String fieldPurpose) {
+		Field field=jsonReader.getFieldData(fieldPurpose);
 		return field;
 	}
+		
+//		public Field addFieldQues() {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
 
-	public Field updateField(Field ipField) {
-		Field opField=jsonReader.updateFieldData(ipField);
+
+	public Field updateField(Field ipField,FieldRuleId ruleId) throws IOException {
+		Field opField=jsonReader.updateFieldData(ipField,ruleId);
 		return opField;
 	}
 
@@ -189,6 +197,12 @@ public class TestDataBuild {
 		return opGeo;
 	}
 
+	public Rule addRule() {
+		Rule rule = jsonReader.getRuleData();
+		return rule;
+	}
+
+	
 
 
 	

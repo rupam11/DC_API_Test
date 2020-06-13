@@ -5,11 +5,10 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-
 public class Field implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-
+	
 	@NotNull
 	private int fieldId;
 	
@@ -525,6 +524,166 @@ public class Field implements Serializable {
 	 */
 	public void setFieldUpdatedAt(String fieldUpdatedAt) {
 		this.fieldUpdatedAt = fieldUpdatedAt;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((fieldCategory == null) ? 0 : fieldCategory.hashCode());
+		result = prime * result + ((fieldComment == null) ? 0 : fieldComment.hashCode());
+		result = prime * result + ((fieldConstraints == null) ? 0 : fieldConstraints.hashCode());
+		result = prime * result + ((fieldCreatedAt == null) ? 0 : fieldCreatedAt.hashCode());
+		result = prime * result + ((fieldCreatedBy == null) ? 0 : fieldCreatedBy.hashCode());
+		result = prime * result + fieldDisplaySequence;
+		result = prime * result + ((fieldGuidance == null) ? 0 : fieldGuidance.hashCode());
+		result = prime * result + fieldId;
+		result = prime * result + ((fieldIndustry == null) ? 0 : fieldIndustry.hashCode());
+		result = prime * result + ((fieldName == null) ? 0 : fieldName.hashCode());
+		result = prime * result + ((fieldOptions == null) ? 0 : fieldOptions.hashCode());
+		result = prime * result + ((fieldParentId == null) ? 0 : fieldParentId.hashCode());
+		result = prime * result + ((fieldQuestion == null) ? 0 : fieldQuestion.hashCode());
+		result = prime * result + ((fieldRuleIds == null) ? 0 : fieldRuleIds.hashCode());
+		result = prime * result + ((fieldSector == null) ? 0 : fieldSector.hashCode());
+		result = prime * result + ((fieldStatus == null) ? 0 : fieldStatus.hashCode());
+		result = prime * result + ((fieldTemplateName == null) ? 0 : fieldTemplateName.hashCode());
+		result = prime * result + ((fieldType == null) ? 0 : fieldType.hashCode());
+		result = prime * result + ((fieldUpdatedAt == null) ? 0 : fieldUpdatedAt.hashCode());
+		result = prime * result + ((fieldUpdatedBy == null) ? 0 : fieldUpdatedBy.hashCode());
+		result = prime * result + fieldUsability;
+		result = prime * result + ((fieldValue == null) ? 0 : fieldValue.hashCode());
+		result = prime * result + ((fieldValueSource == null) ? 0 : fieldValueSource.hashCode());
+		result = prime * result + ((fieldValueSourceComment == null) ? 0 : fieldValueSourceComment.hashCode());
+		result = prime * result + ((fieldVersion == null) ? 0 : fieldVersion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Field other = (Field) obj;
+		if (fieldCategory == null) {
+			if (other.fieldCategory != null)
+				return false;
+		} else if (!fieldCategory.equals(other.fieldCategory))
+			return false;
+		if (fieldComment == null) {
+			if (other.fieldComment != null)
+				return false;
+		} else if (!fieldComment.equals(other.fieldComment))
+			return false;
+		if (fieldConstraints == null) {
+			if (other.fieldConstraints != null)
+				return false;
+		} else if (!fieldConstraints.equals(other.fieldConstraints))
+			return false;
+		if (fieldCreatedAt == null) {
+			if (other.fieldCreatedAt != null)
+				return false;
+		} else if (!fieldCreatedAt.equals(other.fieldCreatedAt))
+			return false;
+		if (fieldCreatedBy == null) {
+			if (other.fieldCreatedBy != null)
+				return false;
+		} else if (!fieldCreatedBy.equals(other.fieldCreatedBy))
+			return false;
+		if (fieldDisplaySequence != other.fieldDisplaySequence)
+			return false;
+		if (fieldGuidance == null) {
+			if (other.fieldGuidance != null)
+				return false;
+		} else if (!fieldGuidance.equals(other.fieldGuidance))
+			return false;
+		if (fieldId != other.fieldId)
+			return false;
+		if (fieldIndustry == null) {
+			if (other.fieldIndustry != null)
+				return false;
+		} else if (!fieldIndustry.equals(other.fieldIndustry))
+			return false;
+		if (fieldName == null) {
+			if (other.fieldName != null)
+				return false;
+		} else if (!fieldName.equals(other.fieldName))
+			return false;
+		if (fieldOptions == null) {
+			if (other.fieldOptions != null)
+				return false;
+		} else if (!fieldOptions.equals(other.fieldOptions))
+			return false;
+		if (fieldParentId == null) {
+			if (other.fieldParentId != null)
+				return false;
+		} else if (!fieldParentId.equals(other.fieldParentId))
+			return false;
+		if (fieldQuestion == null) {
+			if (other.fieldQuestion != null)
+				return false;
+		} else if (!fieldQuestion.equals(other.fieldQuestion))
+			return false;
+		if (fieldRuleIds == null) {
+			if (other.fieldRuleIds != null)
+				return false;
+		} else if (!fieldRuleIds.equals(other.fieldRuleIds))
+			return false;
+		if (fieldSector == null) {
+			if (other.fieldSector != null)
+				return false;
+		} else if (!fieldSector.equals(other.fieldSector))
+			return false;
+		if (fieldStatus == null) {
+			if (other.fieldStatus != null)
+				return false;
+		} else if (!fieldStatus.equals(other.fieldStatus))
+			return false;
+		if (fieldTemplateName == null) {
+			if (other.fieldTemplateName != null)
+				return false;
+		} else if (!fieldTemplateName.equals(other.fieldTemplateName))
+			return false;
+		if (fieldType == null) {
+			if (other.fieldType != null)
+				return false;
+		} else if (!fieldType.equals(other.fieldType))
+			return false;
+		if (fieldUpdatedAt == null) {
+			if (other.fieldUpdatedAt != null)
+				return false;
+		} else if (!fieldUpdatedAt.equals(other.fieldUpdatedAt))
+			return false;
+		if (fieldUpdatedBy == null) {
+			if (other.fieldUpdatedBy != null)
+				return false;
+		} else if (!fieldUpdatedBy.equals(other.fieldUpdatedBy))
+			return false;
+		if (fieldUsability != other.fieldUsability)
+			return false;
+		if (fieldValue == null) {
+			if (other.fieldValue != null)
+				return false;
+		} else if (!fieldValue.equals(other.fieldValue))
+			return false;
+		if (fieldValueSource == null) {
+			if (other.fieldValueSource != null)
+				return false;
+		} else if (!fieldValueSource.equals(other.fieldValueSource))
+			return false;
+		if (fieldValueSourceComment == null) {
+			if (other.fieldValueSourceComment != null)
+				return false;
+		} else if (!fieldValueSourceComment.equals(other.fieldValueSourceComment))
+			return false;
+		if (fieldVersion == null) {
+			if (other.fieldVersion != null)
+				return false;
+		} else if (!fieldVersion.equals(other.fieldVersion))
+			return false;
+		return true;
 	}
 
 	@Override
