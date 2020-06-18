@@ -3,11 +3,11 @@
     "line": 4,
     "elements": [
       {
-        "start_timestamp": "2020-06-13T00:38:43.298Z",
+        "start_timestamp": "2020-06-18T02:50:18.020Z",
         "before": [
           {
             "result": {
-              "duration": 4866000000,
+              "duration": 2231000000,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3005000000,
+              "duration": 1520000000,
               "status": "passed"
             },
             "line": 8,
@@ -56,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 11167000000,
+              "duration": 5677000000,
               "status": "passed"
             },
             "line": 9,
@@ -78,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 5000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 10,
@@ -96,7 +96,7 @@
           },
           {
             "result": {
-              "duration": 5222000000,
+              "duration": 2576000000,
               "status": "passed"
             },
             "line": 11,
@@ -118,7 +118,7 @@
           },
           {
             "result": {
-              "duration": 142000000,
+              "duration": 32000000,
               "status": "passed"
             },
             "line": 12,
@@ -155,11 +155,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:08.145Z",
+        "start_timestamp": "2020-06-18T02:50:30.348Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -186,7 +186,7 @@
         "steps": [
           {
             "result": {
-              "duration": 47000000,
+              "duration": 40000000,
               "status": "passed"
             },
             "line": 16,
@@ -208,7 +208,7 @@
           },
           {
             "result": {
-              "duration": 2158000000,
+              "duration": 2541000000,
               "status": "passed"
             },
             "line": 17,
@@ -230,7 +230,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 18,
@@ -248,7 +247,7 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 19,
@@ -275,11 +274,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:10.493Z",
+        "start_timestamp": "2020-06-18T02:50:33.017Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
               "status": "passed"
             },
             "match": {
@@ -306,7 +304,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2059000000,
+              "duration": 1868000000,
               "status": "passed"
             },
             "line": 23,
@@ -328,7 +326,7 @@
           },
           {
             "result": {
-              "duration": 1532000000,
+              "duration": 1338000000,
               "status": "passed"
             },
             "line": 24,
@@ -367,7 +365,7 @@
           },
           {
             "result": {
-              "duration": 162000000,
+              "duration": 140000000,
               "status": "passed"
             },
             "line": 26,
@@ -379,17 +377,17 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: fieldCreatedAt\nExpected: 2020-03-23 05:07:46\n     got: 2020-06-12 19:39:20\n ; fieldCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; fieldValueSource\nExpected: Rule\n     got: Provided\n ; fieldValueSourceComment\nExpected: \n     got: User provided\n\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:482)\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:464)\r\n\tat stepDefinitions.FieldStepDefinition.verify_reqBody_same_as_responseBody(FieldStepDefinition.java:171)\r\n\tat ✽.Verify responseBody is same as that of requestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Field.feature:27)\r\n",
-              "duration": 73000000,
+              "error_message": "java.lang.AssertionError: fieldCreatedAt\nExpected: 2020-03-23 05:07:46\n     got: 2020-06-17 21:50:43\n ; fieldCreatedBy\nExpected: dchelp\n     got: rupam_sys\n ; fieldValueSource\nExpected: Rule\n     got: Provided\n ; fieldValueSourceComment\nExpected: \n     got: User provided\n\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:482)\r\n\tat org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:464)\r\n\tat stepDefinitions.FieldStepDefinition.verify_reqBody_same_as_responseBody(FieldStepDefinition.java:185)\r\n\tat ✽.Verify field-\u003eresponseBody is same as that of field-\u003erequestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Field.feature:27)\r\n",
+              "duration": 72000000,
               "status": "failed"
             },
             "line": 27,
-            "name": "Verify responseBody is same as that of requestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"",
+            "name": "Verify field-\u003eresponseBody is same as that of field-\u003erequestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"",
             "match": {
               "arguments": [
                 {
                   "val": "\"fieldUpdatedAt,fieldUpdatedBy\"",
-                  "offset": 58
+                  "offset": 72
                 }
               ],
               "location": "stepDefinitions.FieldStepDefinition.verify_reqBody_same_as_responseBody(java.lang.String)"
@@ -413,11 +411,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:14.540Z",
+        "start_timestamp": "2020-06-18T02:50:36.547Z",
         "before": [
           {
             "result": {
-              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -444,7 +441,7 @@
         "steps": [
           {
             "result": {
-              "duration": 79000000,
+              "duration": 40000000,
               "status": "passed"
             },
             "line": 31,
@@ -466,7 +463,7 @@
           },
           {
             "result": {
-              "duration": 1563000000,
+              "duration": 1877000000,
               "status": "passed"
             },
             "line": 32,
@@ -505,7 +502,7 @@
           },
           {
             "result": {
-              "duration": 19000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 34,
@@ -517,7 +514,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "line": 35,
@@ -529,16 +526,16 @@
           },
           {
             "result": {
-              "duration": 47000000,
+              "duration": 27000000,
               "status": "passed"
             },
             "line": 36,
-            "name": "Verify responseBody is same as that of requestBody except:\"fieldId,fieldCreatedAt,fieldCreatedBy,fieldUpdatedAt,fieldUpdatedBy,fieldDisplaySequence,fieldParentId\"",
+            "name": "Verify field-\u003eresponseBody is same as that of field-\u003erequestBody except:\"fieldId,fieldCreatedAt,fieldCreatedBy,fieldUpdatedAt,fieldUpdatedBy,fieldDisplaySequence,fieldParentId\"",
             "match": {
               "arguments": [
                 {
                   "val": "\"fieldId,fieldCreatedAt,fieldCreatedBy,fieldUpdatedAt,fieldUpdatedBy,fieldDisplaySequence,fieldParentId\"",
-                  "offset": 58
+                  "offset": 72
                 }
               ],
               "location": "stepDefinitions.FieldStepDefinition.verify_reqBody_same_as_responseBody(java.lang.String)"
@@ -547,6 +544,7 @@
           },
           {
             "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "line": 37,
@@ -581,7 +579,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 39,
@@ -599,7 +596,7 @@
           },
           {
             "result": {
-              "duration": 58000000,
+              "duration": 28000000,
               "status": "passed"
             },
             "line": 40,
@@ -621,7 +618,7 @@
           },
           {
             "result": {
-              "duration": 70000000,
+              "duration": 40000000,
               "status": "passed"
             },
             "line": 41,
@@ -658,11 +655,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:16.527Z",
+        "start_timestamp": "2020-06-18T02:50:38.643Z",
         "before": [
           {
             "result": {
-              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -689,7 +685,7 @@
         "steps": [
           {
             "result": {
-              "duration": 89000000,
+              "duration": 64000000,
               "status": "passed"
             },
             "line": 45,
@@ -711,7 +707,7 @@
           },
           {
             "result": {
-              "duration": 4938000000,
+              "duration": 13173000000,
               "status": "passed"
             },
             "line": 46,
@@ -750,7 +746,7 @@
           },
           {
             "result": {
-              "duration": 202000000,
+              "duration": 144000000,
               "status": "passed"
             },
             "line": 48,
@@ -762,7 +758,7 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 49,
@@ -774,7 +770,7 @@
           },
           {
             "result": {
-              "duration": 1497000000,
+              "duration": 1696000000,
               "status": "passed"
             },
             "line": 50,
@@ -801,11 +797,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:23.340Z",
+        "start_timestamp": "2020-06-18T02:50:53.824Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -814,6 +809,138 @@
           }
         ],
         "line": 53,
+        "name": "Verify API: getFieldsBySearchCriteria API, search no SearchCriteria",
+        "description": "",
+        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-no-searchcriteria",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "\"System_Admin\" User invoke \"getFieldsBySearchCriteria\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7521000000,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 116000000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "Verify response will return List of Fields",
+            "match": {
+              "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c687\u003e but was:\u003c647\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\r\n\tat org.junit.Assert.assertEquals(Assert.java:118)\r\n\tat org.junit.Assert.assertEquals(Assert.java:555)\r\n\tat org.junit.Assert.assertEquals(Assert.java:542)\r\n\tat stepDefinitions.FieldStepDefinition.total_number_of_Fields_in_List_is_equal_to_getFieldCount(FieldStepDefinition.java:135)\r\n\tat ✽.Verify that total number of Fields in List is equal to getFieldCount(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Field.feature:58)\r\n",
+              "duration": 1714000000,
+              "status": "failed"
+            },
+            "line": 58,
+            "name": "Verify that total number of Fields in List is equal to getFieldCount",
+            "match": {
+              "location": "stepDefinitions.FieldStepDefinition.total_number_of_Fields_in_List_is_equal_to_getFieldCount()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Field"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@getFieldsBySearchCriteria1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T02:51:03.279Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 62,
         "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldCategory\u0027",
         "description": "",
         "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldcategory-",
@@ -832,10 +959,10 @@
         "steps": [
           {
             "result": {
-              "duration": 321000000,
+              "duration": 164000000,
               "status": "passed"
             },
-            "line": 54,
+            "line": 63,
             "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldCategory\"",
             "match": {
               "arguments": [
@@ -858,10 +985,10 @@
           },
           {
             "result": {
-              "duration": 2353000000,
+              "duration": 2633000000,
               "status": "passed"
             },
-            "line": 55,
+            "line": 64,
             "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -880,10 +1007,9 @@
           },
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
-            "line": 56,
+            "line": 65,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -898,10 +1024,10 @@
           },
           {
             "result": {
-              "duration": 60000000,
+              "duration": 100000000,
               "status": "passed"
             },
-            "line": 57,
+            "line": 66,
             "name": "Verify response will return List of Fields",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
@@ -912,7 +1038,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 58,
+            "line": 67,
             "name": "Field added exist in returned Field List",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
@@ -921,10 +1047,10 @@
           },
           {
             "result": {
-              "duration": 28000000,
+              "duration": 48000000,
               "status": "passed"
             },
-            "line": 59,
+            "line": 68,
             "name": "Response should be list of Fields and satisfy the search: \"fieldCategory\"",
             "match": {
               "arguments": [
@@ -954,10 +1080,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:26.159Z",
+        "start_timestamp": "2020-06-18T02:51:06.388Z",
         "before": [
           {
             "result": {
+              "duration": 12000000,
               "status": "passed"
             },
             "match": {
@@ -965,7 +1092,7 @@
             }
           }
         ],
-        "line": 63,
+        "line": 72,
         "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldIdList\u0027",
         "description": "",
         "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldidlist-",
@@ -984,10 +1111,10 @@
         "steps": [
           {
             "result": {
-              "duration": 18000000,
+              "duration": 40000000,
               "status": "passed"
             },
-            "line": 64,
+            "line": 73,
             "name": "\"System_Admin\" User invoke \"getAllFields\"",
             "match": {
               "arguments": [
@@ -1006,10 +1133,10 @@
           },
           {
             "result": {
-              "duration": 4303000000,
+              "duration": 8308000000,
               "status": "passed"
             },
-            "line": 65,
+            "line": 74,
             "name": "User calls \"getAllFields\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -1028,10 +1155,10 @@
           },
           {
             "result": {
-              "duration": 116000000,
+              "duration": 192000000,
               "status": "passed"
             },
-            "line": 66,
+            "line": 75,
             "name": "Verify response will return List of Fields",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
@@ -1042,7 +1169,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 67,
+            "line": 76,
             "name": "Save fieldId of 5 fields in fieldIdList",
             "match": {
               "arguments": [
@@ -1057,10 +1184,10 @@
           },
           {
             "result": {
-              "duration": 55000000,
+              "duration": 68000000,
               "status": "passed"
             },
-            "line": 68,
+            "line": 77,
             "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldIdList\"",
             "match": {
               "arguments": [
@@ -1083,147 +1210,7 @@
           },
           {
             "result": {
-              "duration": 1054000000,
-              "status": "passed"
-            },
-            "line": 69,
-            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 70,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 13000000,
-              "status": "passed"
-            },
-            "line": 71,
-            "name": "Verify response will return List of Fields",
-            "match": {
-              "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 72,
-            "name": "Verify fieldCount result is equal to 5",
-            "match": {
-              "arguments": [
-                {
-                  "val": "5",
-                  "offset": 37
-                }
-              ],
-              "location": "stepDefinitions.FieldStepDefinition.verify_fieldCount_equal_to(int)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Field"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@getFieldsBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-13T00:39:31.771Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 76,
-        "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldIndustry\u0027",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldindustry-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 31000000,
-              "status": "passed"
-            },
-            "line": 77,
-            "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldIndustry\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 34
-                },
-                {
-                  "val": "\"fieldIndustry\"",
-                  "offset": 78
-                }
-              ],
-              "location": "stepDefinitions.FieldStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2521000000,
+              "duration": 1080000000,
               "status": "passed"
             },
             "line": 78,
@@ -1274,10 +1261,150 @@
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: Count is not correct\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepDefinitions.FieldStepDefinition.verify_fieldCount_equal_to(FieldStepDefinition.java:79)\r\n\tat ✽.Verify fieldCount result is equal to 5(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Field.feature:81)\r\n",
+              "duration": 4000000,
+              "status": "failed"
             },
             "line": 81,
+            "name": "Verify fieldCount result is equal to 5",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.FieldStepDefinition.verify_fieldCount_equal_to(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Field"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@getFieldsBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T02:51:16.192Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 85,
+        "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldIndustry\u0027",
+        "description": "",
+        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldindustry-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldIndustry\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"fieldIndustry\"",
+                  "offset": 78
+                }
+              ],
+              "location": "stepDefinitions.FieldStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3353000000,
+              "status": "passed"
+            },
+            "line": 87,
+            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 88,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "Verify response will return List of Fields",
+            "match": {
+              "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 90,
             "name": "Field added exist in returned Field List",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
@@ -1286,10 +1413,10 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 82,
+            "line": 91,
             "name": "Response should be list of Fields and satisfy the search: \"fieldIndustry\"",
             "match": {
               "arguments": [
@@ -1319,7 +1446,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:34.417Z",
+        "start_timestamp": "2020-06-18T02:51:19.621Z",
         "before": [
           {
             "result": {
@@ -1330,7 +1457,7 @@
             }
           }
         ],
-        "line": 86,
+        "line": 95,
         "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldName\u0027",
         "description": "",
         "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldname-",
@@ -1352,7 +1479,7 @@
               "duration": 12000000,
               "status": "passed"
             },
-            "line": 87,
+            "line": 96,
             "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldName\"",
             "match": {
               "arguments": [
@@ -1375,10 +1502,10 @@
           },
           {
             "result": {
-              "duration": 2128000000,
+              "duration": 2616000000,
               "status": "passed"
             },
-            "line": 88,
+            "line": 97,
             "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -1399,7 +1526,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 89,
+            "line": 98,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1414,10 +1541,10 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 90,
+            "line": 99,
             "name": "Verify response will return List of Fields",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
@@ -1428,7 +1555,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 91,
+            "line": 100,
             "name": "Field added exist in returned Field List",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
@@ -1437,10 +1564,10 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 92,
+            "line": 101,
             "name": "Response should be list of Fields and satisfy the search: \"fieldName\"",
             "match": {
               "arguments": [
@@ -1470,7 +1597,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:36.650Z",
+        "start_timestamp": "2020-06-18T02:51:22.301Z",
         "before": [
           {
             "result": {
@@ -1481,7 +1608,7 @@
             }
           }
         ],
-        "line": 96,
+        "line": 105,
         "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldSector\u0027",
         "description": "",
         "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldsector-",
@@ -1500,9 +1627,10 @@
         "steps": [
           {
             "result": {
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 97,
+            "line": 106,
             "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldSector\"",
             "match": {
               "arguments": [
@@ -1525,10 +1653,10 @@
           },
           {
             "result": {
-              "duration": 2538000000,
+              "duration": 2736000000,
               "status": "passed"
             },
-            "line": 98,
+            "line": 107,
             "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -1549,7 +1677,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 99,
+            "line": 108,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1564,10 +1692,10 @@
           },
           {
             "result": {
-              "duration": 25000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 100,
+            "line": 109,
             "name": "Verify response will return List of Fields",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
@@ -1576,10 +1704,9 @@
           },
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
-            "line": 101,
+            "line": 110,
             "name": "Field added exist in returned Field List",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
@@ -1588,10 +1715,10 @@
           },
           {
             "result": {
-              "duration": 37000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 102,
+            "line": 111,
             "name": "Response should be list of Fields and satisfy the search: \"fieldSector\"",
             "match": {
               "arguments": [
@@ -1621,11 +1748,10 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:39.342Z",
+        "start_timestamp": "2020-06-18T02:51:25.113Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -1633,7 +1759,7 @@
             }
           }
         ],
-        "line": 106,
+        "line": 115,
         "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldTemplateName\u0027",
         "description": "",
         "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldtemplatename-",
@@ -1652,10 +1778,10 @@
         "steps": [
           {
             "result": {
-              "duration": 12000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 107,
+            "line": 116,
             "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldTemplateName\"",
             "match": {
               "arguments": [
@@ -1678,158 +1804,7 @@
           },
           {
             "result": {
-              "duration": 2210000000,
-              "status": "passed"
-            },
-            "line": 108,
-            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 109,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 110,
-            "name": "Verify response will return List of Fields",
-            "match": {
-              "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 111,
-            "name": "Field added exist in returned Field List",
-            "match": {
-              "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 11000000,
-              "status": "passed"
-            },
-            "line": 112,
-            "name": "Response should be list of Fields and satisfy the search: \"fieldTemplateName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"fieldTemplateName\"",
-                  "offset": 58
-                }
-              ],
-              "location": "stepDefinitions.FieldStepDefinition.response_should_be_list_of_Fields_and_satisfy_the_search(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Field"
-          },
-          {
-            "name": "@Demo"
-          },
-          {
-            "name": "@getFieldsBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-13T00:39:41.637Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 115,
-        "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldVersion\u0027",
-        "description": "",
-        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldversion-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 12000000,
-              "status": "passed"
-            },
-            "line": 116,
-            "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldVersion\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getFieldsBySearchCriteria\"",
-                  "offset": 34
-                },
-                {
-                  "val": "\"fieldVersion\"",
-                  "offset": 78
-                }
-              ],
-              "location": "stepDefinitions.FieldStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3251000000,
+              "duration": 3452000000,
               "status": "passed"
             },
             "line": 117,
@@ -1868,7 +1843,7 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 119,
@@ -1880,6 +1855,7 @@
           },
           {
             "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "line": 120,
@@ -1891,10 +1867,162 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 121,
+            "name": "Response should be list of Fields and satisfy the search: \"fieldTemplateName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fieldTemplateName\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.FieldStepDefinition.response_should_be_list_of_Fields_and_satisfy_the_search(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Field"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@getFieldsBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T02:51:28.657Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 124,
+        "name": "Verify API: getFieldsBySearchCriteria API, search by \u0027fieldVersion\u0027",
+        "description": "",
+        "id": "validating-field-api-s;verify-api:-getfieldsbysearchcriteria-api--search-by--fieldversion-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 125,
+            "name": "\"System_Admin\" User invoke Field-\u003e\"getFieldsBySearchCriteria\" with Parameter: \"fieldVersion\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"fieldVersion\"",
+                  "offset": 78
+                }
+              ],
+              "location": "stepDefinitions.FieldStepDefinition.user_invoke_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5519000000,
+              "status": "passed"
+            },
+            "line": 126,
+            "name": "User calls \"getFieldsBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getFieldsBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 127,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 128,
+            "name": "Verify response will return List of Fields",
+            "match": {
+              "location": "stepDefinitions.FieldStepDefinition.verify_response_will_return_List_of_Fields()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 129,
+            "name": "Field added exist in returned Field List",
+            "match": {
+              "location": "stepDefinitions.FieldStepDefinition.field_added_exist_in_returned_FieldList()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 130,
             "name": "Response should be list of Fields and satisfy the search: \"fieldVersion\"",
             "match": {
               "arguments": [
@@ -1924,7 +2052,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:45.004Z",
+        "start_timestamp": "2020-06-18T02:51:34.248Z",
         "before": [
           {
             "result": {
@@ -1935,13 +2063,14 @@
             }
           }
         ],
-        "line": 125,
+        "line": 134,
         "name": "Verify API: updateField API add Field paylod",
         "description": "",
         "id": "validating-field-api-s;verify-api:-updatefield-api-add-field-paylod",
         "after": [
           {
             "result": {
+              "duration": 11000000,
               "status": "passed"
             },
             "match": {
@@ -1954,10 +2083,10 @@
         "steps": [
           {
             "result": {
-              "duration": 42000000,
+              "duration": 20000000,
               "status": "passed"
             },
-            "line": 126,
+            "line": 135,
             "name": "\"System_Admin\" Get Field Payload ready for \"Update\" operation",
             "match": {
               "arguments": [
@@ -1976,10 +2105,10 @@
           },
           {
             "result": {
-              "duration": 921000000,
+              "duration": 1035000000,
               "status": "passed"
             },
-            "line": 127,
+            "line": 136,
             "name": "User calls \"updateField\" API with \"Put\" http Request",
             "match": {
               "arguments": [
@@ -2000,7 +2129,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 128,
+            "line": 137,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -2015,9 +2144,10 @@
           },
           {
             "result": {
+              "duration": 24000000,
               "status": "passed"
             },
-            "line": 129,
+            "line": 138,
             "name": "Verify responseBody is instance of Field",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_responseBody_is_instance_of_Field()"
@@ -2026,16 +2156,16 @@
           },
           {
             "result": {
-              "duration": 30000000,
+              "duration": 59000000,
               "status": "passed"
             },
-            "line": 130,
-            "name": "Verify responseBody is same as that of requestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"",
+            "line": 139,
+            "name": "Verify field-\u003eresponseBody is same as that of field-\u003erequestBody except:\"fieldUpdatedAt,fieldUpdatedBy\"",
             "match": {
               "arguments": [
                 {
                   "val": "\"fieldUpdatedAt,fieldUpdatedBy\"",
-                  "offset": 58
+                  "offset": 72
                 }
               ],
               "location": "stepDefinitions.FieldStepDefinition.verify_reqBody_same_as_responseBody(java.lang.String)"
@@ -2059,7 +2189,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:46.062Z",
+        "start_timestamp": "2020-06-18T02:51:35.483Z",
         "before": [
           {
             "result": {
@@ -2070,7 +2200,7 @@
             }
           }
         ],
-        "line": 133,
+        "line": 142,
         "name": "Verify API: updateFieldByRuleId API return \u0027ok\u0027 [need clarification on its functionality]",
         "description": "",
         "id": "validating-field-api-s;verify-api:-updatefieldbyruleid-api-return--ok--[need-clarification-on-its-functionality]",
@@ -2089,10 +2219,10 @@
         "steps": [
           {
             "result": {
-              "duration": 171000000,
+              "duration": 100000000,
               "status": "passed"
             },
-            "line": 134,
+            "line": 143,
             "name": "User create new Rule to associate with Field",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.user_create_new_Rule_to_associate_with_Field()"
@@ -2101,10 +2231,10 @@
           },
           {
             "result": {
-              "duration": 6000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 135,
+            "line": 144,
             "name": "\"System_Admin\" Get query Field-\u003e \"updateFieldByRuleId\" -\u003eParameters ready for \"fieldId,ruleParentId\"",
             "match": {
               "arguments": [
@@ -2127,10 +2257,10 @@
           },
           {
             "result": {
-              "duration": 1589000000,
+              "duration": 1853000000,
               "status": "passed"
             },
-            "line": 136,
+            "line": 145,
             "name": "User calls \"updateFieldByRuleId\" API with Put http Request",
             "match": {
               "arguments": [
@@ -2145,10 +2275,10 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 4000000,
               "status": "passed"
             },
-            "line": 137,
+            "line": 146,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -2165,7 +2295,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 138,
+            "line": 147,
             "name": "Verify Response is string instance and value\u003d\"ok\"",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_Response_is_string_instance_and_value_ok()"
@@ -2189,7 +2319,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-13T00:39:47.872Z",
+        "start_timestamp": "2020-06-18T02:51:37.536Z",
         "before": [
           {
             "result": {
@@ -2200,7 +2330,7 @@
             }
           }
         ],
-        "line": 141,
+        "line": 150,
         "name": "Verify API: deleteField API, update Field status as Passive",
         "description": "",
         "id": "validating-field-api-s;verify-api:-deletefield-api--update-field-status-as-passive",
@@ -2219,10 +2349,10 @@
         "steps": [
           {
             "result": {
-              "duration": 17000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 142,
+            "line": 151,
             "name": "\"System_Admin\" User invoke Field-\u003e\"deleteField\" with Parameter: \"fieldId\"",
             "match": {
               "arguments": [
@@ -2245,10 +2375,10 @@
           },
           {
             "result": {
-              "duration": 1578000000,
+              "duration": 1898000000,
               "status": "passed"
             },
-            "line": 143,
+            "line": 152,
             "name": "User calls \"deleteField\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
@@ -2269,7 +2399,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 144,
+            "line": 153,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -2284,10 +2414,10 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 145,
+            "line": 154,
             "name": "Verify responseBody is instance of Field",
             "match": {
               "location": "stepDefinitions.FieldStepDefinition.verify_responseBody_is_instance_of_Field()"
@@ -2296,10 +2426,10 @@
           },
           {
             "result": {
-              "duration": 38000000,
+              "duration": 56000000,
               "status": "passed"
             },
-            "line": 146,
+            "line": 155,
             "name": "\"fieldStatus\" in response body is \"Passive\"",
             "match": {
               "arguments": [

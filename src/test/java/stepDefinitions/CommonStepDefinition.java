@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import entity.ResponseStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,13 +20,13 @@ public class CommonStepDefinition extends Utils {
 	
 	public CommonStepDefinition() throws FileNotFoundException {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Given("{string} User invoke {string}")
 	public void User_invoke(String userRole, String apiNm) throws IOException {
 		reqSpec=null;
-			reqSpec = given().spec(requestSpecification(userRole));
+		reqSpec = given().spec(requestSpecification(userRole));
 	}
 
 	@When("User calls {string} API with {string} http Request")
@@ -75,6 +77,11 @@ public class CommonStepDefinition extends Utils {
 	public void deletePattern_with_no_Param(String userRole,String apiNm) throws IOException {
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole));		
+	}
+	
+	@Then("Verify responseBody is instance of ResponseStatus")
+	public void verify_responseBody_is_instance_of_ResponseStatus() {
+		respResponseStatus = response.getBody().as(ResponseStatus.class);
 	}
 
 	

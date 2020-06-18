@@ -27,12 +27,16 @@ import entity.Rule;
 import entity.Sector;
 import entity.Squad;
 import entity.Task;
+import entity.Template;
 import entity.User;
+import java.text.SimpleDateFormat;
+
 
 public class JsonDataReader {
 
 	private final String JSONDataFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath();
 	private ConfigFileReader configReader = FileReaderManager.getInstance().getConfigReader();
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy.MM.dd.HH.mm");
 	private Activity activity;
 	private Sector sector;
 	private DiagramDetails bpmn;
@@ -54,6 +58,7 @@ public class JsonDataReader {
 	private Geography geography;
 	private Options option;
 	private Rule rule;
+	private Template template;
 	
 
 	
@@ -74,6 +79,7 @@ public class JsonDataReader {
 		this.country=new Country();
 		this.squad=new Squad();
 		this.geography=new Geography();
+		this.template=new Template();
 	}
 
 	public Activity getActivityData() {
@@ -752,6 +758,41 @@ public class JsonDataReader {
 			} catch (IOException ignore) {
 			}
 		}
+	}
+
+	public Template getTemplateData() {
+		String TemplateFilePath=JSONDataFilePath+"Template/template.json";        
+
+		try {
+			bufferReader = new BufferedReader(new FileReader(TemplateFilePath));
+			template = gson.fromJson(bufferReader, Template.class);
+			//template.setTemplateName(template.getTemplateName()+sdf.format(new Timestamp(System.currentTimeMillis())));
+			return template;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("Json file not found at path : " + TemplateFilePath);
+		} finally {
+			try {
+				if (bufferReader != null)
+					bufferReader.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+
+	public Template updateTemplateData(Template ipTemplate) throws IOException {
+		
+		ipTemplate.setTemplateName("Updated_"+ipTemplate.getTemplateName());
+		ipTemplate.setTemplateIndustryName("Updated_"+ipTemplate.getTemplateIndustryName());
+		ipTemplate.setTemplateSectorName("Updated_"+ipTemplate.getTemplateSectorName());
+	
+		if(ipTemplate.getTemplateStatus().equalsIgnoreCase("Active"))
+			ipTemplate.setTemplateStatus("Passive");
+		else if(ipTemplate.getTemplateStatus().equalsIgnoreCase("Passive"))
+			ipTemplate.setTemplateStatus("Active");
+		else 
+			System.out.println("Please fix template.json data");
+		
+		return ipTemplate;
 	}
 
 	

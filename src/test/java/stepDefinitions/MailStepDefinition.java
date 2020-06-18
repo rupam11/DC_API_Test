@@ -6,9 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import entity.Mail;
-import entity.ResponseStatus;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import testBase.Utils;
 
 public class MailStepDefinition extends Utils {
@@ -18,7 +16,6 @@ public class MailStepDefinition extends Utils {
 		// TODO Auto-generated constructor stub
 	}
 
-	ResponseStatus respResponseStatus;
 	Mail reqMail;
 
 	@Given("{string} Add Mail Payload")
@@ -26,11 +23,6 @@ public class MailStepDefinition extends Utils {
 		reqMail = data.addMail();
 		reqSpec = given().spec(requestSpecification(userRole)).body(reqMail);
 
-	}
-
-	@Then("Verify responseBody is instance of ResponseStatus")
-	public void verify_responseBody_is_instance_of_ResponseStatus() {
-		respResponseStatus = response.getBody().as(ResponseStatus.class);
 	}
 
 }

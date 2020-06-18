@@ -1,5 +1,6 @@
 @DC-Test-Suite
-@Test
+@Demo
+@Template
 
 Feature: Validating Template API's
 

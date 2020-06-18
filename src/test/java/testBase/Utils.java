@@ -4,16 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
-
-import org.json.JSONObject;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 import dataProvider.ConfigFileReader;
 import dataProvider.FileReaderManager;
 import dataProvider.TestDataBuild;
+import entity.ResponseStatus;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -30,7 +24,8 @@ public class Utils {
 	public static Response response;
 	protected TestDataBuild data=new TestDataBuild();
 	private ConfigFileReader configReader=FileReaderManager.getInstance().getConfigReader();
-	private static PrintStream log;
+	private PrintStream log;
+	protected ResponseStatus respResponseStatus;
 	
 
 	public Utils() throws FileNotFoundException {
@@ -55,17 +50,6 @@ public class Utils {
 		JsonPath js = new JsonPath(responseStr);
 		return js.get(key).toString();
 
-	}
-//	
-//	public JSONObject updateJson(JSONObject jsonObject, String service) {
-//		jsonObject.put(service+"CreatedBy","");
-//		jsonObject.put(service+"CreatedAt","");
-//		jsonObject.put(service+"UpdatedBy","");
-//		jsonObject.put(service+"UpdatedAt","");
-//		jsonObject.put(service+"Id","");
-//		jsonObject.put(service+"Code","");
-//		return jsonObject;
-//	}
-	
+	}	
 	
 }

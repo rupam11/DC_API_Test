@@ -1,0 +1,18 @@
+{
+    "templateId": 48,
+    "templateParentId": "48",
+    "templateRuleIds": [],
+    "templateName": "createTemplate_Nm",
+    "templateSequence": 48,
+    "templateIndustryName": "Telecommunications",
+    "templateSectorName": "Communication",
+    "templateStatus": "Active",
+    "templateVersion": "1.0",
+    "templateCreatedBy": "skvarghe",
+    "templateCreatedAt": "2020-06-16 07:37:35",
+    "templateUpdatedBy": "NA",
+    "templateUpdatedAt": "0000-00-00 00:00:00",
+    "fields": [],
+    "categories": [],
+    "data": []
+}

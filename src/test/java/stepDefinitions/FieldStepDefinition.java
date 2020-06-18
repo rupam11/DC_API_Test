@@ -16,6 +16,8 @@ import org.skyscreamer.jsonassert.Customization;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.comparator.CustomComparator;
+import org.skyscreamer.jsonassert.comparator.JSONComparator;
+
 import entity.Field;
 import entity.FieldRuleId;
 import entity.Rule;
@@ -130,7 +132,8 @@ public class FieldStepDefinition extends Utils {
 	public void total_number_of_Fields_in_List_is_equal_to_getFieldCount() {
 		cmnStepDef.user_calls_API_with_http_Request("getFieldCount", "Get");
 		field_count = get_field_count();
-		assertTrue("Total Fields retrieved is not correct", respAllFields.length == field_count);
+		assertEquals(field_count,respAllFields.length);
+		//assertTrue("Total Fields retrieved is not correct", respAllFields.length == field_count);
 	}
 
 	@Then("Field added exist in returned Field List")
@@ -149,11 +152,21 @@ public class FieldStepDefinition extends Utils {
 						new Customization("fieldUpdatedBy", (o1, o2) -> true)));
 	}
 	
-	@Then("Verify responseBody is same as that of requestBody except:{string}")
+	@Then("Verify field->responseBody is same as that of field->requestBody except:{string}")
 	public void verify_reqBody_same_as_responseBody(String excludeParamList) {
 		respField = response.getBody().as(Field.class);
 		
 		String[] excludeParam = excludeParamList.split(",");
+		
+		/*int excludeAttCount=excludeParam.length;
+		
+		JSONComparator customComp = null;
+				
+		for(int i=0;i<excludeAttCount;i++)
+			customComp=customComp.new CustomComparator(JSONCompareMode.LENIENT, new Customization(excludeParam[i], (o1, o2) -> true));
+		
+		JSONAssert.assertEquals(new JSONObject(reqField).toString(), new JSONObject(respField).toString(), customComp);*/
+			
 		
 		if(excludeParam.length==7)
 		{
@@ -166,6 +179,7 @@ public class FieldStepDefinition extends Utils {
 						new Customization(excludeParam[4], (o1, o2) -> true),
 						new Customization(excludeParam[5], (o1, o2) -> true),
 						new Customization(excludeParam[6], (o1, o2) -> true)));
+						
 		}
 		else if(excludeParam.length==2) {
 			JSONAssert.assertEquals(new JSONObject(reqField).toString(), new JSONObject(respField).toString(), 

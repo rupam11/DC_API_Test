@@ -20,6 +20,7 @@ import entity.Rule;
 import entity.Sector;
 import entity.Squad;
 import entity.Task;
+import entity.Template;
 import entity.User;
 import testBase.Utils;
 
@@ -200,6 +201,16 @@ public class TestDataBuild {
 	public Rule addRule() {
 		Rule rule = jsonReader.getRuleData();
 		return rule;
+	}
+
+	public Template addTemplate() {
+		Template template = jsonReader.getTemplateData();
+		return template;
+	}
+
+	public Template updateTemplate(Template ipTemplate) throws IOException {
+		Template opTemplate = jsonReader.updateTemplateData(ipTemplate);
+		return opTemplate;
 	}
 
 	

@@ -24,7 +24,7 @@ Scenario: Verify API: fields/init API, Create Dummy Field [need clarification on
     When User calls "createQuestion" API with "Post" http Request
     Then The API call is success with StatusCode 200
     Then Verify responseBody is instance of Field
-    Then Verify responseBody is same as that of requestBody except:"fieldUpdatedAt,fieldUpdatedBy"
+    Then Verify field->responseBody is same as that of field->requestBody except:"fieldUpdatedAt,fieldUpdatedBy"
 
      @createField
   Scenario: Verify API: createField API, add Field paylod
@@ -33,7 +33,7 @@ Scenario: Verify API: fields/init API, Create Dummy Field [need clarification on
     Then The API call is success with StatusCode 200
     Then Verify responseBody is instance of Field
     Then Print the created Field 
-    Then Verify responseBody is same as that of requestBody except:"fieldId,fieldCreatedAt,fieldCreatedBy,fieldUpdatedAt,fieldUpdatedBy,fieldDisplaySequence,fieldParentId"
+    Then Verify field->responseBody is same as that of field->requestBody except:"fieldId,fieldCreatedAt,fieldCreatedBy,fieldUpdatedAt,fieldUpdatedBy,fieldDisplaySequence,fieldParentId"
     Then Verify fieldId="fieldCount"
     Then Verify fieldId="fieldDisplaySequence"
     Then Verify fieldId="fieldParentId"    
@@ -48,6 +48,15 @@ Scenario: Verify API: getAllFields API return List of All Fields
 	Then Verify response will return List of Fields
 	Then Field added exist in returned Field List
 		Then Verify that total number of Fields in List is equal to getFieldCount
+	
+	 @getFieldsBySearchCriteria1
+Scenario: Verify API: getFieldsBySearchCriteria API, search no SearchCriteria 
+	Given "System_Admin" User invoke "getFieldsBySearchCriteria" 
+		When User calls "getFieldsBySearchCriteria" API with "Get" http Request 
+	Then The API call is success with StatusCode 200 
+	Then Verify response will return List of Fields
+	Then Verify that total number of Fields in List is equal to getFieldCount
+	 
 	
 	 @getFieldsBySearchCriteria
 Scenario: Verify API: getFieldsBySearchCriteria API, search by 'fieldCategory'
@@ -127,7 +136,7 @@ Scenario: Verify API: updateField API add Field paylod
 	When User calls "updateField" API with "Put" http Request 
 	Then The API call is success with StatusCode 200 
 	Then Verify responseBody is instance of Field
-	Then Verify responseBody is same as that of requestBody except:"fieldUpdatedAt,fieldUpdatedBy"
+	Then Verify field->responseBody is same as that of field->requestBody except:"fieldUpdatedAt,fieldUpdatedBy"
 
 @updateFieldByRuleId
 Scenario: Verify API: updateFieldByRuleId API return 'ok' [need clarification on its functionality]
@@ -143,4 +152,4 @@ Scenario: Verify API: deleteField API, update Field status as Passive
 	When User calls "deleteField" API with "Delete" http Request 
 	Then The API call is success with StatusCode 200
 	Then Verify responseBody is instance of Field
-	Then "fieldStatus" in response body is "Passive"
+	Then "fieldStatus" in response body is "Passive"	
