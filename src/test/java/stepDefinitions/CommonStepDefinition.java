@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import entity.ResponseStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,20 +20,23 @@ public class CommonStepDefinition extends Utils {
 	
 	public CommonStepDefinition() throws FileNotFoundException {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Given("{string} User invoke {string}")
 	public void User_invoke(String userRole, String apiNm) throws IOException {
+		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole));
+		
 	}
 
 	@When("User calls {string} API with {string} http Request")
 	public void user_calls_API_with_http_Request(String apiNm, String method) {
+		
 		APIResources resourceAPI = APIResources.valueOf(apiNm);
 		System.out.println("API Called ::: " + apiNm + " with Method === " + method);
 		respSpec = new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
-
+		
 		if (method.equalsIgnoreCase("Post"))
 			response = reqSpec.when().post(resourceAPI.getResource()).then().spec(respSpec).extract().response();
 		else if (method.equalsIgnoreCase("Get"))
@@ -44,12 +49,19 @@ public class CommonStepDefinition extends Utils {
 
 	@Then("The API call is success with StatusCode {int}")
 	public void the_API_call_is_success_with_StatusCode(int expStatusCode) {
+
 		assertEquals(expStatusCode, response.getStatusCode());
 	}
+	
+	@Then("The API call is failed with StatusCode {int}")
+	public void the_API_call_is_failed_with_StatusCode(int expStatusCode) {
 
+		assertEquals(expStatusCode, response.getStatusCode());
+	}
+	
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String keyName, String keyValue) {
-		assertEquals(getKeyValueFromJsonResponse(response, keyName), keyValue);
+		assertEquals(keyValue,getKeyValueFromJsonResponse(response, keyName));
 	}
 	
 	@Then("{string} in response body is {int}")
@@ -68,6 +80,7 @@ public class CommonStepDefinition extends Utils {
 		reqSpec=null;
 		reqSpec = given().spec(requestSpecification(userRole));		
 	}
+	
 
 	
 }

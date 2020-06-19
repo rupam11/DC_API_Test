@@ -1,13 +1,13 @@
 [
   {
-    "line": 3,
+    "line": 4,
     "elements": [
       {
-        "start_timestamp": "2020-06-03T11:32:58.098Z",
+        "start_timestamp": "2020-06-18T16:40:19.675Z",
         "before": [
           {
             "result": {
-              "duration": 11800000000,
+              "duration": 1739000000,
               "status": "passed"
             },
             "match": {
@@ -15,10 +15,10 @@
             }
           }
         ],
-        "line": 6,
-        "name": "Verify API: getSectorCount API return Total Sector Count",
+        "line": 7,
+        "name": "Verify API: getTaskCount API return Total Task Count",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorcount-api-return-total-sector-count",
+        "id": "validating-task-api-s;verify-api:-gettaskcount-api-return-total-task-count",
         "after": [
           {
             "result": {
@@ -34,11 +34,11 @@
         "steps": [
           {
             "result": {
-              "duration": 4992000000,
+              "duration": 1152000000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "\"System_Admin\" User invoke \"getSectorCount\"",
+            "line": 8,
+            "name": "\"System_Admin\" User invoke \"getTaskCount\"",
             "match": {
               "arguments": [
                 {
@@ -46,7 +46,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSectorCount\"",
+                  "val": "\"getTaskCount\"",
                   "offset": 27
                 }
               ],
@@ -56,20 +56,20 @@
           },
           {
             "result": {
-              "duration": 17269000000,
+              "duration": 6403000000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "User calls \"getSectorCount\" API with \"Get\" http Request",
+            "line": 9,
+            "name": "User calls \"getTaskCount\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorCount\"",
+                  "val": "\"getTaskCount\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 37
+                  "offset": 35
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -78,18 +78,7 @@
           },
           {
             "result": {
-              "duration": 21000000,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "Verify sector_Count result is greater than 0",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.get_sector_count()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "line": 10,
@@ -104,6 +93,18 @@
               "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify task_Count result is greater than 0",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.get_task_count()"
+            },
+            "keyword": "Then "
           }
         ],
         "tags": [
@@ -111,19 +112,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getSectorCount"
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskCount"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:33:33.372Z",
+        "start_timestamp": "2020-06-18T16:40:29.189Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -131,10 +134,10 @@
             }
           }
         ],
-        "line": 13,
-        "name": "Verify API: createSector API add Sector paylod",
+        "line": 14,
+        "name": "Verify API: createTask API add Task paylod",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-createsector-api-add-sector-paylod",
+        "id": "validating-task-api-s;verify-api:-createtask-api-add-task-paylod",
         "after": [
           {
             "result": {
@@ -150,11 +153,11 @@
         "steps": [
           {
             "result": {
-              "duration": 4735000000,
+              "duration": 2836000000,
               "status": "passed"
             },
-            "line": 14,
-            "name": "\"System_Admin\" User \"Add\" Sector Payload",
+            "line": 15,
+            "name": "\"System_Admin\" \"Add\" Task Payload",
             "match": {
               "arguments": [
                 {
@@ -163,29 +166,30 @@
                 },
                 {
                   "val": "\"Add\"",
-                  "offset": 20
+                  "offset": 15
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.TaskStepDefinition.task_Payload(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2430000000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(CommonStepDefinition.java:41)\r\n\tat ✽.User calls \"createTask\" API with \"Post\" http Request(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:16)\r\n",
+              "duration": 20000000,
+              "status": "failed"
             },
-            "line": 15,
-            "name": "User calls \"createSector\" API with \"Post\" http Request",
+            "line": 16,
+            "name": "User calls \"createTask\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createSector\"",
+                  "val": "\"createTask\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 35
+                  "offset": 33
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -194,9 +198,9 @@
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 16,
+            "line": 17,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -211,25 +215,51 @@
           },
           {
             "result": {
-              "duration": 736000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 17,
-            "name": "Verify response will return Sector instance",
+            "line": 18,
+            "name": "Verify responseBody is instance of Task",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_response_will_return_Sector_instance()"
+              "location": "stepDefinitions.TaskStepDefinition.Verify_responseBody_is_instance_of_Task()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1653000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 18,
-            "name": "Verify Total sector_Count increased by 1",
+            "line": 19,
+            "name": "Verify Total task_Count increased by 1",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_Total_sector_Count_increased_by()"
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.task_Count_incraesed(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Verify taskId, taskequence, taskDisplaySequence is equal to total_task_count",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_taskAttributes()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Verify Task_Code is equal to \u0027TSK_task_count\u0027",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_taskCode()"
             },
             "keyword": "Then "
           }
@@ -239,19 +269,22 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@createSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@createTask"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:33:43.080Z",
+        "start_timestamp": "2020-06-18T16:40:32.171Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -259,10 +292,10 @@
             }
           }
         ],
-        "line": 21,
-        "name": "Verify API: createSector API with no sector Body",
+        "line": 24,
+        "name": "Verify API: createTask API with no task Body",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-createsector-api-with-no-sector-body",
+        "id": "validating-task-api-s;verify-api:-createtask-api-with-no-task-body",
         "after": [
           {
             "result": {
@@ -278,11 +311,11 @@
         "steps": [
           {
             "result": {
-              "duration": 16000000,
+              "duration": 116000000,
               "status": "passed"
             },
-            "line": 22,
-            "name": "\"System_Admin\" User \"Add\" Sector Payload  with no Sector Body and Param \u003d \"none\"",
+            "line": 25,
+            "name": "\"System_Admin\" User \"Add\" Task Payload  with no Task Body and Param \u003d \"none\"",
             "match": {
               "arguments": [
                 {
@@ -295,29 +328,30 @@
                 },
                 {
                   "val": "\"none\"",
-                  "offset": 74
+                  "offset": 70
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_sector_Payload_with_no_Sector_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Task_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1886000000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(CommonStepDefinition.java:41)\r\n\tat ✽.User calls \"createTask\" API with \"Post\" http Request(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:26)\r\n",
+              "duration": 12000000,
+              "status": "failed"
             },
-            "line": 23,
-            "name": "User calls \"createSector\" API with \"Post\" http Request",
+            "line": 26,
+            "name": "User calls \"createTask\" API with \"Post\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"createSector\"",
+                  "val": "\"createTask\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 35
+                  "offset": 33
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -326,28 +360,27 @@
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 24,
-            "name": "The API call is success with StatusCode 400",
+            "line": 27,
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
                   "val": "400",
-                  "offset": 40
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 7463000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 25,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.createSector(java.lang.String,com.ibm.dc.sector.entity.Sector)\"",
+            "line": 28,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.createTask(java.lang.String,com.ibm.dc.task.entity.Task)\"",
             "match": {
               "arguments": [
                 {
@@ -355,7 +388,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.createSector(java.lang.String,com.ibm.dc.sector.entity.Sector)\"",
+                  "val": "\"Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.createTask(java.lang.String,com.ibm.dc.task.entity.Task)\"",
                   "offset": 30
                 }
               ],
@@ -369,705 +402,33 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@createSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@createTask"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:33:52.714Z",
+        "start_timestamp": "2020-06-18T16:40:32.379Z",
         "before": [
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 28,
-        "name": "Verify API: getAllSectors API return List of All Sectors",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getallsectors-api-return-list-of-all-sectors",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 30000000,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "\"System_Admin\" User invoke \"getAllSectors\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getAllSectors\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1597000000,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "User calls \"getAllSectors\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getAllSectors\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 35000000,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "Verify response will return List of Sectors",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1604000000,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "Total number of Sector in List is equal to getSectorCount",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.total_number_of_Sector_in_List_is_equal_to_getSectorCount()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6000000,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "Sector added exist in returned SectorList",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getAllSectors"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:33:56.040Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 37,
-        "name": "Verify API: getSectorBySearchCriteria API, search no SearchCriteria",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-no-searchcriteria",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 17000000,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "\"System_Admin\" User invoke \"getSectorBySearchCriteria\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"getSectorBySearchCriteria\"",
-                  "offset": 27
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1105000000,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getSectorBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 17000000,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "Verify response will return List of Sectors",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "All Sectors should have Active Status",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.all_Sectors_should_have_Active_Status()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getSectorBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:33:57.224Z",
-        "before": [
-          {
-            "result": {
-              "duration": 5000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 46,
-        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027searchId\u0027",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--searchid-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 1176000000,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorId\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"sectorId\"",
-                  "offset": 69
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1931000000,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getSectorBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2000000,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "Verify response will return List of Sectors",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 51,
-            "name": "Response should be list of Sectors and size should be one",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.response_should_be_list_of_Sectors_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "Sector added exist in returned SectorList",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getSectorBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:34:00.390Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 55,
-        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027sectorName\u0027",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--sectorname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 206000000,
-              "status": "passed"
-            },
-            "line": 56,
-            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \"sectorName\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"sectorName\"",
-                  "offset": 69
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getSectorBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1765000000,
-              "status": "passed"
-            },
-            "line": 57,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getSectorBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 58,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 59,
-            "name": "Verify response will return List of Sectors",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 60,
-            "name": "Sector added exist in returned SectorList",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getSectorBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:34:02.396Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 63,
-        "name": "Verify API: getSectorBySearchCriteria API, search by \u0027sectorId\u0027 \u0026 \u0027sectorName\u0027",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by--sectorid--\u0026--sectorname-",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 27000000,
-              "status": "passed"
-            },
-            "line": 64,
-            "name": "\"System_Admin\" User invoke getSectorBySearchCriteria with Parameter: \u0027sectorId\u0027 \u0026 \u0027sectorName\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\u0027sectorId\u0027",
-                  "offset": 69
-                },
-                {
-                  "val": "\u0027sectorName\u0027",
-                  "offset": 82
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1873000000,
-              "status": "passed"
-            },
-            "line": 65,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getSectorBySearchCriteria\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Get\"",
-                  "offset": 48
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 66,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6000000,
-              "status": "passed"
-            },
-            "line": 67,
-            "name": "Verify response will return List of Sectors",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Verify_response_will_return_List_of_Sectors()"
-            },
-            "keyword": "Then "
-          },
           {
             "result": {
               "duration": 4000000,
               "status": "passed"
             },
-            "line": 68,
-            "name": "Response should be list of Sectors and size should be one",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.response_should_be_list_of_Sectors_and_size_should_be_one()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 69,
-            "name": "Sector added exist in returned SectorList",
-            "match": {
-              "location": "stepDefinitions.SectorStepDefinition.Sector_added_exist_in_returned_SectorList()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@getSectorBySearchCriteria"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:34:04.338Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
             "match": {
               "location": "stepDefinitions.Hooks.beforeScenario()"
             }
           }
         ],
-        "line": 72,
-        "name": "Verify API: getSectorBySearchCriteria API, search by invalid \u0027sectorId\u0027",
+        "line": 32,
+        "name": "Verify API: getAllTasks API return List of All Tasks",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-getsectorbysearchcriteria-api--search-by-invalid--sectorid-",
+        "id": "validating-task-api-s;verify-api:-getalltasks-api-return-list-of-all-tasks",
         "after": [
           {
             "result": {
@@ -1083,11 +444,11 @@
         "steps": [
           {
             "result": {
-              "duration": 13000000,
+              "duration": 28000000,
               "status": "passed"
             },
-            "line": 73,
-            "name": "\"System_Admin\" User invoke \"getSectorBySearchCriteria\" with invalid Parameter: \"sectorId\" \u003d \"-9\"",
+            "line": 33,
+            "name": "\"System_Admin\" User invoke \"getAllTasks\"",
             "match": {
               "arguments": [
                 {
@@ -1095,38 +456,30 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getAllTasks\"",
                   "offset": 27
-                },
-                {
-                  "val": "\"sectorId\"",
-                  "offset": 79
-                },
-                {
-                  "val": "\"-9\"",
-                  "offset": 92
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1644000000,
+              "duration": 11950000000,
               "status": "passed"
             },
-            "line": 74,
-            "name": "User calls \"getSectorBySearchCriteria\" API with \"Get\" http Request",
+            "line": 34,
+            "name": "User calls \"getAllTasks\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getSectorBySearchCriteria\"",
+                  "val": "\"getAllTasks\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Get\"",
-                  "offset": 48
+                  "offset": 34
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1137,7 +490,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 75,
+            "line": 35,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1152,13 +505,25 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 264000000,
               "status": "passed"
             },
-            "line": 76,
-            "name": "Verify response will return List of Sectors with zero records",
+            "line": 36,
+            "name": "Verify response will return List of Tasks",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_response_will_return_List_of_Sectors_with_zero_records()"
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(CommonStepDefinition.java:43)\r\n\tat stepDefinitions.TaskStepDefinition.total_number_of_Tasks_in_List_is_equal_to_getTaskCount(TaskStepDefinition.java:101)\r\n\tat ✽.Total number of Tasks in List is equal to getTaskCount(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:37)\r\n",
+              "status": "failed"
+            },
+            "line": 37,
+            "name": "Total number of Tasks in List is equal to getTaskCount",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.total_number_of_Tasks_in_List_is_equal_to_getTaskCount()"
             },
             "keyword": "Then "
           }
@@ -1168,19 +533,575 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getSectorBySearchCriteria"
+            "name": "@Task"
+          },
+          {
+            "name": "@getAllTasks"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:34:06.032Z",
+        "start_timestamp": "2020-06-18T16:40:44.652Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 41,
+        "name": "Verify API: getTaskBySearchCriteria API, search no SearchCriteria",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-no-searchcriteria",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "\"System_Admin\" User invoke \"getTaskBySearchCriteria\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 27
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.User_invoke(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2144000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "All Tasks should have Active Status",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.all_Tasks_should_have_Active_Status()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:46.948Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 50,
+        "name": "Verify API: getTaskBySearchCriteria API, search by \u0027taskId\u0027 \u0026 \u0027taskDescription\u0027 \u0026 \u0027taskApplicable\u0027 \u0026 \u0027taskStatus\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by--taskid--\u0026--taskdescription--\u0026--taskapplicable--\u0026--taskstatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(TaskStepDefinition.java:189)\r\n\tat ✽.\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \u0027taskId\u0027 \u0026 \u0027taskDescription\u0027 \u0026 \u0027taskApplicable\u0027 \u0026 \u0027taskStatus\u0027(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:51)\r\n",
+              "duration": 16000000,
+              "status": "failed"
+            },
+            "line": 51,
+            "name": "\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \u0027taskId\u0027 \u0026 \u0027taskDescription\u0027 \u0026 \u0027taskApplicable\u0027 \u0026 \u0027taskStatus\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\u0027taskId\u0027",
+                  "offset": 67
+                },
+                {
+                  "val": "\u0027taskDescription\u0027",
+                  "offset": 78
+                },
+                {
+                  "val": "\u0027taskApplicable\u0027",
+                  "offset": 98
+                },
+                {
+                  "val": "\u0027taskStatus\u0027",
+                  "offset": 117
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 52,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 53,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 54,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 55,
+            "name": "Response should be List of Tasks and size should be one",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_should_be_List_of_Tasks_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 56,
+            "name": "Response Task which was added should be filtered",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_Task_is_added_should_be_filtered()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:47.016Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 61,
+        "name": "Verify API: getTaskBySearchCriteria API, search by \u0027taskId\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by--taskid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(TaskStepDefinition.java:172)\r\n\tat ✽.\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskId\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:62)\r\n",
+              "duration": 8000000,
+              "status": "failed"
+            },
+            "line": 62,
+            "name": "\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 67
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 63,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 64,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 65,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 66,
+            "name": "Response should be List of Tasks and size should be one",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_should_be_List_of_Tasks_and_size_should_be_one()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:47.076Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 70,
+        "name": "Verify API: getTaskBySearchCriteria API, search by \u0027taskApplicable\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by--taskapplicable-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(TaskStepDefinition.java:175)\r\n\tat ✽.\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskApplicable\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:71)\r\n",
+              "duration": 8000000,
+              "status": "failed"
+            },
+            "line": 71,
+            "name": "\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskApplicable\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"taskApplicable\"",
+                  "offset": 67
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 72,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 73,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 74,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 75,
+            "name": "Each Task of returned TaskList should have same \"taskApplicable\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"taskApplicable\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.each_Task_of_returned_TaskList_should_have_same(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 76,
+            "name": "Response Task which was added should be filtered",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_Task_is_added_should_be_filtered()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:47.152Z",
+        "before": [
+          {
+            "result": {
               "status": "passed"
             },
             "match": {
@@ -1189,9 +1110,9 @@
           }
         ],
         "line": 79,
-        "name": "Verify API: getTaskBySearchCriteria API, search by invalid \u0027taskDescription\u0027",
+        "name": "Verify API: getTaskBySearchCriteria API, search by \u0027taskDescription\u0027",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-gettaskbysearchcriteria-api--search-by-invalid--taskdescription-",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by--taskdescription-",
         "after": [
           {
             "result": {
@@ -1207,10 +1128,427 @@
         "steps": [
           {
             "result": {
-              "duration": 17000000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(TaskStepDefinition.java:178)\r\n\tat ✽.\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskDescription\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:80)\r\n",
+              "duration": 12000000,
+              "status": "failed"
             },
             "line": 80,
+            "name": "\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskDescription\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"taskDescription\"",
+                  "offset": 67
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 81,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 82,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 83,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 84,
+            "name": "Each Task of returned TaskList should have same \"taskDescription\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"taskDescription\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.each_Task_of_returned_TaskList_should_have_same(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 85,
+            "name": "Response Task which was added should be filtered",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_Task_is_added_should_be_filtered()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:47.196Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 88,
+        "name": "Verify API: getTaskBySearchCriteria API, search by \u0027taskStatus\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by--taskstatus-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(TaskStepDefinition.java:181)\r\n\tat ✽.\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskStatus\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:89)\r\n",
+              "duration": 4000000,
+              "status": "failed"
+            },
+            "line": 89,
+            "name": "\"System_Admin\" User invoke getTaskBySearchCriteria with Parameter: \"taskStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"taskStatus\"",
+                  "offset": 67
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_getTaskBySearchCriteria_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 90,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 91,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 92,
+            "name": "Verify response will return List of Tasks",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 93,
+            "name": "Each Task of returned TaskList should have same \"taskStatus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"taskStatus\"",
+                  "offset": 48
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.each_Task_of_returned_TaskList_should_have_same(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 94,
+            "name": "Response Task which was added should be filtered",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.response_Task_is_added_should_be_filtered()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:47.224Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 99,
+        "name": "Verify API: getTaskBySearchCriteria API, search by invalid \u0027taskId\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by-invalid--taskid-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 104000000,
+              "status": "passed"
+            },
+            "line": 100,
+            "name": "\"System_Admin\" User invoke \"getTaskBySearchCriteria\" with invalid Parameter: \"taskId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 77
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 88
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2760000000,
+              "status": "passed"
+            },
+            "line": 101,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 102,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 103,
+            "name": "Verify response will return List of Tasks with zero records",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:50.220Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 106,
+        "name": "Verify API: getTaskBySearchCriteria API, search by invalid \u0027taskDescription\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by-invalid--taskdescription-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 107,
             "name": "\"System_Admin\" User invoke \"getTaskBySearchCriteria\" with invalid Parameter: \"taskDescription\" \u003d \"invalidDescriptionName\"",
             "match": {
               "arguments": [
@@ -1237,10 +1575,137 @@
           },
           {
             "result": {
-              "duration": 2168000000,
+              "duration": 2721000000,
               "status": "passed"
             },
-            "line": 81,
+            "line": 108,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 109,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 36000000,
+              "status": "passed"
+            },
+            "line": 110,
+            "name": "Verify response will return List of Tasks with zero records",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:53.037Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 113,
+        "name": "Verify API: getTaskBySearchCriteria API, search by invalid \u0027taskApplicable\u0027",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by-invalid--taskapplicable-",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 114,
+            "name": "\"System_Admin\" User invoke \"getTaskBySearchCriteria\" with invalid Parameter: \"taskApplicable\" \u003d \"invalidTaskApplicable\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"getTaskBySearchCriteria\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"taskApplicable\"",
+                  "offset": 77
+                },
+                {
+                  "val": "\"invalidTaskApplicable\"",
+                  "offset": 96
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3471000000,
+              "status": "passed"
+            },
+            "line": 115,
             "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
@@ -1261,7 +1726,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 82,
+            "line": 116,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1276,13 +1741,13 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 83,
-            "name": "Verify response will return List of Sectors with zero records",
+            "line": 117,
+            "name": "Verify response will return List of Tasks with zero records",
             "match": {
-              "location": "stepDefinitions.SectorStepDefinition.verify_response_will_return_List_of_Sectors_with_zero_records()"
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks_with_zero_records()"
             },
             "keyword": "Then "
           }
@@ -1292,19 +1757,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@getSectorBySearchCriteria"
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:34:08.257Z",
+        "start_timestamp": "2020-06-18T16:40:56.580Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1312,10 +1779,10 @@
             }
           }
         ],
-        "line": 86,
-        "name": "Verify API: deleteSector update Sector status as Passive",
+        "line": 120,
+        "name": "Verify API: getTaskBySearchCriteria API, search by invalid \u0027taskStatus\u0027",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-deletesector-update-sector-status-as-passive",
+        "id": "validating-task-api-s;verify-api:-gettaskbysearchcriteria-api--search-by-invalid--taskstatus-",
         "after": [
           {
             "result": {
@@ -1331,11 +1798,11 @@
         "steps": [
           {
             "result": {
-              "duration": 5000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 87,
-            "name": "\"System_Admin\" User invoke deleteSector with Parameter: \"sectorId\"",
+            "line": 121,
+            "name": "\"System_Admin\" User invoke \"getTaskBySearchCriteria\" with invalid Parameter: \"taskStatus\" \u003d \"invalidTaskStatus\"",
             "match": {
               "arguments": [
                 {
@@ -1343,142 +1810,16 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"sectorId\"",
-                  "offset": 56
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.user_invoke_deleteSector_with_Parameter(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 953000000,
-              "status": "passed"
-            },
-            "line": 88,
-            "name": "User calls \"deleteSector\" API with \"Delete\" http Request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"deleteSector\"",
-                  "offset": 11
-                },
-                {
-                  "val": "\"Delete\"",
-                  "offset": 35
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 89,
-            "name": "The API call is success with StatusCode 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 7000000,
-              "status": "passed"
-            },
-            "line": 90,
-            "name": "Verify \"SectorStatus\" of particular \"Sector\" updated as Passive",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"SectorStatus\"",
-                  "offset": 7
-                },
-                {
-                  "val": "\"Sector\"",
-                  "offset": 36
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.verify_of_particular_updated_as_Passive(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@DC-Test-Suite"
-          },
-          {
-            "name": "@Test"
-          },
-          {
-            "name": "@deleteSector"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-03T11:34:09.248Z",
-        "before": [
-          {
-            "result": {
-              "duration": 3000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 94,
-        "name": "Verify API: deleteSector API,  with invalid sectorId",
-        "description": "",
-        "id": "validating-sector-service-apis;verify-api:-deletesector-api---with-invalid-sectorid",
-        "after": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepDefinitions.Hooks.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 9000000,
-              "status": "passed"
-            },
-            "line": 95,
-            "name": "\"System_Admin\" User invoke \"deleteSector\" with invalid Parameter: \"sectorId\" \u003d \"-9\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"System_Admin\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"deleteSector\"",
+                  "val": "\"getTaskBySearchCriteria\"",
                   "offset": 27
                 },
                 {
-                  "val": "\"sectorId\"",
-                  "offset": 66
+                  "val": "\"taskStatus\"",
+                  "offset": 77
                 },
                 {
-                  "val": "\"-9\"",
-                  "offset": 79
+                  "val": "\"invalidTaskStatus\"",
+                  "offset": 92
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
@@ -1487,20 +1828,20 @@
           },
           {
             "result": {
-              "duration": 1664000000,
+              "duration": 2194000000,
               "status": "passed"
             },
-            "line": 96,
-            "name": "User calls \"deleteSector\" API with \"Delete\" http Request",
+            "line": 122,
+            "name": "User calls \"getTaskBySearchCriteria\" API with \"Get\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteSector\"",
+                  "val": "\"getTaskBySearchCriteria\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Delete\"",
-                  "offset": 35
+                  "val": "\"Get\"",
+                  "offset": 46
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1511,12 +1852,12 @@
             "result": {
               "status": "passed"
             },
-            "line": 97,
-            "name": "The API call is success with StatusCode 500",
+            "line": 123,
+            "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
                 {
-                  "val": "500",
+                  "val": "200",
                   "offset": 40
                 }
               ],
@@ -1526,11 +1867,256 @@
           },
           {
             "result": {
-              "duration": 34000000,
+              "duration": 12000000,
               "status": "passed"
             },
-            "line": 98,
-            "name": "\"message\" in response body is \"Sector with id - -9 not found\"",
+            "line": 124,
+            "name": "Verify response will return List of Tasks with zero records",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.verify_response_will_return_List_of_Tasks_with_zero_records()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@getTaskBySearchCriteria"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:58.818Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 127,
+        "name": "Verify API: deleteTask update Task status as Passive",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-deletetask-update-task-status-as-passive",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 128,
+            "name": "\"System_Admin\" User invoke deleteTask with Parameter: \"taskId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 54
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_invoke_deleteTask_with_Parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(CommonStepDefinition.java:45)\r\n\tat ✽.User calls \"deleteTask\" API with \"Delete\" http Request(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:129)\r\n",
+              "duration": 2000000,
+              "status": "failed"
+            },
+            "line": 129,
+            "name": "User calls \"deleteTask\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteTask\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 130,
+            "name": "The API call is success with StatusCode 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 131,
+            "name": "Verify responseBody is instance of Task",
+            "match": {
+              "location": "stepDefinitions.TaskStepDefinition.Verify_responseBody_is_instance_of_Task()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@deleteTask"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:40:58.850Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 134,
+        "name": "Verify API: deleteTask API,  with invalid taskId",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-deletetask-api---with-invalid-taskid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 135,
+            "name": "\"System_Admin\" User invoke \"deleteTask\" with invalid Parameter: \"taskId\" \u003d \"-9\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"deleteTask\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 64
+                },
+                {
+                  "val": "\"-9\"",
+                  "offset": 75
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_invoke_api_with_invalid_Parameter(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1960000000,
+              "status": "passed"
+            },
+            "line": 136,
+            "name": "User calls \"deleteTask\" API with \"Delete\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteTask\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 137,
+            "name": "The API call is failed with StatusCode 500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2468000000,
+              "status": "passed"
+            },
+            "line": 138,
+            "name": "\"message\" in response body is \"Task with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -1538,7 +2124,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Sector with id - -9 not found\"",
+                  "val": "\"Task with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -1552,15 +2138,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@deleteSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@deleteTask"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:34:10.988Z",
+        "start_timestamp": "2020-06-18T16:41:03.342Z",
         "before": [
           {
             "result": {
@@ -1571,13 +2160,14 @@
             }
           }
         ],
-        "line": 101,
-        "name": "Verify API: deleteSector API, with no Param",
+        "line": 141,
+        "name": "Verify API: deleteTask API, with no Param",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-deletesector-api--with-no-param",
+        "id": "validating-task-api-s;verify-api:-deletetask-api--with-no-param",
         "after": [
           {
             "result": {
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -1590,11 +2180,11 @@
         "steps": [
           {
             "result": {
-              "duration": 73000000,
+              "duration": 16000000,
               "status": "passed"
             },
-            "line": 102,
-            "name": "\"System_Admin\" User \"deleteSector\" with no Param",
+            "line": 142,
+            "name": "\"System_Admin\" User \"deleteTask\" with no Param",
             "match": {
               "arguments": [
                 {
@@ -1602,7 +2192,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"deleteSector\"",
+                  "val": "\"deleteTask\"",
                   "offset": 20
                 }
               ],
@@ -1612,20 +2202,20 @@
           },
           {
             "result": {
-              "duration": 1535000000,
+              "duration": 3025000000,
               "status": "passed"
             },
-            "line": 103,
-            "name": "User calls \"deleteSector\" API with \"Delete\" http Request",
+            "line": 143,
+            "name": "User calls \"deleteTask\" API with \"Delete\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"deleteSector\"",
+                  "val": "\"deleteTask\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Delete\"",
-                  "offset": 35
+                  "offset": 33
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1636,26 +2226,26 @@
             "result": {
               "status": "passed"
             },
-            "line": 104,
-            "name": "The API call is success with StatusCode 400",
+            "line": 144,
+            "name": "The API call is failed with StatusCode 400",
             "match": {
               "arguments": [
                 {
                   "val": "400",
-                  "offset": 40
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 35000000,
+              "duration": 36000000,
               "status": "passed"
             },
-            "line": 105,
-            "name": "\"message\" in response body is \"Required Integer parameter \u0027sectorId\u0027 is not present\"",
+            "line": 145,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027taskId\u0027 is not present\"",
             "match": {
               "arguments": [
                 {
@@ -1663,7 +2253,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required Integer parameter \u0027sectorId\u0027 is not present\"",
+                  "val": "\"Required Integer parameter \u0027taskId\u0027 is not present\"",
                   "offset": 30
                 }
               ],
@@ -1677,19 +2267,21 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@deleteSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@deleteTask"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:34:12.674Z",
+        "start_timestamp": "2020-06-18T16:41:06.439Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1697,10 +2289,10 @@
             }
           }
         ],
-        "line": 108,
-        "name": "Verify API: updateSector API add Sector paylod",
+        "line": 148,
+        "name": "Verify API: updateTask API add Task paylod",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-updatesector-api-add-sector-paylod",
+        "id": "validating-task-api-s;verify-api:-updatetask-api-add-task-paylod",
         "after": [
           {
             "result": {
@@ -1716,11 +2308,12 @@
         "steps": [
           {
             "result": {
-              "duration": 100000000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\r\n\tat dataProvider.JsonDataReader.updateTaskData(JsonDataReader.java:184)\r\n\tat dataProvider.TestDataBuild.updateTask(TestDataBuild.java:53)\r\n\tat stepDefinitions.TaskStepDefinition.task_Payload_with_Param(TaskStepDefinition.java:53)\r\n\tat ✽.\"System_Admin\" \"Update\" Task Payload with Param \u003d \"taskId\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:149)\r\n",
+              "duration": 4000000,
+              "status": "failed"
             },
-            "line": 109,
-            "name": "\"System_Admin\" User \"Update\" Sector Payload",
+            "line": 149,
+            "name": "\"System_Admin\" \"Update\" Task Payload with Param \u003d \"taskId\"",
             "match": {
               "arguments": [
                 {
@@ -1729,29 +2322,32 @@
                 },
                 {
                   "val": "\"Update\"",
-                  "offset": 20
+                  "offset": 15
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 50
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_Sector_Payload(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.TaskStepDefinition.task_Payload_with_Param(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1359000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 110,
-            "name": "User calls \"updateSector\" API with \"Put\" http Request",
+            "line": 150,
+            "name": "User calls \"updateTask\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateSector\"",
+                  "val": "\"updateTask\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 35
+                  "offset": 33
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1760,9 +2356,9 @@
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 111,
+            "line": 151,
             "name": "The API call is success with StatusCode 200",
             "match": {
               "arguments": [
@@ -1777,31 +2373,12 @@
           },
           {
             "result": {
-              "duration": 6000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 112,
-            "name": "Verify \u0027sectorName\u0027,\u0027sectorStatus\u0027,\u0027sectorCreatedBy\u0027,\u0027sectorCreatedAt\u0027 gets updated",
+            "line": 152,
+            "name": "Verify Task fields gets updated",
             "match": {
-              "arguments": [
-                {
-                  "val": "\u0027sectorName\u0027",
-                  "offset": 7
-                },
-                {
-                  "val": "\u0027sectorStatus\u0027",
-                  "offset": 20
-                },
-                {
-                  "val": "\u0027sectorCreatedBy\u0027",
-                  "offset": 35
-                },
-                {
-                  "val": "\u0027sectorCreatedAt\u0027",
-                  "offset": 53
-                }
-              ],
-              "location": "stepDefinitions.SectorStepDefinition.verify_gets_updated(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.TaskStepDefinition.verify_Task_fields_gets_updated()"
             },
             "keyword": "Then "
           }
@@ -1811,15 +2388,18 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@updateSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@updateTask"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-03T11:34:14.164Z",
+        "start_timestamp": "2020-06-18T16:41:06.471Z",
         "before": [
           {
             "result": {
@@ -1830,14 +2410,13 @@
             }
           }
         ],
-        "line": 115,
-        "name": "Verify API: updateSector API, with no pattern Body",
+        "line": 157,
+        "name": "Verify API: updateTask API, with invalid taskId",
         "description": "",
-        "id": "validating-sector-service-apis;verify-api:-updatesector-api--with-no-pattern-body",
+        "id": "validating-task-api-s;verify-api:-updatetask-api--with-invalid-taskid",
         "after": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -1850,11 +2429,12 @@
         "steps": [
           {
             "result": {
-              "duration": 11000000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\r\n\tat dataProvider.JsonDataReader.updateTaskData(JsonDataReader.java:184)\r\n\tat dataProvider.TestDataBuild.updateTask(TestDataBuild.java:53)\r\n\tat stepDefinitions.TaskStepDefinition.user_Task_Payload_with_invalid_Param_and_value(TaskStepDefinition.java:205)\r\n\tat ✽.\"System_Admin\" User \"Update\" Task Payload  with invalid Param \u003d \"taskId\" and value\u003d\"-9\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:158)\r\n",
+              "duration": 4000000,
+              "status": "failed"
             },
-            "line": 116,
-            "name": "\"System_Admin\" User \"Update\" Sector Payload  with no Sector Body and Param \u003d \"sectorId\"",
+            "line": 158,
+            "name": "\"System_Admin\" User \"Update\" Task Payload  with invalid Param \u003d \"taskId\" and value\u003d\"-9\"",
             "match": {
               "arguments": [
                 {
@@ -1866,30 +2446,33 @@
                   "offset": 20
                 },
                 {
-                  "val": "\"sectorId\"",
-                  "offset": 77
+                  "val": "\"taskId\"",
+                  "offset": 64
+                },
+                {
+                  "val": "-9",
+                  "offset": 84
                 }
               ],
-              "location": "stepDefinitions.SectorStepDefinition.user_sector_Payload_with_no_Sector_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.TaskStepDefinition.user_Task_Payload_with_invalid_Param_and_value(java.lang.String,java.lang.String,java.lang.String,int)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1717000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 117,
-            "name": "User calls \"updateSector\" API with \"Put\" http Request",
+            "line": 159,
+            "name": "User calls \"updateTask\" API with \"Put\" http Request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"updateSector\"",
+                  "val": "\"updateTask\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Put\"",
-                  "offset": 35
+                  "offset": 33
                 }
               ],
               "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
@@ -1898,28 +2481,27 @@
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 118,
-            "name": "The API call is success with StatusCode 400",
+            "line": 160,
+            "name": "The API call is failed with StatusCode 500",
             "match": {
               "arguments": [
                 {
-                  "val": "400",
-                  "offset": 40
+                  "val": "500",
+                  "offset": 39
                 }
               ],
-              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_success_with_StatusCode(int)"
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 46000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 119,
-            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.updateSector(java.lang.String,com.ibm.dc.sector.entity.Sector)\"",
+            "line": 161,
+            "name": "\"message\" in response body is \"Task with id - -9 not found\"",
             "match": {
               "arguments": [
                 {
@@ -1927,7 +2509,7 @@
                   "offset": 0
                 },
                 {
-                  "val": "\"Required request body is missing: public com.ibm.dc.sector.entity.Sector com.ibm.dc.sector.controller.SectorController.updateSector(java.lang.String,com.ibm.dc.sector.entity.Sector)\"",
+                  "val": "\"Task with id - -9 not found\"",
                   "offset": 30
                 }
               ],
@@ -1941,19 +2523,279 @@
             "name": "@DC-Test-Suite"
           },
           {
-            "name": "@Test"
+            "name": "@Demo"
           },
           {
-            "name": "@updateSector"
+            "name": "@Task"
+          },
+          {
+            "name": "@updateTask"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:41:06.491Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 164,
+        "name": "Verify API: updateTask API, with no taskId",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-updatetask-api--with-no-taskid",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat dataProvider.JsonDataReader.updateTaskData(JsonDataReader.java:184)\r\n\tat dataProvider.TestDataBuild.updateTask(TestDataBuild.java:53)\r\n\tat stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Param(TaskStepDefinition.java:212)\r\n\tat ✽.\"System_Admin\" User \"Update\" Task Payload  with no Param(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:165)\r\n",
+              "status": "failed"
+            },
+            "line": 165,
+            "name": "\"System_Admin\" User \"Update\" Task Payload  with no Param",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Param(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 166,
+            "name": "User calls \"updateTask\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateTask\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 167,
+            "name": "The API call is failed with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 168,
+            "name": "\"message\" in response body is \"Required Integer parameter \u0027taskId\u0027 is not present\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required Integer parameter \u0027taskId\u0027 is not present\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@updateTask"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-18T16:41:06.507Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 171,
+        "name": "Verify API: updateTask API, with no task Body",
+        "description": "",
+        "id": "validating-task-api-s;verify-api:-updatetask-api--with-no-task-body",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Task_Body_and_Param(TaskStepDefinition.java:165)\r\n\tat ✽.\"System_Admin\" User \"Update\" Task Payload  with no Task Body and Param \u003d \"taskId\"(file:///C:/Users/KumariRupam/eclipse-workspace/BDD_FW/src/test/java/features/Task.feature:172)\r\n",
+              "duration": 8000000,
+              "status": "failed"
+            },
+            "line": 172,
+            "name": "\"System_Admin\" User \"Update\" Task Payload  with no Task Body and Param \u003d \"taskId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"System_Admin\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Update\"",
+                  "offset": 20
+                },
+                {
+                  "val": "\"taskId\"",
+                  "offset": 73
+                }
+              ],
+              "location": "stepDefinitions.TaskStepDefinition.user_Task_Payload_with_no_Task_Body_and_Param(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 173,
+            "name": "User calls \"updateTask\" API with \"Put\" http Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateTask\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Put\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.user_calls_API_with_http_Request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 174,
+            "name": "The API call is failed with StatusCode 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.the_API_call_is_failed_with_StatusCode(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 175,
+            "name": "\"message\" in response body is \"Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.updateTask(java.lang.String,java.lang.Integer,com.ibm.dc.task.entity.Task)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"message\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Required request body is missing: public com.ibm.dc.task.entity.Task com.ibm.dc.task.controller.TaskController.updateTask(java.lang.String,java.lang.Integer,com.ibm.dc.task.entity.Task)\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.CommonStepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DC-Test-Suite"
+          },
+          {
+            "name": "@Demo"
+          },
+          {
+            "name": "@Task"
+          },
+          {
+            "name": "@updateTask"
           }
         ]
       }
     ],
-    "name": "Validating Sector-Service APIs",
+    "name": "Validating Task API\u0027s",
     "description": "",
-    "id": "validating-sector-service-apis",
+    "id": "validating-task-api-s",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/test.feature",
+    "uri": "file:src/test/java/features/Task.feature",
     "tags": [
       {
         "name": "@DC-Test-Suite",
@@ -1964,11 +2806,19 @@
         }
       },
       {
-        "name": "@Test",
+        "name": "@Demo",
         "type": "Tag",
         "location": {
-          "line": 1,
-          "column": 16
+          "line": 2,
+          "column": 1
+        }
+      },
+      {
+        "name": "@Task",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
         }
       }
     ]
